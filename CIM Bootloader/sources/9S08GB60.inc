@@ -1,0 +1,1453 @@
+;*********************************************************************
+; HEADER_START
+;
+;  	   $File Name: 9S08GB60.inc$
+;      Project:        Developper's HC08 Bootloader Slave
+;      Description:    S08GB/GT header file
+;      Platform:       HCS08
+;      $Version: 6.0.3.0$
+;      $Date: Nov-3-2004$ 
+;      $Last Modified By: r30323$
+;      Company:        Freescale Semiconductor
+;      Security:       General Business
+;
+; =================================================================== 
+; Copyright (c):      Freescale Semiconductor, 2004, All rights reserved.
+;
+; =================================================================== 
+; THIS SOFTWARE IS PROVIDED BY FREESCALE "AS IS" AND ANY
+; EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+; IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL FREESCALE OR
+; ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+; SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+; NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+; HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+; STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+; OF THE POSSIBILITY OF SUCH DAMAGE.
+; ===================================================================
+;
+; HEADER_END
+
+;* Author: Jim Sibigtroth - Freescale TSPG
+;*
+;* Description: Register and bit name definitions for 9S08GB60
+;*
+;* Documentation: 9S08GB60 family Data Sheet for register and bit explanations
+;* HCS08 Family Reference Manual (HCS08RM1/D) appendix B for explanation of equate files
+;*
+;* Include Files: none
+;*
+;* Assembler:  Metrowerks Code Warrior 3.0 (pre-release)
+;*             or P&E Microcomputer Systems - CASMS08 (beta v4.02)
+;*
+;* Revision History: not yet released
+;* Rev #     Date      Who     Comments
+;* -----  -----------  ------  --------------------------------------------
+;*  1.3    28-Apr-03   J-Sib   SPCO->SPC0, IIAS->IAAS, AN2111 format
+;*  1.2    24-Apr-03   J-Sib   correct minor typos in comments
+;*  1.1    21-Apr-03   J-Sib   comments and modify for CW 3.0 project
+;*  1.0    15-Apr-03   J-Sib   Release version for 9S09GB60
+;********************************************************************************************
+
+;****  Memory Map and Interrupt Vectors  ****************************************************
+;*
+RomStart:   equ   $1080       ;start of 60K flash
+HighRegs:   equ   $1800       ;start of high page registers
+Rom1Start:  equ   $182C       ;start of flash after high regs
+RomLast:    equ   $FFFF       ;last flash location
+RamStart:   equ   $0080       ;start of 4096 byte RAM
+RamLast:    equ   $107F       ;last RAM location
+;
+Vrti:       equ   $FFCC       ;RTI (periodic interrupt) vector
+Viic:       equ   $FFCE       ;IIC vector
+Vatd:       equ   $FFD0       ;analog to digital conversion vector
+Vkeyboard:  equ   $FFD2       ;keyboard vector
+Vsci2tx:    equ   $FFD4       ;SCI2 transmit vector
+Vsci2rx:    equ   $FFD6       ;SCI2 receive vector
+Vsci2err:   equ   $FFD8       ;SCI2 error vector
+Vsci1tx:    equ   $FFDA       ;SCI1 transmit vector
+Vsci1rx:    equ   $FFDC       ;SCI1 receive vector
+Vsci1err:   equ   $FFDE       ;SCI1 error vector
+Vspi:       equ   $FFE0       ;SPI vector
+Vtpm2ovf:   equ   $FFE2       ;TPM2 overflow vector
+Vtpm2ch4:   equ   $FFE4       ;TPM2 channel 4 vector
+Vtpm2ch3:   equ   $FFE6       ;TPM2 channel 3 vector
+Vtpm2ch2:   equ   $FFE8       ;TPM2 channel 2 vector
+Vtpm2ch1:   equ   $FFEA       ;TPM2 channel 1 vector
+Vtpm2ch0:   equ   $FFEC       ;TPM2 channel 0 vector
+Vtpm1ovf:   equ   $FFEE       ;TPM1 overflow vector
+Vtpm1ch2:   equ   $FFF0       ;TPM1 channel 2 vector
+Vtpm1ch1:   equ   $FFF2       ;TPM1 channel 1 vector
+Vtpm1ch0:   equ   $FFF4       ;TPM1 channel 0 vector
+Vicg:       equ   $FFF6       ;ICG vector
+Vlvd:       equ   $FFF8       ;low voltage detect vector
+Virq:       equ   $FFFA       ;IRQ pin vector
+Vswi:       equ   $FFFC       ;SWI vector
+Vreset:     equ   $FFFE       ;reset vector
+
+;****  Input/Output (I/O) Ports  ************************************************************
+;*
+PTAD:       equ   $00         ;I/O port A data register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTAD7:      equ   7           ;bit #7
+PTAD6:      equ   6           ;bit #6
+PTAD5:      equ   5           ;bit #5
+PTAD4:      equ   4           ;bit #4
+PTAD3:      equ   3           ;bit #3
+PTAD2:      equ   2           ;bit #2
+PTAD1:      equ   1           ;bit #1
+PTAD0:      equ   0           ;bit #0
+; bit position masks
+mPTAD7:     equ   %10000000   ;port A bit 7
+mPTAD6:     equ   %01000000   ;port A bit 6
+mPTAD5:     equ   %00100000   ;port A bit 5
+mPTAD4:     equ   %00010000   ;port A bit 4
+mPTAD3:     equ   %00001000   ;port A bit 3
+mPTAD2:     equ   %00000100   ;port A bit 2
+mPTAD1:     equ   %00000010   ;port A bit 1
+mPTAD0:     equ   %00000001   ;port A bit 0
+
+PTAPE:      equ   $01         ;I/O port A pullup enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTAPE7:     equ   7           ;bit #7
+PTAPE6:     equ   6           ;bit #6
+PTAPE5:     equ   5           ;bit #5
+PTAPE4:     equ   4           ;bit #4
+PTAPE3:     equ   3           ;bit #3
+PTAPE2:     equ   2           ;bit #2
+PTAPE1:     equ   1           ;bit #1
+PTAPE0:     equ   0           ;bit #0
+; bit position masks
+mPTAPE7:    equ   %10000000   ;port A bit 7
+mPTAPE6:    equ   %01000000   ;port A bit 6
+mPTAPE5:    equ   %00100000   ;port A bit 5
+mPTAPE4:    equ   %00010000   ;port A bit 4
+mPTAPE3:    equ   %00001000   ;port A bit 3
+mPTAPE2:    equ   %00000100   ;port A bit 2
+mPTAPE1:    equ   %00000010   ;port A bit 1
+mPTAPE0:    equ   %00000001   ;port A bit 0
+
+PTASE:      equ   $02         ;I/O port A slew rate control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTASE7:     equ   7           ;bit #7
+PTASE6:     equ   6           ;bit #6
+PTASE5:     equ   5           ;bit #5
+PTASE4:     equ   4           ;bit #4
+PTASE3:     equ   3           ;bit #3
+PTASE2:     equ   2           ;bit #2
+PTASE1:     equ   1           ;bit #1
+PTASE0:     equ   0           ;bit #0
+; bit position masks
+mPTASE7:    equ   %10000000   ;port A bit 7
+mPTASE6:    equ   %01000000   ;port A bit 6
+mPTASE5:    equ   %00100000   ;port A bit 5
+mPTASE4:    equ   %00010000   ;port A bit 4
+mPTASE3:    equ   %00001000   ;port A bit 3
+mPTASE2:    equ   %00000100   ;port A bit 2
+mPTASE1:    equ   %00000010   ;port A bit 1
+mPTASE0:    equ   %00000001   ;port A bit 0
+
+PTADD:      equ   $03         ;I/O port A data direction register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTADD7:     equ   7           ;bit #7
+PTADD6:     equ   6           ;bit #6
+PTADD5:     equ   5           ;bit #5
+PTADD4:     equ   4           ;bit #4
+PTADD3:     equ   3           ;bit #3
+PTADD2:     equ   2           ;bit #2
+PTADD1:     equ   1           ;bit #1
+PTADD0:     equ   0           ;bit #0
+; bit position masks
+mPTADD7:    equ   %10000000   ;port A bit 7
+mPTADD6:    equ   %01000000   ;port A bit 6
+mPTADD5:    equ   %00100000   ;port A bit 5
+mPTADD4:    equ   %00010000   ;port A bit 4
+mPTADD3:    equ   %00001000   ;port A bit 3
+mPTADD2:    equ   %00000100   ;port A bit 2
+mPTADD1:    equ   %00000010   ;port A bit 1
+mPTADD0:    equ   %00000001   ;port A bit 0
+
+PTBD:       equ   $04         ;I/O port B data register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTBD7:      equ   7           ;bit #7
+PTBD6:      equ   6           ;bit #6
+PTBD5:      equ   5           ;bit #5
+PTBD4:      equ   4           ;bit #4
+PTBD3:      equ   3           ;bit #3
+PTBD2:      equ   2           ;bit #2
+PTBD1:      equ   1           ;bit #1
+PTBD0:      equ   0           ;bit #0
+; bit position masks
+mPTBD7:     equ   %10000000   ;port B bit 7
+mPTBD6:     equ   %01000000   ;port B bit 6
+mPTBD5:     equ   %00100000   ;port B bit 5
+mPTBD4:     equ   %00010000   ;port B bit 4
+mPTBD3:     equ   %00001000   ;port B bit 3
+mPTBD2:     equ   %00000100   ;port B bit 2
+mPTBD1:     equ   %00000010   ;port B bit 1
+mPTBD0:     equ   %00000001   ;port B bit 0
+
+PTBPE:      equ   $05         ;I/O port B pullup enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTBPE7:     equ   7           ;bit #7
+PTBPE6:     equ   6           ;bit #6
+PTBPE5:     equ   5           ;bit #5
+PTBPE4:     equ   4           ;bit #4
+PTBPE3:     equ   3           ;bit #3
+PTBPE2:     equ   2           ;bit #2
+PTBPE1:     equ   1           ;bit #1
+PTBPE0:     equ   0           ;bit #0
+; bit position masks
+mPTBPE7:    equ   %10000000   ;port B bit 7
+mPTBPE6:    equ   %01000000   ;port B bit 6
+mPTBPE5:    equ   %00100000   ;port B bit 5
+mPTBPE4:    equ   %00010000   ;port B bit 4
+mPTBPE3:    equ   %00001000   ;port B bit 3
+mPTBPE2:    equ   %00000100   ;port B bit 2
+mPTBPE1:    equ   %00000010   ;port B bit 1
+mPTBPE0:    equ   %00000001   ;port B bit 0
+
+PTBSE:      equ   $06         ;I/O port B slew rate control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTBSE7:     equ   7           ;bit #7
+PTBSE6:     equ   6           ;bit #6
+PTBSE5:     equ   5           ;bit #5
+PTBSE4:     equ   4           ;bit #4
+PTBSE3:     equ   3           ;bit #3
+PTBSE2:     equ   2           ;bit #2
+PTBSE1:     equ   1           ;bit #1
+PTBSE0:     equ   0           ;bit #0
+; bit position masks
+mPTBSE7:    equ   %10000000   ;port B bit 7
+mPTBSE6:    equ   %01000000   ;port B bit 6
+mPTBSE5:    equ   %00100000   ;port B bit 5
+mPTBSE4:    equ   %00010000   ;port B bit 4
+mPTBSE3:    equ   %00001000   ;port B bit 3
+mPTBSE2:    equ   %00000100   ;port B bit 2
+mPTBSE1:    equ   %00000010   ;port B bit 1
+mPTBSE0:    equ   %00000001   ;port B bit 0
+
+PTBDD:      equ   $07         ;I/O port B data direction register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTBDD7:     equ   7           ;bit #7
+PTBDD6:     equ   6           ;bit #6
+PTBDD5:     equ   5           ;bit #5
+PTBDD4:     equ   4           ;bit #4
+PTBDD3:     equ   3           ;bit #3
+PTBDD2:     equ   2           ;bit #2
+PTBDD1:     equ   1           ;bit #1
+PTBDD0:     equ   0           ;bit #0
+; bit position masks
+mPTBDD7:    equ   %10000000   ;port B bit 7
+mPTBDD6:    equ   %01000000   ;port B bit 6
+mPTBDD5:    equ   %00100000   ;port B bit 5
+mPTBDD4:    equ   %00010000   ;port B bit 4
+mPTBDD3:    equ   %00001000   ;port B bit 3
+mPTBDD2:    equ   %00000100   ;port B bit 2
+mPTBDD1:    equ   %00000010   ;port B bit 1
+mPTBDD0:    equ   %00000001   ;port B bit 0
+
+PTCD:       equ   $08         ;I/O port C data register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTCD7:      equ   7           ;bit #7
+PTCD6:      equ   6           ;bit #6
+PTCD5:      equ   5           ;bit #5
+PTCD4:      equ   4           ;bit #4
+PTCD3:      equ   3           ;bit #3
+PTCD2:      equ   2           ;bit #2
+PTCD1:      equ   1           ;bit #1
+PTCD0:      equ   0           ;bit #0
+; bit position masks
+mPTCD7:     equ   %10000000   ;port C bit 7
+mPTCD6:     equ   %01000000   ;port C bit 6
+mPTCD5:     equ   %00100000   ;port C bit 5
+mPTCD4:     equ   %00010000   ;port C bit 4
+mPTCD3:     equ   %00001000   ;port C bit 3
+mPTCD2:     equ   %00000100   ;port C bit 2
+mPTCD1:     equ   %00000010   ;port C bit 1
+mPTCD0:     equ   %00000001   ;port C bit 0
+
+PTCPE:      equ   $09         ;I/O port C pullup enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTCPE7:     equ   7           ;bit #7
+PTCPE6:     equ   6           ;bit #6
+PTCPE5:     equ   5           ;bit #5
+PTCPE4:     equ   4           ;bit #4
+PTCPE3:     equ   3           ;bit #3
+PTCPE2:     equ   2           ;bit #2
+PTCPE1:     equ   1           ;bit #1
+PTCPE0:     equ   0           ;bit #0
+; bit position masks
+mPTCPE7:    equ   %10000000   ;port C bit 7
+mPTCPE6:    equ   %01000000   ;port C bit 6
+mPTCPE5:    equ   %00100000   ;port C bit 5
+mPTCPE4:    equ   %00010000   ;port C bit 4
+mPTCPE3:    equ   %00001000   ;port C bit 3
+mPTCPE2:    equ   %00000100   ;port C bit 2
+mPTCPE1:    equ   %00000010   ;port C bit 1
+mPTCPE0:    equ   %00000001   ;port C bit 0
+
+PTCSE:      equ   $0A         ;I/O port C slew rate control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTCSE7:     equ   7           ;bit #7
+PTCSE6:     equ   6           ;bit #6
+PTCSE5:     equ   5           ;bit #5
+PTCSE4:     equ   4           ;bit #4
+PTCSE3:     equ   3           ;bit #3
+PTCSE2:     equ   2           ;bit #2
+PTCSE1:     equ   1           ;bit #1
+PTCSE0:     equ   0           ;bit #0
+; bit position masks
+mPTCSE7:    equ   %10000000   ;port C bit 7
+mPTCSE6:    equ   %01000000   ;port C bit 6
+mPTCSE5:    equ   %00100000   ;port C bit 5
+mPTCSE4:    equ   %00010000   ;port C bit 4
+mPTCSE3:    equ   %00001000   ;port C bit 3
+mPTCSE2:    equ   %00000100   ;port C bit 2
+mPTCSE1:    equ   %00000010   ;port C bit 1
+mPTCSE0:    equ   %00000001   ;port C bit 0
+
+PTCDD:      equ   $0B         ;I/O port C data direction register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTCDD7:     equ   7           ;bit #7
+PTCDD6:     equ   6           ;bit #6
+PTCDD5:     equ   5           ;bit #5
+PTCDD4:     equ   4           ;bit #4
+PTCDD3:     equ   3           ;bit #3
+PTCDD2:     equ   2           ;bit #2
+PTCDD1:     equ   1           ;bit #1
+PTCDD0:     equ   0           ;bit #0
+; bit position masks
+mPTCDD7:    equ   %10000000   ;port C bit 7
+mPTCDD6:    equ   %01000000   ;port C bit 6
+mPTCDD5:    equ   %00100000   ;port C bit 5
+mPTCDD4:    equ   %00010000   ;port C bit 4
+mPTCDD3:    equ   %00001000   ;port C bit 3
+mPTCDD2:    equ   %00000100   ;port C bit 2
+mPTCDD1:    equ   %00000010   ;port C bit 1
+mPTCDD0:    equ   %00000001   ;port C bit 0
+
+PTDD:       equ   $0C         ;I/O port D data register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTDD7:      equ   7           ;bit #7
+PTDD6:      equ   6           ;bit #6
+PTDD5:      equ   5           ;bit #5
+PTDD4:      equ   4           ;bit #4
+PTDD3:      equ   3           ;bit #3
+PTDD2:      equ   2           ;bit #2
+PTDD1:      equ   1           ;bit #1
+PTDD0:      equ   0           ;bit #0
+; bit position masks
+mPTDD7:     equ   %10000000   ;port D bit 7
+mPTDD6:     equ   %01000000   ;port D bit 6
+mPTDD5:     equ   %00100000   ;port D bit 5
+mPTDD4:     equ   %00010000   ;port D bit 4
+mPTDD3:     equ   %00001000   ;port D bit 3
+mPTDD2:     equ   %00000100   ;port D bit 2
+mPTDD1:     equ   %00000010   ;port D bit 1
+mPTDD0:     equ   %00000001   ;port D bit 0
+
+PTDPE:      equ   $0D         ;I/O port D pullup enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTDPE7:     equ   7           ;bit #7
+PTDPE6:     equ   6           ;bit #6
+PTDPE5:     equ   5           ;bit #5
+PTDPE4:     equ   4           ;bit #4
+PTDPE3:     equ   3           ;bit #3
+PTDPE2:     equ   2           ;bit #2
+PTDPE1:     equ   1           ;bit #1
+PTDPE0:     equ   0           ;bit #0
+; bit position masks
+mPTDPE7:    equ   %10000000   ;port D bit 7
+mPTDPE6:    equ   %01000000   ;port D bit 6
+mPTDPE5:    equ   %00100000   ;port D bit 5
+mPTDPE4:    equ   %00010000   ;port D bit 4
+mPTDPE3:    equ   %00001000   ;port D bit 3
+mPTDPE2:    equ   %00000100   ;port D bit 2
+mPTDPE1:    equ   %00000010   ;port D bit 1
+mPTDPE0:    equ   %00000001   ;port D bit 0
+
+PTDSE:      equ   $0E         ;I/O port D slew rate control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTDSE7:     equ   7           ;bit #7
+PTDSE6:     equ   6           ;bit #6
+PTDSE5:     equ   5           ;bit #5
+PTDSE4:     equ   4           ;bit #4
+PTDSE3:     equ   3           ;bit #3
+PTDSE2:     equ   2           ;bit #2
+PTDSE1:     equ   1           ;bit #1
+PTDSE0:     equ   0           ;bit #0
+; bit position masks
+mPTDSE7:    equ   %10000000   ;port D bit 7
+mPTDSE6:    equ   %01000000   ;port D bit 6
+mPTDSE5:    equ   %00100000   ;port D bit 5
+mPTDSE4:    equ   %00010000   ;port D bit 4
+mPTDSE3:    equ   %00001000   ;port D bit 3
+mPTDSE2:    equ   %00000100   ;port D bit 2
+mPTDSE1:    equ   %00000010   ;port D bit 1
+mPTDSE0:    equ   %00000001   ;port D bit 0
+
+PTDDD:      equ   $0F         ;I/O port D data direction register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTDDD7:     equ   7           ;bit #7
+PTDDD6:     equ   6           ;bit #6
+PTDDD5:     equ   5           ;bit #5
+PTDDD4:     equ   4           ;bit #4
+PTDDD3:     equ   3           ;bit #3
+PTDDD2:     equ   2           ;bit #2
+PTDDD1:     equ   1           ;bit #1
+PTDDD0:     equ   0           ;bit #0
+; bit position masks
+mPTDDD7:    equ   %10000000   ;port D bit 7
+mPTDDD6:    equ   %01000000   ;port D bit 6
+mPTDDD5:    equ   %00100000   ;port D bit 5
+mPTDDD4:    equ   %00010000   ;port D bit 4
+mPTDDD3:    equ   %00001000   ;port D bit 3
+mPTDDD2:    equ   %00000100   ;port D bit 2
+mPTDDD1:    equ   %00000010   ;port D bit 1
+mPTDDD0:    equ   %00000001   ;port D bit 0
+
+PTED:       equ   $10         ;I/O port E data register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTED7:      equ   7           ;bit #7
+PTED6:      equ   6           ;bit #6
+PTED5:      equ   5           ;bit #5
+PTED4:      equ   4           ;bit #4
+PTED3:      equ   3           ;bit #3
+PTED2:      equ   2           ;bit #2
+PTED1:      equ   1           ;bit #1
+PTED0:      equ   0           ;bit #0
+; bit position masks
+mPTED7:     equ   %10000000   ;port E bit 7
+mPTED6:     equ   %01000000   ;port E bit 6
+mPTED5:     equ   %00100000   ;port E bit 5
+mPTED4:     equ   %00010000   ;port E bit 4
+mPTED3:     equ   %00001000   ;port E bit 3
+mPTED2:     equ   %00000100   ;port E bit 2
+mPTED1:     equ   %00000010   ;port E bit 1
+mPTED0:     equ   %00000001   ;port E bit 0
+
+PTEPE:      equ   $11         ;I/O port E pullup enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTEPE7:     equ   7           ;bit #7
+PTEPE6:     equ   6           ;bit #6
+PTEPE5:     equ   5           ;bit #5
+PTEPE4:     equ   4           ;bit #4
+PTEPE3:     equ   3           ;bit #3
+PTEPE2:     equ   2           ;bit #2
+PTEPE1:     equ   1           ;bit #1
+PTEPE0:     equ   0           ;bit #0
+; bit position masks
+mPTEPE7:    equ   %10000000   ;port E bit 7
+mPTEPE6:    equ   %01000000   ;port E bit 6
+mPTEPE5:    equ   %00100000   ;port E bit 5
+mPTEPE4:    equ   %00010000   ;port E bit 4
+mPTEPE3:    equ   %00001000   ;port E bit 3
+mPTEPE2:    equ   %00000100   ;port E bit 2
+mPTEPE1:    equ   %00000010   ;port E bit 1
+mPTEPE0:    equ   %00000001   ;port E bit 0
+
+PTESE:      equ   $12         ;I/O port E slew rate control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTESE7:     equ   7           ;bit #7
+PTESE6:     equ   6           ;bit #6
+PTESE5:     equ   5           ;bit #5
+PTESE4:     equ   4           ;bit #4
+PTESE3:     equ   3           ;bit #3
+PTESE2:     equ   2           ;bit #2
+PTESE1:     equ   1           ;bit #1
+PTESE0:     equ   0           ;bit #0
+; bit position masks
+mPTESE7:    equ   %10000000   ;port E bit 7
+mPTESE6:    equ   %01000000   ;port E bit 6
+mPTESE5:    equ   %00100000   ;port E bit 5
+mPTESE4:    equ   %00010000   ;port E bit 4
+mPTESE3:    equ   %00001000   ;port E bit 3
+mPTESE2:    equ   %00000100   ;port E bit 2
+mPTESE1:    equ   %00000010   ;port E bit 1
+mPTESE0:    equ   %00000001   ;port E bit 0
+
+PTEDD:      equ   $13         ;I/O port E data direction register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTEDD7:     equ   7           ;bit #7
+PTEDD6:     equ   6           ;bit #6
+PTEDD5:     equ   5           ;bit #5
+PTEDD4:     equ   4           ;bit #4
+PTEDD3:     equ   3           ;bit #3
+PTEDD2:     equ   2           ;bit #2
+PTEDD1:     equ   1           ;bit #1
+PTEDD0:     equ   0           ;bit #0
+; bit position masks
+mPTEDD7:    equ   %10000000   ;port E bit 7
+mPTEDD6:    equ   %01000000   ;port E bit 6
+mPTEDD5:    equ   %00100000   ;port E bit 5
+mPTEDD4:    equ   %00010000   ;port E bit 4
+mPTEDD3:    equ   %00001000   ;port E bit 3
+mPTEDD2:    equ   %00000100   ;port E bit 2
+mPTEDD1:    equ   %00000010   ;port E bit 1
+mPTEDD0:    equ   %00000001   ;port E bit 0
+
+PTFD:       equ   $40         ;I/O port F data register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTFD7:      equ   7           ;bit #7
+PTFD6:      equ   6           ;bit #6
+PTFD5:      equ   5           ;bit #5
+PTFD4:      equ   4           ;bit #4
+PTFD3:      equ   3           ;bit #3
+PTFD2:      equ   2           ;bit #2
+PTFD1:      equ   1           ;bit #1
+PTFD0:      equ   0           ;bit #0
+; bit position masks
+mPTFD7:     equ   %10000000   ;port F bit 7
+mPTFD6:     equ   %01000000   ;port F bit 6
+mPTFD5:     equ   %00100000   ;port F bit 5
+mPTFD4:     equ   %00010000   ;port F bit 4
+mPTFD3:     equ   %00001000   ;port F bit 3
+mPTFD2:     equ   %00000100   ;port F bit 2
+mPTFD1:     equ   %00000010   ;port F bit 1
+mPTFD0:     equ   %00000001   ;port F bit 0
+
+PTFPE:      equ   $41         ;I/O port F pullup enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTFPE7:     equ   7           ;bit #7
+PTFPE6:     equ   6           ;bit #6
+PTFPE5:     equ   5           ;bit #5
+PTFPE4:     equ   4           ;bit #4
+PTFPE3:     equ   3           ;bit #3
+PTFPE2:     equ   2           ;bit #2
+PTFPE1:     equ   1           ;bit #1
+PTFPE0:     equ   0           ;bit #0
+; bit position masks
+mPTFPE7:    equ   %10000000   ;port F bit 7
+mPTFPE6:    equ   %01000000   ;port F bit 6
+mPTFPE5:    equ   %00100000   ;port F bit 5
+mPTFPE4:    equ   %00010000   ;port F bit 4
+mPTFPE3:    equ   %00001000   ;port F bit 3
+mPTFPE2:    equ   %00000100   ;port F bit 2
+mPTFPE1:    equ   %00000010   ;port F bit 1
+mPTFPE0:    equ   %00000001   ;port F bit 0
+
+PTFSE:      equ   $42         ;I/O port F slew rate control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTFSE7:     equ   7           ;bit #7
+PTFSE6:     equ   6           ;bit #6
+PTFSE5:     equ   5           ;bit #5
+PTFSE4:     equ   4           ;bit #4
+PTFSE3:     equ   3           ;bit #3
+PTFSE2:     equ   2           ;bit #2
+PTFSE1:     equ   1           ;bit #1
+PTFSE0:     equ   0           ;bit #0
+; bit position masks
+mPTFSE7:    equ   %10000000   ;port F bit 7
+mPTFSE6:    equ   %01000000   ;port F bit 6
+mPTFSE5:    equ   %00100000   ;port F bit 5
+mPTFSE4:    equ   %00010000   ;port F bit 4
+mPTFSE3:    equ   %00001000   ;port F bit 3
+mPTFSE2:    equ   %00000100   ;port F bit 2
+mPTFSE1:    equ   %00000010   ;port F bit 1
+mPTFSE0:    equ   %00000001   ;port F bit 0
+
+
+PTFDD:      equ   $43         ;I/O port F data direction register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTFDD7:     equ   7           ;bit #7
+PTFDD6:     equ   6           ;bit #6
+PTFDD5:     equ   5           ;bit #5
+PTFDD4:     equ   4           ;bit #4
+PTFDD3:     equ   3           ;bit #3
+PTFDD2:     equ   2           ;bit #2
+PTFDD1:     equ   1           ;bit #1
+PTFDD0:     equ   0           ;bit #0
+; bit position masks
+mPTFDD7:    equ   %10000000   ;port F bit 7
+mPTFDD6:    equ   %01000000   ;port F bit 6
+mPTFDD5:    equ   %00100000   ;port F bit 5
+mPTFDD4:    equ   %00010000   ;port F bit 4
+mPTFDD3:    equ   %00001000   ;port F bit 3
+mPTFDD2:    equ   %00000100   ;port F bit 2
+mPTFDD1:    equ   %00000010   ;port F bit 1
+mPTFDD0:    equ   %00000001   ;port F bit 0
+
+PTGD:       equ   $44         ;I/O port G data register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTGD7:      equ   7           ;bit #7
+PTGD6:      equ   6           ;bit #6
+PTGD5:      equ   5           ;bit #5
+PTGD4:      equ   4           ;bit #4
+PTGD3:      equ   3           ;bit #3
+PTGD2:      equ   2           ;bit #2
+PTGD1:      equ   1           ;bit #1
+PTGD0:      equ   0           ;bit #0
+; bit position masks
+mPTGD7:     equ   %10000000   ;port G bit 7
+mPTGD6:     equ   %01000000   ;port G bit 6
+mPTGD5:     equ   %00100000   ;port G bit 5
+mPTGD4:     equ   %00010000   ;port G bit 4
+mPTGD3:     equ   %00001000   ;port G bit 3
+mPTGD2:     equ   %00000100   ;port G bit 2
+mPTGD1:     equ   %00000010   ;port G bit 1
+mPTGD0:     equ   %00000001   ;port G bit 0
+
+PTGPE:      equ   $45         ;I/O port G pullup enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTGPE7:     equ   7           ;bit #7
+PTGPE6:     equ   6           ;bit #6
+PTGPE5:     equ   5           ;bit #5
+PTGPE4:     equ   4           ;bit #4
+PTGPE3:     equ   3           ;bit #3
+PTGPE2:     equ   2           ;bit #2
+PTGPE1:     equ   1           ;bit #1
+PTGPE0:     equ   0           ;bit #0
+; bit position masks
+mPTGPE7:    equ   %10000000   ;port G bit 7
+mPTGPE6:    equ   %01000000   ;port G bit 6
+mPTGPE5:    equ   %00100000   ;port G bit 5
+mPTGPE4:    equ   %00010000   ;port G bit 4
+mPTGPE3:    equ   %00001000   ;port G bit 3
+mPTGPE2:    equ   %00000100   ;port G bit 2
+mPTGPE1:    equ   %00000010   ;port G bit 1
+mPTGPE0:    equ   %00000001   ;port G bit 0
+
+PTGSE:      equ   $46         ;I/O port G slew rate control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTGSE7:     equ   7           ;bit #7
+PTGSE6:     equ   6           ;bit #6
+PTGSE5:     equ   5           ;bit #5
+PTGSE4:     equ   4           ;bit #4
+PTGSE3:     equ   3           ;bit #3
+PTGSE2:     equ   2           ;bit #2
+PTGSE1:     equ   1           ;bit #1
+PTGSE0:     equ   0           ;bit #0
+; bit position masks
+mPTGSE7:    equ   %10000000   ;port G bit 7
+mPTGSE6:    equ   %01000000   ;port G bit 6
+mPTGSE5:    equ   %00100000   ;port G bit 5
+mPTGSE4:    equ   %00010000   ;port G bit 4
+mPTGSE3:    equ   %00001000   ;port G bit 3
+mPTGSE2:    equ   %00000100   ;port G bit 2
+mPTGSE1:    equ   %00000010   ;port G bit 1
+mPTGSE0:    equ   %00000001   ;port G bit 0
+
+PTGDD:      equ   $47         ;I/O port G data direction register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+PTGDD7:     equ   7           ;bit #7
+PTGDD6:     equ   6           ;bit #6
+PTGDD5:     equ   5           ;bit #5
+PTGDD4:     equ   4           ;bit #4
+PTGDD3:     equ   3           ;bit #3
+PTGDD2:     equ   2           ;bit #2
+PTGDD1:     equ   1           ;bit #1
+PTGDD0:     equ   0           ;bit #0
+; bit position masks
+mPTGDD7:    equ   %10000000   ;port G bit 7
+mPTGDD6:    equ   %01000000   ;port G bit 6
+mPTGDD5:    equ   %00100000   ;port G bit 5
+mPTGDD4:    equ   %00010000   ;port G bit 4
+mPTGDD3:    equ   %00001000   ;port G bit 3
+mPTGDD2:    equ   %00000100   ;port G bit 2
+mPTGDD1:    equ   %00000010   ;port G bit 1
+mPTGDD0:    equ   %00000001   ;port G bit 0
+
+;****  Interrupt Request Module (IRQ)  ******************************************************
+;*
+IRQSC:      equ   $14         ;IRQ status and control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+IRQEDG:     equ   5           ;(bit #5) IRQ pin edge sensitivity
+IRQPE:      equ   4           ;(bit #4) IRQ pin enable (PTB5)
+IRQF:       equ   3           ;(bit #3) IRQ flag
+IRQACK:     equ   2           ;(bit #2) acknowledge IRQ flag
+IRQIE:      equ   1           ;(bit #1) IRQ pin interrupt enable
+IRQMOD:     equ   0           ;(bit #0) IRQ mode
+; bit position masks
+mIRQEDG:    equ   %00100000   ;IRQ pin edge sensitivity
+mIRQPE:     equ   %00010000   ;IRQ pin enable (PTB5)
+mIRQF:      equ   %00001000   ;IRQ flag
+mIRQACK:    equ   %00000100   ;acknowledge IRQ flag
+mIRQIE:     equ   %00000010   ;IRQ pin interrupt enable
+mIRQMOD:    equ   %00000001   ;IRQ mode
+
+;****  Keyboard Interrupt Module (KBI)  *****************************************************
+;*
+KBISC:      equ   $16         ;KBI status and control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+KBEDG7:     equ   7           ;rise-hi/fall-low for KBIP7 pin
+KBEDG6:     equ   6           ;rise-hi/fall-low for KBIP6 pin
+KBEDG5:     equ   5           ;rise-hi/fall-low for KBIP5 pin
+KBEDG4:     equ   4           ;rise-hi/fall-low for KBIP4 pin
+KBF:        equ   3           ;KBI flag
+KBACK:      equ   2           ;acknowledge
+KBIE:       equ   1           ;KBI interrupt enable
+KBIMOD:     equ   0           ;KBI mode select
+; bit position masks
+mKBEDG7:    equ   %10000000   ;rise-hi/fall-low for KBIP7 pin
+mKBEDG6:    equ   %01000000   ;rise-hi/fall-low for KBIP6 pin
+mKBEDG5:    equ   %00100000   ;rise-hi/fall-low for KBIP5 pin
+mKBEDG4:    equ   %00010000   ;rise-hi/fall-low for KBIP4 pin
+mKBF:       equ   %00001000   ;KBI flag
+mKBACK:     equ   %00000100   ;acknowledge
+mKBIE:      equ   %00000010   ;KBI interrupt enable
+mKBIMOD:    equ   %00000001   ;KBI mode select
+
+KBIPE:      equ   $17         ;KBI pin enable controls
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+KBIPE7:     equ   7           ;bit #7
+KBIPE6:     equ   6           ;bit #6
+KBIPE5:     equ   5           ;bit #5
+KBIPE4:     equ   4           ;bit #4
+KBIPE3:     equ   3           ;bit #3
+KBIPE2:     equ   2           ;bit #2
+KBIPE1:     equ   1           ;bit #1
+KBIPE0:     equ   0           ;bit #0
+; bit position masks
+mKBIPE7:    equ   %10000000   ;port A bit 7
+mKBIPE6:    equ   %01000000   ;port A bit 6
+mKBIPE5:    equ   %00100000   ;port A bit 5
+mKBIPE4:    equ   %00010000   ;port A bit 4
+mKBIPE3:    equ   %00001000   ;port A bit 3
+mKBIPE2:    equ   %00000100   ;port A bit 2
+mKBIPE1:    equ   %00000010   ;port A bit 1
+mKBIPE0:    equ   %00000001   ;port A bit 0
+
+;****  Serial Communications Interface 1&2 (SCI1 & SCI2)  ***********************************
+;*
+SCI1BDH:    equ   $18         ;SCI1 baud rate register (high)
+SCI2BDH:    equ   $20         ;SCI2 baud rate register (high)
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+SBR12:      equ   4           ;(bit #4) baud divide (high)
+SBR11:      equ   3           ;(bit #3)  "
+SBR10:      equ   2           ;(bit #2)  "
+SBR9:       equ   1           ;(bit #1)  "
+SBR8:       equ   0           ;(bit #0)  "
+; bit position masks
+mSBR12:     equ   %00010000   ;high bits of baud rate divider
+mSBR11:     equ   %00001000   ; "
+mSBR10:     equ   %00000100   ; "
+mSBR9:      equ   %00000010   ; "
+mSBR8:      equ   %00000001   ; "
+
+SCI1BDL:    equ   $19         ;SCI1 baud rate register (low byte)
+SCI2BDL:    equ   $21         ;SCI2 baud rate register (low byte)
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+SBR7:       equ   7           ;(bit #7) baud divide (low)
+SBR6:       equ   6           ;(bit #6)  "
+SBR5:       equ   5           ;(bit #5)  "
+SBR4:       equ   4           ;(bit #4)  "
+SBR3:       equ   3           ;(bit #3)  "
+SBR2:       equ   2           ;(bit #2)  "
+SBR1:       equ   1           ;(bit #1)  "
+SBR0:       equ   0           ;(bit #0)  "
+; bit position masks
+mSBR7:      equ   %10000000   ;low byte of baud rate divider
+mSBR6:      equ   %01000000   ; "
+mSBR5:      equ   %00100000   ; "
+mSBR4:      equ   %00010000   ; "
+mSBR3:      equ   %00001000   ; "
+mSBR2:      equ   %00000100   ; "
+mSBR1:      equ   %00000010   ; "
+mSBR0:      equ   %00000001   ; "
+
+SCI1C1:     equ   $1A         ;SCI1 control register 1
+SCI2C1:     equ   $22         ;SCI2 control register 1
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+LOOPS:      equ   7           ;(bit #7) loopback mode
+SCISWAI:    equ   6           ;(bit #6) SCI stop in wait
+RSRC:       equ   5           ;(bit #5) receiver source
+M:          equ   4           ;(bit #4) 9/8 bit data
+WAKE:       equ   3           ;(bit #3) wake by addr mark/idle
+ILT:        equ   2           ;(bit #2) idle line type; stop/start
+PE:         equ   1           ;(bit #1) parity enable
+PT:         equ   0           ;(bit #0) parity type
+; bit position masks
+mLOOPS:     equ   %10000000   ;loopback mode select
+mSCISWAI:   equ   %01000000   ;SCI stops in wait mode
+mRSRC:      equ   %00100000   ;receiver source
+mM:         equ   %00010000   ;9/8 bit data
+mWAKE:      equ   %00001000   ;wakeup by addr mark/idle
+mILT:       equ   %00000100   ;idle line type; after stop/start
+mPE:        equ   %00000010   ;parity enable
+mPT:        equ   %00000001   ;parity type even/odd
+
+SCI1C2:     equ   $1B         ;SCI1 control register 2
+SCI2C2:     equ   $23         ;SCI2 control register 2
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+TIE:        equ   7           ;(bit #7) transmit interrupt enable
+TCIE:       equ   6           ;(bit #6) TC interrupt enable
+RIE:        equ   5           ;(bit #5) receive interrupt enable
+ILIE:       equ   4           ;(bit #4) idle line interrupt enable
+TE:         equ   3           ;(bit #3) transmitter enable
+RE:         equ   2           ;(bit #2) receiver enable
+RWU:        equ   1           ;(bit #1) receiver wakeup engage
+SBK:        equ   0           ;(bit #0) send break
+; bit position masks
+mTIE:       equ   %10000000   ;transmit interrupt (TDRE) enable
+mTCIE:      equ   %01000000   ;transmit complete interrupt enable
+mRIE:       equ   %00100000   ;receive interrupt (RDRF) enable
+mILIE:      equ   %00010000   ;idle line interrupt (ILIE) enable
+mTE:        equ   %00001000   ;transmitter enable
+mRE:        equ   %00000100   ;receiver enable
+mRWU:       equ   %00000010   ;receiver wakeup engage
+mSBK:       equ   %00000001   ;send break characters
+
+SCI1S1:     equ   $1C         ;SCI1 status register 1
+SCI2S1:     equ   $24         ;SCI2 status register 1
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+TDRE:       equ   7           ;(bit #7) Tx data register empty
+TC:         equ   6           ;(bit #6) transmit complete
+RDRF:       equ   5           ;(bit #5) Rx data register full
+IDLE:       equ   4           ;(bit #4) idle line detected
+OR:         equ   3           ;(bit #3) Rx over run
+NF:         equ   2           ;(bit #2) Rx noise flag
+FE:         equ   1           ;(bit #1) Rx framing error
+PF:         equ   0           ;(bit #0) Rx parity failed
+; bit position masks
+mTDRE:      equ   %10000000   ;transmit data register empty
+mTC:        equ   %01000000   ;transmit complete
+mRDRF:      equ   %00100000   ;receive data register full
+mIDLE:      equ   %00010000   ;idle line detected
+mOR:        equ   %00001000   ;receiver over run
+mNF:        equ   %00000100   ;receiver noise flag
+mFE:        equ   %00000010   ;receiver framing error
+mPF:        equ   %00000001   ;received parity failed
+
+SCI1S2:     equ   $1D         ;SCI1 status register 2
+SCI2S2:     equ   $25         ;SCI2 status register 2
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+RAF:        equ   0           ;(bit #0) Rx active flag
+; bit position masks
+mRAF:       equ   %00000001   ;receiver active flag
+
+SCI1C3:     equ   $1E         ;SCI1 control register 3
+SCI2C3:     equ   $26         ;SCI2 control register 3
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+R8:         equ   7           ;(bit #7) 9th Rx bit
+T8:         equ   6           ;(bit #6) 9th Tx bit
+TXDIR:      equ   5           ;(bit #5) TxD pin direction?
+ORIE:       equ   3           ;(bit #3) Rx over run int. enable
+NEIE:       equ   2           ;(bit #2) Rx noise flag int. enable
+FEIE:       equ   1           ;(bit #1) Rx framing error int. enable
+PEIE:       equ   0           ;(bit #0) Rx parity error int. enable
+; bit position masks
+mR8:        equ   %10000000   ;9th receive data bit
+mT8:        equ   %01000000   ;9th transmit data bit
+mTXDIR:     equ   %00100000   ;transmit pin direction?
+mORIE:      equ   %00001000   ;receiver over run int. enable
+mNEIE:      equ   %00000100   ;receiver noise flag int. enable
+mFEIE:      equ   %00000010   ;receiver framing error int. enable
+mPEIE:      equ   %00000001   ;received parity error int. enable
+
+SCI1D:      equ   $1F         ;SCI1 data register (low byte)
+SCI2D:      equ   $27         ;SCI2 data register (low byte)
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+; read-only Rx data buffer
+R7:         equ   7           ;(bit #7) receive data bits
+R6:         equ   6           ;(bit #6)  "
+R5:         equ   5           ;(bit #5)  "
+R4:         equ   4           ;(bit #4)  "
+R3:         equ   3           ;(bit #3)  "
+R2:         equ   2           ;(bit #2)  "
+R1:         equ   1           ;(bit #1)  "
+R0:         equ   0           ;(bit #0)  "
+; write-only Tx data buffer
+T7:         equ   7           ;(bit #7) transmit data bits
+T6:         equ   6           ;(bit #6)  "
+T5:         equ   5           ;(bit #5)  "
+T4:         equ   4           ;(bit #4)  "
+T3:         equ   3           ;(bit #3)  "
+T2:         equ   2           ;(bit #2)  "
+T1:         equ   1           ;(bit #1)  "
+T0:         equ   0           ;(bit #0)  "
+; bit position masks
+; read-only Rx data buffer
+mR7:        equ   %10000000   ;receive data bits
+mR6:        equ   %01000000   ; "
+mR5:        equ   %00100000   ; "
+mR4:        equ   %00010000   ; "
+mR3:        equ   %00001000   ; "
+mR2:        equ   %00000100   ; "
+mR1:        equ   %00000010   ; "
+mR0:        equ   %00000001   ; "
+; write-only Tx data buffer
+mT7:        equ   %10000000   ;transmit data bits
+mT6:        equ   %01000000   ; "
+mT5:        equ   %00100000   ; "
+mT4:        equ   %00010000   ; "
+mT3:        equ   %00001000   ; "
+mT2:        equ   %00000100   ; "
+mT1:        equ   %00000010   ; "
+mT0:        equ   %00000001   ; "
+
+;****  Serial Peripheral Interface (SPI)  ***************************************************
+;*
+SPIC1:      equ   $28         ;SPI control register 1
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+SPIE:       equ   7           ;(bit #7) SPI interrupt enable
+SPE:        equ   6           ;(bit #6) SPI enable
+SPTIE:      equ   5           ;(bit #5) Tx error interrupt enable
+MSTR:       equ   4           ;(bit #4) master/slave
+CPOL:       equ   3           ;(bit #3) clock polarity
+CPHA:       equ   2           ;(bit #2) clock phase
+SSOE:       equ   1           ;(bit #1) SS output enable
+LSBFE:      equ   0           ;(bit #0) LSB-first enable
+; bit position masks
+mSPIE:      equ   %10000000   ;SPI interrupt enable
+mSPE:       equ   %01000000   ;SPI enable
+mSPTIE:     equ   %00100000   ;SPI Tx error interrupt enable
+mMSTR:      equ   %00010000   ;master/slave
+mCPOL:      equ   %00001000   ;clock polarity
+mCPHA:      equ   %00000100   ;clock phase
+mSSOE:      equ   %00000010   ;slave select output enable
+mLSBFE:     equ   %00000001   ;LSB-first enable
+
+SPIC2:      equ   $29         ;SPI control register 2
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+MODFEN:     equ   4           ;(bit #4) mode fault enable
+BIDIROE:    equ   3           ;(bit #3) bi-directional enable
+SPISWAI:    equ   1           ;(bit #1) SPI stops in wait
+SPC0:       equ   0           ;(bit #0) SPI pin 0 control
+; bit position masks
+mMODFEN:    equ   %00010000   ;mode fault enable
+mBIDIROE:   equ   %00001000   ;bi-directional operation enable
+mSPISWAI:   equ   %00000010   ;SPI stops in wait mode
+mSPC0:      equ   %00000001   ;SPI pin 0 control
+
+SPIBR:      equ   $2A         ;SPI baud rate select
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+SPPR2:      equ   6           ;(bit #6) SPI baud rate prescale
+SPPR1:      equ   5           ;(bit #5)  "
+SPPR0:      equ   4           ;(bit #4)  "
+SPR2:       equ   2           ;(bit #2) SPI rate selact
+SPR1:       equ   1           ;(bit #1)  "
+SPR0:       equ   0           ;(bit #0)  "
+; bit position masks
+mSPPR2:     equ   %01000000   ;SPI baud rate prescale
+mSPPR1:     equ   %00100000   ; "
+mSPPR0:     equ   %00010000   ; "
+mSPR2:      equ   %00000100   ;SPI rate select
+mSPR1:      equ   %00000010   ; "
+mSPR0:      equ   %00000001   ; "
+
+SPIS:       equ   $2B         ;SPI status register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+SPRF:       equ   7           ;(bit #7) SPI Rx full flag
+SPTEF:      equ   5           ;(bit #5) SPI Tx error flag
+MODF:       equ   4           ;(bit #4) mode fault flag
+; bit position masks
+mSPRF:      equ   %10000000   ;SPI receive buffer full flag
+mSPTEF:     equ   %00100000   ;SPI Tx error flag?
+mMODF:      equ   %00010000   ;mode fault flag
+
+SPID:       equ   $2D         ;SPI data register
+
+;****  Analog-to-Digital Converter Module (ATD)  ********************************************
+;*;
+ATDC:       equ   $50         ;atd control tegister
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+ATDPU:      equ   7           ;(bit #7) ATD power up
+DJM:        equ   6           ;(bit #6) justification mode; rt/left
+RES8:       equ   5           ;(bit #5) ATD resolution select
+SGN:        equ   4           ;(bit #4) signed result select
+PRS3:       equ   3           ;(bit #3) prescaler rate select (high)
+PRS2:       equ   2           ;(bit #2) prescaler rate select
+PRS1:       equ   1           ;(bit #1) prescaler rate select
+PRS0:       equ   0           ;(bit #0) prescaler rate select (low)
+; bit position masks
+mATDPU:     equ   %10000000   ;ATD power up
+mDJM:       equ   %01000000   ;data justification mode; right/left
+mRES8:      equ   %00100000   ;ATD resolution select
+mSGN:       equ   %00010000   ;signed result select
+mPRS3:      equ   %00001000   ;prescaler rate select (high)
+mPRS2:      equ   %00000100   ;prescaler rate select
+mPRS1:      equ   %00000010   ;prescaler rate select
+mPRS0:      equ   %00000001   ;prescaler rate select (low)
+
+ATDSC:      equ   $51         ;atd ststus and control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+CCF:        equ   7           ;(bit #7) conversion complete flag
+ATDIE:      equ   6           ;(bit #6) ATD interrupt enable
+ATDCO:      equ   5           ;(bit #5) ATD continuous conversion
+ATDCH4:     equ   4           ;(bit #4) ATD input channel select (high)
+ATDCH3:     equ   3           ;(bit #3) ATD input channel select
+ATDCH2:     equ   2           ;(bit #2) ATD input channel select
+ATDCH1:     equ   1           ;(bit #1) ATD input channel select
+ATDCH0:     equ   0           ;(bit #0) ATD input channel select (low)
+; bit position masks
+mCCF:       equ   %10000000   ;conversion complete flag
+mATDIE:     equ   %01000000   ;ATD interrupt enable
+mATDCO:     equ   %00100000   ;ATD continuous conversion
+mATDCH4:    equ   %00010000   ;ATD input channel select (high)
+mATDCH3:    equ   %00001000   ;prescaler rate select
+mATDCH2:    equ   %00000100   ;prescaler rate select
+mATDCH1:    equ   %00000010   ;prescaler rate select
+mATDCH0:    equ   %00000001   ;prescaler rate select (low)
+
+ATDPE:      equ   $54         ;ATD pin enable register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+ATDPE7:     equ   7           ;(bit #7)
+ATDPE6:     equ   6           ;(bit #6)
+ATDPE5:     equ   5           ;(bit #5)
+ATDPE4:     equ   4           ;(bit #4)
+ATDPE3:     equ   3           ;(bit #3)
+ATDPE2:     equ   2           ;(bit #2)
+ATDPE1:     equ   1           ;(bit #1)
+ATDPE0:     equ   0           ;(bit #0)
+; bit position masks
+mATDPE7:    equ   %10000000   ;ATDPE bit 7
+mATDPE6:    equ   %01000000   ;ATDPE bit 6
+mATDPE5:    equ   %00100000   ;ATDPE bit 5
+mATDPE4:    equ   %00010000   ;ATDPE bit 4
+mATDPE3:    equ   %00001000   ;ATDPE bit 3
+mATDPE2:    equ   %00000100   ;ATDPE bit 2
+mATDPE1:    equ   %00000010   ;ATDPE bit 1
+mATDPE0:    equ   %00000001   ;ATDPE bit 0
+
+ATDRH:      equ   $52         ;ATD result register (high)
+ATDRL:      equ   $53         ;ATD result register (low)
+
+;****  Inter-Integrated Circuit Module (IIC) ************************************************
+;*;
+IICA:       equ   $58         ;IIC address register
+
+IICF:       equ   $59         ;IIC frequency divider register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+MULT1:      equ   7           ;(bit #7) IIC multiply factor (high)
+MULT0:      equ   6           ;(bit #6) IIC multiply factor (low)
+ICR5:       equ   5           ;(bit #5) IIC Divider and Hold bit-5
+ICR4:       equ   4           ;(bit #4) IIC Divider and Hold bit-4
+ICR3:       equ   3           ;(bit #3) IIC Divider and Hold bit-3
+ICR2:       equ   2           ;(bit #2) IIC Divider and Hold bit-2
+ICR1:       equ   1           ;(bit #1) IIC Divider and Hold bit-1
+ICR0:       equ   0           ;(bit #0) IIC Divider and Hold bit-0
+; bit position masks
+mMULT1:     equ   %10000000   ;IIC multiply factor (high)
+mMULT0:     equ   %01000000   ;IIC multiply factor (low)
+mICR5:      equ   %00100000   ;IIC Divider and Hold bit-5
+mICR4:      equ   %00010000   ;IIC Divider and Hold bit-4
+mICR3:      equ   %00001000   ;IIC Divider and Hold bit-3
+mICR2:      equ   %00000100   ;IIC Divider and Hold bit-2
+mICR1:      equ   %00000010   ;IIC Divider and Hold bit-1
+mICR0:      equ   %00000001   ;IIC Divider and Hold bit-0
+
+IICC:       equ   $5A         ;IIC control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+IICEN:      equ   7           ;(bit #7) IIC enable bit
+IICIE:      equ   6           ;(bit #6) IIC interrupt enable bit
+MST:        equ   5           ;(bit #5) IIC master mode select bit
+TX:         equ   4           ;(bit #4) IIC transmit mode select bit
+TXAK:       equ   3           ;(bit #3) IIC transmit acknowledge bit
+RSTA:       equ   2           ;(bit #2) IIC repeat start bit
+; bit position masks
+mIICEN:     equ   %10000000   ;IIC enable
+mIICIE:     equ   %01000000   ;IIC interrupt enable bit
+mMST:       equ   %00100000   ;IIC master mode select bit
+mTX:        equ   %00010000   ;IIC transmit mode select bit
+mTXAK:      equ   %00001000   ;IIC transmit acknowledge bit
+mRSTA:      equ   %00000100   ;IIC repeat start bit
+
+IICS:       equ   $5B         ;IIC status register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+TCF:        equ   7           ;(bit #7) IIC transfer complete flag bit
+IAAS:       equ   6           ;(bit #6) IIC addressed as slave bit
+BUSY:       equ   5           ;(bit #5) IIC bus busy bit
+ARBL:       equ   4           ;(bit #4) IIC arbitration lost bit
+SRW:        equ   2           ;(bit #2) IIC slave read/write bit
+IICIF:      equ   1           ;(bit #1) IIC interrupt flag bit
+RXAK:       equ   0           ;(bit #0) IIC receive acknowledge bit
+; bit position masks
+mTCF:       equ   %10000000   ;IIC transfer complete flag bit
+mIAAS:      equ   %01000000   ;IIC addressed as slave bit
+mBUSY:      equ   %00100000   ;IIC bus busy bit
+mARBL:      equ   %00010000   ;IIC arbitration lost bit
+mSRW:       equ   %00000100   ;IIC slave read/write bit
+mIICIF:     equ   %00000010   ;IIC interrupt flag bit
+mRXAK:      equ   %00000001   ;IIC receive acknowledge bit
+
+IICD:       equ   $5C         ;IIC data I/O register bits 7:0
+
+;****  Timer/PWM Module 1 (TPM1)  ***** TPM1 has 3 channels *********************************
+;****  Timer/PWM Module 2 (TPM2)  ***** TPM2 has 5 channels *********************************
+;*
+TPM1SC:     equ   $30         ;TPM1 status and control register
+TPM2SC:     equ   $60         ;TPM2 status and control register
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+TOF:        equ   7           ;(bit #7) tomer overflow flag
+TOIE:       equ   6           ;(bit #6) TOF interrupt enable
+CPWMS:      equ   5           ;(bit #5) centered PWM select
+CLKSB:      equ   4           ;(bit #4) clock select bits
+CLKSA:      equ   3           ;(bit #3)  "
+PS2:        equ   2           ;(bit #2) prescaler bits
+PS1:        equ   1           ;(bit #1)  "
+PS0:        equ   0           ;(bit #0)  "
+; bit position masks
+mTOF:       equ   %10000000   ;timer overflow flag
+mTOIE:      equ   %01000000   ;timer overflow interrupt enable
+mCPWMS:     equ   %00100000   ;center-aligned PWM select
+mCLKSB:     equ   %00010000   ;clock source select bits
+mCLKSA:     equ   %00001000   ; "
+mPS2:       equ   %00000100   ;prescaler bits
+mPS1:       equ   %00000010   ; "
+mPS0:       equ   %00000001   ; "
+
+TPM1CNTH:   equ   $31         ;TPM1 counter (high half)
+TPM1CNTL:   equ   $32         ;TPM1 counter (low half)
+TPM1MODH:   equ   $33         ;TPM1 modulo register (high half)
+TPM1MODL:   equ   $34         ;TPM1 modulo register(low half)
+
+TPM2CNTH:   equ   $61         ;TPM2 counter (high half)
+TPM2CNTL:   equ   $62         ;TPM2 counter (low half)
+TPM2MODH:   equ   $63         ;TPM2 modulo register (high half)
+TPM2MODL:   equ   $64         ;TPM2 modulo register(low half)
+
+TPM1C0SC:   equ   $35         ;TPM1 channel 0 status and control
+TPM2C0SC:   equ   $65         ;TPM2 channel 0 status and control
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+CH0F:       equ   7           ;(bit #7) channel 0 flag
+CH0IE:      equ   6           ;(bit #6) ch 0 interrupt enable
+MS0B:       equ   5           ;(bit #5) mode select B
+MS0A:       equ   4           ;(bit #4) mode select A
+ELS0B:      equ   3           ;(bit #3) edge/level select B
+ELS0A:      equ   2           ;(bit #2) edge/level select A
+; bit position masks
+mCH0F:      equ   %10000000   ;channel 0 flag
+mCH0IE:     equ   %01000000   ;ch 0 interrupt enable
+mMS0B:      equ   %00100000   ;mode select B
+mMS0A:      equ   %00010000   ;mode select A
+mELS0B:     equ   %00001000   ;edge/level select B
+mELS0A:     equ   %00000100   ;edge/level select A
+
+TPM1C0VH:   equ   $36         ;TPM1 channel 0 value register (high)
+TPM1C0VL:   equ   $37         ;TPM1 channel 0 value register (low)
+
+TPM2C0VH:   equ   $66         ;TPM2 channel 0 value register (high)
+TPM2C0VL:   equ   $67         ;TPM2 channel 0 value register (low)
+
+TPM1C1SC:   equ   $38         ;TPM1 channel 1 status and control
+TPM2C1SC:   equ   $68         ;TPM2 channel 1 status and control
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+CH1F:       equ   7           ;(bit #7) channel 1 flag
+CH1IE:      equ   6           ;(bit #6) ch 1 interrupt enable
+MS1B:       equ   5           ;(bit #5) mode select B
+MS1A:       equ   4           ;(bit #4) mode select A
+ELS1B:      equ   3           ;(bit #3) edge/level select B
+ELS1A:      equ   2           ;(bit #2) edge/level select A
+; bit position masks
+mCH1F:      equ   %10000000   ;channel 1 flag
+mCH1IE:     equ   %01000000   ;ch 1 interrupt enable
+mMS1B:      equ   %00100000   ;mode select B
+mMS1A:      equ   %00010000   ;mode select A
+mELS1B:     equ   %00001000   ;edge/level select B
+mELS1A:     equ   %00000100   ;edge/level select A
+
+TPM1C1VH:   equ   $39         ;TPM1 channel 1 value register (high)
+TPM1C1VL:   equ   $3A         ;TPM1 channel 1 value register (low)
+
+TPM2C1VH:   equ   $69         ;TPM2 channel 1 value register (high)
+TPM2C1VL:   equ   $6A         ;TPM2 channel 1 value register (low)
+
+TPM1C2SC:   equ   $3B         ;TPM1 channel 2 status and control
+TPM2C2SC:   equ   $6B         ;TPM2 channel 2 status and control
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+CH2F:       equ   7           ;(bit #7) channel 2 flag
+CH2IE:      equ   6           ;(bit #6) ch 2 interrupt enable
+MS2B:       equ   5           ;(bit #5) mode select B
+MS2A:       equ   4           ;(bit #4) mode select A
+ELS2B:      equ   3           ;(bit #3) edge/level select B
+ELS2A:      equ   2           ;(bit #2) edge/level select A
+; bit position masks
+mCH2F:      equ   %10000000   ;channel 2 flag
+mCH2IE:     equ   %01000000   ;ch 2 interrupt enable
+mMS2B:      equ   %00100000   ;mode select B
+mMS2A:      equ   %00010000   ;mode select A
+mELS2B:     equ   %00001000   ;edge/level select B
+mELS2A:     equ   %00000100   ;edge/level select A
+
+TPM1C2VH:   equ   $3C         ;TPM1 channel 2 value register (high)
+TPM1C2VL:   equ   $3D         ;TPM1 channel 2 value register (low)
+
+TPM2C2VH:   equ   $6C         ;TPM2 channel 1 value register (high)
+TPM2C2VL:   equ   $6D         ;TPM2 channel 1 value register (low)
+
+TPM2C3SC:   equ   $6E         ;TPM2 channel 3 status and control
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+CH3F:       equ   7           ;(bit #7) channel 3 flag
+CH3IE:      equ   6           ;(bit #6) ch 3 interrupt enable
+MS3B:       equ   5           ;(bit #5) mode select B
+MS3A:       equ   4           ;(bit #4) mode select A
+ELS3B:      equ   3           ;(bit #3) edge/level select B
+ELS3A:      equ   2           ;(bit #2) edge/level select A
+; bit position masks
+mCH3F:      equ   %10000000   ;channel 3 flag
+mCH3IE:     equ   %01000000   ;ch 3 interrupt enable
+mMS3B:      equ   %00100000   ;mode select B
+mMS3A:      equ   %00010000   ;mode select A
+mELS3B:     equ   %00001000   ;edge/level select B
+mELS3A:     equ   %00000100   ;edge/level select A
+
+TPM2C3VH:   equ   $6F         ;TPM2 channel 1 value register (high)
+TPM2C3VL:   equ   $70         ;TPM2 channel 1 value register (low)
+
+TPM2C4SC:   equ   $71         ;TPM2 channel 4 status and control
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+CH4F:       equ   7           ;(bit #7) channel 4 flag
+CH4IE:      equ   6           ;(bit #6) ch 4 interrupt enable
+MS4B:       equ   5           ;(bit #5) mode select B
+MS4A:       equ   4           ;(bit #4) mode select A
+ELS4B:      equ   3           ;(bit #3) edge/level select B
+ELS4A:      equ   2           ;(bit #2) edge/level select A
+; bit position masks
+mCH4F:      equ   %10000000   ;channel 4 flag
+mCH4IE:     equ   %01000000   ;ch 4 interrupt enable
+mMS4B:      equ   %00100000   ;mode select B
+mMS4A:      equ   %00010000   ;mode select A
+mELS4B:     equ   %00001000   ;edge/level select B
+mELS4A:     equ   %00000100   ;edge/level select A
+
+TPM2C4VH:   equ   $72         ;TPM2 channel 1 value register (high)
+TPM2C4VL:   equ   $73         ;TPM2 channel 1 value register (low)
+
+****  Internal Clock Generator Module (ICG)  ************************************************
+;*
+ICGC1:      equ   $48         ;ICG control register 1
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+RANGE:      equ   6           ;(bit #6) frequency range select
+REFS:       equ   5           ;(bit #5) reference select
+CLKS1:      equ   4           ;(bit #4) clock select bit 1
+CLKS0:      equ   3           ;(bit #3) clock select bit 0
+OSCSTEN:    equ   2           ;(bit #2) oscillator runs in stop
+; bit position masks
+mRANGE:     equ   %01000000   ;frequency range select
+mREFS:      equ   %00100000   ;reference select
+mCLKS1:     equ   %00010000   ;clock mode select (bit-1)
+mCLKS0:     equ   %00001000   ;clock mode select (bit 0)
+mOSCSTEN:   equ   %00000100   ;enable oscillator in stop mode
+
+ICGC2:      equ   $49         ;ICG control register 2
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+LOLRE:      equ   7           ;(bit #7) loss of lock reset enable
+MFD2:       equ   6           ;(bit #6) multiplication factor div
+MFD1:       equ   5           ;(bit #5)  "
+MFD0:       equ   4           ;(bit #4)  "
+LOCRE:      equ   3           ;(bit #3) loss of clock reset enable
+RFD2:       equ   2           ;(bit #2) reference divider
+RFD1:       equ   1           ;(bit #1)  "
+RFD0:       equ   0           ;(bit #0)  "
+; bit position masks
+mLOLRE:     equ   %10000000   ;loss of lock reset enable
+mMFD2:      equ   %01000000   ;multiplication factor divider
+mMFD1:      equ   %00100000   ; "
+mMFD0:      equ   %00010000   ; "
+mLOCRE:     equ   %00001000   ;loss of clock reset enable
+mRFD2:      equ   %00000100   ;reference divider bits
+mRFD1:      equ   %00000010   ; "
+mRFD0:      equ   %00000001   ; "
+
+ICGS1:      equ   $4A         ;ICG status register 1
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+CLKST1:     equ   7           ;(bit #7) clock mode status 1
+CLKST0:     equ   6           ;(bit #6) clock mode status 0
+REFST:      equ   5           ;(bit #5) reference clock status
+LOLS:       equ   4           ;(bit #4) loss of lock status
+LOCK:       equ   3           ;(bit #3) FLL lock status
+LOCS:       equ   2           ;(bit #2) loss of clock status
+ERCS:       equ   1           ;(bit #1) ext ref clk status
+ICGIF:      equ   0           ;(bit #0) ICG interrupt flag
+; bit position masks
+mCLKST1:    equ   %10000000   ;clock mode status 1
+mCLKST0:    equ   %01000000   ;clock mode status 0
+mREFST:     equ   %00100000   ;reference clock status
+mLOLS:      equ   %00010000   ;loss of lock status
+mLOCK:      equ   %00001000   ;FLL lock status
+mLOCS:      equ   %00000100   ;loss of clock status
+mERCS:      equ   %00000010   ;ext ref clk status
+mICGIF:     equ   %00000001   ;ICG interrupt flag
+
+ICGS2:      equ   $4B         ;ICG status register 2
+; bit numbers for use in BCLR, BSET, BRCLR, and BRSET
+DCOS:       equ   0           ;(bit #0) DCO Clock Stable
+; bit position masks
+mDCOS:      equ   %00000001   ;DCO Clock Stable
+
+ICGFLTU:    equ   $4C         ;ICG filter register (upper 4 bits in bits 3:0)
+ICGFLTL:    equ   $4D         ;ICG filter register (lower 8 bits)
+
+ICGTRM:     equ   $4E         ;ICG trim register
+
+;****  System Integration Module (SIM)  *****************************************************
+;*
+SRS:        equ   $1800       ;SIM reset status register
+; bit position masks
+mPOR:       equ   %10000000   ;power-on reset
+mPIN:       equ   %01000000   ;external reset pin
+mCOP:       equ   %00100000   ;COP watchdog timed out
+mILOP:      equ   %00010000   ;illegal opcode
+mICG:       equ   %00000100   ;illegal address access
+mLVD:       equ   %00000010   ;low-voltage detect
+
+SBDFR:      equ   $1801       ;system BDM reset register
+; bit position masks
+mBDFR:      equ   %00000001   ;BDM force reset
+
+SOPT:       equ   $1802       ;SIM options register (write once)
+; bit position masks
+mCOPE:      equ   %10000000   ;COP watchdog enable
+mCOPT:      equ   %01000000   ;COP time-out select
+mSTOPE:     equ   %00100000   ;stop enable
+mBKGDPE:    equ   %00000010   ;BDM pin enable
+
+SDIDH:      equ   $1806       ;system device identification 1 register (read-only)
+SDIDL:      equ   $1807       ;rev3,2,1,0 + 12-bit ID. GB60 ID = $002
+; bit position masks within SDIDH
+mREV3:      equ   %10000000   ;device revision identification (high)
+mREV2:      equ   %01000000   ;device revision identification
+mREV1:      equ   %00100000   ;device revision identification
+mREV0:      equ   %00010000   ;device revision identification (low)
+
+;****  Power Management and Control Module (PMC)  *******************************************
+;*
+SRTISC:     equ   $1808       ;System RTI ststus and control register
+; bit position masks
+mRTIF:      equ   %10000000   ;real-time interrupt flag
+mRTIACK:    equ   %01000000   ;real-time interrupt acknowledge
+mRTICLKS:   equ   %00100000   ;real-time interrupt clock select
+mRTIE:      equ   %00010000   ;real-time interrupt enable
+mRTIS2:     equ   %00000100   ;real-time interrupt delay select (high)
+mRTIS1:     equ   %00000010   ;real-time interrupt delay select
+mRTIS0:     equ   %00000001   ;real-time interrupt delay select (low)
+
+
+SPMSC1:     equ   $1809       ;System power management status and control 1 register
+; bit position masks
+mLVDF:      equ   %10000000   ;low voltage detect flag
+mLVDACK:    equ   %01000000   ;LVD interrupt acknowledge
+mLVDIE:     equ   %00100000   ;LVD interrupt enable
+mLVDRE:     equ   %00010000   ;LVD reset enable (write once bit)
+mLVDSE:     equ   %00001000   ;LDV stop enable (write once bit)
+mLVDE:      equ   %00000100   ;LVD enable (write once bit)
+
+SPMSC2:     equ   $180A       ;System power management status and control 2 register
+; bit position masks
+mLVWF:      equ   %10000000   ;low voltage warning flag
+mLVWACK:    equ   %01000000   ;low voltage warning acknowledge
+mLVDV:      equ   %00100000   ;low voltage detect voltage select
+mLVWV:      equ   %00010000   ;low voltage warning voltage select
+mPPDF:      equ   %00001000   ;partial power down flag
+mPPDACK:    equ   %00000100   ;partial power down acknowledge
+mPDC:       equ   %00000010   ;power down control
+mPPDC:      equ   %00000001   ;partial power down control
+
+;****  Debug Module (DBG)  ******************************************************************
+;*
+DBGCAH:     equ   $1810       ;DBG comparator register A (high)
+DBGCAL:     equ   $1811       ;DBG comparator register A (low)
+DBGCBH:     equ   $1812       ;DBG comparator register B (high)
+DBGCBL:     equ   $1813       ;DBG comparator register B (low)
+DBGFH:      equ   $1814       ;DBG FIFO register (high)
+DBGFL:      equ   $1815       ;DBG FIFO register (low)
+
+DBGC:       equ   $1816       ;DBG control register
+; bit position masks
+mDBGEN:     equ   %10000000   ;debug module enable
+mARM:       equ   %01000000   ;arm control
+mTAG:       equ   %00100000   ;tag/force select
+mBRKEN:     equ   %00010000   ;break enable
+mRWA:       equ   %00001000   ;R/W compare A value
+mRWAEN:     equ   %00000100   ;R/W compare A enable
+mRWB:       equ   %00000010   ;R/W compare B value
+mRWBEN:     equ   %00000001   ;R/W compare B enable
+
+DBGT:       equ   $1817       ;DBG trigger register
+; bit position masks
+mTRGSEL:    equ   %10000000   ;trigger on opcode/access
+mBEGIN:     equ   %01000000   ;begin/end trigger
+mTRG3:      equ   %00001000   ;trigger mode bits
+mTRG2:      equ   %00000100   ; "
+mTRG1:      equ   %00000010   ; "
+mTRG0:      equ   %00000001   ; "
+
+DBGS:       equ   $1818       ;DBG status register
+; bit position masks
+mAF:        equ   %10000000   ;trigger A match flag
+mBF:        equ   %01000000   ;trigger B match flag
+mARMF:      equ   %00100000   ;arm flag
+mCNT3:      equ   %00001000   ;count of items in FIFO (high)
+mCNT2:      equ   %00000100   ; "
+mCNT1:      equ   %00000010   ; "
+mCNT0:      equ   %00000001   ;count of items in FIFO (low)
+
+;****  Flash Module (FLASH)  ****************************************************************
+;*
+FCDIV:      equ   $1820       ;Flash clock divider register
+; bit position masks
+mDIVLD:     equ   %10000000   ;clock divider loaded
+mPRDIV8:    equ   %01000000   ;enable prescale by 8
+mDIV5:      equ   %00100000   ;flash clock divider bits (high)
+mDIV4:      equ   %00010000   ; "
+mDIV3:      equ   %00001000   ; "
+mDIV2:      equ   %00000100   ; "
+mDIV1:      equ   %00000010   ; "
+mDIV0:      equ   %00000001   ;flash clock divider bits (low)
+
+FOPT:       equ   $1821       ;Flash options register
+; bit position masks
+mKEYEN:     equ   %10000000   ;enable backdoor key to security
+mFNORED     equ   %01000000   ;Vector redirection enable
+mSEC01:     equ   %00000010   ;security state code (high)
+mSEC00:     equ   %00000001   ;security state code (low)
+
+FCNFG:      equ   $1823       ;Flash configuration register
+; bit position masks
+mKEYACC:    equ   %00100000   ;enable security key writing
+
+FPROT:      equ   $1824       ;Flash protection register
+; bit position masks
+mFPOPEN:    equ   %10000000   ;open unprotected flash for program/erase
+mFPDIS:     equ   %01000000   ;flash protection disable
+mFPS2:      equ   %00100000   ;flash protect size select (high)
+mFPS1:      equ   %00010000   ;flash protect size select
+mFPS0:      equ   %00001000   ;flash protect size select (low)
+
+FSTAT:      equ   $1825       ;Flash status register
+; bit position masks
+mFCBEF:     equ   %10000000   ;flash command buffer empty flag
+mFCCF:      equ   %01000000   ;flash command complete flag
+mFPVIOL:    equ   %00100000   ;flash protection violation
+mFACCERR:   equ   %00010000   ;flash access error
+mFBLANK:    equ   %00000100   ;flash verified as all blank (erased =$ff) flag
+
+FCMD:       equ   $1826       ;Flash command register
+; bit position masks
+mFCMD7:     equ   %10000000   ;Flash command (high)
+mFCMD6:     equ   %01000000   ; "
+mFCMD5:     equ   %00100000   ; "
+mFCMD4:     equ   %00010000   ; "
+mFCMD3:     equ   %00001000   ; "
+mFCMD2:     equ   %00000100   ; "
+mFCMD1:     equ   %00000010   ; "
+mFCMD0:     equ   %00000001   ;Flash command (low)
+; command codes
+mBlank:     equ   $05         ;Blank Check command
+mByteProg:  equ   $20         ;Byte Program command
+mBurstProg: equ   $25         ;Burst Program command
+mPageErase: equ   $40         ;Page Erase command
+mMassErase: equ   $41         ;Mass Erase command
+
+;****  Flash non-volatile register images  **************************************************
+;*
+NVBACKKEY:  equ   $FFB0       ;8-byte backdoor comparison key
+; comparison key in $FFB0 through $FFB7
+
+; following 2 registers transfered from flash to working regs at reset
+
+;NVPROT:     equ   $FFBD       ;NV flash protection byte
+; NVPROT transfers to FPROT on reset
+
+NVICGTRIM:  equ   $FFBE       ;NV ICG Trim Setting
+; ICG trim value measured during factory test. User software optionally
+; copies to ICGTRM during initialization.
+
+;NVOPT:      equ   $FFBF       ;NV flash options byte
+; NVFEOPT transfers to FOPT on reset
+
+;****  END  *********************************************************************************

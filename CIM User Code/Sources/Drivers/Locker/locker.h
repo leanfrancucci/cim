@@ -1,0 +1,33 @@
+/*
+ * locker.h
+ */
+
+#ifndef __LOCKER_H__
+#define __LOCKER_H__
+
+#include "mytypes.h"
+
+/*
+ * For locking and unlocking
+ * lockers
+ */
+
+enum
+{
+	TOLOCK, TOUNLOCK
+};
+
+/*
+ * set_locker:
+ * 	Send news according to desired operations on
+ * 	seleted locker.	The device number is extracted from 
+ * 	devices table.
+ */
+void set_locker( MUInt which, MUInt ctrl );
+
+void set_tlock( MUInt which, MUInt tlock );
+unsigned short get_tlock_timer( MUInt which );
+void set_tunlock_enable( MUInt tunlock_enable );
+unsigned short get_unlock_ena_timer( void );
+
+#endif

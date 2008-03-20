@@ -1,0 +1,30 @@
+#
+#	optdef.txt
+#
+
+#
+#	Port data must be expressed as follows
+#		symbolic name,port name,baud,bits,parity,stop,first_timeout,byte_timeout
+#		where:
+#			parity = N O E M S
+#			stop = 1 for 1 bit, 5 for 1&half, 2 for 2 bits
+#
+
+#
+#	Safe communicaton port data
+#
+
+safe_comm,COM1,38400,8,N,1,5000,100
+
+#
+#	Test communication port data
+#
+
+test_comm,COM11,38400,8,N,1,0,0
+
+#
+#	Validator communication port data
+#
+
+val_comm,COM10,9600,8,E,1,1000,100
+
