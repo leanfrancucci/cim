@@ -776,6 +776,7 @@ verify_file_checksum( DFLASH_T *pf, MUInt device, ushort check  )
 	ushort p;
 	MInt status;
 
+	status = 0;				/*	No estaba, daba error por falta de inicialización (EAM 2008 03 23)	*/
 	pf->page = 0;
 	flush_page_in_buffer( 1 );
 	pf->device = device;
@@ -825,6 +826,8 @@ verify_both_memories( void )
 			++diffs;
 	}
 
+#ifndef TEST_NO_FW
+
 	if( verify_file_checksum( &df, MAIN_DEVICE, check_main_fw ) < 0 )
 		++main_errors;
 	if( verify_file_checksum( &df, SECONDARY_DEVICE, check_sec_fw ) < 0 )
@@ -833,12 +836,17 @@ verify_both_memories( void )
 	if( main_errors == 0 && sec_errors == 0 )
 		ver_diffs = compare_versions( &df );
 
+#endif
+
 	if( main_errors != 0 )
 	{
-		return FW_NOTHING_TO_DO;
-/*		if( sec_errors != 0 )
+#if 0
+		if( sec_errors != 0 )
 			return FW_BLANK;
-		return FW_21;*/
+		return FW_21;
+#else
+		return FW_BLANK;
+#endif
 	}
 	if( sec_errors != 0 || diffs != 0 || ver_diffs != 0 )
 		return FW_12;
@@ -850,15 +858,18 @@ static
 void
 create_and_blank_firmware( void )
 {
-	DIRINFO_T *p;
+	pcurr = &directory[ FD_FW ];
 
-	p = &directory[ FD_FW ];
-	p->beg_page = 0;
-	p->last_page = NUM_FW_PAGES - 1;
-	p->file_data.unit_size = 1;
-	p->file_data.file_type = RANDOM;
-	p->file_data.num_units = FW_IMAGE;
-	make_file_current( FD_FW );
+	pcurr->file_data.file_type = RANDOM;
+	pcurr->file_data.unit_size = 1;
+	pcurr->beg_page = 0;
+	pcurr->last_page = NUM_FW_PAGES - 1;
+	pcurr->file_data.num_units = FW_IMAGE;
+
+	pinfo.access = RANDOM;
+	pinfo.fdesc = FD_FW;
+	pinfo.unit_size = 1;
+	pinfo.used = 1;
 	blank_current_file( 1 );
 }
 
@@ -915,8 +926,6 @@ verify_and_recover_firmware_file( void )
 	}
 
 	return status;
-
-
 }
 
 /*

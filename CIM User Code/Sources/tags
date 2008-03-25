@@ -24,7 +24,6 @@ ADDUSR	.\ctsafe\cscmds.h	/^	ADDUSR,				\/*	Add one user 						*\/$/;"	e
 ADD_T	.\ctsafe\logprot.c	/^} ADD_T;$/;"	t	file:
 ADD_VALUE	.\Drivers\Dflash\faccess.c	/^	ADD_VALUE, SET_VALUE$/;"	e	file:
 ADD_VALUE	.\Drivers\Dflash\old_faccess.c	/^	ADD_VALUE, SET_VALUE$/;"	e	file:
-ADD_VALUE	.\faccess.c	/^	ADD_VALUE, SET_VALUE$/;"	e	file:
 ALARM0	.\ctsafe\csdevs.h	/^	ALARM0,$/;"	e
 ALARM1	.\ctsafe\csdevs.h	/^	ALARM1,$/;"	e
 ALL_WOUTS	.\Drivers\Wout\wouts.h	29;"	d
@@ -164,7 +163,6 @@ DF_NUM_OPCODES	.\Drivers\Dflash\flash.h	/^	DF_NUM_OPCODES,$/;"	e
 DF_RELEASE_TIME	.\Drivers\Dflash\spihal.h	11;"	d
 DIRINFO_T	.\Drivers\Dflash\faccess.c	/^} DIRINFO_T;$/;"	t	file:
 DIRINFO_T	.\Drivers\Dflash\old_faccess.c	/^} DIRINFO_T;$/;"	t	file:
-DIRINFO_T	.\faccess.c	/^} DIRINFO_T;$/;"	t	file:
 DISABLE	.\Drivers\Alarm\alarm.h	/^	ENABLE, DISABLE$/;"	e
 DISABLE_DET	.\Drivers\Platform\IRQ\irq.h	/^	DISABLE_DET, ENABLE_DET$/;"	e
 DOOR1S	.\Drivers\Platform\IO\ioports.h	21;"	d
@@ -292,10 +290,11 @@ FUSER_T	.\userdfs\users.c	/^} FUSER_T;$/;"	t	file:
 FW_12	.\Drivers\Dflash\faccess.h	/^	FW_BLANK, FW_21, FW_12,		\/*	Recoverable		*\/$/;"	e
 FW_21	.\Drivers\Dflash\faccess.h	/^	FW_BLANK, FW_21, FW_12,		\/*	Recoverable		*\/$/;"	e
 FW_BLANK	.\Drivers\Dflash\faccess.h	/^	FW_BLANK, FW_21, FW_12,		\/*	Recoverable		*\/$/;"	e
-FW_CANFILL	.\Drivers\Dflash\faccess.h	/^	FW_CANFILL					\/*	Not returned to this level	*\/$/;"	e
+FW_CANFILL	.\Drivers\Dflash\faccess.h	/^	FW_CANFILL,					\/*	Not returned to this level	*\/$/;"	e
 FW_IMAGE	.\Drivers\Dflash\dfdata.h	103;"	d
 FW_NOFD	.\Drivers\Dflash\faccess.h	/^	FW_NOTFREE, FW_NOFD,		\/*	Not recoverable	*\/$/;"	e
 FW_NOTFREE	.\Drivers\Dflash\faccess.h	/^	FW_NOTFREE, FW_NOFD,		\/*	Not recoverable	*\/$/;"	e
+FW_NOTHING_TO_DO	.\Drivers\Dflash\faccess.h	/^	FW_NOTHING_TO_DO$/;"	e
 FW_OK	.\Drivers\Dflash\faccess.h	/^	FW_OK,$/;"	e
 FW_PAGE_SIZE	.\Drivers\Dflash\faccess.c	717;"	d	file:
 GETDEV_T	.\ctsafe\logprot.c	/^} GETDEV_T;$/;"	t	file:
@@ -447,7 +446,6 @@ NO_CHECK_MCU	.\ctsafe\logprot.c	/^	NO_CHECK_MCU, CHECK_MCU$/;"	e	file:
 NO_CMD	.\ctsafe\cscmds.h	/^	NO_CMD,				\/* 	Frame to validator devices 			*\/$/;"	e
 NO_PAGE	.\Drivers\Dflash\faccess.c	71;"	d	file:
 NO_PAGE	.\Drivers\Dflash\old_faccess.c	71;"	d	file:
-NO_PAGE	.\faccess.c	66;"	d	file:
 NO_PAR	.\Drivers\Serial\serdefs.h	/^	NO_PAR, EVEN_PAR, ODD_PAR, HIGH_PAR, LOW_PAR,$/;"	e
 NO_REFRESH	.\Drivers\Dflash\dfrefrsh.h	/^	NO_REFRESH = -1$/;"	e
 NO_ROOM	.\userdfs\users.c	91;"	d	file:
@@ -515,7 +513,6 @@ OVRN	.\Drivers\Platform\SCI\sci.c	16;"	d	file:
 PAGE_ERASE	.\Drivers\Dflash\flash.h	/^	PAGE_ERASE,	$/;"	e
 PAGE_INFO_T	.\Drivers\Dflash\faccess.c	/^} PAGE_INFO_T;$/;"	t	file:
 PAGE_INFO_T	.\Drivers\Dflash\old_faccess.c	/^} PAGE_INFO_T;$/;"	t	file:
-PAGE_INFO_T	.\faccess.c	/^} PAGE_INFO_T;$/;"	t	file:
 PAGE_NUM_PER_BLOCK	.\Drivers\Dflash\dftypes.h	26;"	d
 PASS0_MATCH	.\userdfs\users.h	/^	PASS0_MATCH, PASS1_MATCH, PASS_BAD $/;"	e
 PASS1_MATCH	.\userdfs\users.h	/^	PASS0_MATCH, PASS1_MATCH, PASS_BAD $/;"	e
@@ -633,7 +630,6 @@ SETDEV_T	.\ctsafe\logprot.c	/^} SETDEV_T;$/;"	t	file:
 SETUSRDEV	.\ctsafe\cscmds.h	/^	SETUSRDEV,			\/*	Set user device list				*\/$/;"	e
 SET_VALUE	.\Drivers\Dflash\faccess.c	/^	ADD_VALUE, SET_VALUE$/;"	e	file:
 SET_VALUE	.\Drivers\Dflash\old_faccess.c	/^	ADD_VALUE, SET_VALUE$/;"	e	file:
-SET_VALUE	.\faccess.c	/^	ADD_VALUE, SET_VALUE$/;"	e	file:
 SHTDWN	.\Common\news\news.h	/^	SHTDWN,$/;"	e
 SHTDWN_IX	.\Common\news\news.h	/^	SHTDWN_IX,$/;"	e
 SHUTDOWN	.\ctsafe\cscmds.h	/^	SHUTDOWN,			\/*	Force a system shutdown				*\/$/;"	e
@@ -846,8 +842,6 @@ _ICG_H_	.\Drivers\Platform\ICG\icg.h	11;"	d
 _LVD_H_	.\Drivers\Platform\LVD\lvd.h	9;"	d
 _Startup	.\Start08.c	/^__EXTERN_C void _Startup(void) {$/;"	f	signature:(void)
 _Stop	.\derivative.h	9;"	d
-_USERS_FORMAT_	.\main_users.c	41;"	d	file:
-_USER_VALIDATION_2_	.\main_users.c	44;"	d	file:
 _Wait	.\derivative.h	12;"	d
 __8MHz__	.\Drivers\Platform\SCI\sci.h	17;"	d
 __ALARM_H__	.\Drivers\Alarm\alarm.h	6;"	d
@@ -915,7 +909,6 @@ _startupData	.\Start08.c	/^struct _tagStartup _startupData;    \/* read-only:$/;
 access	.\Drivers\Dflash\faccess.c	/^	bitf	access:1;		\/*	access type									*\/$/;"	m	file:
 access	.\Drivers\Dflash\old_faccess.c	/^	bitf	access:1;		\/*	access type									*\/$/;"	m	file:
 access	.\ctsafe\logprot.c	/^	uchar access;$/;"	m	file:
-access	.\faccess.c	/^	bitf	access:1;		\/*	access type									*\/$/;"	m	file:
 acknowledge_irqs	.\Drivers\Platform\platform.c	/^acknowledge_irqs( void )$/;"	f	signature:( void )
 acknowledge_irqs	.\Drivers\Platform\platform.h	/^void acknowledge_irqs( void );$/;"	p	signature:( void )
 act	.\Drivers\Sensor\cparse.h	/^	void (*act)( void );$/;"	m
@@ -929,10 +922,8 @@ additional	.\Drivers\Dflash\flash.c	/^	uchar	additional;$/;"	m	file:
 address	.\Common\vaultdef.h	/^	ushort	address;		\/*	address in page to read or write		(IN)	*\/$/;"	m
 adjust_in	.\Drivers\Dflash\faccess.c	/^adjust_in( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
 adjust_in	.\Drivers\Dflash\old_faccess.c	/^adjust_in( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
-adjust_in	.\faccess.c	/^adjust_in( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
 adjust_out	.\Drivers\Dflash\faccess.c	/^adjust_out( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
 adjust_out	.\Drivers\Dflash\old_faccess.c	/^adjust_out( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
-adjust_out	.\faccess.c	/^adjust_out( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
 assert_cs	.\Drivers\Dflash\spihal.c	/^assert_cs( MUInt dev_no )$/;"	f	file:	signature:( MUInt dev_no )
 assign_timer	.\Drivers\Stimers\stimers.c	/^assign_timer( unsigned char type, STCB cb_func, unsigned char news )$/;"	f	signature:( unsigned char type, STCB cb_func, unsigned char news )
 assign_timer	.\Drivers\Stimers\stimers.h	/^MInt assign_timer( unsigned char type, STCB cb, unsigned char news );$/;"	p	signature:( unsigned char type, STCB cb, unsigned char news )
@@ -950,7 +941,6 @@ baud	.\Drivers\Serial\serdefs.h	/^	MUInt baud;$/;"	m
 baud_rate	.\ctsafe\valconf.h	/^	uchar baud_rate;$/;"	m
 beg_page	.\Drivers\Dflash\faccess.c	/^	ushort		beg_page;$/;"	m	file:
 beg_page	.\Drivers\Dflash\old_faccess.c	/^	ushort		beg_page;$/;"	m	file:
-beg_page	.\faccess.c	/^	ushort		beg_page;$/;"	m	file:
 berase	.\Common\vaultdef.h	/^	uint	berase:1;		\/*	Flag for Built in erase					(IN)	*\/$/;"	m
 bitf	.\Common\mytypes.h	/^typedef uint			bitf;$/;"	t
 bitf	.\Common\mytypes.h	/^typedef ushort			bitf;$/;"	t
@@ -958,11 +948,9 @@ bits	.\Drivers\Serial\serdefs.h	/^	MUInt bits;$/;"	m
 blank_current_file	.\Drivers\Dflash\faccess.c	/^blank_current_file( MUInt in_init )$/;"	f	signature:( MUInt in_init )
 blank_current_file	.\Drivers\Dflash\faccess.h	/^MInt blank_current_file( MUInt in_init );$/;"	p	signature:( MUInt in_init )
 blank_current_file	.\Drivers\Dflash\old_faccess.c	/^blank_current_file( MUInt in_init )$/;"	f	signature:( MUInt in_init )
-blank_current_file	.\faccess.c	/^blank_current_file( MUInt in_init )$/;"	f	signature:( MUInt in_init )
 blank_whole_system	.\Drivers\Dflash\faccess.c	/^blank_whole_system( void )$/;"	f	signature:( void )
 blank_whole_system	.\Drivers\Dflash\faccess.h	/^void blank_whole_system( void );$/;"	p	signature:( void )
 blank_whole_system	.\Drivers\Dflash\old_faccess.c	/^blank_whole_system( void )$/;"	f	signature:( void )
-blank_whole_system	.\faccess.c	/^blank_whole_system( void )$/;"	f	signature:( void )
 block_val	.\Common\Automatons\logprot\alphact.c	/^block_val( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
 block_val	.\Common\Automatons\logprot\alphact.h	/^void block_val( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
 bm	.\Drivers\Pwrsys\pwrsys.c	/^	} bm;$/;"	m	file:
@@ -979,7 +967,6 @@ buff	.\ctsafe\logprot.c	/^	uchar buff[ MAX_WRITE_BYTES ];$/;"	m	file:
 buff	.\ctsafe\logprot.h	/^	uchar *buff;$/;"	m
 buff	.\ctsafe\logprot.h	/^	unsigned char buff[ MAX_FRAME_SIZE ];$/;"	m
 buff	.\ctsafe\logprot.h	/^	unsigned char buff[ VAL_MAX_FRAME_SIZE ];$/;"	m
-buff	.\main_users.c	/^static char buff[30];$/;"	v	file:
 buffer	.\ctsafe\logprot.c	/^	uchar buffer[ MAX_READ_BYTES ];$/;"	m	file:
 calculate_checksum	.\Drivers\Dflash\dfmanage.c	/^calculate_checksum( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
 calculate_signature	.\userdfs\users.c	/^calculate_signature( uchar *puid )$/;"	f	file:	signature:( uchar *puid )
@@ -1005,7 +992,6 @@ close_cparse	.\Drivers\Sensor\cparse.h	/^	MInt close_cparse( MUInt cphdlr );$/;"
 close_cparse	.\Drivers\Sensor\cparse.h	49;"	d
 close_sweep_dir	.\Drivers\Dflash\faccess.c	/^close_sweep_dir( void )$/;"	f	file:	signature:( void )
 close_sweep_dir	.\Drivers\Dflash\old_faccess.c	/^close_sweep_dir( void )$/;"	f	file:	signature:( void )
-close_sweep_dir	.\faccess.c	/^close_sweep_dir( void )$/;"	f	file:	signature:( void )
 cmd_buf	.\Drivers\Dflash\flash.c	/^static uchar cmd_buf[4];$/;"	v	file:
 compare_versions	.\Drivers\Dflash\faccess.c	/^compare_versions( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
 complement_check_and_write	.\Drivers\Dflash\dfmanage.c	/^complement_check_and_write( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
@@ -1018,12 +1004,10 @@ connect_bchrg	.\Drivers\Pwrsys\pwrhdl.h	/^void connect_bchrg( void );$/;"	p	sign
 construct_dir	.\Drivers\Dflash\faccess.c	/^construct_dir( ushort *pfd_ex, ushort *pfd_err )$/;"	f	signature:( ushort *pfd_ex, ushort *pfd_err )
 construct_dir	.\Drivers\Dflash\faccess.h	/^uint construct_dir( ushort *pfd_ex, ushort *pfd_err );$/;"	p	signature:( ushort *pfd_ex, ushort *pfd_err )
 construct_dir	.\Drivers\Dflash\old_faccess.c	/^construct_dir( ushort *pfd_ex, ushort *pfd_err )$/;"	f	signature:( ushort *pfd_ex, ushort *pfd_err )
-construct_dir	.\faccess.c	/^construct_dir( ushort *pfd_ex, ushort *pfd_err )$/;"	f	signature:( ushort *pfd_ex, ushort *pfd_err )
 conv_endians	.\Common\utils\utils.c	/^conv_endians( void *to, const void *from, MUInt qty )$/;"	f	signature:( void *to, const void *from, MUInt qty )
 conv_endians	.\Common\utils\utils.h	/^void conv_endians( void *to, const void *from, MUInt qty );$/;"	p	signature:( void *to, const void *from, MUInt qty )
 convert_to_external_index	.\Drivers\Dflash\faccess.c	/^convert_to_external_index( int ix, uint page )$/;"	f	file:	signature:( int ix, uint page )
 convert_to_external_index	.\Drivers\Dflash\old_faccess.c	/^convert_to_external_index( int ix, uint page )$/;"	f	file:	signature:( int ix, uint page )
-convert_to_external_index	.\faccess.c	/^convert_to_external_index( int ix, uint page )$/;"	f	file:	signature:( int ix, uint page )
 cop_init	.\Drivers\Platform\COP\cop.c	/^cop_init( void )$/;"	f	signature:( void )
 cop_init	.\Drivers\Platform\COP\cop.h	/^void cop_init( void );$/;"	p	signature:( void )
 cop_reset_now	.\Drivers\Watchdog\reset.c	/^cop_reset_now( void )$/;"	f	signature:( void )
@@ -1041,7 +1025,6 @@ create_and_blank_firmware	.\Drivers\Dflash\old_faccess.c	/^create_and_blank_firm
 create_file	.\Drivers\Dflash\faccess.c	/^create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )$/;"	f	signature:( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )
 create_file	.\Drivers\Dflash\faccess.h	/^long create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units );$/;"	p	signature:( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )
 create_file	.\Drivers\Dflash\old_faccess.c	/^create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )$/;"	f	signature:( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )
-create_file	.\faccess.c	/^create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )$/;"	f	signature:( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )
 ctrl	.\ctsafe\logprot.c	/^	uchar ctrl;$/;"	m	file:
 curr_cmd	.\ctsafe\logprot.h	/^	unsigned char curr_cmd;$/;"	m
 curr_dev	.\ctsafe\logprot.h	/^	unsigned char curr_dev;$/;"	m
@@ -1049,7 +1032,6 @@ curr_ndata	.\ctsafe\logprot.h	/^	NDATA_T curr_ndata;$/;"	m
 curr_val	.\ctsafe\logprot.c	/^static MUInt curr_val;$/;"	v	file:
 current_fd	.\Drivers\Dflash\faccess.c	/^static int current_fd;$/;"	v	file:
 current_fd	.\Drivers\Dflash\old_faccess.c	/^static int current_fd;$/;"	v	file:
-current_fd	.\faccess.c	/^static int current_fd;$/;"	v	file:
 dataflash_autopage_rewrite	.\Drivers\Dflash\dataflsh.c	/^dataflash_autopage_rewrite( MUInt device, uint page )$/;"	f	signature:( MUInt device, uint page )
 dataflash_autopage_rewrite	.\Drivers\Dflash\dataflsh.h	/^void dataflash_autopage_rewrite( MUInt device, uint page );$/;"	p	signature:( MUInt device, uint page )
 dataflash_block_erase	.\Drivers\Dflash\dataflsh.c	/^dataflash_block_erase( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
@@ -1098,7 +1080,6 @@ device	.\Common\vaultdef.h	/^	uint	device:1;		\/*	Selects MAIN or SECONDARY devi
 device_id	.\Drivers\Dflash\dftypes.h	/^			uchar	device_id;$/;"	m
 df	.\Drivers\Dflash\faccess.c	/^static DFLASH_T df =$/;"	v	file:
 df	.\Drivers\Dflash\old_faccess.c	/^static DFLASH_T df =$/;"	v	file:
-df	.\faccess.c	/^static DFLASH_T df =$/;"	v	file:
 df	.\userdfs\users.c	/^static DFLASH_T df;$/;"	v	file:
 df_copy_page	.\Drivers\Dflash\dfmanage.c	/^df_copy_page( DFLASH_T *pf, MUInt emerg )$/;"	f	signature:( DFLASH_T *pf, MUInt emerg )
 df_copy_page	.\Drivers\Dflash\dfmanage.h	/^MInt df_copy_page( DFLASH_T *pf, MUInt emerg );$/;"	p	signature:( DFLASH_T *pf, MUInt emerg )
@@ -1150,10 +1131,8 @@ dfs_size	.\Drivers\Dflash\dfdata.h	/^	ulong dfs_size;					\/*	file system size		
 dftimer	.\Drivers\Dflash\spihal.c	/^static ushort dftimer;$/;"	v	file:
 directory	.\Drivers\Dflash\faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *pcurr;$/;"	v	file:
 directory	.\Drivers\Dflash\old_faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *pcurr;$/;"	v	file:
-directory	.\faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *pcurr;$/;"	v	file:
 dirty	.\Drivers\Dflash\faccess.c	/^static MUInt dirty = 0;$/;"	v	file:
 dirty	.\Drivers\Dflash\old_faccess.c	/^static MUInt dirty = 0;$/;"	v	file:
-dirty	.\faccess.c	/^static MUInt dirty = 0;$/;"	v	file:
 disable_gral_interrupt	.\Drivers\Enaint\enaint.c	/^disable_gral_interrupt( void )$/;"	f	signature:( void )
 disable_gral_interrupt	.\Drivers\Enaint\enaint.h	/^void disable_gral_interrupt( void );$/;"	p	signature:( void )
 disable_interrupt	.\Drivers\Enaint\lowint.c	/^disable_interrupt( void )$/;"	f	signature:( void )
@@ -1218,10 +1197,8 @@ eoq	.\Drivers\GRstatus\grqueue.c	9;"	d	file:
 eoq	.\Drivers\Serial\gsqueue\gsqueue.c	10;"	d	file:
 erase_dir_buffer	.\Drivers\Dflash\faccess.c	/^erase_dir_buffer( void )$/;"	f	file:	signature:( void )
 erase_dir_buffer	.\Drivers\Dflash\old_faccess.c	/^erase_dir_buffer( void )$/;"	f	file:	signature:( void )
-erase_dir_buffer	.\faccess.c	/^erase_dir_buffer( void )$/;"	f	file:	signature:( void )
 erase_page_info	.\Drivers\Dflash\faccess.c	/^erase_page_info( void )$/;"	f	file:	signature:( void )
 erase_page_info	.\Drivers\Dflash\old_faccess.c	/^erase_page_info( void )$/;"	f	file:	signature:( void )
-erase_page_info	.\faccess.c	/^erase_page_info( void )$/;"	f	file:	signature:( void )
 errno	.\ctsafe\logprot.c	/^	MInt errno;$/;"	m	file:
 errno	.\ctsafe\logprot.c	/^	uchar errno;$/;"	m	file:
 exec_mparser	.\Common\Mparser\mparser.c	/^exec_mparser( const NEWS_T *pnews )$/;"	f	signature:( const NEWS_T *pnews )
@@ -1247,14 +1224,11 @@ fd_inerror	.\Drivers\Dflash\dfdata.h	/^	ushort fd_inerror;				\/*	bit field of f
 fd_used	.\Drivers\Dflash\dfdata.h	/^	ushort fd_used;					\/*	bit field of file descriptors used 		*\/$/;"	m
 fdesc	.\Drivers\Dflash\faccess.c	/^	bitf	fdesc:5;		\/*	file descriptor <0-31>						*\/$/;"	m	file:
 fdesc	.\Drivers\Dflash\old_faccess.c	/^	bitf	fdesc:5;		\/*	file descriptor <0-31>						*\/$/;"	m	file:
-fdesc	.\faccess.c	/^	bitf	fdesc:5;		\/*	file descriptor <0-31>						*\/$/;"	m	file:
 file_data	.\Drivers\Dflash\faccess.c	/^	FILESYS_T	file_data;$/;"	m	file:
 file_data	.\Drivers\Dflash\old_faccess.c	/^	FILESYS_T	file_data;$/;"	m	file:
-file_data	.\faccess.c	/^	FILESYS_T	file_data;$/;"	m	file:
 file_type	.\Drivers\Dflash\dfdata.h	/^	uchar	file_type;		\/*	Type of file (RANDOM or QUEUE		*\/$/;"	m
 first_avail_page	.\Drivers\Dflash\faccess.c	/^static ushort first_avail_page;$/;"	v	file:
 first_avail_page	.\Drivers\Dflash\old_faccess.c	/^static ushort first_avail_page;$/;"	v	file:
-first_avail_page	.\faccess.c	/^static ushort first_avail_page;$/;"	v	file:
 flash_compose_address	.\Drivers\Dflash\flash.c	/^flash_compose_address( MUInt dev_no, uint page_addr, uint byte_addr )$/;"	f	file:	signature:( MUInt dev_no, uint page_addr, uint byte_addr )
 flash_flush_command	.\Drivers\Dflash\flash.c	/^flash_flush_command( MUInt len)$/;"	f	file:	signature:( MUInt len)
 flash_init	.\Drivers\Dflash\flash.c	/^flash_init( void )$/;"	f	signature:( void )
@@ -1274,11 +1248,7 @@ flash_write	.\Drivers\Dflash\flash.h	/^void flash_write( MUInt dev_no, uchar *pt
 flush_page_in_buffer	.\Drivers\Dflash\faccess.c	/^flush_page_in_buffer( MUInt void_page )$/;"	f	signature:( MUInt void_page )
 flush_page_in_buffer	.\Drivers\Dflash\faccess.h	/^MInt flush_page_in_buffer( MUInt void_page );$/;"	p	signature:( MUInt void_page )
 flush_page_in_buffer	.\Drivers\Dflash\old_faccess.c	/^flush_page_in_buffer( MUInt void_page )$/;"	f	signature:( MUInt void_page )
-flush_page_in_buffer	.\faccess.c	/^flush_page_in_buffer( void )$/;"	f	signature:( void )
 forever	.\main.c	14;"	d	file:
-forever	.\main_dfil.c	26;"	d	file:
-forever	.\main_lockers.c	14;"	d	file:
-forever	.\main_users.c	20;"	d	file:
 format_count	.\userdfs\users.c	/^static uint recovered_count, ok_count, format_count;$/;"	v	file:
 format_page	.\userdfs\users.c	/^format_page( uint page )$/;"	f	file:	signature:( uint page )
 free_users	.\ctsafe\logprot.c	/^	uint free_users;$/;"	m	file:
@@ -1299,17 +1269,14 @@ get_curr_val	.\ctsafe\logprot.h	/^MUInt get_curr_val( void );$/;"	p	signature:( 
 get_current_file_status	.\Drivers\Dflash\faccess.c	/^get_current_file_status( FILESYS_T *psta )$/;"	f	signature:( FILESYS_T *psta )
 get_current_file_status	.\Drivers\Dflash\faccess.h	/^MInt get_current_file_status( FILESYS_T *psta );$/;"	p	signature:( FILESYS_T *psta )
 get_current_file_status	.\Drivers\Dflash\old_faccess.c	/^get_current_file_status( FILESYS_T *psta )$/;"	f	signature:( FILESYS_T *psta )
-get_current_file_status	.\faccess.c	/^get_current_file_status( FILESYS_T *psta )$/;"	f	signature:( FILESYS_T *psta )
 get_current_unit_size	.\Drivers\Dflash\faccess.c	/^get_current_unit_size( void )$/;"	f	signature:( void )
 get_current_unit_size	.\Drivers\Dflash\faccess.h	/^uint get_current_unit_size( void );$/;"	p	signature:( void )
 get_current_unit_size	.\Drivers\Dflash\old_faccess.c	/^get_current_unit_size( void )$/;"	f	signature:( void )
-get_current_unit_size	.\faccess.c	/^get_current_unit_size( void )$/;"	f	signature:( void )
 get_enable_status	.\Drivers\Enaint\lowint.c	/^get_enable_status( void )$/;"	f	signature:( void )
 get_enable_status	.\Drivers\Enaint\lowint.h	/^MUInt get_enable_status( void );$/;"	p	signature:( void )
 get_existing_space	.\Drivers\Dflash\faccess.c	/^get_existing_space( MUInt unit_size )$/;"	f	signature:( MUInt unit_size )
 get_existing_space	.\Drivers\Dflash\faccess.h	/^ulong get_existing_space( MUInt unit_size );$/;"	p	signature:( MUInt unit_size )
 get_existing_space	.\Drivers\Dflash\old_faccess.c	/^get_existing_space( MUInt unit_size )$/;"	f	signature:( MUInt unit_size )
-get_existing_space	.\faccess.c	/^get_existing_space( MUInt unit_size )$/;"	f	signature:( MUInt unit_size )
 get_free_users	.\userdfs\users.c	/^get_free_users( void )$/;"	f	file:	signature:( void )
 get_frlen	.\Common\Automatons\valprot\valact.c	20;"	d	file:
 get_group_status	.\Drivers\GRstatus\grstatus.c	/^get_group_status( void )$/;"	f	signature:( void )
@@ -1322,7 +1289,6 @@ get_gsq_qty	.\Drivers\Serial\gsqueue\gsqueue.c	/^get_gsq_qty( QHDLR qh )$/;"	f	s
 get_gsq_qty	.\Drivers\Serial\gsqueue\gsqueue.h	/^MUInt get_gsq_qty( QHDLR qh );$/;"	p	signature:( QHDLR qh )
 get_info_dir	.\Drivers\Dflash\faccess.c	/^get_info_dir( void )$/;"	f	file:	signature:( void )
 get_info_dir	.\Drivers\Dflash\old_faccess.c	/^get_info_dir( void )$/;"	f	file:	signature:( void )
-get_info_dir	.\faccess.c	/^get_info_dir( void )$/;"	f	file:	signature:( void )
 get_mcu_id	.\Drivers\Pwrsys\pwrhdl.c	/^get_mcu_id( void )$/;"	f	signature:( void )
 get_mcu_id	.\Drivers\Pwrsys\pwrhdl.h	/^MUInt get_mcu_id( void );$/;"	p	signature:( void )
 get_next_power	.\Drivers\Dflash\dfmanage.c	/^get_next_power( uint size )$/;"	f	signature:( uint size )
@@ -1345,8 +1311,6 @@ grq	.\Drivers\GRstatus\grqueue.c	/^static GR1ST_T grq[GRQ_MAX_ELEMENTS];$/;"	v	f
 grqueue	.\Drivers\GRstatus\grqueue.c	/^static GRQUEUE grqueue = $/;"	v	file:
 grst	.\Drivers\GRstatus\grstatus.c	/^static GR1ST_T grst;$/;"	v	file:
 gsqueues	.\Drivers\Serial\gsqueue\qdata.c	/^GSQUEUE gsqueues[] =$/;"	v
-halt_mcu	.\main_dfil.c	27;"	d	file:
-halt_mcu	.\main_users.c	38;"	d	file:
 handler_timers	.\Drivers\Stimers\stimers.c	/^handler_timers( void )$/;"	f	signature:( void )
 handler_timers	.\Drivers\Stimers\stimers.h	/^void handler_timers( void );$/;"	p	signature:( void )
 host_init	.\Drivers\Serial\sloghost.c	/^host_init( SERIAL_T *p )$/;"	f	signature:( SERIAL_T *p )
@@ -1392,21 +1356,16 @@ inc_xmit_frames	.\ctsafe\logprot.c	461;"	d	file:
 inc_xmit_frames	.\ctsafe\logprot.h	/^void inc_xmit_frames( void );$/;"	p	signature:( void )
 index_in	.\Drivers\Dflash\faccess.c	/^	short	index_in;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_in	.\Drivers\Dflash\old_faccess.c	/^	short	index_in;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
-index_in	.\faccess.c	/^	short	index_in;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_out	.\Drivers\Dflash\faccess.c	/^	short	index_out;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_out	.\Drivers\Dflash\old_faccess.c	/^	short	index_out;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
-index_out	.\faccess.c	/^	short	index_out;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 inf_close	.\Drivers\Sensor\cpdata.c	/^inf_close( void )$/;"	f	file:	signature:( void )
 inf_open	.\Drivers\Sensor\cpdata.c	/^inf_open( void )$/;"	f	file:	signature:( void )
 info_add	.\Drivers\Dflash\faccess.c	/^info_add( void )$/;"	f	file:	signature:( void )
 info_add	.\Drivers\Dflash\old_faccess.c	/^info_add( void )$/;"	f	file:	signature:( void )
-info_add	.\faccess.c	/^info_add( void )$/;"	f	file:	signature:( void )
 info_close	.\Drivers\Dflash\faccess.c	/^info_close( void )$/;"	f	file:	signature:( void )
 info_close	.\Drivers\Dflash\old_faccess.c	/^info_close( void )$/;"	f	file:	signature:( void )
-info_close	.\faccess.c	/^info_close( void )$/;"	f	file:	signature:( void )
 info_open	.\Drivers\Dflash\faccess.c	/^info_open( void )$/;"	f	file:	signature:( void )
 info_open	.\Drivers\Dflash\old_faccess.c	/^info_open( void )$/;"	f	file:	signature:( void )
-info_open	.\faccess.c	/^info_open( void )$/;"	f	file:	signature:( void )
 inform_close_ws	.\Common\Automatons\doorws\dwsact.c	/^inform_close_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
 inform_close_ws	.\Common\Automatons\doorws\dwsact.h	/^void inform_close_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
 inform_locker_error	.\Drivers\GRstatus\grstatus.c	/^inform_locker_error( MUInt who, MUInt error )$/;"	f	signature:( MUInt who, MUInt error )
@@ -1414,7 +1373,6 @@ inform_locker_error	.\Drivers\GRstatus\grstatus.h	/^void inform_locker_error( MU
 inform_open_ws	.\Common\Automatons\doorws\dwsact.c	/^inform_open_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
 inform_open_ws	.\Common\Automatons\doorws\dwsact.h	/^void inform_open_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
 init_action	.\Common\Mparser\mparser.h	/^	INIT_ACT init_action;$/;"	m
-init_all_other	.\testflsh.c	/^init_all_other( void )$/;"	f	file:	signature:( void )
 init_cparse	.\Drivers\Sensor\cparse.c	/^init_cparse( MUInt shdlr, MUInt hnews )$/;"	f	signature:( MUInt shdlr, MUInt hnews )
 init_cparse	.\Drivers\Sensor\cparse.h	/^void init_cparse( MUInt shdlr, MUInt hnews );$/;"	p	signature:( MUInt shdlr, MUInt hnews )
 init_dispatcher	.\Common\Dispatch\dispatch.c	/^init_dispatcher( void )$/;"	f	signature:( void )
@@ -1504,7 +1462,6 @@ kill_timer	.\Drivers\Stimers\stimers.c	/^kill_timer( MInt thdlr )$/;"	f	signatur
 kill_timer	.\Drivers\Stimers\stimers.h	/^unsigned short kill_timer( MInt thdlr );$/;"	p	signature:( MInt thdlr )
 last_page	.\Drivers\Dflash\faccess.c	/^	ushort		last_page;$/;"	m	file:
 last_page	.\Drivers\Dflash\old_faccess.c	/^	ushort		last_page;$/;"	m	file:
-last_page	.\faccess.c	/^	ushort		last_page;$/;"	m	file:
 last_value	.\Drivers\Sensor\cparse.h	/^	unsigned char last_value;$/;"	m
 lked2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^lked2lked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
 lked2lked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void lked2lked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
@@ -1553,17 +1510,12 @@ lvd_init	.\Drivers\Platform\LVD\lvd.c	/^lvd_init( void )$/;"	f	signature:( void 
 lvd_init	.\Drivers\Platform\LVD\lvd.h	/^void lvd_init( void );$/;"	p	signature:( void )
 main	.\Start08.c	/^__EXTERN_C extern void main(void); \/* prototype of main function *\/$/;"	p	file:	signature:(void)
 main	.\main.c	/^main( void )$/;"	f	signature:( void )
-main	.\main_dfil.c	/^main( void )$/;"	f	signature:( void )
-main	.\main_lockers.c	/^main( void )$/;"	f	signature:( void )
-main	.\main_users.c	/^main( void )$/;"	f	signature:( void )
-main	.\testflsh.c	/^main( void )$/;"	f	signature:( void )
 main_timer_counter	.\Drivers\Maintime\maintime.c	/^static unsigned short main_timer_counter;$/;"	v	file:
 main_timer_interrupt	.\Drivers\Maintime\maintime.c	/^main_timer_interrupt( void )$/;"	f	signature:( void )
 main_timer_interrupt	.\Drivers\Maintime\maintime.h	/^void main_timer_interrupt( void );$/;"	p	signature:( void )
 make_file_current	.\Drivers\Dflash\faccess.c	/^make_file_current( MUInt fd )$/;"	f	signature:( MUInt fd )
 make_file_current	.\Drivers\Dflash\faccess.h	/^MUInt make_file_current( MUInt fd );$/;"	p	signature:( MUInt fd )
 make_file_current	.\Drivers\Dflash\old_faccess.c	/^make_file_current( MUInt fd )$/;"	f	signature:( MUInt fd )
-make_file_current	.\faccess.c	/^make_file_current( MUInt fd )$/;"	f	signature:( MUInt fd )
 master_restart	.\Common\Automatons\logprot\alphact.c	/^master_restart( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
 master_restart	.\Common\Automatons\logprot\alphact.h	/^void master_restart( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
 match	.\ctsafe\logprot.c	/^	uchar match;$/;"	m	file:
@@ -1580,15 +1532,7 @@ mps	.\Drivers\Pwrsys\pwrsys.c	/^static const char *mps[] =$/;"	v	file:
 mpst	.\Drivers\GRstatus\grstatus.c	/^static const char *mpst[] =$/;"	v	file:
 ms	.\Drivers\Pwrsys\pwrsys.c	/^		unsigned ms		:4;$/;"	m	file:
 ms	.\Drivers\Pwrsys\pwrsys.c	/^static const char *ms[] =$/;"	v	file:
-mt0	.\main_dfil.c	/^static ushort mt0, mt1, mt2;$/;"	v	file:
-mt0	.\main_users.c	/^static ushort mt0;$/;"	v	file:
-mt1	.\main_dfil.c	/^static ushort mt0, mt1, mt2;$/;"	v	file:
-mt1	.\main_users.c	/^static ushort mt1;$/;"	v	file:
-mt2	.\main_dfil.c	/^static ushort mt0, mt1, mt2;$/;"	v	file:
-mt2	.\main_users.c	/^static ushort mt2;$/;"	v	file:
 mtime	.\Drivers\Platform\RTI\rti.c	/^volatile ushort mtime;$/;"	v
-mtime1	.\main_users.c	/^static ushort mtime1, mtime2;$/;"	v	file:
-mtime2	.\main_users.c	/^static ushort mtime1, mtime2;$/;"	v	file:
 must_refresh	.\Drivers\Dflash\dfrefrsh.c	/^must_refresh( MUInt device, int page )$/;"	f	signature:( MUInt device, int page )
 must_refresh	.\Drivers\Dflash\dfrefrsh.h	/^int must_refresh( MUInt device, int page );$/;"	p	signature:( MUInt device, int page )
 nchrg2chrg	.\Common\Automatons\pwrctrl\pwract.c	/^nchrg2chrg( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
@@ -1616,7 +1560,6 @@ num_units	.\ctsafe\logprot.c	/^	long num_units;$/;"	m	file:
 num_units	.\ctsafe\logprot.c	/^	uchar num_units;$/;"	m	file:
 num_units_page	.\Drivers\Dflash\faccess.c	/^static ushort num_units_page;$/;"	v	file:
 num_units_page	.\Drivers\Dflash\old_faccess.c	/^static ushort num_units_page;$/;"	v	file:
-num_units_page	.\faccess.c	/^static ushort num_units_page;$/;"	v	file:
 num_users_per_page	.\Drivers\Dflash\dfvars.c	/^ushort num_users_per_page;$/;"	v
 offset	.\Common\vaultdef.h	/^	short	offset;			\/*	page offset to copy	(signed)			(IN)	*\/$/;"	m
 offset	.\ctsafe\logprot.c	/^	long offset;$/;"	m	file:
@@ -1626,7 +1569,6 @@ opc_actions	.\Drivers\Dflash\flash.c	/^static OPC_T const opc_actions[ DF_NUM_OP
 opcode	.\Drivers\Dflash\flash.c	/^	uchar	opcode;$/;"	m	file:
 open_sweep_dir	.\Drivers\Dflash\faccess.c	/^open_sweep_dir( void )$/;"	f	file:	signature:( void )
 open_sweep_dir	.\Drivers\Dflash\old_faccess.c	/^open_sweep_dir( void )$/;"	f	file:	signature:( void )
-open_sweep_dir	.\faccess.c	/^open_sweep_dir( void )$/;"	f	file:	signature:( void )
 order_num	.\Drivers\Dflash\dftypes.c	/^MUInt order_num;$/;"	v
 out_index	.\Drivers\Dflash\dfdata.h	/^	ulong	out_index;		\/*	indices are measured in terms of....	*\/$/;"	m
 page	.\Common\vaultdef.h	/^	ushort	page;			\/*	page to read or write					(IN)	*\/$/;"	m
@@ -1636,7 +1578,6 @@ page_counters	.\Drivers\Dflash\dfrefrsh.c	/^static uint page_counters[ NUM_FLASH
 page_eff_size	.\Drivers\Dflash\dfvars.c	/^ushort page_eff_size;$/;"	v
 page_in_buffer	.\Drivers\Dflash\faccess.c	/^static ushort page_in_buffer = NO_PAGE;$/;"	v	file:
 page_in_buffer	.\Drivers\Dflash\old_faccess.c	/^static ushort page_in_buffer = NO_PAGE;$/;"	v	file:
-page_in_buffer	.\faccess.c	/^static ushort page_in_buffer = NO_PAGE;$/;"	v	file:
 page_size	.\Drivers\Dflash\dftypes.h	/^			uint	page_size;$/;"	m
 page_size	.\Drivers\Dflash\dfvars.c	/^ushort page_size;$/;"	v
 parity	.\Drivers\Serial\serdefs.h	/^	MUInt parity;$/;"	m
@@ -1655,7 +1596,6 @@ pcmds	.\ctsafe\logprot.c	/^static const PFR pcmds[] =$/;"	v	file:
 pcp	.\Drivers\Sensor\cparse.c	/^static CPARSE *pcp;$/;"	v	file:
 pcurr	.\Drivers\Dflash\faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *pcurr;$/;"	v	file:
 pcurr	.\Drivers\Dflash\old_faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *pcurr;$/;"	v	file:
-pcurr	.\faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *pcurr;$/;"	v	file:
 pdevs	.\ctsafe\logprot.c	/^static const PFR pdevs[] =$/;"	v	file:
 pdflash	.\Drivers\Dflash\dftypes.c	/^const DATAFL_T *pdflash[ NUM_FLASH_DEVICES ];		\/*	Pointer to dataflash detected	*\/$/;"	v
 pfr	.\Common\Automatons\valprot\valact.c	/^static unsigned char *pfr;$/;"	v	file:
@@ -1667,7 +1607,6 @@ pin	.\Drivers\GRstatus\grqueue.h	/^	GR1ST_T *pin;$/;"	m
 pin	.\Drivers\Serial\gsqueue\gsqueue.h	/^	ELEM_TYPE *pin;$/;"	m
 pinfo	.\Drivers\Dflash\faccess.c	/^static PAGE_INFO_T pinfo;$/;"	v	file:
 pinfo	.\Drivers\Dflash\old_faccess.c	/^static PAGE_INFO_T pinfo;$/;"	v	file:
-pinfo	.\faccess.c	/^static PAGE_INFO_T pinfo;$/;"	v	file:
 pint	.\Drivers\Enaint\enaint.c	/^static signed char int_stack[ MAX_INT_STACK ], *pint;$/;"	v	file:
 platform_init	.\Drivers\Platform\platform.c	/^platform_init(void)$/;"	f	signature:(void)
 platform_init	.\Drivers\Platform\platform.h	/^void platform_init(void);$/;"	p	signature:(void)
@@ -1819,45 +1758,34 @@ pwrsys	.\Drivers\Pwrsys\pwrsys.c	/^static PWRSYS pwrsys;$/;"	v	file:
 qcp	.\Drivers\Sensor\cparse.c	/^static CPDATA *qcp;$/;"	v	file:
 qfull	.\Drivers\Dflash\faccess.c	/^	bitf	qfull:1;		\/*	For QUEUE files: full						*\/$/;"	m	file:
 qfull	.\Drivers\Dflash\old_faccess.c	/^	bitf	qfull:1;		\/*	For QUEUE files: full						*\/$/;"	m	file:
-qfull	.\faccess.c	/^	bitf	qfull:1;		\/*	For QUEUE files: full						*\/$/;"	m	file:
 qty	.\ctsafe\logprot.h	/^	ushort qty;$/;"	m
 queue	.\Common\news\nqueue.h	/^	NEWS_T *queue;$/;"	m
 queue	.\Drivers\GRstatus\grqueue.h	/^	GR1ST_T *queue;$/;"	m
 queue	.\Drivers\Serial\gsqueue\gsqueue.h	/^	ELEM_TYPE *queue;$/;"	m
 queue_full	.\Drivers\Dflash\faccess.c	/^static uchar queue_full;$/;"	v	file:
 queue_full	.\Drivers\Dflash\old_faccess.c	/^static uchar queue_full;$/;"	v	file:
-queue_full	.\faccess.c	/^static uchar queue_full;$/;"	v	file:
 rcv_frame	.\Common\Automatons\logprot\alphact.c	/^RFRAME_T rcv_frame;$/;"	v
 read_adc	.\Drivers\Platform\ADC\adc.c	/^read_adc( void )$/;"	f	signature:( void )
 read_adc	.\Drivers\Platform\ADC\adc.h	/^unsigned short read_adc( void );$/;"	p	signature:( void )
 read_current_file	.\Drivers\Dflash\faccess.c	/^read_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
 read_current_file	.\Drivers\Dflash\faccess.h	/^int read_current_file( uint num_units, uchar *pbuff );$/;"	p	signature:( uint num_units, uchar *pbuff )
 read_current_file	.\Drivers\Dflash\old_faccess.c	/^read_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
-read_current_file	.\faccess.c	/^read_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
 read_one	.\Drivers\Dflash\faccess.c	/^read_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
 read_one	.\Drivers\Dflash\old_faccess.c	/^read_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
-read_one	.\faccess.c	/^read_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
 read_one_false_queue	.\Drivers\Dflash\faccess.c	/^read_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 read_one_false_queue	.\Drivers\Dflash\old_faccess.c	/^read_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_false_queue	.\faccess.c	/^read_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 read_one_queue	.\Drivers\Dflash\faccess.c	/^read_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 read_one_queue	.\Drivers\Dflash\old_faccess.c	/^read_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_queue	.\faccess.c	/^read_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 read_one_random	.\Drivers\Dflash\faccess.c	/^read_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
 read_one_random	.\Drivers\Dflash\old_faccess.c	/^read_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_random	.\faccess.c	/^read_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
 read_page	.\Drivers\Dflash\faccess.c	/^read_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
 read_page	.\Drivers\Dflash\old_faccess.c	/^read_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-read_page	.\faccess.c	/^read_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
 read_pinfo	.\Drivers\Dflash\faccess.c	/^read_pinfo( void ) $/;"	f	file:	signature:( void )
 read_pinfo	.\Drivers\Dflash\old_faccess.c	/^read_pinfo( void ) $/;"	f	file:	signature:( void )
-read_pinfo	.\faccess.c	/^read_pinfo( void ) $/;"	f	file:	signature:( void )
 read_queue_current_file	.\Drivers\Dflash\faccess.c	/^read_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 read_queue_current_file	.\Drivers\Dflash\old_faccess.c	/^read_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-read_queue_current_file	.\faccess.c	/^read_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 read_random_current_file	.\Drivers\Dflash\faccess.c	/^read_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 read_random_current_file	.\Drivers\Dflash\old_faccess.c	/^read_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-read_random_current_file	.\faccess.c	/^read_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 read_write	.\Drivers\Dflash\flash.c	/^	uchar	read_write;$/;"	m	file:
 rec_frame	.\Common\Automatons\logprot\alphact.c	/^rec_frame( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
 rec_frame	.\Common\Automatons\logprot\alphact.h	/^void rec_frame( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
@@ -1889,7 +1817,6 @@ sector_count	.\Drivers\Dflash\dftypes.h	/^			uchar	sector_count;$/;"	m
 seek_current	.\Drivers\Dflash\faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f	signature:( long offset, MUInt whence )
 seek_current	.\Drivers\Dflash\faccess.h	/^MInt seek_current( long offset, MUInt whence );$/;"	p	signature:( long offset, MUInt whence )
 seek_current	.\Drivers\Dflash\old_faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f	signature:( long offset, MUInt whence )
-seek_current	.\faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f	signature:( long offset, MUInt whence )
 sem_disable	.\Drivers\Enaint\enaint.c	/^sem_disable( void )$/;"	f	signature:( void )
 sem_disable	.\Drivers\Enaint\enaint.h	/^void sem_disable( void );$/;"	p	signature:( void )
 sem_enable	.\Drivers\Enaint\enaint.c	/^sem_enable( void )$/;"	f	signature:( void )
@@ -2073,7 +2000,6 @@ unit_size	.\Drivers\Dflash\dfdata.h	/^	uchar	unit_size;		\/*	Size of file record
 unit_size	.\Drivers\Dflash\faccess.c	/^	bitf	unit_size:8;	\/*	Size of each register						*\/$/;"	m	file:
 unit_size	.\Drivers\Dflash\old_faccess.c	/^	bitf	unit_size:8;	\/*	Size of each register						*\/$/;"	m	file:
 unit_size	.\ctsafe\logprot.c	/^	uchar unit_size;$/;"	m	file:
-unit_size	.\faccess.c	/^	bitf	unit_size:8;	\/*	Size of each register						*\/$/;"	m	file:
 unlock_locker_wos	.\Common\Automatons\doorwos\dwosact.c	/^unlock_locker_wos( void )$/;"	f	file:	signature:( void )
 unlock_locker_ws	.\Common\Automatons\doorws\dwsact.c	/^unlock_locker_ws( void )$/;"	f	file:	signature:( void )
 unlock_timer	.\Drivers\Locker\locker.c	/^static unsigned short unlock_timer = TOUT_TUNLOCK;$/;"	v	file:
@@ -2085,16 +2011,13 @@ unlocking_ws	.\Common\Automatons\doorws\dwsctrl.c	/^const STATE unlocking_ws =$/
 used	.\Drivers\Dflash\faccess.c	/^	bitf	used:1;			\/*	page used									*\/$/;"	m	file:
 used	.\Drivers\Dflash\old_faccess.c	/^	bitf	used:1;			\/*	page used									*\/$/;"	m	file:
 used	.\Drivers\Stimers\stimers.c	/^	unsigned used: 1;$/;"	m	file:
-used	.\faccess.c	/^	bitf	used:1;			\/*	page used									*\/$/;"	m	file:
 used	.\userdfs\users.c	/^	uchar	used;$/;"	m	file:
 user	.\ctsafe\logprot.c	/^	uchar user[ NUM_UID ];$/;"	m	file:
 user	.\userdfs\users.c	/^	USER_T	user;$/;"	m	file:
 user0	.\ctsafe\logprot.c	/^	uchar user0[ NUM_UID ];$/;"	m	file:
 user0	.\ctsafe\logprot.c	/^static USER_T user0, user1;$/;"	v	file:
-user0	.\main_users.c	/^static USER_T user0 =$/;"	v	file:
 user1	.\ctsafe\logprot.c	/^	uchar user1[ NUM_UID ];$/;"	m	file:
 user1	.\ctsafe\logprot.c	/^static USER_T user0, user1;$/;"	v	file:
-user1	.\main_users.c	/^static USER_T user1 =$/;"	v	file:
 user_buff	.\Drivers\Dflash\dfvars.c	/^uchar user_buff[ WPAGE_SIZE ];$/;"	v
 user_buffer	.\userdfs\users.c	/^static FUSER_T	user_buffer;$/;"	v	file:
 user_delete	.\userdfs\users.c	/^user_delete( uint page, uint address )$/;"	f	file:	signature:( uint page, uint address )
@@ -2184,30 +2107,21 @@ wout_image	.\Drivers\Wout\wouts.c	/^static MUInt wout_image,kickwouts;$/;"	v	fil
 write_current_file	.\Drivers\Dflash\faccess.c	/^write_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
 write_current_file	.\Drivers\Dflash\faccess.h	/^int write_current_file( uint num_units, uchar *pbuff );$/;"	p	signature:( uint num_units, uchar *pbuff )
 write_current_file	.\Drivers\Dflash\old_faccess.c	/^write_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
-write_current_file	.\faccess.c	/^write_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
 write_one	.\Drivers\Dflash\faccess.c	/^write_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
 write_one	.\Drivers\Dflash\old_faccess.c	/^write_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
-write_one	.\faccess.c	/^write_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
 write_one_false_queue	.\Drivers\Dflash\faccess.c	/^write_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 write_one_false_queue	.\Drivers\Dflash\old_faccess.c	/^write_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_false_queue	.\faccess.c	/^write_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 write_one_queue	.\Drivers\Dflash\faccess.c	/^write_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 write_one_queue	.\Drivers\Dflash\old_faccess.c	/^write_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_queue	.\faccess.c	/^write_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
 write_one_random	.\Drivers\Dflash\faccess.c	/^write_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
 write_one_random	.\Drivers\Dflash\old_faccess.c	/^write_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_random	.\faccess.c	/^write_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
 write_page	.\Drivers\Dflash\faccess.c	/^write_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
 write_page	.\Drivers\Dflash\old_faccess.c	/^write_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-write_page	.\faccess.c	/^write_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
 write_pinfo	.\Drivers\Dflash\faccess.c	/^write_pinfo( void )$/;"	f	file:	signature:( void )
 write_pinfo	.\Drivers\Dflash\old_faccess.c	/^write_pinfo( void )$/;"	f	file:	signature:( void )
-write_pinfo	.\faccess.c	/^write_pinfo( void )$/;"	f	file:	signature:( void )
 write_queue_current_file	.\Drivers\Dflash\faccess.c	/^write_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 write_queue_current_file	.\Drivers\Dflash\old_faccess.c	/^write_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-write_queue_current_file	.\faccess.c	/^write_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 write_random_current_file	.\Drivers\Dflash\faccess.c	/^write_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 write_random_current_file	.\Drivers\Dflash\old_faccess.c	/^write_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-write_random_current_file	.\faccess.c	/^write_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
 xframe	.\ctsafe\logprot.c	/^static XMIT_BUFF_T xframe;		\/* is shared with receiving side *\/$/;"	v	file:
 xmit_frames	.\ctsafe\logprot.c	/^static uint xmit_frames;$/;"	v	file:
