@@ -91,7 +91,7 @@ connect_bchrg( void )
 void
 disconnect_bchrg( void )
 {
-	CHRG_CTRL0 = 1;
+//	CHRG_CTRL0 = 1;
 	CHRG_CTRL1 = 0;
 }
 

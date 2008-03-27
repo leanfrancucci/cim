@@ -57,7 +57,7 @@ ports_init(void)
 
 	/* Battery Control */
 	D_BATT_LVL = 0;
-	CHRG_CTRL0 = 1;
+	CHRG_CTRL0 = 0;
 	D_CHRG_CTRL0 = 1;
 	CHRG_CTRL1 = 0;
 	D_CHRG_CTRL1 = 1;

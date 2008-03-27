@@ -62,7 +62,7 @@ assert_cs( MUInt dev_no )
 {
 	if( dev_no == SECONDARY_DEVICE )
 	{
-		SPI1BR = SPI_PRESCAL_X3;
+		SPI1BR = SPI_PRESCAL_X4;
 		SPI_CS_M = 1;
 		SPI_CS_PM = 0;
 	}
