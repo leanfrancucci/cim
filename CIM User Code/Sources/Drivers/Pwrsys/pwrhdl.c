@@ -107,8 +107,8 @@ in_pwf( void )
 void
 proc_pwrstatus_irq( void )
 {	
-	dfpwf_interrupt();
-	do_disable_pwf_interrupt();
+//	dfpwf_interrupt();
+//	do_disable_pwf_interrupt();
 	put_nqueue( NEWS_QUEUE, def_news[PWR_FAIL_IX]);
 	pwrstat_st = BACKUP_ST; 
 }

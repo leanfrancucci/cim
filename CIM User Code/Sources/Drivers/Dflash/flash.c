@@ -11,6 +11,7 @@
 #include "spihal.h"
 #include "dftypes.h"
 #include "dffatal.h"
+#include "cop.h"
 
 #define RDY				0x80
 #define ERROR0_MEMORY	0x00
@@ -186,6 +187,7 @@ flash_wait_ready( MUInt dev_no )
 	wait_resp_count = MAX_STATUS_WAIT_RESP;
 	while(1)
 	{
+		kick_cop_wdog();
 		status = flash_read_status( dev_no );
 		if( ( --wait_resp_count == 0 )	||
 			( status == ERROR0_MEMORY ) ||
