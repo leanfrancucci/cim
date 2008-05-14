@@ -16,8 +16,8 @@
 
 static VAL_CONFIG_T val_configs[] =
 {
-	{ 0, ONE_BIT_STOP, EVEN_PAR, BIT8, B9600, DEF_TOUT_STVAL },
-	{ 0, ONE_BIT_STOP, EVEN_PAR, BIT8, B9600, DEF_TOUT_STVAL }
+	{ 0, VAL_ECHO_DISABLE, ONE_BIT_STOP, EVEN_PAR, BIT8, B9600, DEF_TOUT_STVAL },
+	{ 0, VAL_ECHO_DISABLE, ONE_BIT_STOP, EVEN_PAR, BIT8, B9600, DEF_TOUT_STVAL }
 //	{ 0, ONE_BIT_STOP, NO_PAR, BIT8, B9600, DEF_TOUT_STVAL },
 //	{ 0, ONE_BIT_STOP, NO_PAR, BIT8, B9600, DEF_TOUT_STVAL }
 };
@@ -56,6 +56,9 @@ set_val_config( MUInt val, VAL_CONFIG_T *p )
 
 	val_configs[ val ].baud_rate = p->baud_rate;
 	val_configs[ val ].start_timeout = p->start_timeout;
+
+	val_configs[ val ].echo = p->echo;
+
 #else
 	memcpy( &val_configs[ val ], p, sizeof( VAL_CONFIG_T ) );
 #endif
@@ -80,4 +83,17 @@ set_val_hw_config( MUInt val )
 	serial_config.parity = val_configs[ val ].parity;
 
 	init_serlog( VALCH, &serial_config );
+}
+
+
+/*
+ * get_val_echo:
+ *
+ * 		Returns echo status of desired validator channel.
+ */
+
+MUInt 
+get_val_echo( MUInt val )
+{
+	return val_configs[ val ].echo;
 }

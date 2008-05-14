@@ -234,8 +234,8 @@ ENA_WOUT_DISA	.\Drivers\Enaint\drverr.h	/^	INT_STK_OFLOW, ENA_WOUT_DISA,$/;"	e
 END_FRAME	.\Common\news\news.h	/^	END_FRAME,$/;"	e
 END_PAYLOAD	.\Common\news\news.h	/^	END_PAYLOAD, $/;"	e
 END_VFRAME	.\Common\news\news.h	/^	END_VFRAME,$/;"	e
-ERROR0_MEMORY	.\Drivers\Dflash\flash.c	16;"	d	file:
-ERROR1_MEMORY	.\Drivers\Dflash\flash.c	17;"	d	file:
+ERROR0_MEMORY	.\Drivers\Dflash\flash.c	17;"	d	file:
+ERROR1_MEMORY	.\Drivers\Dflash\flash.c	18;"	d	file:
 ERR_DFILE_BAD_ACCESS	.\Common\vaultdef.h	/^	ERR_DFILE_BAD_ACCESS,			\/*	Bad access in create				*\/$/;"	e
 ERR_DFILE_BAD_FDESC	.\Common\vaultdef.h	/^	ERR_DFILE_BAD_FDESC,			\/*	File descriptor out of range		*\/$/;"	e
 ERR_DFILE_BAD_NUMUNITS	.\Common\vaultdef.h	/^	ERR_DFILE_BAD_NUMUNITS,			\/*	Record number is zero				*\/$/;"	e
@@ -404,7 +404,7 @@ MAX_PARSER	.\Drivers\Sensor\cparse.c	37;"	d	file:
 MAX_PARSERS	.\Drivers\Sensor\cpdata.h	10;"	d
 MAX_READ_BYTES	.\ctsafe\logprot.c	46;"	d	file:
 MAX_REMOVINGS	.\ctsafe\logprot.c	45;"	d	file:
-MAX_STATUS_WAIT_RESP	.\Drivers\Dflash\flash.c	18;"	d	file:
+MAX_STATUS_WAIT_RESP	.\Drivers\Dflash\flash.c	19;"	d	file:
 MAX_TIMERS	.\Drivers\Stimers\stimers.c	12;"	d	file:
 MAX_TUNLOCK_TIME	.\settings\settings.h	40;"	d
 MAX_UNIT_SIZE	.\Drivers\Dflash\dfdata.h	89;"	d
@@ -595,7 +595,7 @@ QHDLR	.\Drivers\Serial\gsqueue\gsqueue.h	/^typedef MUInt QHDLR;$/;"	t
 QUEUE	.\Drivers\Dflash\dfdata.h	/^	RANDOM, QUEUE,$/;"	e
 Q_HDLER	.\Drivers\Serial\gsqueue\qdata.h	/^}Q_HDLER;$/;"	t
 RANDOM	.\Drivers\Dflash\dfdata.h	/^	RANDOM, QUEUE,$/;"	e
-RDY	.\Drivers\Dflash\flash.c	15;"	d	file:
+RDY	.\Drivers\Dflash\flash.c	16;"	d	file:
 READFILE	.\ctsafe\cscmds.h	/^	READFILE,$/;"	e
 READFILE_T	.\ctsafe\logprot.c	/^} READFILE_T;$/;"	t	file:
 READ_BUFF_T	.\ctsafe\logprot.c	/^} READ_BUFF_T;$/;"	t	file:

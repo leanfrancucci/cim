@@ -7,10 +7,16 @@
 
 #include "mytypes.h"
 
+enum
+{
+	VAL_ECHO_ENABLE, VAL_ECHO_DISABLE
+};
+
 
 typedef struct
 {
-	unsigned reserved 	:2;
+	unsigned reserved 	:1;
+	unsigned echo		:1;
 	unsigned stop_bits	:1;
 	unsigned parity		:3;
 	unsigned word_bits	:2;
@@ -44,5 +50,15 @@ void set_val_config( MUInt val, VAL_CONFIG_T *p );
  */
 
 void set_val_hw_config( MUInt val );
+
+
+/*
+ * get_val_echo:
+ *
+ * 		Returns echo status of desired validator channel.
+ */
+
+MUInt get_val_echo( MUInt val );
+
 
 #endif

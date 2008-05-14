@@ -1400,10 +1400,13 @@ proc_dev_val( RFRAME_T *p )
 	set_sersw( p->curr_dev == VAL0 ? CH0 : CH1 );
 	set_val_hw_config( p->curr_dev );
 	
-	disable_rcv_interrupt( VALCH );
+	if( get_val_echo( p->curr_dev ) == VAL_ECHO_DISABLE )
+		disable_rcv_interrupt( VALCH );
+
 	put_nqueue( COND_QUEUE, def_news[ VALUNBLOCK_IX ] );
 	send_val_frame( p->curr_dev, prepare_resp_val( p ) );
 	put_nqueue( COND_QUEUE, def_news[ VALSENT_IX ] );
+
 	enable_rcv_interrupt( VALCH );
 }
 
