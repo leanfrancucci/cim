@@ -51,7 +51,7 @@ set_val_config( MUInt val, VAL_CONFIG_T *p )
 	if( val_configs[ val ].parity <= ODD_PAR )
 		val_configs[ val ].parity  = p->parity;
 
-	if( val_configs[ val ].word_bits == BIT8 )
+//	if( val_configs[ val ].word_bits == BIT8 )
 		val_configs[ val ].word_bits = p->word_bits;
 
 	val_configs[ val ].baud_rate = p->baud_rate;

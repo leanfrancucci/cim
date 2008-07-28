@@ -25,9 +25,11 @@ spi_init(void)
 	SPI1C1_SPE = 1;
 }
 
+#include "stack.h"
 MUInt
 spi_xfer( MUInt byte )
 {
+	test_sp();
 	while( !SPI1S_SPTEF );
 
 	SPI1D = byte;

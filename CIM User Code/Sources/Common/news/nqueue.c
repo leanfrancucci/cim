@@ -33,6 +33,8 @@ remove_nqueue( MUInt qh, NEWS_T *elem )
 	return OK_NQUEUE;
 }
 
+#include "stack.h"
+
 MInt
 put_nqueue( MUInt qh, NEWS_T elem )
 {
@@ -43,6 +45,7 @@ put_nqueue( MUInt qh, NEWS_T elem )
 		return -FULL_NQUEUE;
 
 	sem_disable();
+	test_sp();
 	*p->pin = elem;
 	if( ++p->pin >= eoq() )
 		p->pin = p->queue;

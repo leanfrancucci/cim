@@ -18,6 +18,7 @@
 #include "maintime.h"
 #include "spihal.h"
 #include "cop.h"
+#include "stack.h"
 
 #define _reset_mcu() {asm bgnd;}
 
@@ -40,6 +41,7 @@ rti_handler( void )
 
 	kick_cop_wdog();
 
+	test_sp();
 	if( enable_maintime )
 		main_timer_interrupt();
 

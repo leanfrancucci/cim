@@ -71,11 +71,10 @@ val_sci2_init( SERIAL_T *p )
 	SCI2C1_PT = p->parity == EVEN_PAR ? 0 : 1;	/* set parity type */
 
 	/* Warning: the word bits is wired to 9 bits for parity enable !!! */
-
-	if( p->parity != NO_PAR )
+	if( (p->parity != NO_PAR) && (p->bits == BIT8) )
 		SCI2C1_M = 1;			/* 9-bits */
 	else
-		SCI2C1_M = p->bits == BIT8 ? 0 : 1;			/* word bits */
+		SCI2C1_M = 0;
 
 	*pbaud = sci_br_tbl[ p->baud ];
 

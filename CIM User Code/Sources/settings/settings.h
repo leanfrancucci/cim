@@ -11,7 +11,7 @@
  * Firmware and hardware version string
  */
 #define VER_STR_LEN			17+1
-#define VERSION_STRING		"SW00.12.01HW03.00"
+#define VERSION_STRING		"SW00.13.00HW03.00"
 
 /*
  * The model determine a specified hardware 

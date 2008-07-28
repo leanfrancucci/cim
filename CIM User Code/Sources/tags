@@ -675,6 +675,7 @@ SYNC	.\Common\news\news.h	/^	SYNC,$/;"	e
 SYNCNUMFRAMES	.\ctsafe\cscmds.h	/^	SYNCNUMFRAMES,$/;"	e
 TBET_BYTE	.\Common\news\news.h	/^	TBET_BYTE,$/;"	e
 TBET_BYTE_IX	.\Common\news\news.h	/^	TBET_BYTE_IX,$/;"	e
+TEST_STACK	.\Init\initsys.h	13;"	d
 TIM	.\Common\news\news.h	/^	PROT, UART, TIM, LOCKER, PLUNGER, PWRCTRL, COMMON$/;"	e
 TIMER	.\Drivers\Stimers\stimers.c	/^} TIMER;$/;"	t	file:
 TIMER_BAD_HDL	.\Drivers\Stimers\stimers.h	/^	TIMER_NO, TIMER_BAD_HDL, TIMER_NOT_ASSIGNED$/;"	e
@@ -801,6 +802,8 @@ VALUNBLOCK_IX	.\Common\news\news.h	/^	VALUNBLOCK_IX,$/;"	e
 VALUSR	.\ctsafe\cscmds.h	/^	VALUSR,				\/*	Validate one user					*\/$/;"	e
 VAL_BUFF_T	.\ctsafe\logprot.h	/^} VAL_BUFF_T;$/;"	t
 VAL_CONFIG_T	.\ctsafe\valconf.h	/^} VAL_CONFIG_T;$/;"	t
+VAL_ECHO_DISABLE	.\ctsafe\valconf.h	/^	VAL_ECHO_ENABLE, VAL_ECHO_DISABLE$/;"	e
+VAL_ECHO_ENABLE	.\ctsafe\valconf.h	/^	VAL_ECHO_ENABLE, VAL_ECHO_DISABLE$/;"	e
 VAL_MAX_FRAME_SIZE	.\ctsafe\csframe.h	89;"	d
 VAL_PROT	.\Common\Mparser\mpdata.h	/^	CT_PROT, VAL_PROT, $/;"	e
 VAL_SYNC	.\Common\Automatons\valprot\valprot.h	17;"	d
@@ -973,6 +976,9 @@ calculate_signature	.\userdfs\users.c	/^calculate_signature( uchar *puid )$/;"	f
 change_password	.\userdfs\users.c	/^change_password( MUInt edit_pass, const USER_T *pnew, uint page, uint address )$/;"	f	file:	signature:( MUInt edit_pass, const USER_T *pnew, uint page, uint address )
 change_user_page	.\userdfs\users.c	/^change_user_page( uint page, uint address )$/;"	f	file:	signature:( uint page, uint address )
 check_found	.\userdfs\users.c	/^static ushort check_found;$/;"	v	file:
+check_mem_stat	.\Init\initsys.c	/^check_mem_stat( void )$/;"	f	signature:( void )
+check_mem_stat	.\Init\initsys.h	/^void check_mem_stat( void );$/;"	p	signature:( void )
+check_mem_stat	.\Init\initsys.h	17;"	d
 check_results	.\userdfs\users.c	/^check_results( void )$/;"	f	file:	signature:( void )
 check_sleep	.\Drivers\Sleep\sleep.c	/^check_sleep( void )$/;"	f	signature:( void )
 check_sleep	.\Drivers\Sleep\sleep.h	/^void check_sleep( void );$/;"	p	signature:( void )
@@ -1172,6 +1178,7 @@ dwos_ppro	.\Common\Automatons\doorwos\dwosact.c	/^dwos_ppro( const NEWS_T *in )$
 dwos_ppro	.\Common\Automatons\doorwos\dwosact.h	/^NARG_T dwos_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
 dws_ppro	.\Common\Automatons\doorws\dwsact.c	/^dws_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
 dws_ppro	.\Common\Automatons\doorws\dwsact.h	/^NARG_T dws_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+echo	.\ctsafe\valconf.h	/^	unsigned echo		:1;$/;"	m
 edit_pwd	.\ctsafe\logprot.c	/^	uchar edit_pwd;$/;"	m	file:
 elem_qty	.\Common\news\nqueue.h	/^	MUInt elem_qty;$/;"	m
 elem_qty	.\Drivers\GRstatus\grqueue.h	/^	MUInt elem_qty;$/;"	m
@@ -1305,6 +1312,8 @@ get_unlock_ena_timer	.\Drivers\Locker\locker.c	/^get_unlock_ena_timer( void )$/;
 get_unlock_ena_timer	.\Drivers\Locker\locker.h	/^unsigned short get_unlock_ena_timer( void );$/;"	p	signature:( void )
 get_user_information	.\userdfs\users.c	/^get_user_information(  uint *pmax_users, uint *pfree_users )$/;"	f	signature:( uint *pmax_users, uint *pfree_users )
 get_user_information	.\userdfs\users.h	/^MInt get_user_information(  uint *pmax_users, uint *pfree_users );$/;"	p	signature:( uint *pmax_users, uint *pfree_users )
+get_val_echo	.\ctsafe\valconf.c	/^get_val_echo( MUInt val )$/;"	f	signature:( MUInt val )
+get_val_echo	.\ctsafe\valconf.h	/^MUInt get_val_echo( MUInt val );$/;"	p	signature:( MUInt val )
 get_xmit_frames	.\ctsafe\logprot.c	453;"	d	file:
 get_xmit_frames	.\ctsafe\logprot.h	/^uint get_xmit_frames( void );$/;"	p	signature:( void )
 grq	.\Drivers\GRstatus\grqueue.c	/^static GR1ST_T grq[GRQ_MAX_ELEMENTS];$/;"	v	file:
@@ -1423,6 +1432,7 @@ init_vframe	.\Common\Automatons\valprot\valact.c	/^init_vframe( const NEWS_T *in
 init_vframe	.\Common\Automatons\valprot\valact.h	/^void init_vframe( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
 init_wouts	.\Drivers\Wout\wouts.c	/^init_wouts( void )$/;"	f	signature:( void )
 init_wouts	.\Drivers\Wout\wouts.h	/^void init_wouts( void );$/;"	p	signature:( void )
+installed_mem	.\Init\initsys.c	/^static MUInt installed_mem = 0xFF;$/;"	v	file:
 int_stack	.\Drivers\Enaint\enaint.c	/^static signed char int_stack[ MAX_INT_STACK ], *pint;$/;"	v	file:
 irq_handler	.\Drivers\Platform\IRQ\irq.c	/^irq_handler( void )$/;"	f	signature:( void )
 irq_init	.\Drivers\Platform\IRQ\irq.c	/^irq_init( void )$/;"	f	file:	signature:( void )
@@ -1802,7 +1812,7 @@ remove_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.h	/^MInt remove_gsqueue( QHDLR q
 remove_nqueue	.\Common\news\nqueue.c	/^remove_nqueue( MUInt qh, NEWS_T *elem )$/;"	f	signature:( MUInt qh, NEWS_T *elem )
 remove_nqueue	.\Common\news\nqueue.h	/^MInt remove_nqueue( MUInt qh, NEWS_T *elem );$/;"	p	signature:( MUInt qh, NEWS_T *elem )
 reopen_queue	.\Drivers\Dflash\faccess.h	/^MInt reopen_queue( void );$/;"	p	signature:( void )
-reserved	.\ctsafe\valconf.h	/^	unsigned reserved 	:2;$/;"	m
+reserved	.\ctsafe\valconf.h	/^	unsigned reserved 	:1;$/;"	m
 reset_now	.\Drivers\Watchdog\reset.c	/^reset_now( void )$/;"	f	signature:( void )
 reset_now	.\Drivers\Watchdog\reset.h	/^void reset_now( void );$/;"	p	signature:( void )
 rframe	.\Common\Automatons\valprot\valact.c	/^static VAL_BUFF_T rframe;$/;"	v	file:

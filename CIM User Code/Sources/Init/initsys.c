@@ -15,6 +15,7 @@
 #include "pwrsys.h"
 #include "settings.h"
 #include "sleep.h"
+#include "initsys.h"
 #include <stdlib.h>
 #include "mpdata.h"
 
@@ -28,7 +29,7 @@ void
 init_system( void )
 {
 	static MUInt mcu_id;
-	MUInt installed_mem;
+	static MUInt installed_mem;
 
 	/*---- Hardware initialization ----*/
 
