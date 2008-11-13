@@ -10,7 +10,7 @@
 
 #ifdef TEST_SP
 
-#define MIN_ABSOLUTE_STACK	0x0E3E	// Must be adjusted to linker map 
+#define MIN_ABSOLUTE_STACK	0x0E50	// Must be adjusted to linker map 
 									// see mem_status address as aproximation
 static unsigned short stack;
 

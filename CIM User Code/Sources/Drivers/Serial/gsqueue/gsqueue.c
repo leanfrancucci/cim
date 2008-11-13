@@ -52,13 +52,11 @@ remove_gsqueue( QHDLR qh, ELEM_TYPE *elem )
 	return OK_QUEUE;
 }
 
-#include "stack.h"
 MInt
 put_gsqueue( QHDLR qh, ELEM_TYPE elem )
 {
 	GSQUEUE *p;
 
-	test_sp();
 	p = &gsqueues[ qh ];
 
 	sem_disable();

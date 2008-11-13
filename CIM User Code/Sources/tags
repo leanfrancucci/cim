@@ -332,7 +332,7 @@ INVALID_DATA	.\Common\news\news.h	/^	INVALID_DATA,$/;"	e
 IN_PWF	.\Drivers\Platform\IRQ\pwfhal.h	/^	NORMAL_RUN, IN_PWF$/;"	e
 IX_CLOSE_TIME	.\Drivers\Sensor\cpdata.h	/^	IX_OPEN_TIME, IX_CLOSE_TIME, NUM_TIMEVAL$/;"	e
 IX_OPEN_TIME	.\Drivers\Sensor\cpdata.h	/^	IX_OPEN_TIME, IX_CLOSE_TIME, NUM_TIMEVAL$/;"	e
-Init	.\Start08.c	/^static void Init(void) {$/;"	f	file:	signature:(void)
+Init	.\Start08.c	/^static void Init(void) {$/;"	f	file:
 K	.\Drivers\Dflash\dfdata.h	20;"	d
 KEYS	.\Drivers\Platform\IO\ioports.h	39;"	d
 KEYSWITCH	.\Drivers\Sensor\cparse.h	/^	VAL1STCK, VAL2STCK, KEYSWITCH,$/;"	e
@@ -410,6 +410,7 @@ MAX_TUNLOCK_TIME	.\settings\settings.h	40;"	d
 MAX_UNIT_SIZE	.\Drivers\Dflash\dfdata.h	89;"	d
 MAX_WRITE_BYTES	.\ctsafe\logprot.c	47;"	d	file:
 MCU_ID	.\Drivers\Platform\IO\ioports.h	38;"	d
+MIN_ABSOLUTE_STACK	.\Drivers\Platform\SP\stack.c	13;"	d	file:
 MInt	.\Common\mytypes.h	/^typedef int				MInt;$/;"	t
 MInt	.\Common\mytypes.h	/^typedef schar			MInt;$/;"	t
 MM2B1_XFER	.\Drivers\Dflash\flash.h	/^	MM2B1_XFER,$/;"	e
@@ -675,7 +676,7 @@ SYNC	.\Common\news\news.h	/^	SYNC,$/;"	e
 SYNCNUMFRAMES	.\ctsafe\cscmds.h	/^	SYNCNUMFRAMES,$/;"	e
 TBET_BYTE	.\Common\news\news.h	/^	TBET_BYTE,$/;"	e
 TBET_BYTE_IX	.\Common\news\news.h	/^	TBET_BYTE_IX,$/;"	e
-TEST_STACK	.\Init\initsys.h	13;"	d
+TEST_SP	.\Drivers\Platform\SP\stack.h	5;"	d
 TIM	.\Common\news\news.h	/^	PROT, UART, TIM, LOCKER, PLUNGER, PWRCTRL, COMMON$/;"	e
 TIMER	.\Drivers\Stimers\stimers.c	/^} TIMER;$/;"	t	file:
 TIMER_BAD_HDL	.\Drivers\Stimers\stimers.h	/^	TIMER_NO, TIMER_BAD_HDL, TIMER_NOT_ASSIGNED$/;"	e
@@ -839,11 +840,10 @@ WRITEFILE	.\ctsafe\cscmds.h	/^	WRITEFILE,$/;"	e
 WRITEFILE_T	.\ctsafe\logprot.c	/^} WRITEFILE_T;$/;"	t	file:
 XMIT_BUFF_T	.\ctsafe\logprot.h	/^} XMIT_BUFF_T;$/;"	t
 _1SEC	.\Drivers\Sleep\sleep.h	11;"	d
-_COPY_L	.\Start08.c	/^__EXTERN_C extern void _COPY_L(void);$/;"	p	file:	signature:(void)
 _COP_H_	.\Drivers\Platform\COP\cop.h	8;"	d
 _ICG_H_	.\Drivers\Platform\ICG\icg.h	11;"	d
 _LVD_H_	.\Drivers\Platform\LVD\lvd.h	9;"	d
-_Startup	.\Start08.c	/^__EXTERN_C void _Startup(void) {$/;"	f	signature:(void)
+_Startup	.\Start08.c	/^__EXTERN_C void _Startup(void) {$/;"	f
 _Stop	.\derivative.h	9;"	d
 _Wait	.\derivative.h	12;"	d
 __8MHz__	.\Drivers\Platform\SCI\sci.h	17;"	d
@@ -906,40 +906,34 @@ __VAULTDEF_H__	.\Common\vaultdef.h	2;"	d
 __WATCHDOG_H__	.\Drivers\Watchdog\watchdog.h	9;"	d
 __WOUTS_H__	.\Drivers\Wout\wouts.h	6;"	d
 _kick_cop_wdog	.\Drivers\Platform\COP\cop.c	16;"	d	file:
-_reset_mcu	.\Drivers\Platform\RTI\rti.c	22;"	d	file:
+_reset_mcu	.\Drivers\Platform\RTI\rti.c	23;"	d	file:
 _reset_mcu	.\Drivers\Watchdog\reset.c	11;"	d	file:
 _startupData	.\Start08.c	/^struct _tagStartup _startupData;    \/* read-only:$/;"	v
 access	.\Drivers\Dflash\faccess.c	/^	bitf	access:1;		\/*	access type									*\/$/;"	m	file:
 access	.\Drivers\Dflash\old_faccess.c	/^	bitf	access:1;		\/*	access type									*\/$/;"	m	file:
 access	.\ctsafe\logprot.c	/^	uchar access;$/;"	m	file:
-acknowledge_irqs	.\Drivers\Platform\platform.c	/^acknowledge_irqs( void )$/;"	f	signature:( void )
-acknowledge_irqs	.\Drivers\Platform\platform.h	/^void acknowledge_irqs( void );$/;"	p	signature:( void )
+acknowledge_irqs	.\Drivers\Platform\platform.c	/^acknowledge_irqs( void )$/;"	f
 act	.\Drivers\Sensor\cparse.h	/^	void (*act)( void );$/;"	m
 action	.\Common\Mparser\mparser.h	/^	ACT action;$/;"	m	struct:trans_t
 actions_100	.\Drivers\Maintime\config\mtimetbl.c	/^static void(* const actions_100[])( void ) =$/;"	v	file:
 actions_2	.\Drivers\Maintime\config\mtimetbl.c	/^static void(* const actions_2[])( void ) =$/;"	v	file:
 actions_20	.\Drivers\Maintime\config\mtimetbl.c	/^static void(* const actions_20[])( void ) =$/;"	v	file:
-adc_init	.\Drivers\Platform\ADC\adc.c	/^adc_init( void )$/;"	f	signature:( void )
-adc_init	.\Drivers\Platform\ADC\adc.h	/^void adc_init( void );$/;"	p	signature:( void )
+adc_init	.\Drivers\Platform\ADC\adc.c	/^adc_init( void )$/;"	f
 additional	.\Drivers\Dflash\flash.c	/^	uchar	additional;$/;"	m	file:
 address	.\Common\vaultdef.h	/^	ushort	address;		\/*	address in page to read or write		(IN)	*\/$/;"	m
-adjust_in	.\Drivers\Dflash\faccess.c	/^adjust_in( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
-adjust_in	.\Drivers\Dflash\old_faccess.c	/^adjust_in( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
-adjust_out	.\Drivers\Dflash\faccess.c	/^adjust_out( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
-adjust_out	.\Drivers\Dflash\old_faccess.c	/^adjust_out( MUInt code, int value )$/;"	f	file:	signature:( MUInt code, int value )
-assert_cs	.\Drivers\Dflash\spihal.c	/^assert_cs( MUInt dev_no )$/;"	f	file:	signature:( MUInt dev_no )
-assign_timer	.\Drivers\Stimers\stimers.c	/^assign_timer( unsigned char type, STCB cb_func, unsigned char news )$/;"	f	signature:( unsigned char type, STCB cb_func, unsigned char news )
-assign_timer	.\Drivers\Stimers\stimers.h	/^MInt assign_timer( unsigned char type, STCB cb, unsigned char news );$/;"	p	signature:( unsigned char type, STCB cb, unsigned char news )
+adjust_in	.\Drivers\Dflash\faccess.c	/^adjust_in( MUInt code, int value )$/;"	f	file:
+adjust_in	.\Drivers\Dflash\old_faccess.c	/^adjust_in( MUInt code, int value )$/;"	f	file:
+adjust_out	.\Drivers\Dflash\faccess.c	/^adjust_out( MUInt code, int value )$/;"	f	file:
+adjust_out	.\Drivers\Dflash\old_faccess.c	/^adjust_out( MUInt code, int value )$/;"	f	file:
+assert_cs	.\Drivers\Dflash\spihal.c	/^assert_cs( MUInt dev_no )$/;"	f	file:
+assign_timer	.\Drivers\Stimers\stimers.c	/^assign_timer( unsigned char type, STCB cb_func, unsigned char news )$/;"	f
 avail_flash	.\Drivers\Dflash\dftypes.c	/^DATAFL_T const avail_flash[ NUM_AVAIL_DATAFLASH ] =$/;"	v
-back_bmes	.\Common\Automatons\pwrctrl\pwract.c	/^back_bmes( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-back_bmes	.\Common\Automatons\pwrctrl\pwract.h	/^void back_bmes( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+back_bmes	.\Common\Automatons\pwrctrl\pwract.c	/^back_bmes( NEWS_T *in )$/;"	f
 backup	.\Common\Automatons\pwrctrl\pwrctrl.c	/^const STATE backup =$/;"	v
-backup2ext	.\Common\Automatons\pwrctrl\pwract.c	/^backup2ext( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-backup2ext	.\Common\Automatons\pwrctrl\pwract.h	/^void backup2ext( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+backup2ext	.\Common\Automatons\pwrctrl\pwract.c	/^backup2ext( NEWS_T *in )$/;"	f
 baddr_bits	.\Drivers\Dflash\dftypes.h	/^			uchar	baddr_bits;$/;"	m
 base_page	.\Common\vaultdef.h	/^	ushort	base_page;		\/*	Page origin to measure 'page'			(IN)	*\/$/;"	m
-batt2nbatt	.\Common\Automatons\pwrctrl\pwract.c	/^batt2nbatt( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-batt2nbatt	.\Common\Automatons\pwrctrl\pwract.h	/^void batt2nbatt( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+batt2nbatt	.\Common\Automatons\pwrctrl\pwract.c	/^batt2nbatt( NEWS_T *in )$/;"	f
 baud	.\Drivers\Serial\serdefs.h	/^	MUInt baud;$/;"	m
 baud_rate	.\ctsafe\valconf.h	/^	uchar baud_rate;$/;"	m
 beg_page	.\Drivers\Dflash\faccess.c	/^	ushort		beg_page;$/;"	m	file:
@@ -948,14 +942,11 @@ berase	.\Common\vaultdef.h	/^	uint	berase:1;		\/*	Flag for Built in erase					(I
 bitf	.\Common\mytypes.h	/^typedef uint			bitf;$/;"	t
 bitf	.\Common\mytypes.h	/^typedef ushort			bitf;$/;"	t
 bits	.\Drivers\Serial\serdefs.h	/^	MUInt bits;$/;"	m
-blank_current_file	.\Drivers\Dflash\faccess.c	/^blank_current_file( MUInt in_init )$/;"	f	signature:( MUInt in_init )
-blank_current_file	.\Drivers\Dflash\faccess.h	/^MInt blank_current_file( MUInt in_init );$/;"	p	signature:( MUInt in_init )
-blank_current_file	.\Drivers\Dflash\old_faccess.c	/^blank_current_file( MUInt in_init )$/;"	f	signature:( MUInt in_init )
-blank_whole_system	.\Drivers\Dflash\faccess.c	/^blank_whole_system( void )$/;"	f	signature:( void )
-blank_whole_system	.\Drivers\Dflash\faccess.h	/^void blank_whole_system( void );$/;"	p	signature:( void )
-blank_whole_system	.\Drivers\Dflash\old_faccess.c	/^blank_whole_system( void )$/;"	f	signature:( void )
-block_val	.\Common\Automatons\logprot\alphact.c	/^block_val( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-block_val	.\Common\Automatons\logprot\alphact.h	/^void block_val( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+blank_current_file	.\Drivers\Dflash\faccess.c	/^blank_current_file( MUInt in_init )$/;"	f
+blank_current_file	.\Drivers\Dflash\old_faccess.c	/^blank_current_file( MUInt in_init )$/;"	f
+blank_whole_system	.\Drivers\Dflash\faccess.c	/^blank_whole_system( void )$/;"	f
+blank_whole_system	.\Drivers\Dflash\old_faccess.c	/^blank_whole_system( void )$/;"	f
+block_val	.\Common\Automatons\logprot\alphact.c	/^block_val( const NEWS_T *in )$/;"	f
 bm	.\Drivers\Pwrsys\pwrsys.c	/^	} bm;$/;"	m	file:
 both	.\Common\vaultdef.h	/^	uint	both:1;			\/*	Flag to copy to OTHER device			(IN)	*\/$/;"	m
 bs	.\Drivers\Pwrsys\pwrsys.c	/^		unsigned bs		:2;$/;"	m	file:
@@ -971,66 +962,49 @@ buff	.\ctsafe\logprot.h	/^	uchar *buff;$/;"	m
 buff	.\ctsafe\logprot.h	/^	unsigned char buff[ MAX_FRAME_SIZE ];$/;"	m
 buff	.\ctsafe\logprot.h	/^	unsigned char buff[ VAL_MAX_FRAME_SIZE ];$/;"	m
 buffer	.\ctsafe\logprot.c	/^	uchar buffer[ MAX_READ_BYTES ];$/;"	m	file:
-calculate_checksum	.\Drivers\Dflash\dfmanage.c	/^calculate_checksum( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-calculate_signature	.\userdfs\users.c	/^calculate_signature( uchar *puid )$/;"	f	file:	signature:( uchar *puid )
-change_password	.\userdfs\users.c	/^change_password( MUInt edit_pass, const USER_T *pnew, uint page, uint address )$/;"	f	file:	signature:( MUInt edit_pass, const USER_T *pnew, uint page, uint address )
-change_user_page	.\userdfs\users.c	/^change_user_page( uint page, uint address )$/;"	f	file:	signature:( uint page, uint address )
+calculate_checksum	.\Drivers\Dflash\dfmanage.c	/^calculate_checksum( DFLASH_T *pf )$/;"	f	file:
+calculate_signature	.\userdfs\users.c	/^calculate_signature( uchar *puid )$/;"	f	file:
+change_password	.\userdfs\users.c	/^change_password( MUInt edit_pass, const USER_T *pnew, uint page, uint address )$/;"	f	file:
+change_user_page	.\userdfs\users.c	/^change_user_page( uint page, uint address )$/;"	f	file:
 check_found	.\userdfs\users.c	/^static ushort check_found;$/;"	v	file:
-check_mem_stat	.\Init\initsys.c	/^check_mem_stat( void )$/;"	f	signature:( void )
-check_mem_stat	.\Init\initsys.h	/^void check_mem_stat( void );$/;"	p	signature:( void )
-check_mem_stat	.\Init\initsys.h	17;"	d
-check_results	.\userdfs\users.c	/^check_results( void )$/;"	f	file:	signature:( void )
-check_sleep	.\Drivers\Sleep\sleep.c	/^check_sleep( void )$/;"	f	signature:( void )
-check_sleep	.\Drivers\Sleep\sleep.h	/^void check_sleep( void );$/;"	p	signature:( void )
-check_watchdog	.\Drivers\Watchdog\watchdog.c	/^check_watchdog( void )$/;"	f	signature:( void )
-check_watchdog	.\Drivers\Watchdog\watchdog.h	/^void check_watchdog( void );$/;"	p	signature:( void )
-checkbatt	.\Common\Automatons\pwrctrl\pwract.c	/^checkbatt( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-checkbatt	.\Common\Automatons\pwrctrl\pwract.h	/^void checkbatt( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-chrg2nchrg	.\Common\Automatons\pwrctrl\pwract.c	/^chrg2nchrg( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-chrg2nchrg	.\Common\Automatons\pwrctrl\pwract.h	/^void chrg2nchrg( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+check_results	.\userdfs\users.c	/^check_results( void )$/;"	f	file:
+check_sleep	.\Drivers\Sleep\sleep.c	/^check_sleep( void )$/;"	f
+check_watchdog	.\Drivers\Watchdog\watchdog.c	/^check_watchdog( void )$/;"	f
+checkbatt	.\Common\Automatons\pwrctrl\pwract.c	/^checkbatt( NEWS_T *in )$/;"	f
+chrg2nchrg	.\Common\Automatons\pwrctrl\pwract.c	/^chrg2nchrg( NEWS_T *in )$/;"	f
 clear_lock0_a	.\Drivers\Locker\lockerhdl.h	20;"	d
 clear_lock0_b	.\Drivers\Locker\lockerhdl.h	22;"	d
 clear_lock1_a	.\Drivers\Locker\lockerhdl.h	25;"	d
 clear_lock1_b	.\Drivers\Locker\lockerhdl.h	27;"	d
-clear_memctrl	.\Drivers\Dflash\spihal.c	/^clear_memctrl( void )$/;"	f	file:	signature:( void )
-close_cparse	.\Drivers\Sensor\cparse.c	/^close_cparse( MUInt cphdlr )$/;"	f	signature:( MUInt cphdlr )
-close_cparse	.\Drivers\Sensor\cparse.h	/^	MInt close_cparse( MUInt cphdlr );$/;"	p	signature:( MUInt cphdlr )
+clear_memctrl	.\Drivers\Dflash\spihal.c	/^clear_memctrl( void )$/;"	f	file:
+close_cparse	.\Drivers\Sensor\cparse.c	/^close_cparse( MUInt cphdlr )$/;"	f
 close_cparse	.\Drivers\Sensor\cparse.h	49;"	d
-close_sweep_dir	.\Drivers\Dflash\faccess.c	/^close_sweep_dir( void )$/;"	f	file:	signature:( void )
-close_sweep_dir	.\Drivers\Dflash\old_faccess.c	/^close_sweep_dir( void )$/;"	f	file:	signature:( void )
+close_sweep_dir	.\Drivers\Dflash\faccess.c	/^close_sweep_dir( void )$/;"	f	file:
+close_sweep_dir	.\Drivers\Dflash\old_faccess.c	/^close_sweep_dir( void )$/;"	f	file:
 cmd_buf	.\Drivers\Dflash\flash.c	/^static uchar cmd_buf[4];$/;"	v	file:
-compare_versions	.\Drivers\Dflash\faccess.c	/^compare_versions( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-complement_check_and_write	.\Drivers\Dflash\dfmanage.c	/^complement_check_and_write( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-complement_check_and_write	.\Drivers\Dflash\dfmanage.h	/^void complement_check_and_write( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
+compare_versions	.\Drivers\Dflash\faccess.c	/^compare_versions( DFLASH_T *pf )$/;"	f	file:
+complement_check_and_write	.\Drivers\Dflash\dfmanage.c	/^complement_check_and_write( DFLASH_T *pf )$/;"	f
 cond_queue	.\Common\news\news.c	/^NEWS_T cond_queue[ MAX_CONDITIONAL_ELEMS ];$/;"	v
-connect_battery	.\Drivers\Pwrsys\pwrhdl.c	/^connect_battery( void )$/;"	f	signature:( void )
-connect_battery	.\Drivers\Pwrsys\pwrhdl.h	/^void connect_battery( void );$/;"	p	signature:( void )
-connect_bchrg	.\Drivers\Pwrsys\pwrhdl.c	/^connect_bchrg( void )$/;"	f	signature:( void )
-connect_bchrg	.\Drivers\Pwrsys\pwrhdl.h	/^void connect_bchrg( void );$/;"	p	signature:( void )
-construct_dir	.\Drivers\Dflash\faccess.c	/^construct_dir( ushort *pfd_ex, ushort *pfd_err )$/;"	f	signature:( ushort *pfd_ex, ushort *pfd_err )
-construct_dir	.\Drivers\Dflash\faccess.h	/^uint construct_dir( ushort *pfd_ex, ushort *pfd_err );$/;"	p	signature:( ushort *pfd_ex, ushort *pfd_err )
-construct_dir	.\Drivers\Dflash\old_faccess.c	/^construct_dir( ushort *pfd_ex, ushort *pfd_err )$/;"	f	signature:( ushort *pfd_ex, ushort *pfd_err )
-conv_endians	.\Common\utils\utils.c	/^conv_endians( void *to, const void *from, MUInt qty )$/;"	f	signature:( void *to, const void *from, MUInt qty )
-conv_endians	.\Common\utils\utils.h	/^void conv_endians( void *to, const void *from, MUInt qty );$/;"	p	signature:( void *to, const void *from, MUInt qty )
-convert_to_external_index	.\Drivers\Dflash\faccess.c	/^convert_to_external_index( int ix, uint page )$/;"	f	file:	signature:( int ix, uint page )
-convert_to_external_index	.\Drivers\Dflash\old_faccess.c	/^convert_to_external_index( int ix, uint page )$/;"	f	file:	signature:( int ix, uint page )
-cop_init	.\Drivers\Platform\COP\cop.c	/^cop_init( void )$/;"	f	signature:( void )
-cop_init	.\Drivers\Platform\COP\cop.h	/^void cop_init( void );$/;"	p	signature:( void )
-cop_reset_now	.\Drivers\Watchdog\reset.c	/^cop_reset_now( void )$/;"	f	signature:( void )
-cop_reset_now	.\Drivers\Watchdog\reset.h	/^void cop_reset_now( void );$/;"	p	signature:( void )
+connect_battery	.\Drivers\Pwrsys\pwrhdl.c	/^connect_battery( void )$/;"	f
+connect_bchrg	.\Drivers\Pwrsys\pwrhdl.c	/^connect_bchrg( void )$/;"	f
+construct_dir	.\Drivers\Dflash\faccess.c	/^construct_dir( ushort *pfd_ex, ushort *pfd_err )$/;"	f
+construct_dir	.\Drivers\Dflash\old_faccess.c	/^construct_dir( ushort *pfd_ex, ushort *pfd_err )$/;"	f
+conv_endians	.\Common\utils\utils.c	/^conv_endians( void *to, const void *from, MUInt qty )$/;"	f
+convert_to_external_index	.\Drivers\Dflash\faccess.c	/^convert_to_external_index( int ix, uint page )$/;"	f	file:
+convert_to_external_index	.\Drivers\Dflash\old_faccess.c	/^convert_to_external_index( int ix, uint page )$/;"	f	file:
+cop_init	.\Drivers\Platform\COP\cop.c	/^cop_init( void )$/;"	f
+cop_reset_now	.\Drivers\Watchdog\reset.c	/^cop_reset_now( void )$/;"	f
 copy	.\Common\vaultdef.h	/^	uint	copy:1;			\/*	Flag to copy to offset					(IN)	*\/$/;"	m
-copy_buffer_devices	.\Drivers\Dflash\dfmanage.c	/^copy_buffer_devices( DFLASH_T *pto, DFLASH_T *pfrom )$/;"	f	file:	signature:( DFLASH_T *pto, DFLASH_T *pfrom )
-copy_fw_file	.\Drivers\Dflash\dfmanage.c	/^copy_fw_file( MUInt from_device )$/;"	f	signature:( MUInt from_device )
-copy_fw_file	.\Drivers\Dflash\dfmanage.h	/^void copy_fw_file( MUInt from_device );$/;"	p	signature:( MUInt from_device )
-copy_to_other	.\Drivers\Dflash\dfmanage.c	/^copy_to_other( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-copy_to_same	.\Drivers\Dflash\dfmanage.c	/^copy_to_same( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
+copy_buffer_devices	.\Drivers\Dflash\dfmanage.c	/^copy_buffer_devices( DFLASH_T *pto, DFLASH_T *pfrom )$/;"	f	file:
+copy_fw_file	.\Drivers\Dflash\dfmanage.c	/^copy_fw_file( MUInt from_device )$/;"	f
+copy_to_other	.\Drivers\Dflash\dfmanage.c	/^copy_to_other( DFLASH_T *pf )$/;"	f	file:
+copy_to_same	.\Drivers\Dflash\dfmanage.c	/^copy_to_same( DFLASH_T *pf )$/;"	f	file:
 count_data	.\Common\Automatons\logprot\alphact.c	/^static ushort count_data;$/;"	v	file:
 cpdata	.\Drivers\Sensor\cparse.c	/^static CPDATA cpdata[] =$/;"	v	file:
-create_and_blank_firmware	.\Drivers\Dflash\faccess.c	/^create_and_blank_firmware( void )$/;"	f	file:	signature:( void )
-create_and_blank_firmware	.\Drivers\Dflash\old_faccess.c	/^create_and_blank_firmware( void )$/;"	f	file:	signature:( void )
-create_file	.\Drivers\Dflash\faccess.c	/^create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )$/;"	f	signature:( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )
-create_file	.\Drivers\Dflash\faccess.h	/^long create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units );$/;"	p	signature:( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )
-create_file	.\Drivers\Dflash\old_faccess.c	/^create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )$/;"	f	signature:( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )
+create_and_blank_firmware	.\Drivers\Dflash\faccess.c	/^create_and_blank_firmware( void )$/;"	f	file:
+create_and_blank_firmware	.\Drivers\Dflash\old_faccess.c	/^create_and_blank_firmware( void )$/;"	f	file:
+create_file	.\Drivers\Dflash\faccess.c	/^create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )$/;"	f
+create_file	.\Drivers\Dflash\old_faccess.c	/^create_file( MUInt fd, MUInt unit_size, MUInt access, ulong num_units )$/;"	f
 ctrl	.\ctsafe\logprot.c	/^	uchar ctrl;$/;"	m	file:
 curr_cmd	.\ctsafe\logprot.h	/^	unsigned char curr_cmd;$/;"	m
 curr_dev	.\ctsafe\logprot.h	/^	unsigned char curr_dev;$/;"	m
@@ -1038,47 +1012,28 @@ curr_ndata	.\ctsafe\logprot.h	/^	NDATA_T curr_ndata;$/;"	m
 curr_val	.\ctsafe\logprot.c	/^static MUInt curr_val;$/;"	v	file:
 current_fd	.\Drivers\Dflash\faccess.c	/^static int current_fd;$/;"	v	file:
 current_fd	.\Drivers\Dflash\old_faccess.c	/^static int current_fd;$/;"	v	file:
-dataflash_autopage_rewrite	.\Drivers\Dflash\dataflsh.c	/^dataflash_autopage_rewrite( MUInt device, uint page )$/;"	f	signature:( MUInt device, uint page )
-dataflash_autopage_rewrite	.\Drivers\Dflash\dataflsh.h	/^void dataflash_autopage_rewrite( MUInt device, uint page );$/;"	p	signature:( MUInt device, uint page )
-dataflash_block_erase	.\Drivers\Dflash\dataflsh.c	/^dataflash_block_erase( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_block_erase	.\Drivers\Dflash\dataflsh.h	/^void dataflash_block_erase( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_buffer_read	.\Drivers\Dflash\dataflsh.c	/^dataflash_buffer_read( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_buffer_read	.\Drivers\Dflash\dataflsh.h	/^void dataflash_buffer_read( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_buffer_to_main_memory_program	.\Drivers\Dflash\dataflsh.c	/^dataflash_buffer_to_main_memory_program( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_buffer_to_main_memory_program	.\Drivers\Dflash\dataflsh.h	/^void dataflash_buffer_to_main_memory_program( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_buffer_write	.\Drivers\Dflash\dataflsh.c	/^dataflash_buffer_write( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_buffer_write	.\Drivers\Dflash\dataflsh.h	/^void dataflash_buffer_write( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_classify	.\Drivers\Dflash\dataflsh.c	/^dataflash_classify( MUInt dev_no, MUInt density )$/;"	f	file:	signature:( MUInt dev_no, MUInt density )
-dataflash_fatal	.\Drivers\Dflash\dffatal.c	/^dataflash_fatal( MUInt error_code )$/;"	f	signature:( MUInt error_code )
-dataflash_fatal	.\Drivers\Dflash\dffatal.h	/^MUInt dataflash_fatal( MUInt error_code );$/;"	p	signature:( MUInt error_code )
-dataflash_init	.\Drivers\Dflash\dataflsh.c	/^dataflash_init( void )$/;"	f	signature:( void )
-dataflash_init	.\Drivers\Dflash\dataflsh.h	/^void dataflash_init( void );$/;"	p	signature:( void )
-dataflash_main_memory_page_program_through_buffer	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_program_through_buffer( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_main_memory_page_program_through_buffer	.\Drivers\Dflash\dataflsh.h	/^void dataflash_main_memory_page_program_through_buffer( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_main_memory_page_read	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_read( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_main_memory_page_read	.\Drivers\Dflash\dataflsh.h	/^void dataflash_main_memory_page_read( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_main_memory_page_to_buffer_compare	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_to_buffer_compare( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_main_memory_page_to_buffer_compare	.\Drivers\Dflash\dataflsh.h	/^MUInt dataflash_main_memory_page_to_buffer_compare( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_main_memory_page_to_buffer_xfer	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_to_buffer_xfer( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_main_memory_page_to_buffer_xfer	.\Drivers\Dflash\dataflsh.h	/^void dataflash_main_memory_page_to_buffer_xfer( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_page_erase	.\Drivers\Dflash\dataflsh.c	/^dataflash_page_erase( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_page_erase	.\Drivers\Dflash\dataflsh.h	/^void dataflash_page_erase( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dataflash_page_num	.\Drivers\Dflash\dataflsh.c	/^dataflash_page_num( MUInt dev_no )$/;"	f	signature:( MUInt dev_no )
-dataflash_page_num	.\Drivers\Dflash\dataflsh.h	/^uint dataflash_page_num( MUInt dev_no );$/;"	p	signature:( MUInt dev_no )
-dataflash_page_size	.\Drivers\Dflash\dataflsh.c	/^dataflash_page_size( MUInt dev_no )$/;"	f	signature:( MUInt dev_no )
-dataflash_page_size	.\Drivers\Dflash\dataflsh.h	/^uint dataflash_page_size( MUInt dev_no );$/;"	p	signature:( MUInt dev_no )
-dataflash_query_type	.\Drivers\Dflash\dataflsh.c	/^dataflash_query_type( MUInt dev_no )$/;"	f	signature:( MUInt dev_no )
-dataflash_query_type	.\Drivers\Dflash\dataflsh.h	/^uint dataflash_query_type( MUInt dev_no );$/;"	p	signature:( MUInt dev_no )
-dataflash_read_continuous	.\Drivers\Dflash\dataflsh.c	/^dataflash_read_continuous( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-dataflash_read_continuous	.\Drivers\Dflash\dataflsh.h	/^void dataflash_read_continuous( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-deassert_cs	.\Drivers\Dflash\spihal.c	/^deassert_cs( MUInt dev_no )$/;"	f	file:	signature:( MUInt dev_no )
-deassign_timer	.\Drivers\Stimers\stimers.c	/^deassign_timer( MInt thdlr )$/;"	f	signature:( MInt thdlr )
-deassign_timer	.\Drivers\Stimers\stimers.h	/^void deassign_timer( MInt thdlr );$/;"	p	signature:( MInt thdlr )
+dataflash_autopage_rewrite	.\Drivers\Dflash\dataflsh.c	/^dataflash_autopage_rewrite( MUInt device, uint page )$/;"	f
+dataflash_block_erase	.\Drivers\Dflash\dataflsh.c	/^dataflash_block_erase( DFLASH_T *pf )$/;"	f
+dataflash_buffer_read	.\Drivers\Dflash\dataflsh.c	/^dataflash_buffer_read( DFLASH_T *pf )$/;"	f
+dataflash_buffer_to_main_memory_program	.\Drivers\Dflash\dataflsh.c	/^dataflash_buffer_to_main_memory_program( DFLASH_T *pf )$/;"	f
+dataflash_buffer_write	.\Drivers\Dflash\dataflsh.c	/^dataflash_buffer_write( DFLASH_T *pf )$/;"	f
+dataflash_classify	.\Drivers\Dflash\dataflsh.c	/^dataflash_classify( MUInt dev_no, MUInt density )$/;"	f	file:
+dataflash_fatal	.\Drivers\Dflash\dffatal.c	/^dataflash_fatal( MUInt error_code )$/;"	f
+dataflash_init	.\Drivers\Dflash\dataflsh.c	/^dataflash_init( void )$/;"	f
+dataflash_main_memory_page_program_through_buffer	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_program_through_buffer( DFLASH_T *pf )$/;"	f
+dataflash_main_memory_page_read	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_read( DFLASH_T *pf )$/;"	f
+dataflash_main_memory_page_to_buffer_compare	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_to_buffer_compare( DFLASH_T *pf )$/;"	f
+dataflash_main_memory_page_to_buffer_xfer	.\Drivers\Dflash\dataflsh.c	/^dataflash_main_memory_page_to_buffer_xfer( DFLASH_T *pf )$/;"	f
+dataflash_page_erase	.\Drivers\Dflash\dataflsh.c	/^dataflash_page_erase( DFLASH_T *pf )$/;"	f
+dataflash_page_num	.\Drivers\Dflash\dataflsh.c	/^dataflash_page_num( MUInt dev_no )$/;"	f
+dataflash_page_size	.\Drivers\Dflash\dataflsh.c	/^dataflash_page_size( MUInt dev_no )$/;"	f
+dataflash_query_type	.\Drivers\Dflash\dataflsh.c	/^dataflash_query_type( MUInt dev_no )$/;"	f
+dataflash_read_continuous	.\Drivers\Dflash\dataflsh.c	/^dataflash_read_continuous( DFLASH_T *pf )$/;"	f
+deassert_cs	.\Drivers\Dflash\spihal.c	/^deassert_cs( MUInt dev_no )$/;"	f	file:
+deassign_timer	.\Drivers\Stimers\stimers.c	/^deassign_timer( MInt thdlr )$/;"	f
 def_news	.\Common\news\news.c	/^const NEWS_T def_news[] =$/;"	v
-deplete_grqueue	.\Drivers\GRstatus\grqueue.c	/^deplete_grqueue( void )$/;"	f	signature:( void )
-deplete_grqueue	.\Drivers\GRstatus\grqueue.h	/^void deplete_grqueue( void );$/;"	p	signature:( void )
-deplete_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^deplete_gsqueue( QHDLR qh )$/;"	f	signature:( QHDLR qh )
-deplete_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.h	/^void deplete_gsqueue( QHDLR qh );$/;"	p	signature:( QHDLR qh )
+deplete_grqueue	.\Drivers\GRstatus\grqueue.c	/^deplete_grqueue( void )$/;"	f
+deplete_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^deplete_gsqueue( QHDLR qh )$/;"	f
 dev	.\ctsafe\logprot.c	/^	ushort dev;$/;"	m	file:
 dev_list	.\ctsafe\logprot.c	/^	ushort dev_list;$/;"	m	file:
 dev_list	.\userdfs\users.h	/^	ushort	dev_list;				\/*	dev_list only for high level software				*\/$/;"	m
@@ -1087,51 +1042,30 @@ device_id	.\Drivers\Dflash\dftypes.h	/^			uchar	device_id;$/;"	m
 df	.\Drivers\Dflash\faccess.c	/^static DFLASH_T df =$/;"	v	file:
 df	.\Drivers\Dflash\old_faccess.c	/^static DFLASH_T df =$/;"	v	file:
 df	.\userdfs\users.c	/^static DFLASH_T df;$/;"	v	file:
-df_copy_page	.\Drivers\Dflash\dfmanage.c	/^df_copy_page( DFLASH_T *pf, MUInt emerg )$/;"	f	signature:( DFLASH_T *pf, MUInt emerg )
-df_copy_page	.\Drivers\Dflash\dfmanage.h	/^MInt df_copy_page( DFLASH_T *pf, MUInt emerg );$/;"	p	signature:( DFLASH_T *pf, MUInt emerg )
+df_copy_page	.\Drivers\Dflash\dfmanage.c	/^df_copy_page( DFLASH_T *pf, MUInt emerg )$/;"	f
 df_desc	.\ctsafe\logprot.c	/^	uchar df_desc;$/;"	m	file:
-df_format_page	.\Drivers\Dflash\dfmanage.c	/^df_format_page( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-df_format_page	.\Drivers\Dflash\dfmanage.h	/^MInt df_format_page( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-df_format_this_page	.\Drivers\Dflash\dfmanage.c	/^df_format_this_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
+df_format_page	.\Drivers\Dflash\dfmanage.c	/^df_format_page( DFLASH_T *pf )$/;"	f
+df_format_this_page	.\Drivers\Dflash\dfmanage.c	/^df_format_this_page( DFLASH_T *pf )$/;"	f	file:
 df_num_pages	.\Drivers\Dflash\dfvars.c	/^ushort df_num_pages;$/;"	v
-df_read_data	.\Drivers\Dflash\dfmanage.c	/^df_read_data( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-df_read_data	.\Drivers\Dflash\dfmanage.h	/^MInt df_read_data( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-df_read_page	.\Drivers\Dflash\dfmanage.c	/^df_read_page( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-df_read_page	.\Drivers\Dflash\dfmanage.h	/^MInt df_read_page( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-df_refresh	.\Drivers\Dflash\dataflsh.c	/^df_refresh( MUInt device, uint page )$/;"	f	file:	signature:( MUInt device, uint page )
-df_write_data	.\Drivers\Dflash\dfmanage.c	/^df_write_data( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-df_write_data	.\Drivers\Dflash\dfmanage.h	/^MInt df_write_data( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-df_write_page	.\Drivers\Dflash\dfmanage.c	/^df_write_page( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-df_write_page	.\Drivers\Dflash\dfmanage.h	/^MInt df_write_page( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
-dfile_reinit	.\Drivers\Dflash\dfilsys.c	/^dfile_reinit( MUInt df_desc )$/;"	f	signature:( MUInt df_desc )
-dfile_reinit	.\Drivers\Dflash\dfilsys.h	/^MInt dfile_reinit( MUInt df_desc );$/;"	p	signature:( MUInt df_desc )
-dfilesys_blanking	.\Drivers\Dflash\dfilsys.c	/^dfilesys_blanking( void )$/;"	f	signature:( void )
-dfilesys_blanking	.\Drivers\Dflash\dfilsys.h	/^void dfilesys_blanking( void );$/;"	p	signature:( void )
-dfilesys_create_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_create_file( MUInt df_desc, MUInt unit_size, MUInt access, long *pnum_units )$/;"	f	signature:( MUInt df_desc, MUInt unit_size, MUInt access, long *pnum_units )
-dfilesys_create_file	.\Drivers\Dflash\dfilsys.h	/^MInt dfilesys_create_file( MUInt df_desc, MUInt unit_size, MUInt access, long *pnum_units );$/;"	p	signature:( MUInt df_desc, MUInt unit_size, MUInt access, long *pnum_units )
-dfilesys_get_information	.\Drivers\Dflash\dfilsys.c	/^dfilesys_get_information( void )$/;"	f	signature:( void )
-dfilesys_get_information	.\Drivers\Dflash\dfilsys.h	/^DFS_INFO_T *dfilesys_get_information( void );$/;"	p	signature:( void )
-dfilesys_init	.\Drivers\Dflash\dfilsys.c	/^dfilesys_init( ushort *pdf_ex, ushort *pdf_err )$/;"	f	signature:( ushort *pdf_ex, ushort *pdf_err )
-dfilesys_init	.\Drivers\Dflash\dfsys.h	/^uint dfilesys_init( ushort *pdf_ex, ushort *pdf_err );$/;"	p	signature:( ushort *pdf_ex, ushort *pdf_err )
-dfilesys_read_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_read_file( MUInt df_desc, uint num_units, uchar *pbuff )$/;"	f	signature:( MUInt df_desc, uint num_units, uchar *pbuff )
-dfilesys_read_file	.\Drivers\Dflash\dfilsys.h	/^int dfilesys_read_file( MUInt df_desc, uint num_units, uchar *pbuff );$/;"	p	signature:( MUInt df_desc, uint num_units, uchar *pbuff )
-dfilesys_seek	.\Drivers\Dflash\dfilsys.c	/^dfilesys_seek( MUInt df_desc, long offset, MUInt whence )$/;"	f	signature:( MUInt df_desc, long offset, MUInt whence )
-dfilesys_seek	.\Drivers\Dflash\dfilsys.h	/^MInt dfilesys_seek( MUInt df_desc, long offset, MUInt whence );$/;"	p	signature:( MUInt df_desc, long offset, MUInt whence )
-dfilesys_status_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_status_file( MUInt df_desc, FILESYS_T *psta )$/;"	f	signature:( MUInt df_desc, FILESYS_T *psta )
-dfilesys_status_file	.\Drivers\Dflash\dfilsys.h	/^MInt dfilesys_status_file( MUInt df_desc, FILESYS_T *psta );$/;"	p	signature:( MUInt df_desc, FILESYS_T *psta )
-dfilesys_sync	.\Drivers\Dflash\dfilsys.c	/^dfilesys_sync( void )$/;"	f	signature:( void )
-dfilesys_sync	.\Drivers\Dflash\dfilsys.h	/^MInt dfilesys_sync( void );$/;"	p	signature:( void )
-dfilesys_sync	.\Drivers\Dflash\dfsys.h	/^MInt dfilesys_sync( void );$/;"	p	signature:( void )
-dfilesys_write_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_write_file( MUInt df_desc, uint num_units, uchar *pbuff )$/;"	f	signature:( MUInt df_desc, uint num_units, uchar *pbuff )
-dfilesys_write_file	.\Drivers\Dflash\dfilsys.h	/^int dfilesys_write_file( MUInt df_desc, uint num_units, uchar *pbuff );$/;"	p	signature:( MUInt df_desc, uint num_units, uchar *pbuff )
-dfilsys_object_size	.\Drivers\Dflash\dfilsys.c	/^dfilsys_object_size( MUInt df_desc )$/;"	f	signature:( MUInt df_desc )
-dfilsys_object_size	.\Drivers\Dflash\dfsys.h	/^dfilsys_object_size( MUInt df_desc ); $/;"	p	signature:( MUInt df_desc )
-dflash_handler	.\Drivers\Dflash\spihal.c	/^dflash_handler( void )$/;"	f	signature:( void )
-dflash_handler	.\Drivers\Dflash\spihal.h	/^void	dflash_handler		( void );$/;"	p	signature:( void )
-dfmanage_init	.\Drivers\Dflash\dfmanage.c	/^dfmanage_init( MUInt emergency )$/;"	f	signature:( MUInt emergency )
-dfmanage_init	.\Drivers\Dflash\dfmanage.h	/^MUInt dfmanage_init( MUInt emergency );$/;"	p	signature:( MUInt emergency )
-dfpwf_interrupt	.\Drivers\Dflash\dfpwf.c	/^dfpwf_interrupt( void )$/;"	f	signature:( void )
-dfpwf_interrupt	.\Drivers\Dflash\dfpwf.h	/^void dfpwf_interrupt( void );$/;"	p	signature:( void )
+df_read_data	.\Drivers\Dflash\dfmanage.c	/^df_read_data( DFLASH_T *pf )$/;"	f
+df_read_page	.\Drivers\Dflash\dfmanage.c	/^df_read_page( DFLASH_T *pf )$/;"	f
+df_refresh	.\Drivers\Dflash\dataflsh.c	/^df_refresh( MUInt device, uint page )$/;"	f	file:
+df_write_data	.\Drivers\Dflash\dfmanage.c	/^df_write_data( DFLASH_T *pf )$/;"	f
+df_write_page	.\Drivers\Dflash\dfmanage.c	/^df_write_page( DFLASH_T *pf )$/;"	f
+dfile_reinit	.\Drivers\Dflash\dfilsys.c	/^dfile_reinit( MUInt df_desc )$/;"	f
+dfilesys_blanking	.\Drivers\Dflash\dfilsys.c	/^dfilesys_blanking( void )$/;"	f
+dfilesys_create_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_create_file( MUInt df_desc, MUInt unit_size, MUInt access, long *pnum_units )$/;"	f
+dfilesys_get_information	.\Drivers\Dflash\dfilsys.c	/^dfilesys_get_information( void )$/;"	f
+dfilesys_init	.\Drivers\Dflash\dfilsys.c	/^dfilesys_init( ushort *pdf_ex, ushort *pdf_err )$/;"	f
+dfilesys_read_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_read_file( MUInt df_desc, uint num_units, uchar *pbuff )$/;"	f
+dfilesys_seek	.\Drivers\Dflash\dfilsys.c	/^dfilesys_seek( MUInt df_desc, long offset, MUInt whence )$/;"	f
+dfilesys_status_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_status_file( MUInt df_desc, FILESYS_T *psta )$/;"	f
+dfilesys_sync	.\Drivers\Dflash\dfilsys.c	/^dfilesys_sync( void )$/;"	f
+dfilesys_write_file	.\Drivers\Dflash\dfilsys.c	/^dfilesys_write_file( MUInt df_desc, uint num_units, uchar *pbuff )$/;"	f
+dfilsys_object_size	.\Drivers\Dflash\dfilsys.c	/^dfilsys_object_size( MUInt df_desc )$/;"	f
+dflash_handler	.\Drivers\Dflash\spihal.c	/^dflash_handler( void )$/;"	f
+dfmanage_init	.\Drivers\Dflash\dfmanage.c	/^dfmanage_init( MUInt emergency )$/;"	f
+dfpwf_interrupt	.\Drivers\Dflash\dfpwf.c	/^dfpwf_interrupt( void )$/;"	f
 dfs_info	.\Drivers\Dflash\dfilsys.c	/^static DFS_INFO_T dfs_info;$/;"	v	file:
 dfs_size	.\Drivers\Dflash\dfdata.h	/^	ulong dfs_size;					\/*	file system size						*\/$/;"	m
 dftimer	.\Drivers\Dflash\spihal.c	/^static ushort dftimer;$/;"	v	file:
@@ -1139,45 +1073,26 @@ directory	.\Drivers\Dflash\faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *p
 directory	.\Drivers\Dflash\old_faccess.c	/^static DIRINFO_T directory[ NUM_FDS ], *pcurr;$/;"	v	file:
 dirty	.\Drivers\Dflash\faccess.c	/^static MUInt dirty = 0;$/;"	v	file:
 dirty	.\Drivers\Dflash\old_faccess.c	/^static MUInt dirty = 0;$/;"	v	file:
-disable_gral_interrupt	.\Drivers\Enaint\enaint.c	/^disable_gral_interrupt( void )$/;"	f	signature:( void )
-disable_gral_interrupt	.\Drivers\Enaint\enaint.h	/^void disable_gral_interrupt( void );$/;"	p	signature:( void )
-disable_interrupt	.\Drivers\Enaint\lowint.c	/^disable_interrupt( void )$/;"	f	signature:( void )
-disable_interrupt	.\Drivers\Enaint\lowint.h	/^void disable_interrupt( void );$/;"	p	signature:( void )
-disable_pwf_interrupt	.\Drivers\Dflash\dfpwf.c	/^disable_pwf_interrupt( void )$/;"	f	signature:( void )
-disable_pwf_interrupt	.\Drivers\Dflash\dfpwf.h	/^void disable_pwf_interrupt( void );$/;"	p	signature:( void )
-disable_rcv_interrupt	.\Drivers\Platform\SCI\sci.c	/^disable_rcv_interrupt( MUInt ch )$/;"	f	signature:( MUInt ch )
-disable_rcv_interrupt	.\Drivers\Platform\SCI\sci.h	/^void disable_rcv_interrupt( MUInt ch );$/;"	p	signature:( MUInt ch )
-disable_vlocks	.\Drivers\Wout\wouts.c	/^disable_vlocks( MUInt who )$/;"	f	signature:( MUInt who )
-disable_vlocks	.\Drivers\Wout\wouts.h	/^void disable_vlocks( MUInt who );$/;"	p	signature:( MUInt who )
-disable_vrly	.\Drivers\Wout\wouts.c	/^disable_vrly( MUInt who )$/;"	f	signature:( MUInt who )
-disable_vrly	.\Drivers\Wout\wouts.h	/^void disable_vrly( MUInt who );$/;"	p	signature:( MUInt who )
-disconnect_battery	.\Drivers\Pwrsys\pwrhdl.c	/^disconnect_battery( void )$/;"	f	signature:( void )
-disconnect_battery	.\Drivers\Pwrsys\pwrhdl.h	/^void disconnect_battery( void );$/;"	p	signature:( void )
-disconnect_bchrg	.\Drivers\Pwrsys\pwrhdl.c	/^disconnect_bchrg( void )$/;"	f	signature:( void )
-disconnect_bchrg	.\Drivers\Pwrsys\pwrhdl.h	/^void disconnect_bchrg( void );$/;"	p	signature:( void )
-dispatcher	.\Common\Dispatch\dispatch.c	/^dispatcher( void )$/;"	f	signature:( void )
-dispatcher	.\Common\Dispatch\dispatch.h	/^void dispatcher( void );$/;"	p	signature:( void )
-do_cparse	.\Drivers\Sensor\cparse.c	/^do_cparse( MUInt shdlr, MUInt hnews )$/;"	f	signature:( MUInt shdlr, MUInt hnews )
-do_cparse	.\Drivers\Sensor\cparse.h	/^MInt do_cparse( MUInt cphdlr, MUInt news );$/;"	p	signature:( MUInt cphdlr, MUInt news )
-do_disable_all_interrupts	.\Drivers\Platform\IRQ\pwfhal.h	/^void do_disable_all_interrupts( void );$/;"	p	signature:( void )
-do_disable_pwf_interrupt	.\Drivers\Platform\IRQ\irq.c	/^do_disable_pwf_interrupt( void )$/;"	f	signature:( void )
-do_disable_pwf_interrupt	.\Drivers\Platform\IRQ\pwfhal.h	/^void do_disable_pwf_interrupt( void );$/;"	p	signature:( void )
-do_enable_pwf_interrupt	.\Drivers\Platform\IRQ\irq.c	/^do_enable_pwf_interrupt( void )$/;"	f	signature:( void )
-do_enable_pwf_interrupt	.\Drivers\Platform\IRQ\pwfhal.h	/^void do_enable_pwf_interrupt( void );$/;"	p	signature:( void )
-do_mparse	.\Common\Mparser\mparser.c	/^do_mparse( const NEWS_T *pnews )$/;"	f	file:	signature:( const NEWS_T *pnews )
-do_reset	.\Drivers\Platform\IRQ\pwfhal.h	/^void do_reset( void );$/;"	p	signature:( void )
+disable_gral_interrupt	.\Drivers\Enaint\enaint.c	/^disable_gral_interrupt( void )$/;"	f
+disable_interrupt	.\Drivers\Enaint\lowint.c	/^disable_interrupt( void )$/;"	f
+disable_pwf_interrupt	.\Drivers\Dflash\dfpwf.c	/^disable_pwf_interrupt( void )$/;"	f
+disable_rcv_interrupt	.\Drivers\Platform\SCI\sci.c	/^disable_rcv_interrupt( MUInt ch )$/;"	f
+disable_vlocks	.\Drivers\Wout\wouts.c	/^disable_vlocks( MUInt who )$/;"	f
+disable_vrly	.\Drivers\Wout\wouts.c	/^disable_vrly( MUInt who )$/;"	f
+disconnect_battery	.\Drivers\Pwrsys\pwrhdl.c	/^disconnect_battery( void )$/;"	f
+disconnect_bchrg	.\Drivers\Pwrsys\pwrhdl.c	/^disconnect_bchrg( void )$/;"	f
+dispatcher	.\Common\Dispatch\dispatch.c	/^dispatcher( void )$/;"	f
+do_cparse	.\Drivers\Sensor\cparse.c	/^do_cparse( MUInt shdlr, MUInt hnews )$/;"	f
+do_disable_pwf_interrupt	.\Drivers\Platform\IRQ\irq.c	/^do_disable_pwf_interrupt( void )$/;"	f
+do_enable_pwf_interrupt	.\Drivers\Platform\IRQ\irq.c	/^do_enable_pwf_interrupt( void )$/;"	f
+do_mparse	.\Common\Mparser\mparser.c	/^do_mparse( const NEWS_T *pnews )$/;"	f	file:
 dprintf	.\settings\settings.h	64;"	d
 dprintf	.\settings\settings.h	66;"	d
-drivers_init	.\Drivers\drivers.c	/^drivers_init(void)$/;"	f	signature:(void)
-drivers_init	.\Drivers\drivers.h	/^MUInt drivers_init(void);$/;"	p	signature:(void)
-drop_frame	.\Common\Automatons\logprot\alphact.c	/^drop_frame( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-drop_frame	.\Common\Automatons\logprot\alphact.h	/^void drop_frame( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-drop_vframe	.\Common\Automatons\valprot\valact.c	/^drop_vframe( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-drop_vframe	.\Common\Automatons\valprot\valact.h	/^void drop_vframe( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-dwos_ppro	.\Common\Automatons\doorwos\dwosact.c	/^dwos_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-dwos_ppro	.\Common\Automatons\doorwos\dwosact.h	/^NARG_T dwos_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-dws_ppro	.\Common\Automatons\doorws\dwsact.c	/^dws_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-dws_ppro	.\Common\Automatons\doorws\dwsact.h	/^NARG_T dws_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+drivers_init	.\Drivers\drivers.c	/^drivers_init(void)$/;"	f
+drop_frame	.\Common\Automatons\logprot\alphact.c	/^drop_frame( const NEWS_T *in )$/;"	f
+drop_vframe	.\Common\Automatons\valprot\valact.c	/^drop_vframe( const NEWS_T *in )$/;"	f
+dwos_ppro	.\Common\Automatons\doorwos\dwosact.c	/^dwos_ppro( const NEWS_T *in )$/;"	f
+dws_ppro	.\Common\Automatons\doorws\dwsact.c	/^dws_ppro( const NEWS_T *in )$/;"	f
 echo	.\ctsafe\valconf.h	/^	unsigned echo		:1;$/;"	m
 edit_pwd	.\ctsafe\logprot.c	/^	uchar edit_pwd;$/;"	m	file:
 elem_qty	.\Common\news\nqueue.h	/^	MUInt elem_qty;$/;"	m
@@ -1186,45 +1101,34 @@ elem_qty	.\Drivers\Serial\gsqueue\gsqueue.h	/^	MUInt elem_qty;$/;"	m
 emer_queue	.\Common\news\news.c	/^NEWS_T emer_queue[ MAX_EMER_ELEMS ];$/;"	v
 emerg	.\Drivers\Dflash\dfvars.c	/^uchar emerg;$/;"	v
 emergency	.\Drivers\Dflash\dfmanage.c	/^static MUInt emergency;$/;"	v	file:
-enable_gral_interrupt	.\Drivers\Enaint\enaint.c	/^enable_gral_interrupt( void )$/;"	f	signature:( void )
-enable_gral_interrupt	.\Drivers\Enaint\enaint.h	/^void enable_gral_interrupt( void );$/;"	p	signature:( void )
-enable_interrupt	.\Drivers\Enaint\lowint.c	/^enable_interrupt( void )$/;"	f	signature:( void )
-enable_interrupt	.\Drivers\Enaint\lowint.h	/^void enable_interrupt( void );$/;"	p	signature:( void )
+enable_gral_interrupt	.\Drivers\Enaint\enaint.c	/^enable_gral_interrupt( void )$/;"	f
+enable_interrupt	.\Drivers\Enaint\lowint.c	/^enable_interrupt( void )$/;"	f
 enable_maintime	.\Drivers\Platform\RTI\rti.c	/^static MUInt enable_maintime = 1;$/;"	v	file:
-enable_pwf_interrupt	.\Drivers\Dflash\dfpwf.c	/^enable_pwf_interrupt( void )$/;"	f	signature:( void )
-enable_pwf_interrupt	.\Drivers\Dflash\dfpwf.h	/^void enable_pwf_interrupt( void );$/;"	p	signature:( void )
-enable_rcv_interrupt	.\Drivers\Platform\SCI\sci.c	/^enable_rcv_interrupt( MUInt ch )$/;"	f	signature:( MUInt ch )
-enable_rcv_interrupt	.\Drivers\Platform\SCI\sci.h	/^void enable_rcv_interrupt( MUInt ch );$/;"	p	signature:( MUInt ch )
-enable_vlocks	.\Drivers\Wout\wouts.c	/^enable_vlocks( MUInt who )$/;"	f	signature:( MUInt who )
-enable_vlocks	.\Drivers\Wout\wouts.h	/^void enable_vlocks( MUInt who );$/;"	p	signature:( MUInt who )
-enable_vrly	.\Drivers\Wout\wouts.c	/^enable_vrly( MUInt who )$/;"	f	signature:( MUInt who )
-enable_vrly	.\Drivers\Wout\wouts.h	/^void enable_vrly( MUInt who );$/;"	p	signature:( MUInt who )
+enable_pwf_interrupt	.\Drivers\Dflash\dfpwf.c	/^enable_pwf_interrupt( void )$/;"	f
+enable_rcv_interrupt	.\Drivers\Platform\SCI\sci.c	/^enable_rcv_interrupt( MUInt ch )$/;"	f
+enable_vlocks	.\Drivers\Wout\wouts.c	/^enable_vlocks( MUInt who )$/;"	f
+enable_vrly	.\Drivers\Wout\wouts.c	/^enable_vrly( MUInt who )$/;"	f
 eoq	.\Common\news\nqueue.c	9;"	d	file:
 eoq	.\Drivers\GRstatus\grqueue.c	9;"	d	file:
 eoq	.\Drivers\Serial\gsqueue\gsqueue.c	10;"	d	file:
-erase_dir_buffer	.\Drivers\Dflash\faccess.c	/^erase_dir_buffer( void )$/;"	f	file:	signature:( void )
-erase_dir_buffer	.\Drivers\Dflash\old_faccess.c	/^erase_dir_buffer( void )$/;"	f	file:	signature:( void )
-erase_page_info	.\Drivers\Dflash\faccess.c	/^erase_page_info( void )$/;"	f	file:	signature:( void )
-erase_page_info	.\Drivers\Dflash\old_faccess.c	/^erase_page_info( void )$/;"	f	file:	signature:( void )
+erase_dir_buffer	.\Drivers\Dflash\faccess.c	/^erase_dir_buffer( void )$/;"	f	file:
+erase_dir_buffer	.\Drivers\Dflash\old_faccess.c	/^erase_dir_buffer( void )$/;"	f	file:
+erase_page_info	.\Drivers\Dflash\faccess.c	/^erase_page_info( void )$/;"	f	file:
+erase_page_info	.\Drivers\Dflash\old_faccess.c	/^erase_page_info( void )$/;"	f	file:
 errno	.\ctsafe\logprot.c	/^	MInt errno;$/;"	m	file:
 errno	.\ctsafe\logprot.c	/^	uchar errno;$/;"	m	file:
-exec_mparser	.\Common\Mparser\mparser.c	/^exec_mparser( const NEWS_T *pnews )$/;"	f	signature:( const NEWS_T *pnews )
-exec_mparser	.\Common\Mparser\mparser.h	/^void exec_mparser( const NEWS_T *pnews );$/;"	p	signature:( const NEWS_T *pnews )
-exec_protocol	.\ctsafe\logprot.c	/^exec_protocol( MUInt ch )$/;"	f	signature:( MUInt ch )
-exec_protocol	.\ctsafe\logprot.h	/^void exec_protocol( MUInt ch );$/;"	p	signature:( MUInt ch )
-execute_list	.\Drivers\Maintime\maintime.c	/^execute_list( void (* const *p)( void ) )$/;"	f	file:	signature:( void (* const *p)( void ) )
-execute_parser	.\Drivers\Sensor\cparse.c	/^execute_parser( MUInt hdlr, MUInt which )$/;"	f	file:	signature:( MUInt hdlr, MUInt which )
-exists_at_beginning	.\Drivers\Dflash\faccess.c	/^exists_at_beginning( void )$/;"	f	signature:( void )
-exists_at_beginning	.\Drivers\Dflash\old_faccess.c	/^exists_at_beginning( void )$/;"	f	signature:( void )
+exec_mparser	.\Common\Mparser\mparser.c	/^exec_mparser( const NEWS_T *pnews )$/;"	f
+exec_protocol	.\ctsafe\logprot.c	/^exec_protocol( MUInt ch )$/;"	f
+execute_list	.\Drivers\Maintime\maintime.c	/^execute_list( void (* const *p)( void ) )$/;"	f	file:
+execute_parser	.\Drivers\Sensor\cparse.c	/^execute_parser( MUInt hdlr, MUInt which )$/;"	f	file:
+exists_at_beginning	.\Drivers\Dflash\faccess.c	/^exists_at_beginning( void )$/;"	f
+exists_at_beginning	.\Drivers\Dflash\old_faccess.c	/^exists_at_beginning( void )$/;"	f
 ext	.\Common\Automatons\pwrctrl\pwrctrl.c	/^const STATE ext =$/;"	v
-ext2backup	.\Common\Automatons\pwrctrl\pwract.c	/^ext2backup( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ext2backup	.\Common\Automatons\pwrctrl\pwract.h	/^void ext2backup( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ext2ext	.\Common\Automatons\pwrctrl\pwract.c	/^ext2ext( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ext2ext	.\Common\Automatons\pwrctrl\pwract.h	/^void ext2ext( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+ext2backup	.\Common\Automatons\pwrctrl\pwract.c	/^ext2backup( NEWS_T *in )$/;"	f
+ext2ext	.\Common\Automatons\pwrctrl\pwract.c	/^ext2ext( NEWS_T *in )$/;"	f
 extchrg	.\Common\Automatons\pwrctrl\pwrctrl.c	/^const STATE extchrg =$/;"	v
 extnotchrg	.\Common\Automatons\pwrctrl\pwrctrl.c	/^const STATE extnotchrg =$/;"	v
-fatal	.\Drivers\Enaint\drverr.c	/^fatal( char *file, int line, MUInt error )$/;"	f	signature:( char *file, int line, MUInt error )
-fatal	.\Drivers\Enaint\drverr.h	/^void fatal( char *file, int line, MUInt error );$/;"	p	signature:( char *file, int line, MUInt error )
+fatal	.\Drivers\Enaint\drverr.c	/^fatal( char *file, int line, MUInt error )$/;"	f
 fatal_driver	.\Drivers\Enaint\drverr.h	30;"	d
 fd2bit	.\Drivers\Dflash\dfvars.c	/^const ushort fd2bit[ 16 ] =$/;"	v
 fd_inerror	.\Drivers\Dflash\dfdata.h	/^	ushort fd_inerror;				\/*	bit field of file descriptors in error	*\/$/;"	m
@@ -1236,264 +1140,168 @@ file_data	.\Drivers\Dflash\old_faccess.c	/^	FILESYS_T	file_data;$/;"	m	file:
 file_type	.\Drivers\Dflash\dfdata.h	/^	uchar	file_type;		\/*	Type of file (RANDOM or QUEUE		*\/$/;"	m
 first_avail_page	.\Drivers\Dflash\faccess.c	/^static ushort first_avail_page;$/;"	v	file:
 first_avail_page	.\Drivers\Dflash\old_faccess.c	/^static ushort first_avail_page;$/;"	v	file:
-flash_compose_address	.\Drivers\Dflash\flash.c	/^flash_compose_address( MUInt dev_no, uint page_addr, uint byte_addr )$/;"	f	file:	signature:( MUInt dev_no, uint page_addr, uint byte_addr )
-flash_flush_command	.\Drivers\Dflash\flash.c	/^flash_flush_command( MUInt len)$/;"	f	file:	signature:( MUInt len)
-flash_init	.\Drivers\Dflash\flash.c	/^flash_init( void )$/;"	f	signature:( void )
-flash_init	.\Drivers\Dflash\flash.h	/^void flash_init( void );$/;"	p	signature:( void )
-flash_read	.\Drivers\Dflash\flash.c	/^flash_read( MUInt dev_no, uchar *prx, uint qty )$/;"	f	signature:( MUInt dev_no, uchar *prx, uint qty )
-flash_read	.\Drivers\Dflash\flash.h	/^void flash_read( MUInt dev_no, uchar *prx, uint qty );$/;"	p	signature:( MUInt dev_no, uchar *prx, uint qty )
-flash_read_status	.\Drivers\Dflash\flash.c	/^flash_read_status( MUInt dev_no )$/;"	f	signature:( MUInt dev_no )
-flash_read_status	.\Drivers\Dflash\flash.h	/^MUInt flash_read_status( MUInt dev_no );$/;"	p	signature:( MUInt dev_no )
-flash_send_command	.\Drivers\Dflash\flash.c	/^flash_send_command( MUInt dev_no, MUInt command, int page_address, int byte_address )$/;"	f	signature:( MUInt dev_no, MUInt command, int page_address, int byte_address )
-flash_send_command	.\Drivers\Dflash\flash.h	/^void flash_send_command( MUInt dev_no, MUInt command, int page_address, int byte_address );$/;"	p	signature:( MUInt dev_no, MUInt command, int page_address, int byte_address )
-flash_sync	.\Common\Automatons\pwrctrl\pwract.c	/^flash_sync( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-flash_sync	.\Common\Automatons\pwrctrl\pwract.h	/^void flash_sync( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-flash_wait_ready	.\Drivers\Dflash\flash.c	/^flash_wait_ready( MUInt dev_no )$/;"	f	signature:( MUInt dev_no )
-flash_wait_ready	.\Drivers\Dflash\flash.h	/^void flash_wait_ready( MUInt dev_no );$/;"	p	signature:( MUInt dev_no )
-flash_write	.\Drivers\Dflash\flash.c	/^flash_write( MUInt dev_no, uchar *ptx, uint qty )$/;"	f	signature:( MUInt dev_no, uchar *ptx, uint qty )
-flash_write	.\Drivers\Dflash\flash.h	/^void flash_write( MUInt dev_no, uchar *ptx, uint qty );$/;"	p	signature:( MUInt dev_no, uchar *ptx, uint qty )
-flush_page_in_buffer	.\Drivers\Dflash\faccess.c	/^flush_page_in_buffer( MUInt void_page )$/;"	f	signature:( MUInt void_page )
-flush_page_in_buffer	.\Drivers\Dflash\faccess.h	/^MInt flush_page_in_buffer( MUInt void_page );$/;"	p	signature:( MUInt void_page )
-flush_page_in_buffer	.\Drivers\Dflash\old_faccess.c	/^flush_page_in_buffer( MUInt void_page )$/;"	f	signature:( MUInt void_page )
+flash_compose_address	.\Drivers\Dflash\flash.c	/^flash_compose_address( MUInt dev_no, uint page_addr, uint byte_addr )$/;"	f	file:
+flash_flush_command	.\Drivers\Dflash\flash.c	/^flash_flush_command( MUInt len)$/;"	f	file:
+flash_init	.\Drivers\Dflash\flash.c	/^flash_init( void )$/;"	f
+flash_read	.\Drivers\Dflash\flash.c	/^flash_read( MUInt dev_no, uchar *prx, uint qty )$/;"	f
+flash_read_status	.\Drivers\Dflash\flash.c	/^flash_read_status( MUInt dev_no )$/;"	f
+flash_send_command	.\Drivers\Dflash\flash.c	/^flash_send_command( MUInt dev_no, MUInt command, int page_address, int byte_address )$/;"	f
+flash_sync	.\Common\Automatons\pwrctrl\pwract.c	/^flash_sync( NEWS_T *in )$/;"	f
+flash_wait_ready	.\Drivers\Dflash\flash.c	/^flash_wait_ready( MUInt dev_no )$/;"	f
+flash_write	.\Drivers\Dflash\flash.c	/^flash_write( MUInt dev_no, uchar *ptx, uint qty )$/;"	f
+flush_page_in_buffer	.\Drivers\Dflash\faccess.c	/^flush_page_in_buffer( MUInt void_page )$/;"	f
+flush_page_in_buffer	.\Drivers\Dflash\old_faccess.c	/^flush_page_in_buffer( MUInt void_page )$/;"	f
 forever	.\main.c	14;"	d	file:
 format_count	.\userdfs\users.c	/^static uint recovered_count, ok_count, format_count;$/;"	v	file:
-format_page	.\userdfs\users.c	/^format_page( uint page )$/;"	f	file:	signature:( uint page )
+format_page	.\userdfs\users.c	/^format_page( uint page )$/;"	f	file:
 free_users	.\ctsafe\logprot.c	/^	uint free_users;$/;"	m	file:
 fs_buff	.\Drivers\Dflash\dfvars.c	/^uchar fs_buff[ WPAGE_SIZE ];$/;"	v
 fs_num_pages	.\Drivers\Dflash\dfvars.c	/^ushort fs_num_pages;$/;"	v
 fs_page_errors	.\Drivers\Dflash\dfdata.h	/^	uint fs_page_errors;			\/*	file system pages in error				*\/$/;"	m
 fsync_t	.\Common\Automatons\pwrctrl\pwract.c	/^static MInt pwrctrl_t, fsync_t;$/;"	v	file:
-get_batt_lvl	.\Drivers\Pwrsys\pwrhdl.c	/^get_batt_lvl( void )$/;"	f	signature:( void )
-get_batt_lvl	.\Drivers\Pwrsys\pwrhdl.h	/^MUInt get_batt_lvl( void );$/;"	p	signature:( void )
-get_char	.\Drivers\Serial\serial.c	/^get_char( MUInt channel, unsigned char *p )$/;"	f	signature:( MUInt channel, unsigned char *p )
-get_char	.\Drivers\Serial\serial.h	/^MInt get_char( MUInt channel, unsigned char *p );$/;"	p	signature:( MUInt channel, unsigned char *p )
-get_checksum	.\Common\utils\utils.c	/^get_checksum( void *p, MUInt qty )$/;"	f	signature:( void *p, MUInt qty )
-get_checksum	.\Common\utils\utils.h	/^unsigned char get_checksum( void *p, MUInt qty );$/;"	p	signature:( void *p, MUInt qty )
-get_cstate	.\Drivers\Sensor\cparse.c	/^get_cstate( MUInt cphdlr )$/;"	f	signature:( MUInt cphdlr )
-get_cstate	.\Drivers\Sensor\cparse.h	/^MUInt get_cstate( MUInt cphdlr );$/;"	p	signature:( MUInt cphdlr )
-get_curr_val	.\ctsafe\logprot.c	/^get_curr_val( void )$/;"	f	signature:( void )
-get_curr_val	.\ctsafe\logprot.h	/^MUInt get_curr_val( void );$/;"	p	signature:( void )
-get_current_file_status	.\Drivers\Dflash\faccess.c	/^get_current_file_status( FILESYS_T *psta )$/;"	f	signature:( FILESYS_T *psta )
-get_current_file_status	.\Drivers\Dflash\faccess.h	/^MInt get_current_file_status( FILESYS_T *psta );$/;"	p	signature:( FILESYS_T *psta )
-get_current_file_status	.\Drivers\Dflash\old_faccess.c	/^get_current_file_status( FILESYS_T *psta )$/;"	f	signature:( FILESYS_T *psta )
-get_current_unit_size	.\Drivers\Dflash\faccess.c	/^get_current_unit_size( void )$/;"	f	signature:( void )
-get_current_unit_size	.\Drivers\Dflash\faccess.h	/^uint get_current_unit_size( void );$/;"	p	signature:( void )
-get_current_unit_size	.\Drivers\Dflash\old_faccess.c	/^get_current_unit_size( void )$/;"	f	signature:( void )
-get_enable_status	.\Drivers\Enaint\lowint.c	/^get_enable_status( void )$/;"	f	signature:( void )
-get_enable_status	.\Drivers\Enaint\lowint.h	/^MUInt get_enable_status( void );$/;"	p	signature:( void )
-get_existing_space	.\Drivers\Dflash\faccess.c	/^get_existing_space( MUInt unit_size )$/;"	f	signature:( MUInt unit_size )
-get_existing_space	.\Drivers\Dflash\faccess.h	/^ulong get_existing_space( MUInt unit_size );$/;"	p	signature:( MUInt unit_size )
-get_existing_space	.\Drivers\Dflash\old_faccess.c	/^get_existing_space( MUInt unit_size )$/;"	f	signature:( MUInt unit_size )
-get_free_users	.\userdfs\users.c	/^get_free_users( void )$/;"	f	file:	signature:( void )
+get_batt_lvl	.\Drivers\Pwrsys\pwrhdl.c	/^get_batt_lvl( void )$/;"	f
+get_char	.\Drivers\Serial\serial.c	/^get_char( MUInt channel, unsigned char *p )$/;"	f
+get_checksum	.\Common\utils\utils.c	/^get_checksum( void *p, MUInt qty )$/;"	f
+get_cstate	.\Drivers\Sensor\cparse.c	/^get_cstate( MUInt cphdlr )$/;"	f
+get_curr_val	.\ctsafe\logprot.c	/^get_curr_val( void )$/;"	f
+get_current_file_status	.\Drivers\Dflash\faccess.c	/^get_current_file_status( FILESYS_T *psta )$/;"	f
+get_current_file_status	.\Drivers\Dflash\old_faccess.c	/^get_current_file_status( FILESYS_T *psta )$/;"	f
+get_current_unit_size	.\Drivers\Dflash\faccess.c	/^get_current_unit_size( void )$/;"	f
+get_current_unit_size	.\Drivers\Dflash\old_faccess.c	/^get_current_unit_size( void )$/;"	f
+get_enable_status	.\Drivers\Enaint\lowint.c	/^get_enable_status( void )$/;"	f
+get_existing_space	.\Drivers\Dflash\faccess.c	/^get_existing_space( MUInt unit_size )$/;"	f
+get_existing_space	.\Drivers\Dflash\old_faccess.c	/^get_existing_space( MUInt unit_size )$/;"	f
+get_free_users	.\userdfs\users.c	/^get_free_users( void )$/;"	f	file:
 get_frlen	.\Common\Automatons\valprot\valact.c	20;"	d	file:
-get_group_status	.\Drivers\GRstatus\grstatus.c	/^get_group_status( void )$/;"	f	signature:( void )
-get_group_status	.\Drivers\GRstatus\grstatus.h	/^unsigned char *get_group_status( void );$/;"	p	signature:( void )
-get_grq_qty	.\Drivers\GRstatus\grqueue.c	/^get_grq_qty( void )$/;"	f	signature:( void )
-get_grq_qty	.\Drivers\GRstatus\grqueue.h	/^MUInt get_grq_qty( void );$/;"	p	signature:( void )
-get_grstat	.\Drivers\GRstatus\grstatus.c	/^get_grstat( void )$/;"	f	signature:( void )
-get_grstat	.\Drivers\GRstatus\grstatus.h	/^GR1ST_T * get_grstat( void );$/;"	p	signature:( void )
-get_gsq_qty	.\Drivers\Serial\gsqueue\gsqueue.c	/^get_gsq_qty( QHDLR qh )$/;"	f	signature:( QHDLR qh )
-get_gsq_qty	.\Drivers\Serial\gsqueue\gsqueue.h	/^MUInt get_gsq_qty( QHDLR qh );$/;"	p	signature:( QHDLR qh )
-get_info_dir	.\Drivers\Dflash\faccess.c	/^get_info_dir( void )$/;"	f	file:	signature:( void )
-get_info_dir	.\Drivers\Dflash\old_faccess.c	/^get_info_dir( void )$/;"	f	file:	signature:( void )
-get_mcu_id	.\Drivers\Pwrsys\pwrhdl.c	/^get_mcu_id( void )$/;"	f	signature:( void )
-get_mcu_id	.\Drivers\Pwrsys\pwrhdl.h	/^MUInt get_mcu_id( void );$/;"	p	signature:( void )
-get_next_power	.\Drivers\Dflash\dfmanage.c	/^get_next_power( uint size )$/;"	f	signature:( uint size )
-get_page	.\Drivers\Dflash\faccess.c	/^get_page( DFLASH_T *pf, MUInt device, ushort *pcheck, ushort *pfcheck )$/;"	f	file:	signature:( DFLASH_T *pf, MUInt device, ushort *pcheck, ushort *pfcheck )
-get_page	.\Drivers\Dflash\old_faccess.c	/^get_page( DFLASH_T *pf, MUInt device, ushort *pcheck )$/;"	f	file:	signature:( DFLASH_T *pf, MUInt device, ushort *pcheck )
-get_processor_state	.\userdfs\users.c	/^get_processor_state( void )$/;"	f	signature:( void )
-get_processor_state	.\userdfs\users.h	/^MUInt get_processor_state( void );$/;"	p	signature:( void )
-get_sensor	.\Drivers\Sensor\sensor.c	/^get_sensor( MUInt hdlr )$/;"	f	file:	signature:( MUInt hdlr )
-get_start_val_timeout	.\ctsafe\valconf.c	/^get_start_val_timeout( MUInt val )$/;"	f	signature:( MUInt val )
-get_start_val_timeout	.\ctsafe\valconf.h	/^ushort get_start_val_timeout( MUInt val );$/;"	p	signature:( MUInt val )
-get_tlock_timer	.\Drivers\Locker\locker.c	/^get_tlock_timer( MUInt which )$/;"	f	signature:( MUInt which )
-get_tlock_timer	.\Drivers\Locker\locker.h	/^unsigned short get_tlock_timer( MUInt which );$/;"	p	signature:( MUInt which )
-get_unlock_ena_timer	.\Drivers\Locker\locker.c	/^get_unlock_ena_timer( void )$/;"	f	signature:( void )
-get_unlock_ena_timer	.\Drivers\Locker\locker.h	/^unsigned short get_unlock_ena_timer( void );$/;"	p	signature:( void )
-get_user_information	.\userdfs\users.c	/^get_user_information(  uint *pmax_users, uint *pfree_users )$/;"	f	signature:( uint *pmax_users, uint *pfree_users )
-get_user_information	.\userdfs\users.h	/^MInt get_user_information(  uint *pmax_users, uint *pfree_users );$/;"	p	signature:( uint *pmax_users, uint *pfree_users )
-get_val_echo	.\ctsafe\valconf.c	/^get_val_echo( MUInt val )$/;"	f	signature:( MUInt val )
-get_val_echo	.\ctsafe\valconf.h	/^MUInt get_val_echo( MUInt val );$/;"	p	signature:( MUInt val )
+get_group_status	.\Drivers\GRstatus\grstatus.c	/^get_group_status( void )$/;"	f
+get_grq_qty	.\Drivers\GRstatus\grqueue.c	/^get_grq_qty( void )$/;"	f
+get_grstat	.\Drivers\GRstatus\grstatus.c	/^get_grstat( void )$/;"	f
+get_gsq_qty	.\Drivers\Serial\gsqueue\gsqueue.c	/^get_gsq_qty( QHDLR qh )$/;"	f
+get_info_dir	.\Drivers\Dflash\faccess.c	/^get_info_dir( void )$/;"	f	file:
+get_info_dir	.\Drivers\Dflash\old_faccess.c	/^get_info_dir( void )$/;"	f	file:
+get_mcu_id	.\Drivers\Pwrsys\pwrhdl.c	/^get_mcu_id( void )$/;"	f
+get_next_power	.\Drivers\Dflash\dfmanage.c	/^get_next_power( uint size )$/;"	f
+get_page	.\Drivers\Dflash\faccess.c	/^get_page( DFLASH_T *pf, MUInt device, ushort *pcheck, ushort *pfcheck )$/;"	f	file:
+get_page	.\Drivers\Dflash\old_faccess.c	/^get_page( DFLASH_T *pf, MUInt device, ushort *pcheck )$/;"	f	file:
+get_processor_state	.\userdfs\users.c	/^get_processor_state( void )$/;"	f
+get_sensor	.\Drivers\Sensor\sensor.c	/^get_sensor( MUInt hdlr )$/;"	f	file:
+get_start_val_timeout	.\ctsafe\valconf.c	/^get_start_val_timeout( MUInt val )$/;"	f
+get_tlock_timer	.\Drivers\Locker\locker.c	/^get_tlock_timer( MUInt which )$/;"	f
+get_unlock_ena_timer	.\Drivers\Locker\locker.c	/^get_unlock_ena_timer( void )$/;"	f
+get_user_information	.\userdfs\users.c	/^get_user_information(  uint *pmax_users, uint *pfree_users )$/;"	f
+get_val_echo	.\ctsafe\valconf.c	/^get_val_echo( MUInt val )$/;"	f
 get_xmit_frames	.\ctsafe\logprot.c	453;"	d	file:
-get_xmit_frames	.\ctsafe\logprot.h	/^uint get_xmit_frames( void );$/;"	p	signature:( void )
 grq	.\Drivers\GRstatus\grqueue.c	/^static GR1ST_T grq[GRQ_MAX_ELEMENTS];$/;"	v	file:
 grqueue	.\Drivers\GRstatus\grqueue.c	/^static GRQUEUE grqueue = $/;"	v	file:
 grst	.\Drivers\GRstatus\grstatus.c	/^static GR1ST_T grst;$/;"	v	file:
 gsqueues	.\Drivers\Serial\gsqueue\qdata.c	/^GSQUEUE gsqueues[] =$/;"	v
-handler_timers	.\Drivers\Stimers\stimers.c	/^handler_timers( void )$/;"	f	signature:( void )
-handler_timers	.\Drivers\Stimers\stimers.h	/^void handler_timers( void );$/;"	p	signature:( void )
-host_init	.\Drivers\Serial\sloghost.c	/^host_init( SERIAL_T *p )$/;"	f	signature:( SERIAL_T *p )
-host_init	.\Drivers\Serial\sloghost.h	/^void host_init( SERIAL_T *p );$/;"	p	signature:( SERIAL_T *p )
-host_rcv_isr	.\Drivers\Platform\SCI\sci.c	/^host_rcv_isr( void )$/;"	f	signature:( void )
-host_reset	.\Drivers\Pwrsys\pwrsys.c	/^host_reset( void )$/;"	f	signature:( void )
-host_reset	.\Drivers\Pwrsys\pwrsys.h	/^void host_reset( void );$/;"	p	signature:( void )
-host_sci1_init	.\Drivers\Platform\SCI\sci.c	/^host_sci1_init( SERIAL_T *p )$/;"	f	signature:( SERIAL_T *p )
-host_sci1_init	.\Drivers\Platform\SCI\sci.h	/^void host_sci1_init( SERIAL_T *p );$/;"	p	signature:( SERIAL_T *p )
-host_sci1_sendchar	.\Drivers\Platform\SCI\sci.c	/^host_sci1_sendchar( unsigned char c )$/;"	f	signature:( unsigned char c )
-host_sci1_sendchar	.\Drivers\Platform\SCI\sci.h	/^void host_sci1_sendchar( unsigned char c );$/;"	p	signature:( unsigned char c )
-host_sci1_setbd	.\Drivers\Platform\SCI\sci.c	/^host_sci1_setbd( unsigned short baud_rate )$/;"	f	signature:( unsigned short baud_rate )
-host_sci1_setbd	.\Drivers\Platform\SCI\sci.h	/^void host_sci1_setbd( unsigned short baud_rate );$/;"	p	signature:( unsigned short baud_rate )
-host_sendchar	.\Drivers\Serial\sloghost.c	/^host_sendchar( unsigned char c )$/;"	f	signature:( unsigned char c )
-host_sendchar	.\Drivers\Serial\sloghost.h	/^void host_sendchar( unsigned char c );$/;"	p	signature:( unsigned char c )
-host_setbd	.\Drivers\Serial\sloghost.c	/^host_setbd( MUInt bd )$/;"	f	signature:( MUInt bd )
-host_setbd	.\Drivers\Serial\sloghost.h	/^void host_setbd( MUInt bd );$/;"	p	signature:( MUInt bd )
+handler_timers	.\Drivers\Stimers\stimers.c	/^handler_timers( void )$/;"	f
+host_init	.\Drivers\Serial\sloghost.c	/^host_init( SERIAL_T *p )$/;"	f
+host_rcv_isr	.\Drivers\Platform\SCI\sci.c	/^host_rcv_isr( void )$/;"	f
+host_reset	.\Drivers\Pwrsys\pwrsys.c	/^host_reset( void )$/;"	f
+host_sci1_init	.\Drivers\Platform\SCI\sci.c	/^host_sci1_init( SERIAL_T *p )$/;"	f
+host_sci1_sendchar	.\Drivers\Platform\SCI\sci.c	/^host_sci1_sendchar( unsigned char c )$/;"	f
+host_sci1_setbd	.\Drivers\Platform\SCI\sci.c	/^host_sci1_setbd( unsigned short baud_rate )$/;"	f
+host_sendchar	.\Drivers\Serial\sloghost.c	/^host_sendchar( unsigned char c )$/;"	f
+host_setbd	.\Drivers\Serial\sloghost.c	/^host_setbd( MUInt bd )$/;"	f
 hostrx_queue	.\Drivers\Serial\sertable.c	/^unsigned char hostrx_queue[ HOSTRX_MAX_CH ];$/;"	v
-icg_init	.\Drivers\Platform\ICG\icg.c	/^icg_init( void )$/;"	f	signature:( void )
-icg_init	.\Drivers\Platform\ICG\icg.h	/^void icg_init( void );$/;"	p	signature:( void )
-idle_ppro	.\Common\Automatons\logprot\alphact.c	/^idle_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-idle_ppro	.\Common\Automatons\logprot\alphact.h	/^NARG_T idle_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+icg_init	.\Drivers\Platform\ICG\icg.c	/^icg_init( void )$/;"	f
+idle_ppro	.\Common\Automatons\logprot\alphact.c	/^idle_ppro( const NEWS_T *in )$/;"	f
 idle_prot	.\Common\Automatons\logprot\alphctrl.c	/^const STATE idle_prot =$/;"	v
 idle_val	.\Common\Automatons\valprot\valctrl.c	/^const STATE idle_val =$/;"	v
-idle_val_ppro	.\Common\Automatons\valprot\valact.c	/^idle_val_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-idle_val_ppro	.\Common\Automatons\valprot\valact.h	/^NARG_T idle_val_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+idle_val_ppro	.\Common\Automatons\valprot\valact.c	/^idle_val_ppro( const NEWS_T *in )$/;"	f
 idle_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE idle_wos =$/;"	v
 idle_ws	.\Common\Automatons\doorws\dwsctrl.c	/^const STATE idle_ws =$/;"	v
 in	.\Common\Mparser\mparser.c	/^static NARG_T in;$/;"	v	file:
 in	.\ctsafe\logprot.c	/^static NEWS_T in;$/;"	v	file:
 in_data	.\Common\Automatons\logprot\alphctrl.c	/^const STATE in_data =$/;"	v
-in_data_ppro	.\Common\Automatons\logprot\alphact.c	/^in_data_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-in_data_ppro	.\Common\Automatons\logprot\alphact.h	/^NARG_T in_data_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+in_data_ppro	.\Common\Automatons\logprot\alphact.c	/^in_data_ppro( const NEWS_T *in )$/;"	f
 in_frame	.\Common\Automatons\valprot\valctrl.c	/^const STATE in_frame =$/;"	v
-in_frame_ppro	.\Common\Automatons\valprot\valact.c	/^in_frame_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-in_frame_ppro	.\Common\Automatons\valprot\valact.h	/^NARG_T in_frame_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+in_frame_ppro	.\Common\Automatons\valprot\valact.c	/^in_frame_ppro( const NEWS_T *in )$/;"	f
 in_index	.\Drivers\Dflash\dfdata.h	/^	ulong	in_index;		\/*	....number of elements from beginning	*\/$/;"	m
-in_numdata	.\Common\Automatons\logprot\alphact.c	/^in_numdata( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-in_numdata	.\Common\Automatons\logprot\alphact.h	/^void in_numdata( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-in_pwf	.\Drivers\Pwrsys\pwrhdl.c	/^in_pwf( void )$/;"	f	signature:( void )
-in_pwf	.\Drivers\Pwrsys\pwrhdl.h	/^MUInt in_pwf( void );$/;"	p	signature:( void )
+in_numdata	.\Common\Automatons\logprot\alphact.c	/^in_numdata( const NEWS_T *in )$/;"	f
+in_pwf	.\Drivers\Pwrsys\pwrhdl.c	/^in_pwf( void )$/;"	f
 inc_xmit_frames	.\ctsafe\logprot.c	461;"	d	file:
-inc_xmit_frames	.\ctsafe\logprot.h	/^void inc_xmit_frames( void );$/;"	p	signature:( void )
 index_in	.\Drivers\Dflash\faccess.c	/^	short	index_in;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_in	.\Drivers\Dflash\old_faccess.c	/^	short	index_in;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_out	.\Drivers\Dflash\faccess.c	/^	short	index_out;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_out	.\Drivers\Dflash\old_faccess.c	/^	short	index_out;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
-inf_close	.\Drivers\Sensor\cpdata.c	/^inf_close( void )$/;"	f	file:	signature:( void )
-inf_open	.\Drivers\Sensor\cpdata.c	/^inf_open( void )$/;"	f	file:	signature:( void )
-info_add	.\Drivers\Dflash\faccess.c	/^info_add( void )$/;"	f	file:	signature:( void )
-info_add	.\Drivers\Dflash\old_faccess.c	/^info_add( void )$/;"	f	file:	signature:( void )
-info_close	.\Drivers\Dflash\faccess.c	/^info_close( void )$/;"	f	file:	signature:( void )
-info_close	.\Drivers\Dflash\old_faccess.c	/^info_close( void )$/;"	f	file:	signature:( void )
-info_open	.\Drivers\Dflash\faccess.c	/^info_open( void )$/;"	f	file:	signature:( void )
-info_open	.\Drivers\Dflash\old_faccess.c	/^info_open( void )$/;"	f	file:	signature:( void )
-inform_close_ws	.\Common\Automatons\doorws\dwsact.c	/^inform_close_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-inform_close_ws	.\Common\Automatons\doorws\dwsact.h	/^void inform_close_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-inform_locker_error	.\Drivers\GRstatus\grstatus.c	/^inform_locker_error( MUInt who, MUInt error )$/;"	f	signature:( MUInt who, MUInt error )
-inform_locker_error	.\Drivers\GRstatus\grstatus.h	/^void inform_locker_error( MUInt who, MUInt error );$/;"	p	signature:( MUInt who, MUInt error )
-inform_open_ws	.\Common\Automatons\doorws\dwsact.c	/^inform_open_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-inform_open_ws	.\Common\Automatons\doorws\dwsact.h	/^void inform_open_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+inf_close	.\Drivers\Sensor\cpdata.c	/^inf_close( void )$/;"	f	file:
+inf_open	.\Drivers\Sensor\cpdata.c	/^inf_open( void )$/;"	f	file:
+info_add	.\Drivers\Dflash\faccess.c	/^info_add( void )$/;"	f	file:
+info_add	.\Drivers\Dflash\old_faccess.c	/^info_add( void )$/;"	f	file:
+info_close	.\Drivers\Dflash\faccess.c	/^info_close( void )$/;"	f	file:
+info_close	.\Drivers\Dflash\old_faccess.c	/^info_close( void )$/;"	f	file:
+info_open	.\Drivers\Dflash\faccess.c	/^info_open( void )$/;"	f	file:
+info_open	.\Drivers\Dflash\old_faccess.c	/^info_open( void )$/;"	f	file:
+inform_close_ws	.\Common\Automatons\doorws\dwsact.c	/^inform_close_ws( NEWS_T *in )$/;"	f
+inform_locker_error	.\Drivers\GRstatus\grstatus.c	/^inform_locker_error( MUInt who, MUInt error )$/;"	f
+inform_open_ws	.\Common\Automatons\doorws\dwsact.c	/^inform_open_ws( NEWS_T *in )$/;"	f
 init_action	.\Common\Mparser\mparser.h	/^	INIT_ACT init_action;$/;"	m
-init_cparse	.\Drivers\Sensor\cparse.c	/^init_cparse( MUInt shdlr, MUInt hnews )$/;"	f	signature:( MUInt shdlr, MUInt hnews )
-init_cparse	.\Drivers\Sensor\cparse.h	/^void init_cparse( MUInt shdlr, MUInt hnews );$/;"	p	signature:( MUInt shdlr, MUInt hnews )
-init_dispatcher	.\Common\Dispatch\dispatch.c	/^init_dispatcher( void )$/;"	f	signature:( void )
-init_dispatcher	.\Common\Dispatch\dispatch.h	/^void init_dispatcher( void );$/;"	p	signature:( void )
-init_dwosctrl	.\Common\Automatons\doorwos\dwosact.c	/^init_dwosctrl( void )$/;"	f	signature:( void )
-init_dwosctrl	.\Common\Automatons\doorwos\dwosact.h	/^void init_dwosctrl( void );$/;"	p	signature:( void )
-init_dwsctrl	.\Common\Automatons\doorws\dwsact.c	/^init_dwsctrl( void )$/;"	f	signature:( void )
-init_dwsctrl	.\Common\Automatons\doorws\dwsact.h	/^void init_dwsctrl( void );$/;"	p	signature:( void )
-init_frame	.\Common\Automatons\logprot\alphact.c	/^init_frame( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-init_frame	.\Common\Automatons\logprot\alphact.h	/^void init_frame( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-init_group_status	.\Drivers\GRstatus\grstatus.c	/^init_group_status( void )$/;"	f	signature:( void )
-init_group_status	.\Drivers\GRstatus\grstatus.h	/^void init_group_status( void );$/;"	p	signature:( void )
-init_int_handler	.\Drivers\Enaint\enaint.c	/^init_int_handler( void )$/;"	f	signature:( void )
-init_int_handler	.\Drivers\Enaint\enaint.h	/^void init_int_handler( void );$/;"	p	signature:( void )
-init_logprot	.\ctsafe\logprot.c	/^init_logprot( void )$/;"	f	signature:( void )
-init_logprot	.\ctsafe\logprot.h	/^void init_logprot( void );$/;"	p	signature:( void )
-init_main_timer_interrupt	.\Drivers\Maintime\maintime.c	/^init_main_timer_interrupt( void )$/;"	f	signature:( void )
-init_main_timer_interrupt	.\Drivers\Maintime\maintime.h	/^void init_main_timer_interrupt( void );$/;"	p	signature:( void )
-init_mparsers	.\Common\Mparser\mparser.c	/^init_mparsers( MUInt hp )$/;"	f	signature:( MUInt hp )
-init_mparsers	.\Common\Mparser\mparser.h	/^void init_mparsers( MUInt hp );$/;"	p	signature:( MUInt hp )
-init_phymed	.\Drivers\Serial\Phylay\phylay.c	/^init_phymed( void )$/;"	f	signature:( void )
-init_phymed	.\Drivers\Serial\Phylay\phylay.h	/^void init_phymed( void );$/;"	p	signature:( void )
-init_prot	.\Common\Automatons\logprot\alphact.c	/^init_prot( void )$/;"	f	signature:( void )
-init_prot	.\Common\Automatons\logprot\alphact.h	/^void init_prot( void );$/;"	p	signature:( void )
-init_pwrctrl	.\Common\Automatons\pwrctrl\pwract.c	/^init_pwrctrl( void )$/;"	f	signature:( void )
-init_pwrctrl	.\Common\Automatons\pwrctrl\pwract.h	/^void init_pwrctrl( void );$/;"	p	signature:( void )
-init_pwrfail_det	.\Drivers\Platform\IRQ\irq.c	/^init_pwrfail_det( void )$/;"	f	signature:( void )
-init_pwrfail_det	.\Drivers\Platform\IRQ\irq.h	/^void init_pwrfail_det( void );$/;"	p	signature:( void )
-init_pwrsys	.\Drivers\Pwrsys\pwrsys.c	/^init_pwrsys( void )$/;"	f	signature:( void )
-init_pwrsys	.\Drivers\Pwrsys\pwrsys.h	/^MUInt init_pwrsys( void );$/;"	p	signature:( void )
-init_sensors	.\Drivers\Sensor\sensor.c	/^init_sensors( void )$/;"	f	signature:( void )
-init_sensors	.\Drivers\Sensor\sensor.h	/^void init_sensors( void );$/;"	p	signature:( void )
-init_serlog	.\Drivers\Serial\serlog.c	/^init_serlog( MUInt channel, const SERIAL_T *p )$/;"	f	signature:( MUInt channel, const SERIAL_T *p )
-init_serlog	.\Drivers\Serial\serlog.h	/^void init_serlog( MUInt channel, const SERIAL_T *p );$/;"	p	signature:( MUInt channel, const SERIAL_T *p )
-init_sersw	.\Drivers\Serial\Phylay\sersw.c	/^init_sersw( void )$/;"	f	signature:( void )
-init_sersw	.\Drivers\Serial\Phylay\sersw.h	/^void init_sersw( void );$/;"	p	signature:( void )
-init_stack	.\Drivers\Enaint\enaint.c	/^init_stack( void )$/;"	f	file:	signature:( void )
+init_cparse	.\Drivers\Sensor\cparse.c	/^init_cparse( MUInt shdlr, MUInt hnews )$/;"	f
+init_dispatcher	.\Common\Dispatch\dispatch.c	/^init_dispatcher( void )$/;"	f
+init_dwosctrl	.\Common\Automatons\doorwos\dwosact.c	/^init_dwosctrl( void )$/;"	f
+init_dwsctrl	.\Common\Automatons\doorws\dwsact.c	/^init_dwsctrl( void )$/;"	f
+init_frame	.\Common\Automatons\logprot\alphact.c	/^init_frame( const NEWS_T *in )$/;"	f
+init_group_status	.\Drivers\GRstatus\grstatus.c	/^init_group_status( void )$/;"	f
+init_int_handler	.\Drivers\Enaint\enaint.c	/^init_int_handler( void )$/;"	f
+init_logprot	.\ctsafe\logprot.c	/^init_logprot( void )$/;"	f
+init_main_timer_interrupt	.\Drivers\Maintime\maintime.c	/^init_main_timer_interrupt( void )$/;"	f
+init_mparsers	.\Common\Mparser\mparser.c	/^init_mparsers( MUInt hp )$/;"	f
+init_phymed	.\Drivers\Serial\Phylay\phylay.c	/^init_phymed( void )$/;"	f
+init_prot	.\Common\Automatons\logprot\alphact.c	/^init_prot( void )$/;"	f
+init_pwrctrl	.\Common\Automatons\pwrctrl\pwract.c	/^init_pwrctrl( void )$/;"	f
+init_pwrfail_det	.\Drivers\Platform\IRQ\irq.c	/^init_pwrfail_det( void )$/;"	f
+init_pwrsys	.\Drivers\Pwrsys\pwrsys.c	/^init_pwrsys( void )$/;"	f
+init_sensors	.\Drivers\Sensor\sensor.c	/^init_sensors( void )$/;"	f
+init_serlog	.\Drivers\Serial\serlog.c	/^init_serlog( MUInt channel, const SERIAL_T *p )$/;"	f
+init_sersw	.\Drivers\Serial\Phylay\sersw.c	/^init_sersw( void )$/;"	f
+init_stack	.\Drivers\Enaint\enaint.c	/^init_stack( void )$/;"	f	file:
 init_state	.\Common\Mparser\mparser.h	/^	const STATE *const init_state;$/;"	m
-init_stimers	.\Drivers\Stimers\stimers.c	/^init_stimers( void )$/;"	f	signature:( void )
-init_stimers	.\Drivers\Stimers\stimers.h	/^void init_stimers( void );$/;"	p	signature:( void )
-init_system	.\Init\initsys.c	/^init_system( void )$/;"	f	signature:( void )
-init_system	.\Init\initsys.h	/^void init_system( void );$/;"	p	signature:( void )
-init_timer_hardware	.\Drivers\Maintime\config\irqtime.h	/^void init_timer_hardware( unsigned short irq_time );$/;"	p	signature:( unsigned short irq_time )
-init_timer_hardware	.\Drivers\Platform\RTI\rti.c	/^init_timer_hardware( unsigned short irq_time )$/;"	f	signature:( unsigned short irq_time )
-init_val	.\Common\Automatons\valprot\valact.c	/^init_val( void )$/;"	f	signature:( void )
-init_val	.\Common\Automatons\valprot\valact.h	/^void init_val( void );$/;"	p	signature:( void )
-init_vframe	.\Common\Automatons\valprot\valact.c	/^init_vframe( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-init_vframe	.\Common\Automatons\valprot\valact.h	/^void init_vframe( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-init_wouts	.\Drivers\Wout\wouts.c	/^init_wouts( void )$/;"	f	signature:( void )
-init_wouts	.\Drivers\Wout\wouts.h	/^void init_wouts( void );$/;"	p	signature:( void )
-installed_mem	.\Init\initsys.c	/^static MUInt installed_mem = 0xFF;$/;"	v	file:
+init_stimers	.\Drivers\Stimers\stimers.c	/^init_stimers( void )$/;"	f
+init_system	.\Init\initsys.c	/^init_system( void )$/;"	f
+init_timer_hardware	.\Drivers\Platform\RTI\rti.c	/^init_timer_hardware( unsigned short irq_time )$/;"	f
+init_val	.\Common\Automatons\valprot\valact.c	/^init_val( void )$/;"	f
+init_vframe	.\Common\Automatons\valprot\valact.c	/^init_vframe( const NEWS_T *in )$/;"	f
+init_wouts	.\Drivers\Wout\wouts.c	/^init_wouts( void )$/;"	f
 int_stack	.\Drivers\Enaint\enaint.c	/^static signed char int_stack[ MAX_INT_STACK ], *pint;$/;"	v	file:
-irq_handler	.\Drivers\Platform\IRQ\irq.c	/^irq_handler( void )$/;"	f	signature:( void )
-irq_init	.\Drivers\Platform\IRQ\irq.c	/^irq_init( void )$/;"	f	file:	signature:( void )
+irq_handler	.\Drivers\Platform\IRQ\irq.c	/^irq_handler( void )$/;"	f
+irq_init	.\Drivers\Platform\IRQ\irq.c	/^irq_init( void )$/;"	f	file:
 irqf	.\Drivers\Platform\RTI\rti.c	/^static const unsigned short irqf[]=$/;"	v	file:
-irqpin_det	.\Drivers\Platform\IRQ\irq.h	/^void irqpin_det( MUInt ctrl );$/;"	p	signature:( MUInt ctrl )
 is_cmd	.\Common\Automatons\logprot\alphact.c	21;"	d	file:
 is_dev	.\Common\Automatons\logprot\alphact.c	20;"	d	file:
-is_empty_grqueue	.\Drivers\GRstatus\grqueue.c	/^is_empty_grqueue( void )$/;"	f	signature:( void )
-is_empty_grqueue	.\Drivers\GRstatus\grqueue.h	/^MUInt is_empty_grqueue( void );$/;"	p	signature:( void )
-is_empty_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^is_empty_gsqueue( QHDLR qh )$/;"	f	signature:( QHDLR qh )
-is_empty_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.h	/^MUInt is_empty_gsqueue( QHDLR qh );$/;"	p	signature:( QHDLR qh )
-is_empty_nqueue	.\Common\news\nqueue.c	/^is_empty_nqueue( MUInt qh )$/;"	f	signature:( MUInt qh )
-is_empty_nqueue	.\Common\news\nqueue.h	/^MUInt is_empty_nqueue( MUInt qh );$/;"	p	signature:( MUInt qh )
-is_irqpin_set	.\Drivers\Platform\IRQ\irq.c	/^is_irqpin_set( void )$/;"	f	signature:( void )
-is_irqpin_set	.\Drivers\Platform\IRQ\irq.h	/^unsigned char is_irqpin_set( void );$/;"	p	signature:( void )
-is_key_switch_open	.\Drivers\Sensor\cparse.c	/^is_key_switch_open( void )$/;"	f	signature:( void )
-is_key_switch_open	.\Drivers\Sensor\sensor.h	/^MUInt is_key_switch_open( void );$/;"	p	signature:( void )
-is_locker_open	.\Drivers\Locker\lockerhdl.c	/^is_locker_open( MUInt who )$/;"	f	signature:( MUInt who )
-is_locker_open	.\Drivers\Locker\lockerhdl.h	/^MUInt is_locker_open( MUInt who );$/;"	p	signature:( MUInt who )
-is_unlocked	.\Drivers\Locker\lockerhdl.c	/^is_unlocked( MUInt who )$/;"	f	signature:( MUInt who )
-is_unlocked	.\Drivers\Locker\lockerhdl.h	/^MUInt is_unlocked( MUInt who );$/;"	p	signature:( MUInt who )
+is_empty_grqueue	.\Drivers\GRstatus\grqueue.c	/^is_empty_grqueue( void )$/;"	f
+is_empty_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^is_empty_gsqueue( QHDLR qh )$/;"	f
+is_empty_nqueue	.\Common\news\nqueue.c	/^is_empty_nqueue( MUInt qh )$/;"	f
+is_irqpin_set	.\Drivers\Platform\IRQ\irq.c	/^is_irqpin_set( void )$/;"	f
+is_key_switch_open	.\Drivers\Sensor\cparse.c	/^is_key_switch_open( void )$/;"	f
+is_locker_open	.\Drivers\Locker\lockerhdl.c	/^is_locker_open( MUInt who )$/;"	f
+is_unlocked	.\Drivers\Locker\lockerhdl.c	/^is_unlocked( MUInt who )$/;"	f
 is_valid	.\Common\Automatons\valprot\valact.c	21;"	d	file:
 ix_tout	.\Drivers\Sensor\cparse.h	/^	char ix_tout;$/;"	m
-kick_cop_wdog	.\Drivers\Platform\COP\cop.c	/^kick_cop_wdog( void )$/;"	f	signature:( void )
-kick_cop_wdog	.\Drivers\Platform\COP\cop.h	/^void kick_cop_wdog( void );$/;"	p	signature:( void )
+kick_cop_wdog	.\Drivers\Platform\COP\cop.c	/^kick_cop_wdog( void )$/;"	f
 kick_dftimer	.\Drivers\Dflash\spihal.c	27;"	d	file:
-kick_timer	.\Drivers\Stimers\stimers.c	/^kick_timer( MInt thdlr, unsigned short msec )$/;"	f	signature:( MInt thdlr, unsigned short msec )
-kick_timer	.\Drivers\Stimers\stimers.h	/^unsigned short kick_timer( MInt thdlr, unsigned short msec );$/;"	p	signature:( MInt thdlr, unsigned short msec )
-kick_watchdog	.\Drivers\Watchdog\watchdog.c	/^kick_watchdog( void )$/;"	f	signature:( void )
-kick_watchdog	.\Drivers\Watchdog\watchdog.h	/^void kick_watchdog( void );$/;"	p	signature:( void )
-kick_watchdog_low	.\Drivers\Platform\IRQ\pwfhal.h	/^void kick_watchdog_low( void );$/;"	p	signature:( void )
-kick_wouts	.\Drivers\Wout\wouts.c	/^kick_wouts( void )$/;"	f	signature:( void )
-kick_wouts	.\Drivers\Wout\wouts.h	/^void kick_wouts( void );$/;"	p	signature:( void )
+kick_timer	.\Drivers\Stimers\stimers.c	/^kick_timer( MInt thdlr, unsigned short msec )$/;"	f
+kick_watchdog	.\Drivers\Watchdog\watchdog.c	/^kick_watchdog( void )$/;"	f
+kick_wouts	.\Drivers\Wout\wouts.c	/^kick_wouts( void )$/;"	f
 kickwouts	.\Drivers\Wout\wouts.c	/^static MUInt wout_image,kickwouts;$/;"	v	file:
 kill_dftimer	.\Drivers\Dflash\spihal.c	28;"	d	file:
-kill_timer	.\Drivers\Stimers\stimers.c	/^kill_timer( MInt thdlr )$/;"	f	signature:( MInt thdlr )
-kill_timer	.\Drivers\Stimers\stimers.h	/^unsigned short kill_timer( MInt thdlr );$/;"	p	signature:( MInt thdlr )
+kill_timer	.\Drivers\Stimers\stimers.c	/^kill_timer( MInt thdlr )$/;"	f
 last_page	.\Drivers\Dflash\faccess.c	/^	ushort		last_page;$/;"	m	file:
 last_page	.\Drivers\Dflash\old_faccess.c	/^	ushort		last_page;$/;"	m	file:
 last_value	.\Drivers\Sensor\cparse.h	/^	unsigned char last_value;$/;"	m
-lked2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^lked2lked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-lked2lked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void lked2lked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-lked2pulking_wos	.\Common\Automatons\doorwos\dwosact.c	/^lked2pulking_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-lked2pulking_wos	.\Common\Automatons\doorwos\dwosact.h	/^void lked2pulking_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-lked2pulking_ws	.\Common\Automatons\doorws\dwsact.c	/^lked2pulking_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-lked2pulking_ws	.\Common\Automatons\doorws\dwsact.h	/^void lked2pulking_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-lked2ulked_wos	.\Common\Automatons\doorwos\dwosact.c	/^lked2ulked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-lked2ulked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void lked2ulked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-lked2unlked_ws	.\Common\Automatons\doorws\dwsact.c	/^lked2unlked_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-lked2unlked_ws	.\Common\Automatons\doorws\dwsact.h	/^void lked2unlked_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-lking2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^lking2lked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-lking2lked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void lking2lked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-lking2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^lking2lked_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-lking2lked_ws	.\Common\Automatons\doorws\dwsact.h	/^void lking2lked_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-loadByte	.\Start08.c	/^static void near loadByte(void) {$/;"	f	file:	signature:(void)
-lock_a_ctrl	.\Drivers\Locker\lockerhdl.c	/^lock_a_ctrl( MUInt who, MUInt ctrl )$/;"	f	signature:( MUInt who, MUInt ctrl )
-lock_a_ctrl	.\Drivers\Locker\lockerhdl.h	/^void lock_a_ctrl( MUInt who, MUInt ctrl );$/;"	p	signature:( MUInt who, MUInt ctrl )
-lock_b_ctrl	.\Drivers\Locker\lockerhdl.c	/^lock_b_ctrl( MUInt who, MUInt ctrl )$/;"	f	signature:( MUInt who, MUInt ctrl )
-lock_b_ctrl	.\Drivers\Locker\lockerhdl.h	/^void lock_b_ctrl( MUInt who, MUInt ctrl );$/;"	p	signature:( MUInt who, MUInt ctrl )
-lock_locker_wos	.\Common\Automatons\doorwos\dwosact.c	/^lock_locker_wos( void )$/;"	f	file:	signature:( void )
-lock_locker_ws	.\Common\Automatons\doorws\dwsact.c	/^lock_locker_ws( void )$/;"	f	file:	signature:( void )
+lked2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^lked2lked_wos( NEWS_T *in )$/;"	f
+lked2pulking_wos	.\Common\Automatons\doorwos\dwosact.c	/^lked2pulking_wos( NEWS_T *in )$/;"	f
+lked2pulking_ws	.\Common\Automatons\doorws\dwsact.c	/^lked2pulking_ws( NEWS_T *in )$/;"	f
+lked2ulked_wos	.\Common\Automatons\doorwos\dwosact.c	/^lked2ulked_wos( NEWS_T *in )$/;"	f
+lked2unlked_ws	.\Common\Automatons\doorws\dwsact.c	/^lked2unlked_ws( NEWS_T *in )$/;"	f
+lking2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^lking2lked_wos( NEWS_T *in )$/;"	f
+lking2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^lking2lked_ws( NEWS_T *in )$/;"	f
+loadByte	.\Start08.c	/^static void near loadByte(void) {$/;"	f	file:
+lock_a_ctrl	.\Drivers\Locker\lockerhdl.c	/^lock_a_ctrl( MUInt who, MUInt ctrl )$/;"	f
+lock_b_ctrl	.\Drivers\Locker\lockerhdl.c	/^lock_b_ctrl( MUInt who, MUInt ctrl )$/;"	f
+lock_locker_wos	.\Common\Automatons\doorwos\dwosact.c	/^lock_locker_wos( void )$/;"	f	file:
+lock_locker_ws	.\Common\Automatons\doorws\dwsact.c	/^lock_locker_ws( void )$/;"	f	file:
 lock_timer	.\Drivers\Locker\locker.c	/^static unsigned short lock_timer[] = { TOUT_TLOCK, TOUT_TLOCK };$/;"	v	file:
 locked_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE locked_wos =$/;"	v
 locked_ws	.\Common\Automatons\doorws\dwsctrl.c	/^const STATE locked_ws =$/;"	v
@@ -1509,25 +1317,19 @@ log_keys	.\Drivers\Sensor\cpdata.c	17;"	d	file:
 log_keys	.\Drivers\Sensor\cpdata.c	22;"	d	file:
 log_sens	.\Drivers\Sensor\cpdata.c	18;"	d	file:
 log_sens	.\Drivers\Sensor\cpdata.c	23;"	d	file:
-log_user_and_password	.\ctsafe\logprot.c	/^log_user_and_password( uchar dev, uchar *user, uchar *pwd  )$/;"	f	file:	signature:( uchar dev, uchar *user, uchar *pwd )
+log_user_and_password	.\ctsafe\logprot.c	/^log_user_and_password( uchar dev, uchar *user, uchar *pwd  )$/;"	f	file:
 log_val1stck	.\Drivers\Sensor\cpdata.c	15;"	d	file:
 log_val1stck	.\Drivers\Sensor\cpdata.c	20;"	d	file:
 log_val2stck	.\Drivers\Sensor\cpdata.c	16;"	d	file:
 log_val2stck	.\Drivers\Sensor\cpdata.c	21;"	d	file:
-loging_led	.\Drivers\Platform\IO\ioports.c	/^loging_led( void )$/;"	f	signature:( void )
-loging_led	.\Drivers\Platform\IO\ioports.h	/^void loging_led( void );$/;"	p	signature:( void )
-lvd_init	.\Drivers\Platform\LVD\lvd.c	/^lvd_init( void )$/;"	f	signature:( void )
-lvd_init	.\Drivers\Platform\LVD\lvd.h	/^void lvd_init( void );$/;"	p	signature:( void )
-main	.\Start08.c	/^__EXTERN_C extern void main(void); \/* prototype of main function *\/$/;"	p	file:	signature:(void)
-main	.\main.c	/^main( void )$/;"	f	signature:( void )
+loging_led	.\Drivers\Platform\IO\ioports.c	/^loging_led( void )$/;"	f
+lvd_init	.\Drivers\Platform\LVD\lvd.c	/^lvd_init( void )$/;"	f
+main	.\main.c	/^main( void )$/;"	f
 main_timer_counter	.\Drivers\Maintime\maintime.c	/^static unsigned short main_timer_counter;$/;"	v	file:
-main_timer_interrupt	.\Drivers\Maintime\maintime.c	/^main_timer_interrupt( void )$/;"	f	signature:( void )
-main_timer_interrupt	.\Drivers\Maintime\maintime.h	/^void main_timer_interrupt( void );$/;"	p	signature:( void )
-make_file_current	.\Drivers\Dflash\faccess.c	/^make_file_current( MUInt fd )$/;"	f	signature:( MUInt fd )
-make_file_current	.\Drivers\Dflash\faccess.h	/^MUInt make_file_current( MUInt fd );$/;"	p	signature:( MUInt fd )
-make_file_current	.\Drivers\Dflash\old_faccess.c	/^make_file_current( MUInt fd )$/;"	f	signature:( MUInt fd )
-master_restart	.\Common\Automatons\logprot\alphact.c	/^master_restart( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-master_restart	.\Common\Automatons\logprot\alphact.h	/^void master_restart( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+main_timer_interrupt	.\Drivers\Maintime\maintime.c	/^main_timer_interrupt( void )$/;"	f
+make_file_current	.\Drivers\Dflash\faccess.c	/^make_file_current( MUInt fd )$/;"	f
+make_file_current	.\Drivers\Dflash\old_faccess.c	/^make_file_current( MUInt fd )$/;"	f
+master_restart	.\Common\Automatons\logprot\alphact.c	/^master_restart( const NEWS_T *in )$/;"	f
 match	.\ctsafe\logprot.c	/^	uchar match;$/;"	m	file:
 max_users	.\ctsafe\logprot.c	/^	uint max_users;$/;"	m	file:
 mbs	.\Drivers\Pwrsys\pwrsys.c	/^static const char *mbs[] =$/;"	v	file:
@@ -1535,18 +1337,15 @@ mch	.\Drivers\Serial\Phylay\sersw.c	/^static const char *mch[] =$/;"	v	file:
 mem_status	.\Drivers\Dflash\dfvars.c	/^uchar mem_status;$/;"	v
 mlst	.\Drivers\GRstatus\grstatus.c	/^static const char *mlst[] =$/;"	v	file:
 mode	.\Drivers\Dflash\flash.c	/^	uchar	mode;$/;"	m	file:
-modify_page	.\Drivers\Dflash\dfmanage.c	/^modify_page( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-modify_page	.\Drivers\Dflash\dfmanage.h	/^MInt modify_page( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
+modify_page	.\Drivers\Dflash\dfmanage.c	/^modify_page( DFLASH_T *pf )$/;"	f
 mparsers	.\Common\Mparser\mpdata.c	/^MPARSE mparsers[] =$/;"	v
 mps	.\Drivers\Pwrsys\pwrsys.c	/^static const char *mps[] =$/;"	v	file:
 mpst	.\Drivers\GRstatus\grstatus.c	/^static const char *mpst[] =$/;"	v	file:
 ms	.\Drivers\Pwrsys\pwrsys.c	/^		unsigned ms		:4;$/;"	m	file:
 ms	.\Drivers\Pwrsys\pwrsys.c	/^static const char *ms[] =$/;"	v	file:
 mtime	.\Drivers\Platform\RTI\rti.c	/^volatile ushort mtime;$/;"	v
-must_refresh	.\Drivers\Dflash\dfrefrsh.c	/^must_refresh( MUInt device, int page )$/;"	f	signature:( MUInt device, int page )
-must_refresh	.\Drivers\Dflash\dfrefrsh.h	/^int must_refresh( MUInt device, int page );$/;"	p	signature:( MUInt device, int page )
-nchrg2chrg	.\Common\Automatons\pwrctrl\pwract.c	/^nchrg2chrg( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-nchrg2chrg	.\Common\Automatons\pwrctrl\pwract.h	/^void nchrg2chrg( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+must_refresh	.\Drivers\Dflash\dfrefrsh.c	/^must_refresh( MUInt device, int page )$/;"	f
+nchrg2chrg	.\Common\Automatons\pwrctrl\pwract.c	/^nchrg2chrg( NEWS_T *in )$/;"	f
 new_pwd	.\ctsafe\logprot.c	/^	uchar new_pwd[ NUM_PASS ];$/;"	m	file:
 news	.\Common\Mparser\mparser.h	/^	NARG_T news;$/;"	m	struct:trans_t
 news	.\Common\news\news.h	/^	NARG_T news;$/;"	m
@@ -1555,8 +1354,8 @@ news_fly	.\Common\news\news.h	/^	unsigned news_fly:5;$/;"	m
 news_queue	.\Common\news\news.c	/^NEWS_T news_queue[ MAX_NEWS_ELEMS ];$/;"	v
 next_state	.\Common\Mparser\mparser.h	/^	const struct state_t *const next_state;$/;"	m	struct:trans_t
 next_state	.\Drivers\Sensor\cparse.h	/^	unsigned char next_state;$/;"	m
-nil	.\Drivers\Sensor\cpdata.c	/^nil( void )$/;"	f	file:	signature:( void )
-none	.\Drivers\Maintime\config\mtimetbl.c	/^none( void )$/;"	f	signature:( void )
+nil	.\Drivers\Sensor\cpdata.c	/^nil( void )$/;"	f	file:
+none	.\Drivers\Maintime\config\mtimetbl.c	/^none( void )$/;"	f
 nqueues	.\Common\news\nqdata.c	/^NQUEUE nqueues[] =$/;"	v
 num_bytes	.\Drivers\Dflash\flash.c	/^	uchar	num_bytes;$/;"	m	file:
 num_data	.\Common\Automatons\logprot\alphact.c	/^static uchar num_data[ 2 ];$/;"	v	file:
@@ -1577,8 +1376,8 @@ ok_count	.\userdfs\users.c	/^static uint recovered_count, ok_count, format_count
 old_pwd	.\ctsafe\logprot.c	/^	uchar old_pwd[ NUM_PASS ];$/;"	m	file:
 opc_actions	.\Drivers\Dflash\flash.c	/^static OPC_T const opc_actions[ DF_NUM_OPCODES ] =$/;"	v	file:
 opcode	.\Drivers\Dflash\flash.c	/^	uchar	opcode;$/;"	m	file:
-open_sweep_dir	.\Drivers\Dflash\faccess.c	/^open_sweep_dir( void )$/;"	f	file:	signature:( void )
-open_sweep_dir	.\Drivers\Dflash\old_faccess.c	/^open_sweep_dir( void )$/;"	f	file:	signature:( void )
+open_sweep_dir	.\Drivers\Dflash\faccess.c	/^open_sweep_dir( void )$/;"	f	file:
+open_sweep_dir	.\Drivers\Dflash\old_faccess.c	/^open_sweep_dir( void )$/;"	f	file:
 order_num	.\Drivers\Dflash\dftypes.c	/^MUInt order_num;$/;"	v
 out_index	.\Drivers\Dflash\dfdata.h	/^	ulong	out_index;		\/*	indices are measured in terms of....	*\/$/;"	m
 page	.\Common\vaultdef.h	/^	ushort	page;			\/*	page to read or write					(IN)	*\/$/;"	m
@@ -1597,7 +1396,7 @@ pass0	.\ctsafe\logprot.c	/^	uchar pass0[ NUM_PASS ];$/;"	m	file:
 pass0	.\userdfs\users.h	/^	uchar	pass0[ NUM_PASS ];		\/*	In case validation, here goes the login password	*\/$/;"	m
 pass1	.\ctsafe\logprot.c	/^	uchar pass1[ NUM_PASS ];$/;"	m	file:
 pass1	.\userdfs\users.h	/^	uchar	pass1[ NUM_PASS ];$/;"	m
-pass_compare	.\userdfs\users.c	/^pass_compare( const uchar *p1, const uchar *p2 )$/;"	f	file:	signature:( const uchar *p1, const uchar *p2 )
+pass_compare	.\userdfs\users.c	/^pass_compare( const uchar *p1, const uchar *p2 )$/;"	f	file:
 pass_index	.\userdfs\users.c	/^static MInt pass_index;$/;"	v	file:
 payload	.\ctsafe\logprot.h	/^	unsigned char payload[ MAX_NDATA_LEN ];$/;"	m
 pbsc	.\Drivers\Dflash\dftypes.h	/^	const	uchar	*pbsc;		\/*	Pointer to block sector count	*\/$/;"	m
@@ -1610,21 +1409,18 @@ pdevs	.\ctsafe\logprot.c	/^static const PFR pdevs[] =$/;"	v	file:
 pdflash	.\Drivers\Dflash\dftypes.c	/^const DATAFL_T *pdflash[ NUM_FLASH_DEVICES ];		\/*	Pointer to dataflash detected	*\/$/;"	v
 pfr	.\Common\Automatons\valprot\valact.c	/^static unsigned char *pfr;$/;"	v	file:
 pframe	.\Common\Automatons\logprot\alphctrl.c	/^const STATE pframe =$/;"	v
-pframe_ppro	.\Common\Automatons\logprot\alphact.c	/^pframe_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-pframe_ppro	.\Common\Automatons\logprot\alphact.h	/^NARG_T pframe_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+pframe_ppro	.\Common\Automatons\logprot\alphact.c	/^pframe_ppro( const NEWS_T *in )$/;"	f
 pin	.\Common\news\nqueue.h	/^	NEWS_T *pin;$/;"	m
 pin	.\Drivers\GRstatus\grqueue.h	/^	GR1ST_T *pin;$/;"	m
 pin	.\Drivers\Serial\gsqueue\gsqueue.h	/^	ELEM_TYPE *pin;$/;"	m
 pinfo	.\Drivers\Dflash\faccess.c	/^static PAGE_INFO_T pinfo;$/;"	v	file:
 pinfo	.\Drivers\Dflash\old_faccess.c	/^static PAGE_INFO_T pinfo;$/;"	v	file:
 pint	.\Drivers\Enaint\enaint.c	/^static signed char int_stack[ MAX_INT_STACK ], *pint;$/;"	v	file:
-platform_init	.\Drivers\Platform\platform.c	/^platform_init(void)$/;"	f	signature:(void)
-platform_init	.\Drivers\Platform\platform.h	/^void platform_init(void);$/;"	p	signature:(void)
+platform_init	.\Drivers\Platform\platform.c	/^platform_init(void)$/;"	f
 plunger0	.\Drivers\GRstatus\grstatus.h	/^	unsigned char plunger0;$/;"	m
 plunger1	.\Drivers\GRstatus\grstatus.h	/^	unsigned char plunger1;$/;"	m
-pop	.\Drivers\Enaint\enaint.c	/^pop( void )$/;"	f	file:	signature:( void )
-ports_init	.\Drivers\Platform\IO\ioports.c	/^ports_init(void)$/;"	f	signature:(void)
-ports_init	.\Drivers\Platform\IO\ioports.h	/^void ports_init(void);$/;"	p	signature:(void)
+pop	.\Drivers\Enaint\enaint.c	/^pop( void )$/;"	f	file:
+ports_init	.\Drivers\Platform\IO\ioports.c	/^ports_init(void)$/;"	f
 position	.\Drivers\Dflash\dfdata.h	/^	ulong	position;		\/*	Current position for RANDOM	*\/$/;"	m
 pout	.\Common\news\nqueue.h	/^	NEWS_T *pout;$/;"	m
 pout	.\Drivers\GRstatus\grqueue.h	/^	GR1ST_T *pout;$/;"	m
@@ -1633,135 +1429,77 @@ ppayload	.\Common\Automatons\logprot\alphact.c	/^static unsigned char *ppayload;
 ppro	.\Common\Mparser\mparser.h	/^	PREPRO ppro;$/;"	m	struct:state_t
 pre_unlocking_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE pre_unlocking_wos =$/;"	v
 pre_unlocking_ws	.\Common\Automatons\doorws\dwsctrl.c	/^const STATE pre_unlocking_ws =$/;"	v
-prepare_resp_sbox	.\ctsafe\logprot.c	/^prepare_resp_sbox( MUInt dev, MUInt cmd, ushort ndata, void *p )$/;"	f	signature:( MUInt dev, MUInt cmd, ushort ndata, void *p )
-prepare_resp_sbox	.\ctsafe\logprot.h	/^XMIT_BUFF_T *prepare_resp_sbox( MUInt dev, MUInt cmd, ushort ndata, void *p );$/;"	p	signature:( MUInt dev, MUInt cmd, ushort ndata, void *p )
-prepare_resp_val	.\ctsafe\logprot.c	/^prepare_resp_val( RFRAME_T *p )$/;"	f	signature:( RFRAME_T *p )
-prepare_resp_val	.\ctsafe\logprot.h	/^XMIT_BUFF_T *prepare_resp_val( RFRAME_T *p );$/;"	p	signature:( RFRAME_T *p )
-primary_shut_down	.\Drivers\Pwrsys\pwrhdl.c	/^primary_shut_down( void )$/;"	f	signature:( void )
-primary_shut_down	.\Drivers\Pwrsys\pwrhdl.h	/^void primary_shut_down( void );$/;"	p	signature:( void )
-primary_shut_down	.\Drivers\Pwrsys\pwrsys.h	/^void primary_shut_down( void );$/;"	p	signature:( void )
-proc_actrl	.\ctsafe\logprot.c	/^			proc_actrl( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_actrl	.\ctsafe\logprot.c	/^proc_actrl( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_addusr	.\ctsafe\logprot.c	/^			proc_addusr( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_addusr	.\ctsafe\logprot.c	/^proc_addusr( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_blankdfs	.\ctsafe\logprot.c	/^			proc_blankdfs( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_blankdfs	.\ctsafe\logprot.c	/^proc_blankdfs( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_create_file	.\ctsafe\logprot.c	/^			proc_create_file( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_create_file	.\ctsafe\logprot.c	/^proc_create_file( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_delusr	.\ctsafe\logprot.c	/^			proc_delusr( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_delusr	.\ctsafe\logprot.c	/^proc_delusr( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
+prepare_resp_sbox	.\ctsafe\logprot.c	/^prepare_resp_sbox( MUInt dev, MUInt cmd, ushort ndata, void *p )$/;"	f
+prepare_resp_val	.\ctsafe\logprot.c	/^prepare_resp_val( RFRAME_T *p )$/;"	f
+primary_shut_down	.\Drivers\Pwrsys\pwrhdl.c	/^primary_shut_down( void )$/;"	f
+proc_actrl	.\ctsafe\logprot.c	/^proc_actrl( RFRAME_T *p )$/;"	f	file:
+proc_addusr	.\ctsafe\logprot.c	/^proc_addusr( RFRAME_T *p )$/;"	f	file:
+proc_blankdfs	.\ctsafe\logprot.c	/^proc_blankdfs( RFRAME_T *p )$/;"	f	file:
+proc_create_file	.\ctsafe\logprot.c	/^proc_create_file( RFRAME_T *p )$/;"	f	file:
+proc_delusr	.\ctsafe\logprot.c	/^proc_delusr( RFRAME_T *p )$/;"	f	file:
 proc_dev_alarm	.\ctsafe\logprot.c	342;"	d	file:
 proc_dev_locker	.\ctsafe\logprot.c	338;"	d	file:
 proc_dev_locker	.\ctsafe\logprot.c	340;"	d	file:
 proc_dev_plunger	.\ctsafe\logprot.c	339;"	d	file:
 proc_dev_plunger	.\ctsafe\logprot.c	341;"	d	file:
-proc_dev_sbox	.\ctsafe\logprot.c	/^			proc_dev_sbox( RFRAME_T *p );$/;"	p	file:	signature:( RFRAME_T *p )
-proc_dev_sbox	.\ctsafe\logprot.c	/^proc_dev_sbox( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_dev_val	.\ctsafe\logprot.c	/^proc_dev_val( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_dev_val	.\ctsafe\logprot.c	/^static void proc_dev_val( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_editusr	.\ctsafe\logprot.c	/^			proc_editusr( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_editusr	.\ctsafe\logprot.c	/^proc_editusr( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_forceusrpass	.\ctsafe\logprot.c	/^			proc_forceusrpass( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_forceusrpass	.\ctsafe\logprot.c	/^proc_forceusrpass( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_get_dfs_info	.\ctsafe\logprot.c	/^			proc_get_dfs_info( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_get_dfs_info	.\ctsafe\logprot.c	/^proc_get_dfs_info( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_getusrdev	.\ctsafe\logprot.c	/^			proc_getusrdev( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_getusrdev	.\ctsafe\logprot.c	/^proc_getusrdev( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_getusrinfo	.\ctsafe\logprot.c	/^			proc_getusrinfo( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_getusrinfo	.\ctsafe\logprot.c	/^proc_getusrinfo( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_gr1_status	.\ctsafe\logprot.c	/^			proc_gr1_status( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_gr1_status	.\ctsafe\logprot.c	/^proc_gr1_status( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_hostpwr	.\ctsafe\logprot.c	/^			proc_hostpwr( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_hostpwr	.\ctsafe\logprot.c	/^proc_hostpwr( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_lock	.\ctsafe\logprot.c	/^			proc_lock( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_lock	.\ctsafe\logprot.c	/^proc_lock( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_model	.\ctsafe\logprot.c	/^			proc_model( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_model	.\ctsafe\logprot.c	/^proc_model( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_not_assigned	.\ctsafe\logprot.c	/^			proc_not_assigned( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_not_assigned	.\ctsafe\logprot.c	/^proc_not_assigned( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_pwrstatus_irq	.\Drivers\Pwrsys\pwrhdl.c	/^proc_pwrstatus_irq( void )$/;"	f	signature:( void )
-proc_pwrstatus_irq	.\Drivers\Pwrsys\pwrhdl.h	/^void proc_pwrstatus_irq( void );$/;"	p	signature:( void )
-proc_pwrstatus_rti	.\Drivers\Pwrsys\pwrhdl.c	/^proc_pwrstatus_rti( void )$/;"	f	signature:( void )
-proc_pwrstatus_rti	.\Drivers\Pwrsys\pwrhdl.h	/^void proc_pwrstatus_rti( void );$/;"	p	signature:( void )
-proc_rcv_cmd	.\ctsafe\logprot.c	/^proc_rcv_cmd( RFRAME_T *p  )$/;"	f	signature:( RFRAME_T *p )
-proc_rcv_cmd	.\ctsafe\logprot.h	/^void proc_rcv_cmd( RFRAME_T *p );$/;"	p	signature:( RFRAME_T *p )
-proc_rcv_frame	.\ctsafe\logprot.c	/^proc_rcv_frame( RFRAME_T *p )$/;"	f	signature:( RFRAME_T *p )
-proc_rcv_frame	.\ctsafe\logprot.h	/^void proc_rcv_frame( RFRAME_T *p );$/;"	p	signature:( RFRAME_T *p )
-proc_read_file	.\ctsafe\logprot.c	/^			proc_read_file( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_read_file	.\ctsafe\logprot.c	/^proc_read_file( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_reinit_file	.\ctsafe\logprot.c	/^			proc_reinit_file( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_reinit_file	.\ctsafe\logprot.c	/^proc_reinit_file( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_resetmcu	.\ctsafe\logprot.c	/^			proc_resetmcu( RFRAME_T *p );$/;"	p	file:	signature:( RFRAME_T *p )
-proc_resetmcu	.\ctsafe\logprot.c	/^proc_resetmcu( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_seek_file	.\ctsafe\logprot.c	/^			proc_seek_file( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_seek_file	.\ctsafe\logprot.c	/^proc_seek_file( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_sensors	.\Drivers\Sensor\sensor.c	/^proc_sensors( void )$/;"	f	signature:( void )
-proc_sensors	.\Drivers\Sensor\sensor.h	/^void proc_sensors( void );$/;"	p	signature:( void )
-proc_setusrdev	.\ctsafe\logprot.c	/^			proc_setusrdev( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_setusrdev	.\ctsafe\logprot.c	/^proc_setusrdev( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_shutdown	.\ctsafe\logprot.c	/^			proc_shutdown( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_shutdown	.\ctsafe\logprot.c	/^proc_shutdown( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_status_file	.\ctsafe\logprot.c	/^			proc_status_file( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_status_file	.\ctsafe\logprot.c	/^proc_status_file( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_syncnumframes	.\ctsafe\logprot.c	/^			proc_syncnumframes( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_syncnumframes	.\ctsafe\logprot.c	/^proc_syncnumframes( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_tlock	.\ctsafe\logprot.c	/^			proc_tlock( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_tlock	.\ctsafe\logprot.c	/^proc_tlock( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_tunlock_enable	.\ctsafe\logprot.c	/^			proc_tunlock_enable( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_tunlock_enable	.\ctsafe\logprot.c	/^proc_tunlock_enable( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_unlock	.\ctsafe\logprot.c	/^proc_unlock( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_unlock	.\ctsafe\logprot.c	/^static void proc_unlock( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_usrformat	.\ctsafe\logprot.c	/^			proc_usrformat( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_usrformat	.\ctsafe\logprot.c	/^proc_usrformat( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_val_config	.\ctsafe\logprot.c	/^			proc_val_config( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_val_config	.\ctsafe\logprot.c	/^proc_val_config( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_valusr	.\ctsafe\logprot.c	/^			proc_valusr( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_valusr	.\ctsafe\logprot.c	/^proc_valusr( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_version	.\ctsafe\logprot.c	/^			proc_version( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_version	.\ctsafe\logprot.c	/^proc_version( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-proc_wouts	.\Drivers\Wout\wouts.c	/^proc_wouts( void )$/;"	f	signature:( void )
-proc_wouts	.\Drivers\Wout\wouts.h	/^void proc_wouts( void );$/;"	p	signature:( void )
-proc_write_file	.\ctsafe\logprot.c	/^			proc_write_file( RFRAME_T *p ),$/;"	p	file:	signature:( RFRAME_T *p )
-proc_write_file	.\ctsafe\logprot.c	/^proc_write_file( RFRAME_T *p )$/;"	f	file:	signature:( RFRAME_T *p )
-program_page	.\Drivers\Dflash\dfmanage.c	/^program_page( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-program_page	.\Drivers\Dflash\dfmanage.h	/^MInt program_page( DFLASH_T *pf );$/;"	p	signature:( DFLASH_T *pf )
+proc_dev_sbox	.\ctsafe\logprot.c	/^proc_dev_sbox( RFRAME_T *p )$/;"	f	file:
+proc_dev_val	.\ctsafe\logprot.c	/^proc_dev_val( RFRAME_T *p )$/;"	f	file:
+proc_editusr	.\ctsafe\logprot.c	/^proc_editusr( RFRAME_T *p )$/;"	f	file:
+proc_forceusrpass	.\ctsafe\logprot.c	/^proc_forceusrpass( RFRAME_T *p )$/;"	f	file:
+proc_get_dfs_info	.\ctsafe\logprot.c	/^proc_get_dfs_info( RFRAME_T *p )$/;"	f	file:
+proc_getusrdev	.\ctsafe\logprot.c	/^proc_getusrdev( RFRAME_T *p )$/;"	f	file:
+proc_getusrinfo	.\ctsafe\logprot.c	/^proc_getusrinfo( RFRAME_T *p )$/;"	f	file:
+proc_gr1_status	.\ctsafe\logprot.c	/^proc_gr1_status( RFRAME_T *p )$/;"	f	file:
+proc_hostpwr	.\ctsafe\logprot.c	/^proc_hostpwr( RFRAME_T *p )$/;"	f	file:
+proc_lock	.\ctsafe\logprot.c	/^proc_lock( RFRAME_T *p )$/;"	f	file:
+proc_model	.\ctsafe\logprot.c	/^proc_model( RFRAME_T *p )$/;"	f	file:
+proc_not_assigned	.\ctsafe\logprot.c	/^proc_not_assigned( RFRAME_T *p )$/;"	f	file:
+proc_pwrstatus_irq	.\Drivers\Pwrsys\pwrhdl.c	/^proc_pwrstatus_irq( void )$/;"	f
+proc_pwrstatus_rti	.\Drivers\Pwrsys\pwrhdl.c	/^proc_pwrstatus_rti( void )$/;"	f
+proc_rcv_cmd	.\ctsafe\logprot.c	/^proc_rcv_cmd( RFRAME_T *p  )$/;"	f
+proc_rcv_frame	.\ctsafe\logprot.c	/^proc_rcv_frame( RFRAME_T *p )$/;"	f
+proc_read_file	.\ctsafe\logprot.c	/^proc_read_file( RFRAME_T *p )$/;"	f	file:
+proc_reinit_file	.\ctsafe\logprot.c	/^proc_reinit_file( RFRAME_T *p )$/;"	f	file:
+proc_resetmcu	.\ctsafe\logprot.c	/^proc_resetmcu( RFRAME_T *p )$/;"	f	file:
+proc_seek_file	.\ctsafe\logprot.c	/^proc_seek_file( RFRAME_T *p )$/;"	f	file:
+proc_sensors	.\Drivers\Sensor\sensor.c	/^proc_sensors( void )$/;"	f
+proc_setusrdev	.\ctsafe\logprot.c	/^proc_setusrdev( RFRAME_T *p )$/;"	f	file:
+proc_shutdown	.\ctsafe\logprot.c	/^proc_shutdown( RFRAME_T *p )$/;"	f	file:
+proc_status_file	.\ctsafe\logprot.c	/^proc_status_file( RFRAME_T *p )$/;"	f	file:
+proc_syncnumframes	.\ctsafe\logprot.c	/^proc_syncnumframes( RFRAME_T *p )$/;"	f	file:
+proc_tlock	.\ctsafe\logprot.c	/^proc_tlock( RFRAME_T *p )$/;"	f	file:
+proc_tunlock_enable	.\ctsafe\logprot.c	/^proc_tunlock_enable( RFRAME_T *p )$/;"	f	file:
+proc_unlock	.\ctsafe\logprot.c	/^proc_unlock( RFRAME_T *p )$/;"	f	file:
+proc_usrformat	.\ctsafe\logprot.c	/^proc_usrformat( RFRAME_T *p )$/;"	f	file:
+proc_val_config	.\ctsafe\logprot.c	/^proc_val_config( RFRAME_T *p )$/;"	f	file:
+proc_valusr	.\ctsafe\logprot.c	/^proc_valusr( RFRAME_T *p )$/;"	f	file:
+proc_version	.\ctsafe\logprot.c	/^proc_version( RFRAME_T *p )$/;"	f	file:
+proc_wouts	.\Drivers\Wout\wouts.c	/^proc_wouts( void )$/;"	f
+proc_write_file	.\ctsafe\logprot.c	/^proc_write_file( RFRAME_T *p )$/;"	f	file:
+program_page	.\Drivers\Dflash\dfmanage.c	/^program_page( DFLASH_T *pf )$/;"	f
 ps	.\Drivers\Pwrsys\pwrsys.c	/^		unsigned ps		:1;$/;"	m	file:
 ps_reg	.\Drivers\Pwrsys\pwrsys.c	/^	unsigned char ps_reg;$/;"	m	file:
 ptbl	.\Drivers\Sensor\cparse.h	/^	CPARSE  *ptbl;$/;"	m
 ptimeact	.\Drivers\Maintime\mtimetyp.h	/^	void (* const *ptimeact)( void );$/;"	m
-pulking2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^pulking2lked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-pulking2lked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void pulking2lked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-pulking2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^pulking2lked_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-pulking2lked_ws	.\Common\Automatons\doorws\dwsact.h	/^void pulking2lked_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-pulking2ulked_wos	.\Common\Automatons\doorwos\dwosact.c	/^pulking2ulked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-pulking2ulked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void pulking2ulked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-pulking2ulked_ws	.\Common\Automatons\doorws\dwsact.c	/^pulking2ulked_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-pulking2ulked_ws	.\Common\Automatons\doorws\dwsact.h	/^void pulking2ulked_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-pulking2ulking_wos	.\Common\Automatons\doorwos\dwosact.c	/^pulking2ulking_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-pulking2ulking_wos	.\Common\Automatons\doorwos\dwosact.h	/^void pulking2ulking_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-pulking2ulking_ws	.\Common\Automatons\doorws\dwsact.c	/^pulking2ulking_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-pulking2ulking_ws	.\Common\Automatons\doorws\dwsact.h	/^void pulking2ulking_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-push	.\Drivers\Enaint\enaint.c	/^push( MUInt enable_status )$/;"	f	file:	signature:( MUInt enable_status )
-put_char	.\Drivers\Serial\serial.c	/^put_char( MUInt channel, const unsigned char c )$/;"	f	signature:( MUInt channel, const unsigned char c )
-put_char	.\Drivers\Serial\serial.h	/^void put_char( MUInt channel, const unsigned char c );$/;"	p	signature:( MUInt channel, const unsigned char c )
-put_grqueue	.\Drivers\GRstatus\grqueue.c	/^put_grqueue( GR1ST_T *elem )$/;"	f	signature:( GR1ST_T *elem )
-put_grqueue	.\Drivers\GRstatus\grqueue.h	/^MInt put_grqueue( GR1ST_T *elem );$/;"	p	signature:( GR1ST_T *elem )
-put_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^put_gsqueue( QHDLR qh, ELEM_TYPE elem )$/;"	f	signature:( QHDLR qh, ELEM_TYPE elem )
-put_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.h	/^MInt put_gsqueue( QHDLR qh, ELEM_TYPE elem );$/;"	p	signature:( QHDLR qh, ELEM_TYPE elem )
-put_nchar	.\Drivers\Serial\serial.c	/^put_nchar( MUInt channel, const unsigned char *p, ushort qty )$/;"	f	signature:( MUInt channel, const unsigned char *p, ushort qty )
-put_nchar	.\Drivers\Serial\serial.h	/^void put_nchar( MUInt channel, const unsigned char *p, ushort qty );$/;"	p	signature:( MUInt channel, const unsigned char *p, ushort qty )
-put_nqueue	.\Common\news\nqueue.c	/^put_nqueue( MUInt qh, NEWS_T elem )$/;"	f	signature:( MUInt qh, NEWS_T elem )
-put_nqueue	.\Common\news\nqueue.h	/^MInt put_nqueue( MUInt qh, NEWS_T elem );$/;"	p	signature:( MUInt qh, NEWS_T elem )
-put_string	.\Drivers\Serial\serial.c	/^put_string( MUInt channel, const char *p )$/;"	f	signature:( MUInt channel, const char *p )
-put_string	.\Drivers\Serial\serial.h	/^void put_string( MUInt channel, const char *p );$/;"	p	signature:( MUInt channel, const char *p )
+pulking2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^pulking2lked_wos( NEWS_T *in )$/;"	f
+pulking2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^pulking2lked_ws( NEWS_T *in )$/;"	f
+pulking2ulked_wos	.\Common\Automatons\doorwos\dwosact.c	/^pulking2ulked_wos( NEWS_T *in )$/;"	f
+pulking2ulked_ws	.\Common\Automatons\doorws\dwsact.c	/^pulking2ulked_ws( NEWS_T *in )$/;"	f
+pulking2ulking_wos	.\Common\Automatons\doorwos\dwosact.c	/^pulking2ulking_wos( NEWS_T *in )$/;"	f
+pulking2ulking_ws	.\Common\Automatons\doorws\dwsact.c	/^pulking2ulking_ws( NEWS_T *in )$/;"	f
+push	.\Drivers\Enaint\enaint.c	/^push( MUInt enable_status )$/;"	f	file:
+put_char	.\Drivers\Serial\serial.c	/^put_char( MUInt channel, const unsigned char c )$/;"	f
+put_grqueue	.\Drivers\GRstatus\grqueue.c	/^put_grqueue( GR1ST_T *elem )$/;"	f
+put_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^put_gsqueue( QHDLR qh, ELEM_TYPE elem )$/;"	f
+put_nchar	.\Drivers\Serial\serial.c	/^put_nchar( MUInt channel, const unsigned char *p, ushort qty )$/;"	f
+put_nqueue	.\Common\news\nqueue.c	/^put_nqueue( MUInt qh, NEWS_T elem )$/;"	f
+put_string	.\Drivers\Serial\serial.c	/^put_string( MUInt channel, const char *p )$/;"	f
 pwd	.\ctsafe\logprot.c	/^	uchar pwd[ NUM_PASS ];$/;"	m	file:
 pwd0	.\ctsafe\logprot.c	/^	uchar pwd0[ NUM_PASS ];$/;"	m	file:
 pwd1	.\ctsafe\logprot.c	/^	uchar pwd1[ NUM_PASS ];$/;"	m	file:
 pwd_log	.\ctsafe\logprot.c	/^	uchar pwd_log[ NUM_PASS ];$/;"	m	file:
 pwd_type	.\ctsafe\logprot.c	/^	uchar pwd_type;$/;"	m	file:
-pwf_level	.\Drivers\Platform\IRQ\pwfhal.h	/^MUInt pwf_level( void );$/;"	p	signature:( void )
-pwrctrl_ppro	.\Common\Automatons\pwrctrl\pwract.c	/^pwrctrl_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-pwrctrl_ppro	.\Common\Automatons\pwrctrl\pwract.h	/^NARG_T pwrctrl_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+pwrctrl_ppro	.\Common\Automatons\pwrctrl\pwract.c	/^pwrctrl_ppro( const NEWS_T *in )$/;"	f
 pwrctrl_t	.\Common\Automatons\pwrctrl\pwract.c	/^static MInt pwrctrl_t, fsync_t;$/;"	v	file:
 pwrstat_st	.\Drivers\Pwrsys\pwrhdl.c	/^static MUInt pwrstat_st;$/;"	v	file:
 pwrsys	.\Drivers\Pwrsys\pwrsys.c	/^static PWRSYS pwrsys;$/;"	v	file:
@@ -1775,152 +1513,104 @@ queue	.\Drivers\Serial\gsqueue\gsqueue.h	/^	ELEM_TYPE *queue;$/;"	m
 queue_full	.\Drivers\Dflash\faccess.c	/^static uchar queue_full;$/;"	v	file:
 queue_full	.\Drivers\Dflash\old_faccess.c	/^static uchar queue_full;$/;"	v	file:
 rcv_frame	.\Common\Automatons\logprot\alphact.c	/^RFRAME_T rcv_frame;$/;"	v
-read_adc	.\Drivers\Platform\ADC\adc.c	/^read_adc( void )$/;"	f	signature:( void )
-read_adc	.\Drivers\Platform\ADC\adc.h	/^unsigned short read_adc( void );$/;"	p	signature:( void )
-read_current_file	.\Drivers\Dflash\faccess.c	/^read_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
-read_current_file	.\Drivers\Dflash\faccess.h	/^int read_current_file( uint num_units, uchar *pbuff );$/;"	p	signature:( uint num_units, uchar *pbuff )
-read_current_file	.\Drivers\Dflash\old_faccess.c	/^read_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
-read_one	.\Drivers\Dflash\faccess.c	/^read_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
-read_one	.\Drivers\Dflash\old_faccess.c	/^read_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
-read_one_false_queue	.\Drivers\Dflash\faccess.c	/^read_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_false_queue	.\Drivers\Dflash\old_faccess.c	/^read_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_queue	.\Drivers\Dflash\faccess.c	/^read_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_queue	.\Drivers\Dflash\old_faccess.c	/^read_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_random	.\Drivers\Dflash\faccess.c	/^read_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_one_random	.\Drivers\Dflash\old_faccess.c	/^read_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
-read_page	.\Drivers\Dflash\faccess.c	/^read_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-read_page	.\Drivers\Dflash\old_faccess.c	/^read_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-read_pinfo	.\Drivers\Dflash\faccess.c	/^read_pinfo( void ) $/;"	f	file:	signature:( void )
-read_pinfo	.\Drivers\Dflash\old_faccess.c	/^read_pinfo( void ) $/;"	f	file:	signature:( void )
-read_queue_current_file	.\Drivers\Dflash\faccess.c	/^read_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-read_queue_current_file	.\Drivers\Dflash\old_faccess.c	/^read_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-read_random_current_file	.\Drivers\Dflash\faccess.c	/^read_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-read_random_current_file	.\Drivers\Dflash\old_faccess.c	/^read_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
+read_adc	.\Drivers\Platform\ADC\adc.c	/^read_adc( void )$/;"	f
+read_current_file	.\Drivers\Dflash\faccess.c	/^read_current_file( uint num_units, uchar *pbuff )$/;"	f
+read_current_file	.\Drivers\Dflash\old_faccess.c	/^read_current_file( uint num_units, uchar *pbuff )$/;"	f
+read_one	.\Drivers\Dflash\faccess.c	/^read_one( ulong position, uchar *p, MUInt access )$/;"	f	file:
+read_one	.\Drivers\Dflash\old_faccess.c	/^read_one( ulong position, uchar *p, MUInt access )$/;"	f	file:
+read_one_false_queue	.\Drivers\Dflash\faccess.c	/^read_one_false_queue( uchar *p )$/;"	f	file:
+read_one_false_queue	.\Drivers\Dflash\old_faccess.c	/^read_one_false_queue( uchar *p )$/;"	f	file:
+read_one_queue	.\Drivers\Dflash\faccess.c	/^read_one_queue( uchar *p )$/;"	f	file:
+read_one_queue	.\Drivers\Dflash\old_faccess.c	/^read_one_queue( uchar *p )$/;"	f	file:
+read_one_random	.\Drivers\Dflash\faccess.c	/^read_one_random( uchar *p )$/;"	f	file:
+read_one_random	.\Drivers\Dflash\old_faccess.c	/^read_one_random( uchar *p )$/;"	f	file:
+read_page	.\Drivers\Dflash\faccess.c	/^read_page( DFLASH_T *pf )$/;"	f	file:
+read_page	.\Drivers\Dflash\old_faccess.c	/^read_page( DFLASH_T *pf )$/;"	f	file:
+read_pinfo	.\Drivers\Dflash\faccess.c	/^read_pinfo( void ) $/;"	f	file:
+read_pinfo	.\Drivers\Dflash\old_faccess.c	/^read_pinfo( void ) $/;"	f	file:
+read_queue_current_file	.\Drivers\Dflash\faccess.c	/^read_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
+read_queue_current_file	.\Drivers\Dflash\old_faccess.c	/^read_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
+read_random_current_file	.\Drivers\Dflash\faccess.c	/^read_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
+read_random_current_file	.\Drivers\Dflash\old_faccess.c	/^read_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
 read_write	.\Drivers\Dflash\flash.c	/^	uchar	read_write;$/;"	m	file:
-rec_frame	.\Common\Automatons\logprot\alphact.c	/^rec_frame( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-rec_frame	.\Common\Automatons\logprot\alphact.h	/^void rec_frame( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-rec_vframe	.\Common\Automatons\valprot\valact.c	/^rec_vframe( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-rec_vframe	.\Common\Automatons\valprot\valact.h	/^void rec_vframe( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-reclose_queue	.\Drivers\Dflash\faccess.h	/^MInt reclose_queue( void );$/;"	p	signature:( void )
+rec_frame	.\Common\Automatons\logprot\alphact.c	/^rec_frame( const NEWS_T *in )$/;"	f
+rec_vframe	.\Common\Automatons\valprot\valact.c	/^rec_vframe( const NEWS_T *in )$/;"	f
 recovered_count	.\userdfs\users.c	/^static uint recovered_count, ok_count, format_count;$/;"	v	file:
 relais_state	.\Drivers\Dflash\spihal.c	/^static uchar relais_state = RELAIS_OPEN;$/;"	v	file:
 reload	.\Drivers\Stimers\stimers.c	/^	unsigned short reload;$/;"	m	file:
-remove_grqueue	.\Drivers\GRstatus\grqueue.c	/^remove_grqueue( GR1ST_T *elem )$/;"	f	signature:( GR1ST_T *elem )
-remove_grqueue	.\Drivers\GRstatus\grqueue.h	/^MInt remove_grqueue( GR1ST_T *elem );$/;"	p	signature:( GR1ST_T *elem )
-remove_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^remove_gsqueue( QHDLR qh, ELEM_TYPE *elem )$/;"	f	signature:( QHDLR qh, ELEM_TYPE *elem )
-remove_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.h	/^MInt remove_gsqueue( QHDLR qh, ELEM_TYPE *elem );$/;"	p	signature:( QHDLR qh, ELEM_TYPE *elem )
-remove_nqueue	.\Common\news\nqueue.c	/^remove_nqueue( MUInt qh, NEWS_T *elem )$/;"	f	signature:( MUInt qh, NEWS_T *elem )
-remove_nqueue	.\Common\news\nqueue.h	/^MInt remove_nqueue( MUInt qh, NEWS_T *elem );$/;"	p	signature:( MUInt qh, NEWS_T *elem )
-reopen_queue	.\Drivers\Dflash\faccess.h	/^MInt reopen_queue( void );$/;"	p	signature:( void )
+remove_grqueue	.\Drivers\GRstatus\grqueue.c	/^remove_grqueue( GR1ST_T *elem )$/;"	f
+remove_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^remove_gsqueue( QHDLR qh, ELEM_TYPE *elem )$/;"	f
+remove_nqueue	.\Common\news\nqueue.c	/^remove_nqueue( MUInt qh, NEWS_T *elem )$/;"	f
 reserved	.\ctsafe\valconf.h	/^	unsigned reserved 	:1;$/;"	m
-reset_now	.\Drivers\Watchdog\reset.c	/^reset_now( void )$/;"	f	signature:( void )
-reset_now	.\Drivers\Watchdog\reset.h	/^void reset_now( void );$/;"	p	signature:( void )
+reset_now	.\Drivers\Watchdog\reset.c	/^reset_now( void )$/;"	f
 rframe	.\Common\Automatons\valprot\valact.c	/^static VAL_BUFF_T rframe;$/;"	v	file:
-rti_ctrl	.\Drivers\Platform\RTI\rti.c	/^rti_ctrl( MUInt ctrl )$/;"	f	signature:( MUInt ctrl )
-rti_ctrl	.\Drivers\Platform\RTI\rti.h	/^void rti_ctrl( MUInt ctrl );$/;"	p	signature:( MUInt ctrl )
-rti_handler	.\Drivers\Platform\RTI\rti.c	/^rti_handler( void )$/;"	f	signature:( void )
+rti_ctrl	.\Drivers\Platform\RTI\rti.c	/^rti_ctrl( MUInt ctrl )$/;"	f
+rti_handler	.\Drivers\Platform\RTI\rti.c	/^rti_handler( void )$/;"	f
 s	.\Drivers\Pwrsys\pwrsys.c	/^		unsigned s		:1;$/;"	m	file:
 safe_box	.\Drivers\GRstatus\grstatus.h	/^	unsigned char safe_box;$/;"	m
 schar	.\Common\mytypes.h	/^typedef signed char		schar;$/;"	t
 sci_br_tbl	.\Drivers\Platform\SCI\scibrtbl.c	/^const unsigned short sci_br_tbl[NUM_BAUD] =$/;"	v
 sector_count	.\Drivers\Dflash\dftypes.h	/^			uchar	sector_count;$/;"	m
-seek_current	.\Drivers\Dflash\faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f	signature:( long offset, MUInt whence )
-seek_current	.\Drivers\Dflash\faccess.h	/^MInt seek_current( long offset, MUInt whence );$/;"	p	signature:( long offset, MUInt whence )
-seek_current	.\Drivers\Dflash\old_faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f	signature:( long offset, MUInt whence )
-sem_disable	.\Drivers\Enaint\enaint.c	/^sem_disable( void )$/;"	f	signature:( void )
-sem_disable	.\Drivers\Enaint\enaint.h	/^void sem_disable( void );$/;"	p	signature:( void )
-sem_enable	.\Drivers\Enaint\enaint.c	/^sem_enable( void )$/;"	f	signature:( void )
-sem_enable	.\Drivers\Enaint\enaint.h	/^void sem_enable( void );$/;"	p	signature:( void )
+seek_current	.\Drivers\Dflash\faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f
+seek_current	.\Drivers\Dflash\old_faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f
+sem_disable	.\Drivers\Enaint\enaint.c	/^sem_disable( void )$/;"	f
+sem_enable	.\Drivers\Enaint\enaint.c	/^sem_enable( void )$/;"	f
 send_failure	.\ctsafe\logprot.c	51;"	d	file:
-send_nack	.\Common\Automatons\logprot\alphact.c	/^send_nack( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-send_nack	.\Common\Automatons\logprot\alphact.h	/^void send_nack( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-send_nack_resp	.\ctsafe\logprot.c	/^send_nack_resp( MUInt dev )$/;"	f	signature:( MUInt dev )
-send_nack_resp	.\ctsafe\logprot.h	/^void send_nack_resp( MUInt dev );$/;"	p	signature:( MUInt dev )
-send_resp	.\Common\Automatons\logprot\alphact.c	/^send_resp( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-send_resp	.\Common\Automatons\logprot\alphact.h	/^void send_resp( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-send_sbox_frame	.\ctsafe\logprot.c	/^send_sbox_frame( XMIT_BUFF_T *p )$/;"	f	signature:( XMIT_BUFF_T *p )
-send_sbox_frame	.\ctsafe\logprot.h	/^void send_sbox_frame( XMIT_BUFF_T *p );$/;"	p	signature:( XMIT_BUFF_T *p )
+send_nack	.\Common\Automatons\logprot\alphact.c	/^send_nack( const NEWS_T *in )$/;"	f
+send_nack_resp	.\ctsafe\logprot.c	/^send_nack_resp( MUInt dev )$/;"	f
+send_resp	.\Common\Automatons\logprot\alphact.c	/^send_resp( const NEWS_T *in )$/;"	f
+send_sbox_frame	.\ctsafe\logprot.c	/^send_sbox_frame( XMIT_BUFF_T *p )$/;"	f
 send_success	.\ctsafe\logprot.c	49;"	d	file:
-send_val_frame	.\ctsafe\logprot.c	/^send_val_frame( MUInt val, XMIT_BUFF_T *p )$/;"	f	file:	signature:( MUInt val, XMIT_BUFF_T *p )
+send_val_frame	.\ctsafe\logprot.c	/^send_val_frame( MUInt val, XMIT_BUFF_T *p )$/;"	f	file:
 sens_mask	.\Drivers\Sensor\sensor.c	/^static const char sens_mask[ NUM_SENSORS ] =$/;"	v	file:
 sens_news	.\Drivers\Sensor\cpdata.c	/^const short sens_news[MAX_PARSERS][NUM_NEWSTYPE] = $/;"	v
 sens_tout	.\Drivers\Sensor\cpdata.c	/^const short sens_tout[MAX_PARSERS][NUM_TIMEVAL] = $/;"	v
 senspar	.\Drivers\Sensor\cpdata.c	/^const CPARSE senspar[SNUM][NUM_ENTRIES] =$/;"	v
 serial_default	.\Drivers\Serial\sertable.c	/^const SERIAL_T serial_default[] =$/;"	v
-serial_init	.\Drivers\Serial\serial.c	/^serial_init( MUInt channel )$/;"	f	signature:( MUInt channel )
-serial_init	.\Drivers\Serial\serial.h	/^void serial_init( MUInt channel );$/;"	p	signature:( MUInt channel )
-serlog_sendchar	.\Drivers\Serial\serlog.c	/^serlog_sendchar( MUInt channel, const unsigned char *p )$/;"	f	signature:( MUInt channel, const unsigned char *p )
-serlog_sendchar	.\Drivers\Serial\serlog.h	/^void serlog_sendchar( MUInt channel, const unsigned char *p );$/;"	p	signature:( MUInt channel, const unsigned char *p )
-serlog_setbd	.\Drivers\Serial\serlog.c	/^serlog_setbd( MUInt channel, MUInt bd )$/;"	f	signature:( MUInt channel, MUInt bd )
-serlog_setbd	.\Drivers\Serial\serlog.h	/^void serlog_setbd( MUInt channel, MUInt bd );$/;"	p	signature:( MUInt channel, MUInt bd )
-set_alarm	.\Drivers\Alarm\alarm.c	/^set_alarm( MUInt which, MUInt ctrl )$/;"	f	signature:( MUInt which, MUInt ctrl )
-set_alarm	.\Drivers\Alarm\alarm.h	/^void set_alarm( MUInt which, MUInt ctrl );$/;"	p	signature:( MUInt which, MUInt ctrl )
-set_batt_st	.\Drivers\Pwrsys\pwrsys.c	/^set_batt_st( MUInt state )$/;"	f	signature:( MUInt state )
-set_batt_st	.\Drivers\Pwrsys\pwrsys.h	/^void set_batt_st( MUInt state );$/;"	p	signature:( MUInt state )
-set_baudrate	.\Drivers\Serial\serial.c	/^set_baudrate( MUInt channel, MUInt bd )$/;"	f	signature:( MUInt channel, MUInt bd )
-set_baudrate	.\Drivers\Serial\serial.h	/^void set_baudrate( MUInt channel, MUInt bd );$/;"	p	signature:( MUInt channel, MUInt bd )
-set_current_user_devlist	.\userdfs\users.c	/^set_current_user_devlist( uint dev_list, uint page, uint address )$/;"	f	file:	signature:( uint dev_list, uint page, uint address )
-set_dir_phymed	.\Drivers\Serial\Phylay\phylay.c	/^set_dir_phymed( MUInt dir )$/;"	f	signature:( MUInt dir )
-set_dir_phymed	.\Drivers\Serial\Phylay\phylay.h	/^void set_dir_phymed( MUInt dir );$/;"	p	signature:( MUInt dir )
-set_host_pwr	.\Drivers\Pwrsys\pwrhdl.c	/^set_host_pwr( MUInt ctrl )$/;"	f	signature:( MUInt ctrl )
-set_host_pwr	.\Drivers\Pwrsys\pwrhdl.h	/^void set_host_pwr( MUInt ctrl );$/;"	p	signature:( MUInt ctrl )
+serial_init	.\Drivers\Serial\serial.c	/^serial_init( MUInt channel )$/;"	f
+serlog_sendchar	.\Drivers\Serial\serlog.c	/^serlog_sendchar( MUInt channel, const unsigned char *p )$/;"	f
+serlog_setbd	.\Drivers\Serial\serlog.c	/^serlog_setbd( MUInt channel, MUInt bd )$/;"	f
+set_alarm	.\Drivers\Alarm\alarm.c	/^set_alarm( MUInt which, MUInt ctrl )$/;"	f
+set_batt_st	.\Drivers\Pwrsys\pwrsys.c	/^set_batt_st( MUInt state )$/;"	f
+set_baudrate	.\Drivers\Serial\serial.c	/^set_baudrate( MUInt channel, MUInt bd )$/;"	f
+set_current_user_devlist	.\userdfs\users.c	/^set_current_user_devlist( uint dev_list, uint page, uint address )$/;"	f	file:
+set_dir_phymed	.\Drivers\Serial\Phylay\phylay.c	/^set_dir_phymed( MUInt dir )$/;"	f
+set_host_pwr	.\Drivers\Pwrsys\pwrhdl.c	/^set_host_pwr( MUInt ctrl )$/;"	f
 set_lock0_a	.\Drivers\Locker\lockerhdl.h	19;"	d
 set_lock0_b	.\Drivers\Locker\lockerhdl.h	21;"	d
 set_lock1_a	.\Drivers\Locker\lockerhdl.h	24;"	d
 set_lock1_b	.\Drivers\Locker\lockerhdl.h	26;"	d
-set_locker	.\Drivers\Locker\locker.c	/^set_locker( MUInt which, MUInt ctrl )$/;"	f	signature:( MUInt which, MUInt ctrl )
-set_locker	.\Drivers\Locker\locker.h	/^void set_locker( MUInt which, MUInt ctrl );$/;"	p	signature:( MUInt which, MUInt ctrl )
-set_locker_state	.\Drivers\GRstatus\grstatus.c	/^set_locker_state( MUInt who, unsigned char state )$/;"	f	signature:( MUInt who, unsigned char state )
-set_locker_state	.\Drivers\GRstatus\grstatus.h	/^void set_locker_state( MUInt who, unsigned char state );$/;"	p	signature:( MUInt who, unsigned char state )
-set_memctrl	.\Drivers\Dflash\spihal.c	/^set_memctrl( void )$/;"	f	file:	signature:( void )
-set_memstat	.\Drivers\Pwrsys\pwrsys.c	/^set_memstat( unsigned char safe_stat )$/;"	f	signature:( unsigned char safe_stat )
-set_memstat	.\Drivers\Pwrsys\pwrsys.h	/^unsigned char set_memstat( unsigned char safe_stat );$/;"	p	signature:( unsigned char safe_stat )
-set_plunger_state	.\Drivers\GRstatus\grstatus.c	/^set_plunger_state( MUInt who, unsigned char state )$/;"	f	signature:( MUInt who, unsigned char state )
-set_plunger_state	.\Drivers\GRstatus\grstatus.h	/^void set_plunger_state( MUInt who, unsigned char state );$/;"	p	signature:( MUInt who, unsigned char state )
-set_pwr_st	.\Drivers\Pwrsys\pwrsys.c	/^set_pwr_st( MUInt state )$/;"	f	signature:( MUInt state )
-set_pwr_st	.\Drivers\Pwrsys\pwrsys.h	/^void set_pwr_st( MUInt state );$/;"	p	signature:( MUInt state )
-set_results	.\userdfs\users.c	/^set_results( MUInt i )$/;"	f	file:	signature:( MUInt i )
-set_safebox_st	.\Drivers\GRstatus\grstatus.c	/^set_safebox_st( unsigned char state )$/;"	f	signature:( unsigned char state )
-set_safebox_st	.\Drivers\GRstatus\grstatus.h	/^void set_safebox_st( unsigned char state );$/;"	p	signature:( unsigned char state )
-set_sersw	.\Drivers\Serial\Phylay\sersw.c	/^set_sersw( MUInt ch )$/;"	f	signature:( MUInt ch )
-set_sersw	.\Drivers\Serial\Phylay\sersw.h	/^void set_sersw( MUInt ch );$/;"	p	signature:( MUInt ch )
-set_stacker_state	.\Drivers\GRstatus\grstatus.c	/^set_stacker_state( MUInt who, unsigned char state )$/;"	f	signature:( MUInt who, unsigned char state )
-set_stacker_state	.\Drivers\GRstatus\grstatus.h	/^set_stacker_state( MUInt who, unsigned char state );$/;"	p	signature:( MUInt who, unsigned char state )
-set_start_rcv	.\Common\Automatons\valprot\valact.c	/^set_start_rcv( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-set_start_rcv	.\Common\Automatons\valprot\valact.h	/^void set_start_rcv( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-set_tlock	.\Drivers\Locker\locker.c	/^set_tlock( MUInt which, MUInt tlock )$/;"	f	signature:( MUInt which, MUInt tlock )
-set_tlock	.\Drivers\Locker\locker.h	/^void set_tlock( MUInt which, MUInt tlock );$/;"	p	signature:( MUInt which, MUInt tlock )
-set_tunlock_enable	.\Drivers\Locker\locker.c	/^set_tunlock_enable( MUInt tunlock_enable )$/;"	f	signature:( MUInt tunlock_enable )
-set_tunlock_enable	.\Drivers\Locker\locker.h	/^void set_tunlock_enable( MUInt tunlock_enable );$/;"	p	signature:( MUInt tunlock_enable )
-set_val_config	.\ctsafe\valconf.c	/^set_val_config( MUInt val, VAL_CONFIG_T *p )$/;"	f	signature:( MUInt val, VAL_CONFIG_T *p )
-set_val_config	.\ctsafe\valconf.h	/^void set_val_config( MUInt val, VAL_CONFIG_T *p );$/;"	p	signature:( MUInt val, VAL_CONFIG_T *p )
-set_val_hw_config	.\ctsafe\valconf.c	/^set_val_hw_config( MUInt val )$/;"	f	signature:( MUInt val )
-set_val_hw_config	.\ctsafe\valconf.h	/^void set_val_hw_config( MUInt val );$/;"	p	signature:( MUInt val )
+set_locker	.\Drivers\Locker\locker.c	/^set_locker( MUInt which, MUInt ctrl )$/;"	f
+set_locker_state	.\Drivers\GRstatus\grstatus.c	/^set_locker_state( MUInt who, unsigned char state )$/;"	f
+set_memctrl	.\Drivers\Dflash\spihal.c	/^set_memctrl( void )$/;"	f	file:
+set_memstat	.\Drivers\Pwrsys\pwrsys.c	/^set_memstat( unsigned char safe_stat )$/;"	f
+set_plunger_state	.\Drivers\GRstatus\grstatus.c	/^set_plunger_state( MUInt who, unsigned char state )$/;"	f
+set_pwr_st	.\Drivers\Pwrsys\pwrsys.c	/^set_pwr_st( MUInt state )$/;"	f
+set_results	.\userdfs\users.c	/^set_results( MUInt i )$/;"	f	file:
+set_safebox_st	.\Drivers\GRstatus\grstatus.c	/^set_safebox_st( unsigned char state )$/;"	f
+set_sersw	.\Drivers\Serial\Phylay\sersw.c	/^set_sersw( MUInt ch )$/;"	f
+set_stacker_state	.\Drivers\GRstatus\grstatus.c	/^set_stacker_state( MUInt who, unsigned char state )$/;"	f
+set_start_rcv	.\Common\Automatons\valprot\valact.c	/^set_start_rcv( const NEWS_T *in )$/;"	f
+set_tlock	.\Drivers\Locker\locker.c	/^set_tlock( MUInt which, MUInt tlock )$/;"	f
+set_tunlock_enable	.\Drivers\Locker\locker.c	/^set_tunlock_enable( MUInt tunlock_enable )$/;"	f
+set_val_config	.\ctsafe\valconf.c	/^set_val_config( MUInt val, VAL_CONFIG_T *p )$/;"	f
+set_val_hw_config	.\ctsafe\valconf.c	/^set_val_hw_config( MUInt val )$/;"	f
 set_xmit_frames	.\ctsafe\logprot.c	469;"	d	file:
-shtdwn	.\Common\Automatons\pwrctrl\pwract.c	/^shtdwn( NEWS_T *ix )$/;"	f	signature:( NEWS_T *ix )
-shtdwn	.\Common\Automatons\pwrctrl\pwract.h	/^void shtdwn( NEWS_T *ix );$/;"	p	signature:( NEWS_T *ix )
-shutdown	.\Drivers\Pwrsys\pwrsys.c	/^shutdown( void )$/;"	f	signature:( void )
-shutdown	.\Drivers\Pwrsys\pwrsys.h	/^void shutdown( void );$/;"	p	signature:( void )
+shtdwn	.\Common\Automatons\pwrctrl\pwract.c	/^shtdwn( NEWS_T *ix )$/;"	f
+shutdown	.\Drivers\Pwrsys\pwrsys.c	/^shutdown( void )$/;"	f
 signature	.\userdfs\users.c	/^	uchar	signature;$/;"	m	file:
 size	.\Common\vaultdef.h	/^	ushort	size;			\/*	Size of data to read or write			(IN-OUT)*\/$/;"	m
 size	.\Drivers\Dflash\dftypes.h	/^			ushort	size;			\/*	In Megabit	*\/$/;"	m
-sleep	.\Drivers\Sleep\sleep.c	/^sleep( unsigned short msec )$/;"	f	signature:( unsigned short msec )
-sleep	.\Drivers\Sleep\sleep.h	/^void sleep( unsigned short msec );$/;"	p	signature:( unsigned short msec )
-spi_deselect_channel	.\Drivers\Dflash\spihal.c	/^spi_deselect_channel( MUInt dev_no )$/;"	f	signature:( MUInt dev_no )
-spi_deselect_channel	.\Drivers\Dflash\spihal.h	/^void	spi_deselect_channel( MUInt dev_no );$/;"	p	signature:( MUInt dev_no )
-spi_get_byte	.\Drivers\Dflash\spihal.c	/^spi_get_byte( void )$/;"	f	signature:( void )
-spi_get_byte	.\Drivers\Dflash\spihal.h	/^MUInt	spi_get_byte		( void );$/;"	p	signature:( void )
-spi_init	.\Drivers\Platform\SPI\spi.c	/^spi_init(void)$/;"	f	signature:(void)
-spi_init	.\Drivers\Platform\SPI\spi.h	/^void spi_init(void);$/;"	p	signature:(void)
-spi_select_channel	.\Drivers\Dflash\spihal.c	/^spi_select_channel( MUInt dev_no )$/;"	f	signature:( MUInt dev_no )
-spi_select_channel	.\Drivers\Dflash\spihal.h	/^void	spi_select_channel	( MUInt dev_no );$/;"	p	signature:( MUInt dev_no )
-spi_send_byte	.\Drivers\Dflash\spihal.c	/^spi_send_byte( MUInt byte )$/;"	f	signature:( MUInt byte )
-spi_send_byte	.\Drivers\Dflash\spihal.h	/^void	spi_send_byte		( MUInt byte );$/;"	p	signature:( MUInt byte )
-spi_xfer	.\Drivers\Platform\SPI\spi.c	/^spi_xfer( MUInt byte )$/;"	f	signature:( MUInt byte )
-spi_xfer	.\Drivers\Platform\SPI\spi.h	/^MUInt spi_xfer( MUInt byte );$/;"	p	signature:( MUInt byte )
-spihal_init	.\Drivers\Dflash\spihal.c	/^spihal_init( void )$/;"	f	signature:( void )
-spihal_init	.\Drivers\Dflash\spihal.h	/^void	spihal_init			( void );$/;"	p	signature:( void )
+sleep	.\Drivers\Sleep\sleep.c	/^sleep( unsigned short msec )$/;"	f
+spi_deselect_channel	.\Drivers\Dflash\spihal.c	/^spi_deselect_channel( MUInt dev_no )$/;"	f
+spi_get_byte	.\Drivers\Dflash\spihal.c	/^spi_get_byte( void )$/;"	f
+spi_init	.\Drivers\Platform\SPI\spi.c	/^spi_init(void)$/;"	f
+spi_select_channel	.\Drivers\Dflash\spihal.c	/^spi_select_channel( MUInt dev_no )$/;"	f
+spi_send_byte	.\Drivers\Dflash\spihal.c	/^spi_send_byte( MUInt byte )$/;"	f
+spi_xfer	.\Drivers\Platform\SPI\spi.c	/^spi_xfer( MUInt byte )$/;"	f
+spihal_init	.\Drivers\Dflash\spihal.c	/^spihal_init( void )$/;"	f
 sta	.\ctsafe\logprot.c	/^static FILESYS_T sta;$/;"	v	file:
+stack	.\Drivers\Platform\SP\stack.c	/^static unsigned short stack;$/;"	v	file:
 stacker0	.\Drivers\GRstatus\grstatus.h	/^	unsigned char stacker0;$/;"	m
 stacker1	.\Drivers\GRstatus\grstatus.h	/^	unsigned char stacker1;$/;"	m
 start_timeout	.\ctsafe\valconf.h	/^	uchar start_timeout;$/;"	m
@@ -1929,18 +1619,15 @@ state	.\Drivers\Sensor\cparse.h	/^	unsigned char state;$/;"	m
 state_t	.\Common\Mparser\mparser.h	/^typedef struct state_t$/;"	s
 stmr_callback	.\Drivers\Stimers\stimers.c	/^	STCB stmr_callback;$/;"	m	file:
 stop_bits	.\ctsafe\valconf.h	/^	unsigned stop_bits	:1;$/;"	m
-store_cmd	.\Common\Automatons\logprot\alphact.c	/^store_cmd( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-store_cmd	.\Common\Automatons\logprot\alphact.h	/^void store_cmd( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-store_data	.\Common\Automatons\logprot\alphact.c	/^store_data( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-store_data	.\Common\Automatons\logprot\alphact.h	/^void store_data( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-store_dev	.\Common\Automatons\logprot\alphact.c	/^store_dev( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-store_dev	.\Common\Automatons\logprot\alphact.h	/^void store_dev( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-store_numdata	.\Common\Automatons\logprot\alphact.c	/^store_numdata( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-store_numdata	.\Common\Automatons\logprot\alphact.h	/^void store_numdata( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-store_vdata	.\Common\Automatons\valprot\valact.c	/^store_vdata( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-store_vdata	.\Common\Automatons\valprot\valact.h	/^void store_vdata( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+store_cmd	.\Common\Automatons\logprot\alphact.c	/^store_cmd( const NEWS_T *in )$/;"	f
+store_data	.\Common\Automatons\logprot\alphact.c	/^store_data( const NEWS_T *in )$/;"	f
+store_dev	.\Common\Automatons\logprot\alphact.c	/^store_dev( const NEWS_T *in )$/;"	f
+store_numdata	.\Common\Automatons\logprot\alphact.c	/^store_numdata( const NEWS_T *in )$/;"	f
+store_vdata	.\Common\Automatons\valprot\valact.c	/^store_vdata( const NEWS_T *in )$/;"	f
 sum	.\Common\Automatons\logprot\alphact.c	/^static MInt sum;$/;"	v	file:
 tbet_byte	.\Common\Automatons\logprot\alphact.c	/^static MInt tbet_byte, txmit1, tinactivity;$/;"	v	file:
+test_sp	.\Drivers\Platform\SP\stack.c	/^test_sp( void )$/;"	f
+test_sp	.\Drivers\Platform\SP\stack.h	12;"	d
 tick	.\Drivers\Sleep\sleep.c	/^static unsigned short tick;$/;"	v	file:
 timer	.\Drivers\Maintime\mtimetyp.h	/^	unsigned short timer;$/;"	m
 timer_chain	.\Drivers\Maintime\config\mtimetbl.c	/^const TIMER_CHAIN timer_chain[] =$/;"	v
@@ -1950,8 +1637,7 @@ tlock0	.\ctsafe\logprot.c	/^	uchar tlock0;$/;"	m	file:
 tlock1	.\ctsafe\logprot.c	/^	uchar tlock1;$/;"	m	file:
 toCopyDownBegOffs	.\Start08.c	100;"	d	file:
 toCopyDownBegOffs	.\Start08.c	98;"	d	file:
-toidle	.\Common\Automatons\logprot\alphact.c	/^toidle( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-toidle	.\Common\Automatons\logprot\alphact.h	/^void toidle( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+toidle	.\Common\Automatons\logprot\alphact.c	/^toidle( const NEWS_T *in )$/;"	f
 tout	.\Drivers\Sensor\cparse.h	/^	unsigned short tout;$/;"	m
 tout	.\Drivers\Stimers\stimers.c	/^	unsigned short tout;$/;"	m	file:
 trans	.\Common\Mparser\mparser.h	/^	const TRAN *const trans;$/;"	m	struct:state_t
@@ -1988,30 +1674,22 @@ txmit1	.\Common\Automatons\logprot\alphact.c	/^static MInt tbet_byte, txmit1, ti
 type	.\Drivers\Stimers\stimers.c	/^	unsigned type: 1;$/;"	m	file:
 uchar	.\Common\mytypes.h	/^typedef unsigned char	uchar;$/;"	t
 uint	.\Common\mytypes.h	/^typedef unsigned int	uint;$/;"	t
-ulked2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulked2lked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulked2lked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void ulked2lked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ulked2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulked2lked_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulked2lked_ws	.\Common\Automatons\doorws\dwsact.h	/^void ulked2lked_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ulked2lking_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulked2lking_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulked2lking_wos	.\Common\Automatons\doorwos\dwosact.h	/^void ulked2lking_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ulked2lking_ws	.\Common\Automatons\doorws\dwsact.c	/^ulked2lking_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulked2lking_ws	.\Common\Automatons\doorws\dwsact.h	/^void ulked2lking_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ulking2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulking2lked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulking2lked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void ulking2lked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ulking2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulking2lked_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulking2lked_ws	.\Common\Automatons\doorws\dwsact.h	/^void ulking2lked_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ulking2ulked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulking2ulked_wos( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulking2ulked_wos	.\Common\Automatons\doorwos\dwosact.h	/^void ulking2ulked_wos( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
-ulking2ulked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulking2ulked_ws( NEWS_T *in )$/;"	f	signature:( NEWS_T *in )
-ulking2ulked_ws	.\Common\Automatons\doorws\dwsact.h	/^void ulking2ulked_ws( NEWS_T *in );$/;"	p	signature:( NEWS_T *in )
+ulked2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulked2lked_wos( NEWS_T *in )$/;"	f
+ulked2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulked2lked_ws( NEWS_T *in )$/;"	f
+ulked2lking_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulked2lking_wos( NEWS_T *in )$/;"	f
+ulked2lking_ws	.\Common\Automatons\doorws\dwsact.c	/^ulked2lking_ws( NEWS_T *in )$/;"	f
+ulking2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulking2lked_wos( NEWS_T *in )$/;"	f
+ulking2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulking2lked_ws( NEWS_T *in )$/;"	f
+ulking2ulked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulking2ulked_wos( NEWS_T *in )$/;"	f
+ulking2ulked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulking2ulked_ws( NEWS_T *in )$/;"	f
 ulocke_dws	.\Common\Automatons\doorws\dwsact.c	/^static MInt ulocke_dws;$/;"	v	file:
 ulong	.\Common\mytypes.h	/^typedef unsigned long	ulong;$/;"	t
 unit_size	.\Drivers\Dflash\dfdata.h	/^	uchar	unit_size;		\/*	Size of file record					*\/$/;"	m
 unit_size	.\Drivers\Dflash\faccess.c	/^	bitf	unit_size:8;	\/*	Size of each register						*\/$/;"	m	file:
 unit_size	.\Drivers\Dflash\old_faccess.c	/^	bitf	unit_size:8;	\/*	Size of each register						*\/$/;"	m	file:
 unit_size	.\ctsafe\logprot.c	/^	uchar unit_size;$/;"	m	file:
-unlock_locker_wos	.\Common\Automatons\doorwos\dwosact.c	/^unlock_locker_wos( void )$/;"	f	file:	signature:( void )
-unlock_locker_ws	.\Common\Automatons\doorws\dwsact.c	/^unlock_locker_ws( void )$/;"	f	file:	signature:( void )
+unlock_locker_wos	.\Common\Automatons\doorwos\dwosact.c	/^unlock_locker_wos( void )$/;"	f	file:
+unlock_locker_ws	.\Common\Automatons\doorws\dwsact.c	/^unlock_locker_ws( void )$/;"	f	file:
 unlock_timer	.\Drivers\Locker\locker.c	/^static unsigned short unlock_timer = TOUT_TUNLOCK;$/;"	v	file:
 unlocke_dwos	.\Common\Automatons\doorwos\dwosact.c	/^static MInt unlocke_dwos;$/;"	v	file:
 unlocked_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE unlocked_wos =$/;"	v
@@ -2030,108 +1708,86 @@ user1	.\ctsafe\logprot.c	/^	uchar user1[ NUM_UID ];$/;"	m	file:
 user1	.\ctsafe\logprot.c	/^static USER_T user0, user1;$/;"	v	file:
 user_buff	.\Drivers\Dflash\dfvars.c	/^uchar user_buff[ WPAGE_SIZE ];$/;"	v
 user_buffer	.\userdfs\users.c	/^static FUSER_T	user_buffer;$/;"	v	file:
-user_delete	.\userdfs\users.c	/^user_delete( uint page, uint address )$/;"	f	file:	signature:( uint page, uint address )
-user_exists	.\userdfs\users.c	/^user_exists( const uchar *puser_id, ushort *pdev_list, uint *ppage, uint *paddress, MUInt in_search )		\/*	Changed prototype	*\/$/;"	f	file:	signature:( const uchar *puser_id, ushort *pdev_list, uint *ppage, uint *paddress, MUInt in_search )
+user_delete	.\userdfs\users.c	/^user_delete( uint page, uint address )$/;"	f	file:
+user_exists	.\userdfs\users.c	/^user_exists( const uchar *puser_id, ushort *pdev_list, uint *ppage, uint *paddress, MUInt in_search )		\/*	Changed prototype	*\/$/;"	f	file:
 user_id	.\userdfs\users.h	/^	uchar	user_id[NUM_UID];		\/*	user_id is main search key							*\/$/;"	m
-user_insert	.\userdfs\users.c	/^user_insert( const USER_T *p, uint page, uint address )$/;"	f	file:	signature:( const USER_T *p, uint page, uint address )
+user_insert	.\userdfs\users.c	/^user_insert( const USER_T *p, uint page, uint address )$/;"	f	file:
 user_log	.\ctsafe\logprot.c	/^	uchar user_log[ NUM_UID ];$/;"	m	file:
-users_add	.\userdfs\users.c	/^users_add( const USER_T *p )$/;"	f	signature:( const USER_T *p )
-users_add	.\userdfs\users.h	/^MInt users_add( const USER_T *p );$/;"	p	signature:( const USER_T *p )
-users_edit	.\userdfs\users.c	/^users_edit( MUInt edit_pass, USER_T *pold, USER_T *pnew, MUInt log )$/;"	f	signature:( MUInt edit_pass, USER_T *pold, USER_T *pnew, MUInt log )
-users_edit	.\userdfs\users.h	/^MInt users_edit( MUInt edit_pass, USER_T *pold, USER_T *pnew, MUInt log );$/;"	p	signature:( MUInt edit_pass, USER_T *pold, USER_T *pnew, MUInt log )
-users_erase	.\userdfs\users.c	/^MInt users_erase(  uchar *puser_id )$/;"	f	signature:( uchar *puser_id )
-users_erase	.\userdfs\users.h	/^MInt users_erase(  uchar *puser_id );$/;"	p	signature:( uchar *puser_id )
-users_format	.\userdfs\users.c	/^users_format( void )$/;"	f	signature:( void )
-users_format	.\userdfs\users.h	/^MInt users_format( void );$/;"	p	signature:( void )
-users_get_devlist	.\userdfs\users.c	/^users_get_devlist( uchar *puser_id, ushort *pdev_list )$/;"	f	signature:( uchar *puser_id, ushort *pdev_list )
-users_get_devlist	.\userdfs\users.h	/^MInt users_get_devlist( uchar *puser_id, ushort *pdev_list );$/;"	p	signature:( uchar *puser_id, ushort *pdev_list )
-users_init	.\userdfs\users.c	/^users_init( uint *pnum_users_avail )$/;"	f	signature:( uint *pnum_users_avail )
-users_init	.\userdfs\users.h	/^MInt users_init( uint *pnum_users_avail );$/;"	p	signature:( uint *pnum_users_avail )
-users_set_devlist	.\userdfs\users.c	/^users_set_devlist( uchar *puser_id, uint dev_list )$/;"	f	signature:( uchar *puser_id, uint dev_list )
-users_set_devlist	.\userdfs\users.h	/^MInt users_set_devlist( uchar *puser_id, uint dev_list );$/;"	p	signature:( uchar *puser_id, uint dev_list )
-users_validation	.\userdfs\users.c	/^users_validation( const USER_T *p, uchar *pass_match, ushort *pdev_list )$/;"	f	signature:( const USER_T *p, uchar *pass_match, ushort *pdev_list )
-users_validation	.\userdfs\users.h	/^MInt users_validation( const USER_T *p, uchar *pass_match, ushort *pdev_list );$/;"	p	signature:( const USER_T *p, uchar *pass_match, ushort *pdev_list )
+users_add	.\userdfs\users.c	/^users_add( const USER_T *p )$/;"	f
+users_edit	.\userdfs\users.c	/^users_edit( MUInt edit_pass, USER_T *pold, USER_T *pnew, MUInt log )$/;"	f
+users_erase	.\userdfs\users.c	/^MInt users_erase(  uchar *puser_id )$/;"	f
+users_format	.\userdfs\users.c	/^users_format( void )$/;"	f
+users_get_devlist	.\userdfs\users.c	/^users_get_devlist( uchar *puser_id, ushort *pdev_list )$/;"	f
+users_init	.\userdfs\users.c	/^users_init( uint *pnum_users_avail )$/;"	f
+users_set_devlist	.\userdfs\users.c	/^users_set_devlist( uchar *puser_id, uint dev_list )$/;"	f
+users_validation	.\userdfs\users.c	/^users_validation( const USER_T *p, uchar *pass_match, ushort *pdev_list )$/;"	f
 ushort	.\Common\mytypes.h	/^typedef unsigned short	ushort;$/;"	t
 val_configs	.\ctsafe\valconf.c	/^static VAL_CONFIG_T val_configs[] =$/;"	v	file:
-val_err_isr	.\Drivers\Platform\SCI\sci.c	/^val_err_isr( void )$/;"	f	signature:( void )
-val_init	.\Drivers\Serial\slogval.c	/^val_init( SERIAL_T *p )$/;"	f	signature:( SERIAL_T *p )
-val_init	.\Drivers\Serial\slogval.h	/^void val_init( SERIAL_T *p );$/;"	p	signature:( SERIAL_T *p )
-val_rcv_isr	.\Drivers\Platform\SCI\sci.c	/^val_rcv_isr( void )$/;"	f	signature:( void )
-val_sci2_init	.\Drivers\Platform\SCI\sci.c	/^val_sci2_init( SERIAL_T *p )$/;"	f	signature:( SERIAL_T *p )
-val_sci2_init	.\Drivers\Platform\SCI\sci.h	/^void val_sci2_init( SERIAL_T *p );$/;"	p	signature:( SERIAL_T *p )
-val_sci2_sendchar	.\Drivers\Platform\SCI\sci.c	/^val_sci2_sendchar( unsigned char c )$/;"	f	signature:( unsigned char c )
-val_sci2_sendchar	.\Drivers\Platform\SCI\sci.h	/^void val_sci2_sendchar( unsigned char c );$/;"	p	signature:( unsigned char c )
-val_sci2_setbd	.\Drivers\Platform\SCI\sci.c	/^val_sci2_setbd( unsigned short baud_rate )$/;"	f	signature:( unsigned short baud_rate )
-val_sci2_setbd	.\Drivers\Platform\SCI\sci.h	/^void val_sci2_setbd( unsigned short baud_rate );$/;"	p	signature:( unsigned short baud_rate )
-val_sendchar	.\Drivers\Serial\slogval.c	/^val_sendchar( unsigned char c )$/;"	f	signature:( unsigned char c )
-val_sendchar	.\Drivers\Serial\slogval.h	/^void val_sendchar( unsigned char c );$/;"	p	signature:( unsigned char c )
-val_setbd	.\Drivers\Serial\slogval.c	/^val_setbd( MUInt bd )$/;"	f	signature:( MUInt bd )
-val_setbd	.\Drivers\Serial\slogval.h	/^void val_setbd( MUInt bd );$/;"	p	signature:( MUInt bd )
+val_err_isr	.\Drivers\Platform\SCI\sci.c	/^val_err_isr( void )$/;"	f
+val_init	.\Drivers\Serial\slogval.c	/^val_init( SERIAL_T *p )$/;"	f
+val_rcv_isr	.\Drivers\Platform\SCI\sci.c	/^val_rcv_isr( void )$/;"	f
+val_sci2_init	.\Drivers\Platform\SCI\sci.c	/^val_sci2_init( SERIAL_T *p )$/;"	f
+val_sci2_sendchar	.\Drivers\Platform\SCI\sci.c	/^val_sci2_sendchar( unsigned char c )$/;"	f
+val_sci2_setbd	.\Drivers\Platform\SCI\sci.c	/^val_sci2_setbd( unsigned short baud_rate )$/;"	f
+val_sendchar	.\Drivers\Serial\slogval.c	/^val_sendchar( unsigned char c )$/;"	f
+val_setbd	.\Drivers\Serial\slogval.c	/^val_setbd( MUInt bd )$/;"	f
 val_timer	.\Common\Automatons\valprot\valact.c	/^static MInt val_timer;$/;"	v	file:
-validate_user_and_devlist	.\ctsafe\logprot.c	/^validate_user_and_devlist( uchar dev, USER_T *user, uchar *pass_match, ushort *pdev_list )$/;"	f	file:	signature:( uchar dev, USER_T *user, uchar *pass_match, ushort *pdev_list )
+validate_user_and_devlist	.\ctsafe\logprot.c	/^validate_user_and_devlist( uchar dev, USER_T *user, uchar *pass_match, ushort *pdev_list )$/;"	f	file:
 valrx_queue	.\Drivers\Serial\sertable.c	/^unsigned char valrx_queue[ VALRX_MAX_CH ];$/;"	v
 vblocked	.\Common\Automatons\valprot\valctrl.c	/^const STATE vblocked =$/;"	v
-vblocked_ppro	.\Common\Automatons\valprot\valact.c	/^vblocked_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-vblocked_ppro	.\Common\Automatons\valprot\valact.h	/^NARG_T vblocked_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-verify_and_recover	.\userdfs\users.c	/^verify_and_recover( void )$/;"	f	file:	signature:( void )
-verify_and_recover_firmware_file	.\Drivers\Dflash\faccess.c	/^verify_and_recover_firmware_file( void )$/;"	f	signature:( void )
-verify_and_recover_firmware_file	.\Drivers\Dflash\faccess.h	/^MInt verify_and_recover_firmware_file( void );$/;"	p	signature:( void )
-verify_and_recover_firmware_file	.\Drivers\Dflash\old_faccess.c	/^verify_and_recover_firmware_file( void )$/;"	f	signature:( void )
-verify_block_address	.\Drivers\Dflash\dataflsh.c	/^verify_block_address( DFLASH_T *pf	)$/;"	f	signature:( DFLASH_T *pf )
-verify_both_memories	.\Drivers\Dflash\faccess.c	/^verify_both_memories( void )$/;"	f	signature:( void )
-verify_both_memories	.\Drivers\Dflash\old_faccess.c	/^verify_both_memories( void )$/;"	f	signature:( void )
-verify_byte_address	.\Drivers\Dflash\dataflsh.c	/^verify_byte_address( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-verify_content_mcu	.\ctsafe\logprot.c	/^verify_content_mcu( uchar check_mcu, RFRAME_T *p, ushort size )$/;"	f	file:	signature:( uchar check_mcu, RFRAME_T *p, ushort size )
-verify_file_checksum	.\Drivers\Dflash\faccess.c	/^verify_file_checksum( DFLASH_T *pf, MUInt device, ushort check  )$/;"	f	file:	signature:( DFLASH_T *pf, MUInt device, ushort check )
-verify_installed_memory	.\ctsafe\logprot.c	/^verify_installed_memory( MUInt memory, MUInt dev )$/;"	f	file:	signature:( MUInt memory, MUInt dev )
-verify_memory_and_mcu	.\ctsafe\logprot.c	/^verify_memory_and_mcu( MUInt dev )$/;"	f	file:	signature:( MUInt dev )
-verify_page_address	.\Drivers\Dflash\dataflsh.c	/^verify_page_address( DFLASH_T *pf )$/;"	f	signature:( DFLASH_T *pf )
-verify_password	.\userdfs\users.c	/^verify_password( const USER_T *pold, uint page, uint address )$/;"	f	file:	signature:( const USER_T *pold, uint page, uint address )
-verify_to_respond	.\ctsafe\logprot.c	/^verify_to_respond( MUInt dev, int result, void *to_send, ushort qty )$/;"	f	file:	signature:( MUInt dev, int result, void *to_send, ushort qty )
+vblocked_ppro	.\Common\Automatons\valprot\valact.c	/^vblocked_ppro( const NEWS_T *in )$/;"	f
+verify_and_recover	.\userdfs\users.c	/^verify_and_recover( void )$/;"	f	file:
+verify_and_recover_firmware_file	.\Drivers\Dflash\faccess.c	/^verify_and_recover_firmware_file( void )$/;"	f
+verify_and_recover_firmware_file	.\Drivers\Dflash\old_faccess.c	/^verify_and_recover_firmware_file( void )$/;"	f
+verify_block_address	.\Drivers\Dflash\dataflsh.c	/^verify_block_address( DFLASH_T *pf	)$/;"	f
+verify_both_memories	.\Drivers\Dflash\faccess.c	/^verify_both_memories( void )$/;"	f
+verify_both_memories	.\Drivers\Dflash\old_faccess.c	/^verify_both_memories( void )$/;"	f
+verify_byte_address	.\Drivers\Dflash\dataflsh.c	/^verify_byte_address( DFLASH_T *pf )$/;"	f
+verify_content_mcu	.\ctsafe\logprot.c	/^verify_content_mcu( uchar check_mcu, RFRAME_T *p, ushort size )$/;"	f	file:
+verify_file_checksum	.\Drivers\Dflash\faccess.c	/^verify_file_checksum( DFLASH_T *pf, MUInt device, ushort check  )$/;"	f	file:
+verify_installed_memory	.\ctsafe\logprot.c	/^verify_installed_memory( MUInt memory, MUInt dev )$/;"	f	file:
+verify_memory_and_mcu	.\ctsafe\logprot.c	/^verify_memory_and_mcu( MUInt dev )$/;"	f	file:
+verify_page_address	.\Drivers\Dflash\dataflsh.c	/^verify_page_address( DFLASH_T *pf )$/;"	f
+verify_password	.\userdfs\users.c	/^verify_password( const USER_T *pold, uint page, uint address )$/;"	f	file:
+verify_to_respond	.\ctsafe\logprot.c	/^verify_to_respond( MUInt dev, int result, void *to_send, ushort qty )$/;"	f	file:
 version_number	.\settings\settings.c	/^const char version_number[ VER_STR_LEN ] =  { VERSION_STRING };$/;"	v
 visit_dftimer	.\Drivers\Dflash\spihal.c	29;"	d	file:
 vlocks_st	.\Drivers\Wout\wouts.c	/^static MUInt vlocks_st[NUM_VLOCKS_MINORS];$/;"	v	file:
 vrly_st	.\Drivers\Wout\wouts.c	/^static MUInt vrly_st[NUM_VRLY_MINORS];$/;"	v	file:
 wait_cmd	.\Common\Automatons\logprot\alphctrl.c	/^const STATE wait_cmd =$/;"	v
-wait_cmd_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_cmd_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-wait_cmd_ppro	.\Common\Automatons\logprot\alphact.h	/^NARG_T wait_cmd_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+wait_cmd_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_cmd_ppro( const NEWS_T *in )$/;"	f
 wait_dev	.\Common\Automatons\logprot\alphctrl.c	/^const STATE wait_dev =$/;"	v
-wait_dev_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_dev_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-wait_dev_ppro	.\Common\Automatons\logprot\alphact.h	/^NARG_T wait_dev_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
-wait_ndata_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_ndata_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-wait_ndata_ppro	.\Common\Automatons\logprot\alphact.h	/^NARG_T wait_ndata_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+wait_dev_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_dev_ppro( const NEWS_T *in )$/;"	f
+wait_ndata_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_ndata_ppro( const NEWS_T *in )$/;"	f
 wait_numdata	.\Common\Automatons\logprot\alphctrl.c	/^const STATE wait_numdata =$/;"	v
 wait_term	.\Drivers\Dflash\flash.c	/^	uchar	wait_term;$/;"	m	file:
 wait_vresp	.\Common\Automatons\logprot\alphctrl.c	/^const STATE wait_vresp =$/;"	v
-wait_vresp_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_vresp_ppro( const NEWS_T *in )$/;"	f	signature:( const NEWS_T *in )
-wait_vresp_ppro	.\Common\Automatons\logprot\alphact.h	/^NARG_T wait_vresp_ppro( const NEWS_T *in );$/;"	p	signature:( const NEWS_T *in )
+wait_vresp_ppro	.\Common\Automatons\logprot\alphact.c	/^wait_vresp_ppro( const NEWS_T *in )$/;"	f
 watchdog_tick	.\Drivers\Watchdog\watchdog.c	/^static short watchdog_tick = BWATCHDOG_TICK;$/;"	v	file:
 wbuff	.\Common\vaultdef.h	/^	uint	wbuff:1;		\/*	Selects BUFFER0 (0) or BUFFER1 (1)		(IN)	*\/$/;"	m
 whence	.\ctsafe\logprot.c	/^	uchar whence;$/;"	m	file:
 which	.\Drivers\Sensor\cparse.h	/^	unsigned char which;$/;"	m
-which_sensor	.\Drivers\Sensor\cparse.c	/^which_sensor( void )$/;"	f	signature:( void )
-which_sensor	.\Drivers\Sensor\cparse.h	/^MUInt which_sensor( void );$/;"	p	signature:( void )
+which_sensor	.\Drivers\Sensor\cparse.c	/^which_sensor( void )$/;"	f
 who	.\Common\news\news.h	/^	unsigned who:3;$/;"	m
 word_bits	.\ctsafe\valconf.h	/^	unsigned word_bits	:2;$/;"	m
 wout_image	.\Drivers\Wout\wouts.c	/^static MUInt wout_image,kickwouts;$/;"	v	file:
-write_current_file	.\Drivers\Dflash\faccess.c	/^write_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
-write_current_file	.\Drivers\Dflash\faccess.h	/^int write_current_file( uint num_units, uchar *pbuff );$/;"	p	signature:( uint num_units, uchar *pbuff )
-write_current_file	.\Drivers\Dflash\old_faccess.c	/^write_current_file( uint num_units, uchar *pbuff )$/;"	f	signature:( uint num_units, uchar *pbuff )
-write_one	.\Drivers\Dflash\faccess.c	/^write_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
-write_one	.\Drivers\Dflash\old_faccess.c	/^write_one( ulong position, uchar *p, MUInt access )$/;"	f	file:	signature:( ulong position, uchar *p, MUInt access )
-write_one_false_queue	.\Drivers\Dflash\faccess.c	/^write_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_false_queue	.\Drivers\Dflash\old_faccess.c	/^write_one_false_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_queue	.\Drivers\Dflash\faccess.c	/^write_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_queue	.\Drivers\Dflash\old_faccess.c	/^write_one_queue( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_random	.\Drivers\Dflash\faccess.c	/^write_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_one_random	.\Drivers\Dflash\old_faccess.c	/^write_one_random( uchar *p )$/;"	f	file:	signature:( uchar *p )
-write_page	.\Drivers\Dflash\faccess.c	/^write_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-write_page	.\Drivers\Dflash\old_faccess.c	/^write_page( DFLASH_T *pf )$/;"	f	file:	signature:( DFLASH_T *pf )
-write_pinfo	.\Drivers\Dflash\faccess.c	/^write_pinfo( void )$/;"	f	file:	signature:( void )
-write_pinfo	.\Drivers\Dflash\old_faccess.c	/^write_pinfo( void )$/;"	f	file:	signature:( void )
-write_queue_current_file	.\Drivers\Dflash\faccess.c	/^write_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-write_queue_current_file	.\Drivers\Dflash\old_faccess.c	/^write_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-write_random_current_file	.\Drivers\Dflash\faccess.c	/^write_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
-write_random_current_file	.\Drivers\Dflash\old_faccess.c	/^write_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:	signature:( uint num_units, uchar *pbuff )
+write_current_file	.\Drivers\Dflash\faccess.c	/^write_current_file( uint num_units, uchar *pbuff )$/;"	f
+write_current_file	.\Drivers\Dflash\old_faccess.c	/^write_current_file( uint num_units, uchar *pbuff )$/;"	f
+write_one	.\Drivers\Dflash\faccess.c	/^write_one( ulong position, uchar *p, MUInt access )$/;"	f	file:
+write_one	.\Drivers\Dflash\old_faccess.c	/^write_one( ulong position, uchar *p, MUInt access )$/;"	f	file:
+write_one_false_queue	.\Drivers\Dflash\faccess.c	/^write_one_false_queue( uchar *p )$/;"	f	file:
+write_one_false_queue	.\Drivers\Dflash\old_faccess.c	/^write_one_false_queue( uchar *p )$/;"	f	file:
+write_one_queue	.\Drivers\Dflash\faccess.c	/^write_one_queue( uchar *p )$/;"	f	file:
+write_one_queue	.\Drivers\Dflash\old_faccess.c	/^write_one_queue( uchar *p )$/;"	f	file:
+write_one_random	.\Drivers\Dflash\faccess.c	/^write_one_random( uchar *p )$/;"	f	file:
+write_one_random	.\Drivers\Dflash\old_faccess.c	/^write_one_random( uchar *p )$/;"	f	file:
+write_page	.\Drivers\Dflash\faccess.c	/^write_page( DFLASH_T *pf )$/;"	f	file:
+write_page	.\Drivers\Dflash\old_faccess.c	/^write_page( DFLASH_T *pf )$/;"	f	file:
+write_pinfo	.\Drivers\Dflash\faccess.c	/^write_pinfo( void )$/;"	f	file:
+write_pinfo	.\Drivers\Dflash\old_faccess.c	/^write_pinfo( void )$/;"	f	file:
+write_queue_current_file	.\Drivers\Dflash\faccess.c	/^write_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
+write_queue_current_file	.\Drivers\Dflash\old_faccess.c	/^write_queue_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
+write_random_current_file	.\Drivers\Dflash\faccess.c	/^write_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
+write_random_current_file	.\Drivers\Dflash\old_faccess.c	/^write_random_current_file( uint num_units, uchar *pbuff )$/;"	f	file:
 xframe	.\ctsafe\logprot.c	/^static XMIT_BUFF_T xframe;		\/* is shared with receiving side *\/$/;"	v	file:
 xmit_frames	.\ctsafe\logprot.c	/^static uint xmit_frames;$/;"	v	file:

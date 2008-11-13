@@ -85,6 +85,6 @@ enum
 
 #define DATA_POS			(NDATA_POS + NDATA_SIZE)
 
-#define MAX_NDATA_LEN		512	
+#define MAX_NDATA_LEN		530	
 #define VAL_MAX_FRAME_SIZE	128
 #define MAX_FRAME_SIZE		(MAX_NDATA_LEN + 4 + NDATA_SIZE)

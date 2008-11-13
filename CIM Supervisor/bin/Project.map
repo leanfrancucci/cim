@@ -1,5 +1,5 @@
 
-PROGRAM "c:\CIM Soft\CIMSUP\cimsup\bin\Project.abs"
+PROGRAM "c:\3\CIM Supervisor\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -37,7 +37,7 @@ _startupData is allocated at 0xE084 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x100     25
-  _Copy    *toCopyDownBeg 0xE38F
+  _Copy    *toCopyDownBeg 0xE389
 } _startupData;
 
 *********************************************************************************************
@@ -47,9 +47,9 @@ Section Name                    Size  Type     From       To       Segment
 .data                              9   R/W      0x100      0x108   RAM
 .init                            132     R     0xE000     0xE083   ROM
 .startData                        14     R     0xE084     0xE091   ROM
-.rodata1                          58     R     0xE092     0xE0CB   ROM
-.text                            707     R     0xE0CC     0xE38E   ROM
-.copy                              7     R     0xE38F     0xE395   ROM
+.rodata1                          52     R     0xE092     0xE0C5   ROM
+.text                            707     R     0xE0C6     0xE388   ROM
+.copy                              7     R     0xE389     0xE38F   ROM
 .abs_section_0                     1   N/I        0x0        0x0   .absSeg0
 .abs_section_1                     1   N/I        0x1        0x1   .absSeg1
 .abs_section_2                     1   N/I        0x2        0x2   .absSeg2
@@ -132,7 +132,7 @@ Section Name                    Size  Type     From       To       Segment
 .vectSeg77_vect                    2     R     0xFFFE     0xFFFF   .vectSeg77
 
 Summary of section sizes per section type:
-READ_ONLY (R):         39A (dec:      922)
+READ_ONLY (R):         394 (dec:      916)
 READ_WRITE (R/W):       69 (dec:      105)
 NO_INIT (N/I):          55 (dec:       85)
 
@@ -148,7 +148,7 @@ OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 MODULE:                 -- main.c.o --
 - PROCEDURES:
-     main                                      E0CC       8       8       1   .text       
+     main                                      E0C6       8       8       1   .text       
 - VARIABLES:
 MODULE:                 -- MC9S08QG8.C.o --
 - PROCEDURES:
@@ -240,77 +240,77 @@ MODULE:                 -- Start08.c.o --
      __SEG_END_SSTACK                           169       0       0       1               
 MODULE:                 -- drivers.c.o --
 - PROCEDURES:
-     drivers_init                              E0D4       F      15       1   .text       
+     drivers_init                              E0CE       F      15       1   .text       
 - VARIABLES:
 MODULE:                 -- cop.c.o --
 - PROCEDURES:
-     cop_init                                  E0E3       D      13       1   .text       
+     cop_init                                  E0DD       D      13       1   .text       
 - VARIABLES:
 MODULE:                 -- rti.c.o --
 - PROCEDURES:
-     rti_init                                  E0F0      12      18       1   .text       
-     rti_handler                               E102      10      16       1   .text       
+     rti_init                                  E0EA      12      18       1   .text       
+     rti_handler                               E0FC      10      16       1   .text       
 - VARIABLES:
      _Vector_23                                FFD0       2       2       0   .abs_section_ffd0
 MODULE:                 -- drverr.c.o --
 - PROCEDURES:
-     fatal                                     E112       3       3       2   .text       
+     fatal                                     E10C       3       3       2   .text       
 - VARIABLES:
 MODULE:                 -- enaint.c.o --
 - PROCEDURES:
-     init_stack                                E115       7       7       1   .text       
-     push                                      E11C      16      22       1   .text       
-     pop                                       E132      1A      26       1   .text       
-     init_int_handler                          E14C       2       2       1   .text       
-     sem_disable                               E14E      22      34       1   .text       
-     sem_enable                                E170      24      36       1   .text       
-     enable_gral_interrupt                     E194       3       3       1   .text       
+     init_stack                                E10F       7       7       1   .text       
+     push                                      E116      16      22       1   .text       
+     pop                                       E12C      1A      26       1   .text       
+     init_int_handler                          E146       2       2       1   .text       
+     sem_disable                               E148      22      34       1   .text       
+     sem_enable                                E16A      24      36       1   .text       
+     enable_gral_interrupt                     E18E       3       3       1   .text       
 - VARIABLES:
-     STRING.c..CIM.Soft.CIMSUP.c.1             E092      3A      58       2   .rodata1    
+     STRING.c..3.CIM.Supervisor..1             E092      34      52       2   .rodata1    
      int_stack                                  109       8       8       3   .bss        
      pint                                       111       2       2       6   .bss        
 MODULE:                 -- lowint.c.o --
 - PROCEDURES:
-     enable_interrupt                          E197       2       2       2   .text       
-     disable_interrupt                         E199       2       2       2   .text       
-     get_enable_status                         E19B      10      16       1   .text       
+     enable_interrupt                          E191       2       2       2   .text       
+     disable_interrupt                         E193       2       2       2   .text       
+     get_enable_status                         E195      10      16       1   .text       
 - VARIABLES:
 MODULE:                 -- watchdog.c.o --
 - PROCEDURES:
-     reset_now                                 E1AB       2       2       2   .text       
-     kick_watchdog                             E1AD       4       4       2   .text       
+     reset_now                                 E1A5       2       2       2   .text       
+     kick_watchdog                             E1A7       4       4       2   .text       
 - VARIABLES:
 MODULE:                 -- platform.c.o --
 - PROCEDURES:
-     platform_init                             E1B1       F      15       1   .text       
-     acknowledge_irqs                          E1C0       8       8       1   .text       
+     platform_init                             E1AB       F      15       1   .text       
+     acknowledge_irqs                          E1BA       8       8       1   .text       
 - VARIABLES:
 MODULE:                 -- ioports.c.o --
 - PROCEDURES:
-     ports_init                                E1C8      32      50       1   .text       
+     ports_init                                E1C2      32      50       1   .text       
 - VARIABLES:
 MODULE:                 -- sleep.c.o --
 - PROCEDURES:
-     check_sleep                               E1FA      10      16       1   .text       
-     sleep                                     E20A      1B      27       2   .text       
+     check_sleep                               E1F4      10      16       1   .text       
+     sleep                                     E204      1B      27       2   .text       
 - VARIABLES:
      tick                                       113       2       2       4   .bss        
 MODULE:                 -- lvd.c.o --
 - PROCEDURES:
-     lvd_init                                  E225       A      10       1   .text       
+     lvd_init                                  E21F       A      10       1   .text       
 - VARIABLES:
 MODULE:                 -- ics.c.o --
 - PROCEDURES:
-     ics_init                                  E22F       1       1       1   .text       
+     ics_init                                  E229       1       1       1   .text       
 - VARIABLES:
 MODULE:                 -- superv.c.o --
 - PROCEDURES:
-     supervisor_init                           E230      53      83       1   .text       
-     wdog_act                                  E283      2F      47       1   .text       
-     vrly_act                                  E2B2      2E      46       1   .text       
-     vlock_act                                 E2E0      2D      45       1   .text       
-     tst_jump_superv                           E30D      5B      91       1   .text       
-     do_supervisor                             E368      27      39       1   .text       
+     supervisor_init                           E22A      53      83       1   .text       
+     wdog_act                                  E27D      2F      47       1   .text       
+     vrly_act                                  E2AC      2E      46       1   .text       
+     vlock_act                                 E2DA      2D      45       1   .text       
+     tst_jump_superv                           E307      5B      91       1   .text       
+     do_supervisor                             E362      27      39       1   .text       
 - VARIABLES:
      wdogsup                                    100       9       9       3   .data       
      isjump                                     115       1       1       3   .bss        
@@ -328,7 +328,7 @@ MODULE STATISTIC
   cop.c.o                                      0     13      0
   rti.c.o                                      0     34      2
   drverr.c.o                                   0      3      0
-  enaint.c.o                                  10    130     58
+  enaint.c.o                                  10    130     52
   lowint.c.o                                   0     20      0
   watchdog.c.o                                 0      6      0
   platform.c.o                                 0     23      0
@@ -355,7 +355,7 @@ SECTION: ".bss"
 SECTION: ".init"
   loadByte Init _Startup 
 SECTION: ".rodata1"
-  STRING.c..CIM.Soft.CIMSUP.c.1 
+  STRING.c..3.CIM.Supervisor..1 
 SECTION: ".abs_section_0"
   _PTAD 
 SECTION: ".abs_section_1"
@@ -601,38 +601,38 @@ OBJECT LIST SORTED BY ADDRESS
      loadByte                                  E000       E      14       5   .init       
      Init                                      E00E      6D     109       1   .init       
      _Startup                                  E07B       9       9       0   .init       
-     STRING.c..CIM.Soft.CIMSUP.c.1             E092      3A      58       2   .rodata1    
-     main                                      E0CC       8       8       1   .text       
-     drivers_init                              E0D4       F      15       1   .text       
-     cop_init                                  E0E3       D      13       1   .text       
-     rti_init                                  E0F0      12      18       1   .text       
-     rti_handler                               E102      10      16       1   .text       
-     fatal                                     E112       3       3       2   .text       
-     init_stack                                E115       7       7       1   .text       
-     push                                      E11C      16      22       1   .text       
-     pop                                       E132      1A      26       1   .text       
-     init_int_handler                          E14C       2       2       1   .text       
-     sem_disable                               E14E      22      34       1   .text       
-     sem_enable                                E170      24      36       1   .text       
-     enable_gral_interrupt                     E194       3       3       1   .text       
-     enable_interrupt                          E197       2       2       2   .text       
-     disable_interrupt                         E199       2       2       2   .text       
-     get_enable_status                         E19B      10      16       1   .text       
-     reset_now                                 E1AB       2       2       2   .text       
-     kick_watchdog                             E1AD       4       4       2   .text       
-     platform_init                             E1B1       F      15       1   .text       
-     acknowledge_irqs                          E1C0       8       8       1   .text       
-     ports_init                                E1C8      32      50       1   .text       
-     check_sleep                               E1FA      10      16       1   .text       
-     sleep                                     E20A      1B      27       2   .text       
-     lvd_init                                  E225       A      10       1   .text       
-     ics_init                                  E22F       1       1       1   .text       
-     supervisor_init                           E230      53      83       1   .text       
-     wdog_act                                  E283      2F      47       1   .text       
-     vrly_act                                  E2B2      2E      46       1   .text       
-     vlock_act                                 E2E0      2D      45       1   .text       
-     tst_jump_superv                           E30D      5B      91       1   .text       
-     do_supervisor                             E368      27      39       1   .text       
+     STRING.c..3.CIM.Supervisor..1             E092      34      52       2   .rodata1    
+     main                                      E0C6       8       8       1   .text       
+     drivers_init                              E0CE       F      15       1   .text       
+     cop_init                                  E0DD       D      13       1   .text       
+     rti_init                                  E0EA      12      18       1   .text       
+     rti_handler                               E0FC      10      16       1   .text       
+     fatal                                     E10C       3       3       2   .text       
+     init_stack                                E10F       7       7       1   .text       
+     push                                      E116      16      22       1   .text       
+     pop                                       E12C      1A      26       1   .text       
+     init_int_handler                          E146       2       2       1   .text       
+     sem_disable                               E148      22      34       1   .text       
+     sem_enable                                E16A      24      36       1   .text       
+     enable_gral_interrupt                     E18E       3       3       1   .text       
+     enable_interrupt                          E191       2       2       2   .text       
+     disable_interrupt                         E193       2       2       2   .text       
+     get_enable_status                         E195      10      16       1   .text       
+     reset_now                                 E1A5       2       2       2   .text       
+     kick_watchdog                             E1A7       4       4       2   .text       
+     platform_init                             E1AB       F      15       1   .text       
+     acknowledge_irqs                          E1BA       8       8       1   .text       
+     ports_init                                E1C2      32      50       1   .text       
+     check_sleep                               E1F4      10      16       1   .text       
+     sleep                                     E204      1B      27       2   .text       
+     lvd_init                                  E21F       A      10       1   .text       
+     ics_init                                  E229       1       1       1   .text       
+     supervisor_init                           E22A      53      83       1   .text       
+     wdog_act                                  E27D      2F      47       1   .text       
+     vrly_act                                  E2AC      2E      46       1   .text       
+     vlock_act                                 E2DA      2D      45       1   .text       
+     tst_jump_superv                           E307      5B      91       1   .text       
+     do_supervisor                             E362      27      39       1   .text       
      _Vector_23                                FFD0       2       2       0   .abs_section_ffd0
 
 *********************************************************************************************
@@ -645,13 +645,13 @@ enaint.c.o:
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xE38F ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xE389 ---- SIZE       4 ---
 Filling bytes inserted
  00010101
-------- ROM-ADDRESS: 0xE393 ---- RAM-ADDRESS: 0x101 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xE38D ---- RAM-ADDRESS: 0x101 ---- SIZE       1 ---
 Name of initialized Object : wdogsup:1
  7D
-------- ROM-ADDRESS: 0xE394 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xE38E ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -672,8 +672,8 @@ push                      USES pint int_stack
 pop                       USES pint int_stack 
 init_int_handler          USES init_stack 
 sem_disable               USES get_enable_status disable_interrupt 
-                                STRING.c..CIM.Soft.CIMSUP.c.1 fatal push 
-sem_enable                USES pop STRING.c..CIM.Soft.CIMSUP.c.1 fatal 
+                                STRING.c..3.CIM.Supervisor..1 fatal push 
+sem_enable                USES pop STRING.c..3.CIM.Supervisor..1 fatal 
                                 disable_interrupt enable_interrupt 
 enable_gral_interrupt     USES enable_interrupt 
 kick_watchdog             USES _SRS 
@@ -785,6 +785,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 6
-Total size of all blocks to be downloaded: 922
+Number of blocks to be downloaded: 5
+Total size of all blocks to be downloaded: 916
 

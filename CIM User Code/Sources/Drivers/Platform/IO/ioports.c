@@ -136,7 +136,7 @@ ports_init(void)
 void
 loging_led( void )
 {
-//	LED1 ^= 1;
+	LED1 ^= 1;
 }
 
 
