@@ -139,8 +139,11 @@ shutdown( void )
 	if( pwrsys.bm.ps == BACKUP )
 	{
 		disconnect_battery();
+		sleep( PWROFF_TIME );
+		reset_now();
+/*
 		for(;;)
-			kick_watchdog();
+			kick_watchdog();*/
 	}
 	else
 	{

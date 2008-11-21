@@ -20,11 +20,22 @@ safe_comm,COM1,38400,8,N,1,5000,100
 #	Test communication port data
 #
 
-test_comm,COM11,38400,8,N,1,0,0
+test_comm,COM14,38400,8,N,1,0,0
 
 #
 #	Validator communication port data
 #
 
-val_comm,COM10,9600,8,E,1,1000,100
+val_comm,COM15,9600,8,E,1,1000,100
 
+#
+#	Lower Version Upgradable
+#
+
+lower_version,SW00.14.00 
+
+#
+#	File System Format Time
+#
+
+fsys_format_time,240

@@ -1,5 +1,5 @@
 
-PROGRAM "F:\CIM 00.13.01\CIM User Code\bin\Project.abs"
+PROGRAM "F:\CIM 00.15.00\CIM User Code\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -385,7 +385,7 @@ MODULE:                 -- stimers.c.o --
      timers                                     19B      68     104      12   .bss        
 MODULE:                 -- watchdog.c.o --
 - PROCEDURES:
-     kick_watchdog                             2304      17      23       8   .text       
+     kick_watchdog                             2304      17      23       7   .text       
      check_watchdog                            231B      18      24       1   .text       
 - VARIABLES:
      watchdog_tick                              110       2       2       5   .data       
@@ -486,7 +486,7 @@ MODULE:                 -- enaint.c.o --
      sem_enable                                27FC      24      36      17   .text       
      enable_gral_interrupt                     2820       3       3       1   .text       
 - VARIABLES:
-     STRING.F..CIM.00.13.01.CIM..1             7692      3E      62       2   .rodata1    
+     STRING.F..CIM.00.15.00.CIM..1             7692      3E      62       2   .rodata1    
      int_stack                                  28F       8       8       3   .bss        
      pint                                       297       2       2       6   .bss        
 MODULE:                 -- lowint.c.o --
@@ -634,7 +634,7 @@ MODULE:                 -- logprot.c.o --
 - VARIABLES:
      pdevs                                     7288      12      18       1   .rodata     
      pcmds                                     729A      48      72       1   .rodata     
-     STRING.SW00.14.00HW03.00.1                76D0      12      18       1   .rodata1    
+     STRING.SW00.15.00HW03.00.1                76D0      12      18       1   .rodata1    
      xframe                                     2BB       4       4      10   .bss        
      in                                         2BF       2       2       3   .bss        
      curr_val                                   2C1       1       1       2   .bss        
@@ -1441,7 +1441,7 @@ SECTION: ".rodata"
   locking_ws bsc16 bsc32 avail_flash fd2bit opc_actions trans_extchrg 
   trans_extnotchrg trans_ext trans_backup extchrg extnotchrg ext backup 
 SECTION: ".rodata1"
-  STRING.F..CIM.00.13.01.CIM..1 STRING.SW00.14.00HW03.00.1 
+  STRING.F..CIM.00.15.00.CIM..1 STRING.SW00.15.00HW03.00.1 
 SECTION: "BOOTROM"
   version_number 
 SECTION: ".common"
@@ -1968,7 +1968,7 @@ OBJECT LIST SORTED BY ADDRESS
      assign_timer                              2267      62      98      11   .text       
      kick_timer                                22C9      37      55      34   .text       
      kill_timer                                2300       4       4      15   .text       
-     kick_watchdog                             2304      17      23       8   .text       
+     kick_watchdog                             2304      17      23       7   .text       
      check_watchdog                            231B      18      24       1   .text       
      init_wouts                                2333       6       6       1   .text       
      enable_vlocks                             2339      23      35       2   .text       
@@ -2407,8 +2407,8 @@ OBJECT LIST SORTED BY ADDRESS
      extnotchrg                                7686       4       4       5   .rodata     
      ext                                       768A       4       4       6   .rodata     
      backup                                    768E       4       4       6   .rodata     
-     STRING.F..CIM.00.13.01.CIM..1             7692      3E      62       2   .rodata1    
-     STRING.SW00.14.00HW03.00.1                76D0      12      18       1   .rodata1    
+     STRING.F..CIM.00.15.00.CIM..1             7692      3E      62       2   .rodata1    
+     STRING.SW00.15.00HW03.00.1                76D0      12      18       1   .rodata1    
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      _Vector_20                                FFD6       2       2       0   .abs_section_ffd6
      _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
@@ -2678,8 +2678,8 @@ push                      USES pint int_stack
 pop                       USES pint int_stack 
 init_int_handler          USES init_stack 
 sem_disable               USES get_enable_status disable_interrupt 
-                                STRING.F..CIM.00.13.01.CIM..1 fatal push 
-sem_enable                USES pop STRING.F..CIM.00.13.01.CIM..1 fatal 
+                                STRING.F..CIM.00.15.00.CIM..1 fatal push 
+sem_enable                USES pop STRING.F..CIM.00.15.00.CIM..1 fatal 
                                 disable_interrupt enable_interrupt 
 enable_gral_interrupt     USES enable_interrupt 
 init_group_status         USES grst get_cstate 
@@ -2759,7 +2759,7 @@ proc_getusrinfo           USES verify_content_mcu verify_memory_and_mcu
 proc_usrformat            USES verify_content_mcu verify_installed_memory 
                                 get_grstat prepare_resp_sbox send_sbox_frame users_format 
                                 verify_to_respond 
-proc_version              USES verify_content_mcu STRING.SW00.14.00HW03.00.1 
+proc_version              USES verify_content_mcu STRING.SW00.15.00HW03.00.1 
                                 prepare_resp_sbox send_sbox_frame 
 proc_model                USES verify_content_mcu prepare_resp_sbox 
                                 send_sbox_frame 
@@ -2847,7 +2847,7 @@ set_pwr_st                USES pwrsys set_safebox_st
 host_reset                USES set_host_pwr sleep pwrsys disconnect_battery 
                                 kick_watchdog reset_now 
 shutdown                  USES set_host_pwr sleep pwrsys disconnect_battery 
-                                kick_watchdog reset_now 
+                                reset_now 
 set_memstat               USES mem_status 
 execute_parser            USES qcp pcp p1.1 sens_tout 
 init_cparse               USES cpdata _PUSH_CC _POP_CC 
@@ -4014,8 +4014,6 @@ DEPENDENCY TREE
  |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  |     |  
  |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  |     +- disconnect_battery  
  |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  |     |    
- |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  |     +- kick_watchdog        (see above)
- |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  |     |  
  |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  |     +- reset_now            (see above)
  |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  |        
  |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |     |  +- proc_gr1_status     
