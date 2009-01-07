@@ -13,6 +13,7 @@ extern const STATE 	idle_ws,
 					locked_ws,
 	   				pre_unlocking_ws,
 					unlocking_ws, 
+					wpunlock_ws,
 					unlocked_ws, 
 					locking_ws; 
 

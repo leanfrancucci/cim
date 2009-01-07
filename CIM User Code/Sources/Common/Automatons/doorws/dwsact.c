@@ -16,6 +16,7 @@
 #include "dwsact.h"
 #include "pwrhdl.h"
 #include "vaultdef.h"
+#include "settings.h"
 #include "sensor.h"
 #include <stdlib.h>
 
@@ -154,6 +155,7 @@ pulking2ulked_ws( NEWS_T *in )
 	set_locker_state( LOCKER0, UNLOCKED_STATUS );
 }
 
+#if 0
 void
 ulking2lked_ws( NEWS_T *in )
 {
@@ -165,6 +167,22 @@ ulking2lked_ws( NEWS_T *in )
 	set_locker_state( LOCKER0, LOCKED_STATUS );
 	kill_timer( lockt_dws );
 }
+#else
+
+void
+lock_and_wait( NEWS_T *in )
+{
+	lock_locker_ws();
+	kick_timer( lockt_dws, WAIT_UNLOCK_DWS );
+}
+
+void
+ulking2lked_ws( NEWS_T *in )
+{
+	set_locker_state( LOCKER0, LOCKED_STATUS );
+	kill_timer( lockt_dws );
+}
+#endif
 
 void
 ulking2ulked_ws( NEWS_T *in )

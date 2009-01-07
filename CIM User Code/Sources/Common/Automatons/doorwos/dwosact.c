@@ -2,6 +2,7 @@
  * dwosact.c
  */
 
+#include "settings.h"
 #include "news.h"
 #include "mpdata.h"
 #include "mytypes.h"
@@ -137,6 +138,8 @@ ulking2ulked_wos( NEWS_T *in )
 	put_nqueue( NEWS_QUEUE, def_news[LOCK_DOOR2_IX] );
 }
 
+#if 0
+
 void
 ulking2lked_wos( NEWS_T *in )
 {
@@ -144,6 +147,24 @@ ulking2lked_wos( NEWS_T *in )
 	set_locker_state(LOCKER1, LOCKED_STATUS );
 	kill_timer( lockt_dwos );
 }
+
+#else
+
+void
+lock_and_wait_wos( NEWS_T *in )
+{
+	lock_locker_wos();
+	kick_timer( lockt_dwos, WAIT_UNLOCK_DWOS );
+}
+
+void
+ulking2lked_wos( NEWS_T *in )
+{
+	set_locker_state(LOCKER1, LOCKED_STATUS );
+	kill_timer( lockt_dwos );
+}
+
+#endif
 
 void
 ulked2lked_wos( NEWS_T *in )

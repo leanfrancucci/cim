@@ -13,6 +13,7 @@ extern const STATE 	idle_wos,
 					locked_wos,
 					pre_unlocking_wos, 
 					unlocking_wos, 
+					wpunlock_wos,
 					unlocked_wos, 
 					locking_wos; 
 

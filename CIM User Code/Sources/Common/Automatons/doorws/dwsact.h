@@ -24,6 +24,7 @@ void lked2unlked_ws( NEWS_T *in );
 void pulking2ulking_ws( NEWS_T *in );
 void pulking2lked_ws( NEWS_T *in );
 void pulking2ulked_ws( NEWS_T *in );
+void lock_and_wait( NEWS_T *in );
 void ulking2lked_ws( NEWS_T *in );
 void ulking2ulked_ws( NEWS_T *in );
 void ulked2lking_ws( NEWS_T *in );

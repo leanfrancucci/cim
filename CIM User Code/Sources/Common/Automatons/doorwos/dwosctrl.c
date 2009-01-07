@@ -50,7 +50,21 @@ static const TRAN trans_unlocking_wos[] =
 //	OPEN_KEYS,		&unlocking_wos,		NULL,
 //	CLOSE_KEYS,		&unlocking_wos,		NULL,
 //	UNLOCK_DOOR,	&unlocking_wos,		NULL,
+#if 0
 	LOCK_DOOR,		&locked_wos,		ulking2lked_wos,
+	TOUT_DOOR,		&locked_wos,		ulking2lked_wos,
+#else
+	LOCK_DOOR,		&wpunlock_wos,		lock_and_wait_wos,
+	TOUT_DOOR,		&wpunlock_wos,		lock_and_wait_wos,
+#endif
+	UNKNOWN,		&unlocking_wos,		NULL,
+	MPANY,			&unlocking_wos,		NULL
+};
+
+static const TRAN trans_wpunlock_wos[] =
+{
+	OPEN_DOOR,		&unlocked_wos,		ulking2ulked_wos,
+	CLOSE_DOOR,		&locked_wos,		ulked2lked_wos,
 	TOUT_DOOR,		&locked_wos,		ulking2lked_wos,
 	UNKNOWN,		&unlocking_wos,		NULL,
 	MPANY,			&unlocking_wos,		NULL
@@ -100,6 +114,11 @@ const STATE pre_unlocking_wos =
 const STATE unlocking_wos =
 {
 	trans_unlocking_wos,	dwos_ppro
+};
+
+const STATE wpunlock_wos =
+{
+	trans_wpunlock_wos,	dwos_ppro
 };
 
 const STATE unlocked_wos =

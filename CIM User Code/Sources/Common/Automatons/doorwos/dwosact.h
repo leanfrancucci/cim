@@ -23,6 +23,7 @@ void pulking2ulked_wos( NEWS_T *in );
 void pulking2ulking_wos( NEWS_T *in );
 void pulking2lked_wos( NEWS_T *in );
 void ulking2ulked_wos( NEWS_T *in );
+void lock_and_wait_wos( NEWS_T *in );
 void ulking2lked_wos( NEWS_T *in );
 void ulked2lked_wos( NEWS_T *in );
 void lked2lked_wos( NEWS_T *in );
