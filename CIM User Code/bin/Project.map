@@ -1,5 +1,5 @@
 
-PROGRAM "F:\CIM 00.15.00\CIM User Code\bin\Project.abs"
+PROGRAM "F:\CIM 00.15.01\CIM User Code\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -486,7 +486,7 @@ MODULE:                 -- enaint.c.o --
      sem_enable                                27FC      24      36      17   .text       
      enable_gral_interrupt                     2820       3       3       1   .text       
 - VARIABLES:
-     STRING.F..CIM.00.15.00.CIM..1             76BD      3E      62       2   .rodata1    
+     STRING.F..CIM.00.15.01.CIM..1             76BD      3E      62       2   .rodata1    
      int_stack                                  28F       8       8       3   .bss        
      pint                                       297       2       2       6   .bss        
 MODULE:                 -- lowint.c.o --
@@ -634,7 +634,7 @@ MODULE:                 -- logprot.c.o --
 - VARIABLES:
      pdevs                                     7274      12      18       1   .rodata     
      pcmds                                     7286      48      72       1   .rodata     
-     STRING.SW00.15.01HW03.00.1                76FB      12      18       1   .rodata1    
+     STRING.SW00.16.00HW03.00.1                76FB      12      18       1   .rodata1    
      xframe                                     2BB       4       4      10   .bss        
      in                                         2BF       2       2       3   .bss        
      curr_val                                   2C1       1       1       2   .bss        
@@ -1447,7 +1447,7 @@ SECTION: ".rodata"
   locking_ws bsc16 bsc32 avail_flash fd2bit opc_actions trans_extchrg 
   trans_extnotchrg trans_ext trans_backup extchrg extnotchrg ext backup 
 SECTION: ".rodata1"
-  STRING.F..CIM.00.15.00.CIM..1 STRING.SW00.15.01HW03.00.1 
+  STRING.F..CIM.00.15.01.CIM..1 STRING.SW00.16.00HW03.00.1 
 SECTION: "BOOTROM"
   version_number 
 SECTION: ".common"
@@ -2418,8 +2418,8 @@ OBJECT LIST SORTED BY ADDRESS
      extnotchrg                                76B1       4       4       5   .rodata     
      ext                                       76B5       4       4       6   .rodata     
      backup                                    76B9       4       4       6   .rodata     
-     STRING.F..CIM.00.15.00.CIM..1             76BD      3E      62       2   .rodata1    
-     STRING.SW00.15.01HW03.00.1                76FB      12      18       1   .rodata1    
+     STRING.F..CIM.00.15.01.CIM..1             76BD      3E      62       2   .rodata1    
+     STRING.SW00.16.00HW03.00.1                76FB      12      18       1   .rodata1    
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      _Vector_20                                FFD6       2       2       0   .abs_section_ffd6
      _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
@@ -2691,8 +2691,8 @@ push                      USES pint int_stack
 pop                       USES pint int_stack 
 init_int_handler          USES init_stack 
 sem_disable               USES get_enable_status disable_interrupt 
-                                STRING.F..CIM.00.15.00.CIM..1 fatal push 
-sem_enable                USES pop STRING.F..CIM.00.15.00.CIM..1 fatal 
+                                STRING.F..CIM.00.15.01.CIM..1 fatal push 
+sem_enable                USES pop STRING.F..CIM.00.15.01.CIM..1 fatal 
                                 disable_interrupt enable_interrupt 
 enable_gral_interrupt     USES enable_interrupt 
 init_group_status         USES grst get_cstate 
@@ -2772,7 +2772,7 @@ proc_getusrinfo           USES verify_content_mcu verify_memory_and_mcu
 proc_usrformat            USES verify_content_mcu verify_installed_memory 
                                 get_grstat prepare_resp_sbox send_sbox_frame users_format 
                                 verify_to_respond 
-proc_version              USES verify_content_mcu STRING.SW00.15.01HW03.00.1 
+proc_version              USES verify_content_mcu STRING.SW00.16.00HW03.00.1 
                                 prepare_resp_sbox send_sbox_frame 
 proc_model                USES verify_content_mcu prepare_resp_sbox 
                                 send_sbox_frame 
