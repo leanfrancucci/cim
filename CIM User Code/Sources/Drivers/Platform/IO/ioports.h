@@ -43,9 +43,9 @@
 #define WDOG_CTRL	PTDD_PTDD2	/* output */
 #define VLOCKS_CTRL	PTDD_PTDD3	/* output */
 #define VRLY_CTRL	PTDD_PTDD4	/* output */
-#define AUX1		PTDD_PTDD5	/* input */
+#define VAL0PWR		PTDD_PTDD5	/* output */
 #define AUX2		PTDD_PTDD6	/* input */
-#define AUX3		PTDD_PTDD7	/* input */
+#define VAL1PWR		PTDD_PTDD7	/* output */
 /* PORT E Data Register */
 #define UART1_TXD	PTED_PTED0	/* SCI1 TX output */
 #define UART1_RXD	PTED_PTED1	/* SCI1 RX output */
@@ -99,9 +99,9 @@
 #define D_WDOG_CTRL		PTDDD_PTDDD2	/* output */
 #define D_VLOCKS_CTRL	PTDDD_PTDDD3	/* output */
 #define D_VRLY_CTRL		PTDDD_PTDDD4	/* output */
-#define D_AUX1			PTDDD_PTDDD5	/* input */
+#define D_VAL0PWR		PTDDD_PTDDD5	/* output */
 #define D_AUX2			PTDDD_PTDDD6	/* input */
-#define D_AUX3			PTDDD_PTDDD7	/* input */
+#define D_VAL1PWR		PTDDD_PTDDD7	/* output */
 /* PORT E Data Direction Register */
 #define D_UART1_TXD		PTEDD_PTEDD0	/* SCI1 TX output */
 #define D_UART1_RXD		PTEDD_PTEDD1	/* SCI1 RX output */
@@ -155,9 +155,9 @@
 #define P_WDOG_CTRL		PTDPE_PTDPE2	/* output */
 #define P_VLOCKS_CTRL	PTDPE_PTDPE3	/* output */
 #define P_VRLY_CTRL		PTDPE_PTDPE4	/* output */
-#define P_AUX1			PTDPE_PTDPE5	/* input */
+#define P_VAL0PWR		PTDPE_PTDPE5	/* output */
 #define P_AUX2			PTDPE_PTDPE6	/* input */
-#define P_AUX3			PTDPE_PTDPE7	/* input */
+#define P_VAL1PWR		PTDPE_PTDPE7	/* output */
 /* PORT E PullUp Enable Register */
 #define P_UART1_TXD		PTEPE_PTEPE0	/* SCI1 TX output */
 #define P_UART1_RXD		PTEPE_PTEPE1	/* SCI1 RX output */

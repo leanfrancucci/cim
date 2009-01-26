@@ -20,6 +20,7 @@
 
 
 static MInt pwrctrl_t, fsync_t;
+static unsigned short onbackup_tcount;
 
 /*
  * Define initialization routine
@@ -72,6 +73,7 @@ ext2backup( NEWS_T *in )
 	set_pwr_st(BACKUP);
 	disconnect_bchrg();
 	kick_timer(pwrctrl_t, BACKUP_BATTM_TIME );
+	onbackup_tcount = ONBACKUP_TIME;
 }
 
 void
@@ -140,7 +142,7 @@ back_bmes( NEWS_T *in )
 
 	set_batt_st( battlvl );
 	kick_timer(pwrctrl_t, BACKUP_BATTM_TIME );
-	if( battlvl == BATTLOW )
+	if( ( battlvl == BATTLOW ) || (--onbackup_tcount <= 0) )
 		put_nqueue( NEWS_QUEUE, def_news[SHTDWN_IX] );
 }
 

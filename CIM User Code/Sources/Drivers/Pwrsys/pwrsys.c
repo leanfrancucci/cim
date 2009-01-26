@@ -155,12 +155,13 @@ shutdown( void )
 	dprintf( printf( "\nForce a shutdown!!\n" ) );
 }
 
-unsigned char
-set_memstat( unsigned char safe_stat )
+void
+set_memstat( unsigned char *safe_stat )
 {
-	PWRSYS new_sstat;
-
-	new_sstat.ps_reg = safe_stat;
-	new_sstat.bm.ms = mem_status;
-	return new_sstat.ps_reg;
+	static PWRSYS new_stat;
+	
+	new_stat.ps_reg = *safe_stat;
+	new_stat.bm.ms = mem_status;
+	*safe_stat = new_stat.ps_reg;
 }
+

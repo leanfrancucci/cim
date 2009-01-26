@@ -92,11 +92,11 @@ get_group_status( void )
 	
 	if( remove_grqueue(&rem_grst) != -EMPTY_GQUEUE )
 	{
-		rem_grst.safe_box = set_memstat( rem_grst.safe_box );
+		set_memstat( &rem_grst.safe_box );
 		return (unsigned char*)&rem_grst;
 	}
 
-	grst.safe_box = set_memstat( grst.safe_box );
+	set_memstat( &grst.safe_box );
 	return (unsigned char*)&grst;
 }
 

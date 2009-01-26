@@ -11,7 +11,7 @@
  * Firmware and hardware version string
  */
 #define VER_STR_LEN			17+1
-#define VERSION_STRING		"SW00.16.00HW03.00"
+#define VERSION_STRING		"SW00.17.00HW03.00"
 
 /*
  * The model determine a specified hardware 
@@ -63,6 +63,13 @@
  */
 
 #define TOUT_BETVAL			(100/STIMER_BASE)
+
+/*
+ * Used to debbouncing PWR_FAIL event before inform 
+ * to upper layer.
+ */
+
+#define TRUE_PWRFAIL_TIME 	(1000/STIMER_BASE)
 
 /*
  * Debugging

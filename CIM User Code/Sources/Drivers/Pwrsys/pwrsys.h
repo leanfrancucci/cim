@@ -72,7 +72,8 @@ void host_reset( void );
  */
 void primary_shut_down( void );
 
-unsigned char set_memstat( unsigned char safe_stat );
+void set_memstat( unsigned char *safe_stat );
 
+void set_valpwr( MUInt who, MUInt pwr );
 
 #endif

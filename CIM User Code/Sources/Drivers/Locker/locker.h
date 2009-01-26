@@ -27,7 +27,7 @@ void set_locker( MUInt which, MUInt ctrl );
 
 void set_tlock( MUInt which, MUInt tlock );
 unsigned short get_tlock_timer( MUInt which );
-void set_tunlock_enable( MUInt tunlock_enable );
-unsigned short get_unlock_ena_timer( void );
+void set_tunlock_enable( MUInt which, MUInt tunlock_enable );
+unsigned short get_unlock_ena_timer( MUInt which );
 
 #endif

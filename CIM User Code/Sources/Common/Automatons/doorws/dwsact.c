@@ -118,11 +118,11 @@ inform_close_ws( NEWS_T *in )
 void
 lked2pulking_ws( NEWS_T *in )
 {
-	if( is_key_switch_open() || (get_unlock_ena_timer() == 0) )
+	if( is_key_switch_open() || (get_unlock_ena_timer(LOCKER0) == 0) )
 		put_nqueue( NEWS_QUEUE, def_news[OPEN_KEYS_D1_IX] );
 
 	set_locker_state(LOCKER0, UNLOCKING_STATUS );
-	kick_timer( ulocke_dws, get_unlock_ena_timer() );
+	kick_timer( ulocke_dws, get_unlock_ena_timer(LOCKER0) );
 }
 
 void

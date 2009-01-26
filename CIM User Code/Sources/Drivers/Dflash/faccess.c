@@ -43,7 +43,7 @@
  *					if( index_out > 0 )
  *						indecx_out in page
  *		Also, calculates the first page available for
- *		using in a new file, because all files has their
+ *		using in a .new file, because all files has their
  *		pages contiguous amd the files itselfs are
  *		contiguous.
  */

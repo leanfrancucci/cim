@@ -27,3 +27,9 @@
 #define CHRG_DCONN_TIME			(1000/STIMER_BASE)
 #define FSYNC_TIME				((1000/STIMER_BASE)*60)
 
+/*
+ * Expired forces shutdown.
+ * expressed as a multiple of BACKUP_BATTM_TIME
+ */
+#define ONBACKUP_TIME			(5400) /** 90 minutes */
+

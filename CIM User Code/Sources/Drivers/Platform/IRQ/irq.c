@@ -93,6 +93,7 @@ do_enable_pwf_interrupt( void )
 void
 init_pwrfail_det( void )
 {
+	init_pwrhdl();
 	irq_init();
 }
 

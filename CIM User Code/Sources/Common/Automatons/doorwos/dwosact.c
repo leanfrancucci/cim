@@ -100,11 +100,11 @@ lked2ulked_wos( NEWS_T *in )
 void
 lked2pulking_wos( NEWS_T *in )
 {
-	if( is_key_switch_open() || (get_unlock_ena_timer() == 0) )
+	if( is_key_switch_open() || (get_unlock_ena_timer(LOCKER1) == 0) )
 		put_nqueue( NEWS_QUEUE, def_news[OPEN_KEYS_D2_IX] );
 
 	set_locker_state(LOCKER1, UNLOCKING_STATUS );
-	kick_timer( unlocke_dwos, get_unlock_ena_timer() );
+	kick_timer( unlocke_dwos, get_unlock_ena_timer(LOCKER1) );
 }
 
 void

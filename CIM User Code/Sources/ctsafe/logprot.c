@@ -318,6 +318,26 @@ typedef struct
 	uchar ctrl;
 } HOSTPWR_T;
 
+/*
+ * 		Used by TUNLOCK_ENABLE_LOCKS command
+ */
+
+typedef struct
+{
+	uchar tunlock_enable_lock0;
+	uchar tunlock_enable_lock1;
+} TUNLOCK_ENABLE_LOCKS_T;
+
+/*
+ * 
+ * 		Used by VALPWR command
+ */
+
+typedef struct
+{
+	uchar who;
+	uchar pwr;
+} VALPWR_T;
 
 static XMIT_BUFF_T xframe;		/* is shared with receiving side */
 extern RFRAME_T rcv_frame;		/* is shared with receiving side */
@@ -373,8 +393,10 @@ static void proc_unlock( RFRAME_T *p ),
 			proc_forceusrpass( RFRAME_T *p ),
 			proc_syncnumframes( RFRAME_T *p ),
 			proc_hostpwr( RFRAME_T *p ),
-			proc_resetmcu( RFRAME_T *p );
-
+			proc_resetmcu( RFRAME_T *p ),
+			proc_tunlock_enable_locks( RFRAME_T *p ),
+			proc_valpwr( RFRAME_T *p );
+			
 static void proc_dev_val( RFRAME_T *p ),
 			proc_dev_sbox( RFRAME_T *p );
 
@@ -442,6 +464,8 @@ static const PFR pcmds[] =
 	proc_syncnumframes,
 	proc_hostpwr,
 	proc_resetmcu,
+	proc_tunlock_enable_locks,
+	proc_valpwr
 };
 
 /*
@@ -1267,7 +1291,10 @@ proc_tunlock_enable( RFRAME_T *p )
 		return;
 	
 	if( pload->tunlock_enable != TUNLOCK_NOT_ALLOWED )
-		set_tunlock_enable( pload->tunlock_enable );
+	{
+		set_tunlock_enable( LOCKER0, pload->tunlock_enable );
+		set_tunlock_enable( LOCKER1, pload->tunlock_enable );
+	}
 	send_success( p->curr_dev );
 }
 
@@ -1355,6 +1382,41 @@ proc_resetmcu( RFRAME_T *p )
 	dfilesys_sync();
 
 	cop_reset_now();
+}
+
+static
+void 
+proc_tunlock_enable_locks( RFRAME_T *p )
+{
+	TUNLOCK_ENABLE_LOCKS_T *pload;
+
+	pload = (TUNLOCK_ENABLE_LOCKS_T*)p->payload;
+	
+	if( verify_content_mcu( NO_CHECK_MCU, p, sizeof( TUNLOCK_ENABLE_LOCKS_T ) ) )
+		return;
+	
+	if( pload->tunlock_enable_lock0 != TUNLOCK_NOT_ALLOWED )
+		set_tunlock_enable( LOCKER0, pload->tunlock_enable_lock0 );
+	if( pload->tunlock_enable_lock1 != TUNLOCK_NOT_ALLOWED )
+		set_tunlock_enable( LOCKER1, pload->tunlock_enable_lock1 );
+
+	send_success( p->curr_dev );
+}
+
+static
+void 
+proc_valpwr( RFRAME_T *p )
+{
+	VALPWR_T *pload;
+
+	pload = (VALPWR_T*)p->payload;
+	
+	if( verify_content_mcu( NO_CHECK_MCU, p, sizeof( VALPWR_T ) ) )
+		return;
+	
+	set_valpwr( pload->who, pload->pwr );
+
+	send_success( p->curr_dev );
 }
 
 static

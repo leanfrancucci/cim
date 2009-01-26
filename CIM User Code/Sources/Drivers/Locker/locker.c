@@ -19,7 +19,7 @@
  */
 
 static unsigned short lock_timer[] = { TOUT_TLOCK, TOUT_TLOCK };
-static unsigned short unlock_timer = TOUT_TUNLOCK;
+static unsigned short unlock_timer[] = { TOUT_TUNLOCK, TOUT_TUNLOCK };
 
 /*
  * set_locker:
@@ -81,16 +81,19 @@ get_tlock_timer( MUInt which )
  * set_unlock_enable:
  */
 void 
-set_tunlock_enable( MUInt tunlock_enable )
+set_tunlock_enable( MUInt which, MUInt tunlock_enable )
 {
+	MUInt ix;
+
+	ix = which != LOCKER0;
 	if( tunlock_enable > MAX_TUNLOCK_TIME )
 		tunlock_enable = MAX_TUNLOCK_TIME;
 
-	unlock_timer = tunlock_enable*TUNLOCK_K;
+	unlock_timer[ix] = tunlock_enable*TUNLOCK_K;
 }
 
 unsigned short
-get_unlock_ena_timer( void )
+get_unlock_ena_timer( MUInt which )
 {
-	return unlock_timer;
+	return unlock_timer[ which != LOCKER0 ];
 }

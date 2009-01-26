@@ -9,6 +9,8 @@
 #define BATTLVL_BUFF_SIZE	10
 #endif
 
+void init_pwrhdl( void );
+
 /*
  * MCU Id functions
  */

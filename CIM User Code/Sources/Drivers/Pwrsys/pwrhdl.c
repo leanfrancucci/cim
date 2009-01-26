@@ -3,6 +3,7 @@
  */
 
 #include "mytypes.h"
+#include "csdevs.h"
 #include "ioports.h"
 #include "pwrhdl.h"
 #include "pwrsys.h"
@@ -17,6 +18,8 @@
 #include "dfpwf.h"
 #include "pwfhal.h"
 #include "reset.h"
+#include "settings.h"
+#include "stimers.h"
 
 enum
 {
@@ -24,6 +27,19 @@ enum
 };
 
 static MUInt pwrstat_st;
+static MUInt pwrfail_t;
+
+void
+inform_pwrfail( MInt thdlr )
+{
+	put_nqueue( NEWS_QUEUE, def_news[PWR_FAIL_IX]);
+}
+
+void
+init_pwrhdl( void )
+{
+	pwrfail_t = assign_timer( ONESHOT, inform_pwrfail, 0 );
+}
 
 /*
  * MCU Id functions
@@ -107,9 +123,7 @@ in_pwf( void )
 void
 proc_pwrstatus_irq( void )
 {	
-//	dfpwf_interrupt();
-//	do_disable_pwf_interrupt();
-	put_nqueue( NEWS_QUEUE, def_news[PWR_FAIL_IX]);
+	kick_timer( pwrfail_t, TRUE_PWRFAIL_TIME );
 	pwrstat_st = BACKUP_ST; 
 }
 
@@ -121,6 +135,7 @@ proc_pwrstatus_rti( void )
 
 	if( is_irqpin_set() )
 	{
+		kill_timer( pwrfail_t );
 		pwrstat_st = EXT_ST; 
 		do_enable_pwf_interrupt();
 		put_nqueue( NEWS_QUEUE, def_news[PWR_OK_IX]);
@@ -143,4 +158,13 @@ void
 primary_shut_down( void )
 {
 	PRIPWRCTRL = 1;
+}
+
+void
+set_valpwr( MUInt who, MUInt pwr )
+{
+	if( who == VAL0 )
+		VAL0PWR = pwr;
+	else
+		VAL1PWR = pwr;
 }
