@@ -133,10 +133,10 @@ ports_init(void)
 	P_CIM_ID3 = 1;
 
 	/* VAL_PWR */
-	VAL0PWR = 1;
-	VAL1PWR = 1;
 	D_VAL0PWR = 1;
 	D_VAL1PWR = 1;
+	VAL0PWR = 1;
+	VAL1PWR = 1;
 }
 
 void

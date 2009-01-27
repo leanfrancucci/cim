@@ -1,5 +1,5 @@
 
-PROGRAM "F:\CIM 00.16.01\CIM Supervisor\bin\Project.abs"
+PROGRAM "F:\CIM 00.17.00\CIM Supervisor\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -266,7 +266,7 @@ MODULE:                 -- enaint.c.o --
      sem_enable                                E175      24      36       1   .text       
      enable_gral_interrupt                     E199       3       3       1   .text       
 - VARIABLES:
-     STRING.F..CIM.00.16.01.CIM..1             E092      3F      63       2   .rodata1    
+     STRING.F..CIM.00.17.00.CIM..1             E092      3F      63       2   .rodata1    
      int_stack                                  109       8       8       3   .bss        
      pint                                       111       2       2       6   .bss        
 MODULE:                 -- lowint.c.o --
@@ -355,7 +355,7 @@ SECTION: ".bss"
 SECTION: ".init"
   loadByte Init _Startup 
 SECTION: ".rodata1"
-  STRING.F..CIM.00.16.01.CIM..1 
+  STRING.F..CIM.00.17.00.CIM..1 
 SECTION: ".abs_section_0"
   _PTAD 
 SECTION: ".abs_section_1"
@@ -601,7 +601,7 @@ OBJECT LIST SORTED BY ADDRESS
      loadByte                                  E000       E      14       5   .init       
      Init                                      E00E      6D     109       1   .init       
      _Startup                                  E07B       9       9       0   .init       
-     STRING.F..CIM.00.16.01.CIM..1             E092      3F      63       2   .rodata1    
+     STRING.F..CIM.00.17.00.CIM..1             E092      3F      63       2   .rodata1    
      main                                      E0D1       8       8       1   .text       
      drivers_init                              E0D9       F      15       1   .text       
      cop_init                                  E0E8       D      13       1   .text       
@@ -672,8 +672,8 @@ push                      USES pint int_stack
 pop                       USES pint int_stack 
 init_int_handler          USES init_stack 
 sem_disable               USES get_enable_status disable_interrupt 
-                                STRING.F..CIM.00.16.01.CIM..1 fatal push 
-sem_enable                USES pop STRING.F..CIM.00.16.01.CIM..1 fatal 
+                                STRING.F..CIM.00.17.00.CIM..1 fatal push 
+sem_enable                USES pop STRING.F..CIM.00.17.00.CIM..1 fatal 
                                 disable_interrupt enable_interrupt 
 enable_gral_interrupt     USES enable_interrupt 
 kick_watchdog             USES _SRS 
