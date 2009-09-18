@@ -26,8 +26,12 @@ enum
 #define set_lock1_b()		lock_b_ctrl(LOCKER1,CTRL_ON)
 #define clear_lock1_b()		lock_b_ctrl(LOCKER1,CTRL_OFF)
 
+#define set_nlock0_b()		nlock_b_ctrl(CTRL_ON)
+#define clear_nlock0_b()	nlock_b_ctrl(CTRL_OFF)
+
 void lock_a_ctrl( MUInt who, MUInt ctrl );
 void lock_b_ctrl( MUInt who, MUInt ctrl );
+void nlock_b_ctrl( MUInt ctrl );
 
 MUInt is_unlocked( MUInt who );
 

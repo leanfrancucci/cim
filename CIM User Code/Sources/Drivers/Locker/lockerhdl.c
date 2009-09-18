@@ -32,6 +32,12 @@ lock_b_ctrl( MUInt who, MUInt ctrl )
 	sleep(LOCKER_DRV_RESP_TIME);
 }
 
+void
+nlock_b_ctrl( MUInt ctrl )
+{
+	NOT_LOCK1B_SEC = !ctrl; 
+}
+
 MUInt
 is_unlocked( MUInt who )
 {
@@ -49,3 +55,4 @@ is_locker_open( MUInt who )
 	else
 		return 0;
 }
+

@@ -54,6 +54,7 @@ lock_locker_ws( void )
 	disable_vlocks( VLOCKS_LOCKER0 );
 	clear_lock0_a();
 	clear_lock0_b();
+	clear_nlock0_b();
 
 	if( get_mcu_id() == SECONDARY_DEVICE )
 		return;
@@ -77,6 +78,7 @@ unlock_locker_ws( void )
 	if( get_mcu_id() == SECONDARY_DEVICE )
 	{
 		set_lock0_b();
+		set_nlock0_b();
 		return;
 	}
 

@@ -28,6 +28,7 @@
 #define SENSORS_IN	PTAD
 /* PORT B Data Register */
 #define BATT_LVL	PTBD_PTBD0	/* A/D input */
+#define NOT_LOCK1B_SEC PTBD_PTBD7 /* output */
 /* PORT C Data Register */
 #define UART2_TXD	PTCD_PTCD0	/* SCI2 TX output */
 #define UART2_RXD	PTCD_PTCD1	/* SCI2 RX input */
@@ -84,6 +85,7 @@
 #define D_VAL2_STACKS	PTADD_PTADD7	/* input */
 /* PORT B Data Direction Register */
 #define D_BATT_LVL		PTBDD_PTBDD0	/* A/D input */
+#define D_NOT_LOCK1B_SEC PTBDD_PTBDD7 /* output */
 /* PORT C Data Direction Register */
 #define D_UART2_TXD		PTCDD_PTCDD0	/* SCI2 TX output */
 #define D_UART2_RXD		PTCDD_PTCDD1	/* SCI2 RX input */
@@ -140,6 +142,7 @@
 #define P_VAL2_STACKS	PTAPE_PTAPE7	/* input */
 /* PORT B PullUp Enable Register */
 #define P_BATT_LVL		PTBPE_PTBPE0	/* A/D input */
+#define P_NOT_LOCK1B_SEC PTBPE_PTBPE7 /* output */
 /* PORT C PullUp Enable Register */
 #define P_UART2_TXD		PTCPE_PTCPE0	/* SCI2 TX output */
 #define P_UART2_RXD		PTCPE_PTCPE1	/* SCI2 RX input */

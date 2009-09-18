@@ -48,6 +48,8 @@ ports_init(void)
 	D_LOCK1A = 1;
 	LOCK1B = 0;
 	D_LOCK1B = 1;
+	D_NOT_LOCK1B_SEC = 1;
+	NOT_LOCK1B_SEC = 1;
 	/* Locker 2 */
 	LOCK2A = 0;
 	D_LOCK2A = 1;
