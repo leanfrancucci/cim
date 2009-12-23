@@ -11,7 +11,7 @@
  * Firmware and hardware version string
  */
 #define VER_STR_LEN			17+1
-#define VERSION_STRING		"SW00.18.00HW03.00"
+#define VERSION_STRING		"SW00.20.00HW03.00"
 
 /*
  * The model determine a specified hardware 
@@ -69,7 +69,7 @@
  * to upper layer.
  */
 
-#define TRUE_PWRFAIL_TIME 	(1000/STIMER_BASE)
+#define TRUE_PWRFAIL_TIME 	(5000/STIMER_BASE)
 
 /*
  * Debugging

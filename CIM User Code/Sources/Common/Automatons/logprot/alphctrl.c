@@ -50,7 +50,7 @@ static const TRAN trans_in_data[] =
 {
 	DATA_VALID,		&in_data,		store_data,
 	END_PAYLOAD,	&pframe,		rec_frame,
-	TBET_BYTE,		&idle_prot,		drop_frame,
+	TBET_BYTE,		&idle_prot,		send_nack,
 	UNKNOWN_DATA,	&in_data,		NULL,
 	MPANY,			&in_data,		NULL
 };

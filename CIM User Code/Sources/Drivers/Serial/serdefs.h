@@ -7,7 +7,7 @@
 
 #include "gsqueue.h"
 
-#define HOSTRX_MAX_CH		128
+#define HOSTRX_MAX_CH		144
 #define VALRX_MAX_CH		64
 
 /*
