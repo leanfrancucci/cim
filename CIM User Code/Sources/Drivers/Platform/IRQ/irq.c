@@ -55,11 +55,13 @@ irq_handler( void )
 	kick_cop_wdog();
 	dfpwf_interrupt();
 	do_disable_pwf_interrupt();
-	for(;;)
+	proc_pwrstatus_irq();
+	put_nqueue(EMER_QUEUE, def_news[TOUT_FSYNC_IX] );
+/*	for(;;)
 	{
 		kick_watchdog();
 		kick_cop_wdog();
-	}
+	}*/
 }
 
 MUInt

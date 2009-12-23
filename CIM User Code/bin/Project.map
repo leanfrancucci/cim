@@ -1,5 +1,5 @@
 
-PROGRAM "F:\CIM - SafeBoardKit Software V19.00\CIM User Code\bin\Project.abs"
+PROGRAM "F:\CIM - SafeBoardKit Software V21.00\CIM User Code\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -101,7 +101,7 @@ _startupData is allocated at 0x18D0 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x100     3437
-  _Copy    *toCopyDownBeg 0x7875
+  _Copy    *toCopyDownBeg 0x786A
 } _startupData;
 
 *********************************************************************************************
@@ -109,9 +109,9 @@ SECTION-ALLOCATION SECTION
 Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .data                            155   R/W      0x100      0x19A   RAM
-.text                          22884     R     0x18DE     0x7241   ROM
-.rodata                         1485     R     0x7242     0x780E   ROM
-.rodata1                         102     R     0x780F     0x7874   ROM
+.text                          22873     R     0x18DE     0x7236   ROM
+.rodata                         1485     R     0x7237     0x7803   ROM
+.rodata1                         102     R     0x7804     0x7869   ROM
 BOOTROM                           18     R     0x182C     0x183D   BOOT_ROM
 .abs_section_ffdc                  2     R     0xFFDC     0xFFDD   .absSeg0
 .abs_section_ffd8                  2     R     0xFFD8     0xFFD9   .absSeg1
@@ -231,11 +231,11 @@ BOOTROM                           18     R     0x182C     0x183D   BOOT_ROM
 .init                            132     R     0x184C     0x18CF   ROM
 .common                         1845   R/W      0x738      0xE6C   RAM
 .stack                           531   R/W      0xE6D     0x107F   RAM
-.copy                            161     R     0x7875     0x7915   ROM
+.copy                            161     R     0x786A     0x790A   ROM
 .vectSeg113_vect                   2     R     0xFFFE     0xFFFF   .vectSeg113
 
 Summary of section sizes per section type:
-READ_ONLY (R):        60E8 (dec:    24808)
+READ_ONLY (R):        60DD (dec:    24797)
 READ_WRITE (R/W):      F80 (dec:     3968)
 NO_INIT (N/I):          7E (dec:      126)
 
@@ -331,7 +331,7 @@ MODULE:                 -- sci.c.o --
 MODULE:                 -- scibrtbl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     sci_br_tbl                                7242      12      18       4   .rodata     
+     sci_br_tbl                                7237      12      18       4   .rodata     
 MODULE:                 -- serial.c.o --
 - PROCEDURES:
      serial_init                               1FE9      1B      27       2   .text       
@@ -346,7 +346,7 @@ MODULE:                 -- serlog.c.o --
 MODULE:                 -- sertable.c.o --
 - PROCEDURES:
 - VARIABLES:
-     serial_default                            7254       6       6       2   .rodata     
+     serial_default                            7249       6       6       2   .rodata     
      hostrx_queue                               738      90     144       3   .common     
      valrx_queue                                7C8      40      64       3   .common     
 MODULE:                 -- sloghost.c.o --
@@ -385,7 +385,7 @@ MODULE:                 -- stimers.c.o --
      timers                                     19B      70     112      12   .bss        
 MODULE:                 -- watchdog.c.o --
 - PROCEDURES:
-     kick_watchdog                             2304      17      23       7   .text       
+     kick_watchdog                             2304      17      23       6   .text       
      check_watchdog                            231B      18      24       1   .text       
 - VARIABLES:
      watchdog_tick                              110       2       2       5   .data       
@@ -424,12 +424,12 @@ MODULE:                 -- valact.c.o --
 MODULE:                 -- valctrl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     trans_vblocked                            725A       F      15       1   .rodata     
-     trans_idle_val                            7269      19      25       1   .rodata     
-     trans_in_frame                            7282      1E      30       1   .rodata     
-     vblocked                                  72A0       4       4       9   .rodata     
-     idle_val                                  72A4       4       4       3   .rodata     
-     in_frame                                  72A8       4       4       4   .rodata     
+     trans_vblocked                            724F       F      15       1   .rodata     
+     trans_idle_val                            725E      19      25       1   .rodata     
+     trans_in_frame                            7277      1E      30       1   .rodata     
+     vblocked                                  7295       4       4       9   .rodata     
+     idle_val                                  7299       4       4       3   .rodata     
+     in_frame                                  729D       4       4       4   .rodata     
 MODULE:                 -- dispatch.c.o --
 - PROCEDURES:
      init_dispatcher                           24EC      13      19       1   .text       
@@ -449,7 +449,7 @@ MODULE:                 -- mpdata.c.o --
 MODULE:                 -- news.c.o --
 - PROCEDURES:
 - VARIABLES:
-     def_news                                  72AC      50      80      34   .rodata     
+     def_news                                  72A1      50      80      34   .rodata     
      emer_queue                                 808       4       4       3   .common     
      cond_queue                                 80C       8       8       3   .common     
      news_queue                                 814      10      16       3   .common     
@@ -486,7 +486,7 @@ MODULE:                 -- enaint.c.o --
      sem_enable                                27FC      24      36      17   .text       
      enable_gral_interrupt                     2820       3       3       1   .text       
 - VARIABLES:
-     STRING.F..CIM...SafeBoardKi.1             780F      54      84       2   .rodata1    
+     STRING.F..CIM...SafeBoardKi.1             7804      54      84       2   .rodata1    
      int_stack                                  297       8       8       3   .bss        
      pint                                       29F       2       2       6   .bss        
 MODULE:                 -- lowint.c.o --
@@ -566,20 +566,20 @@ MODULE:                 -- alphact.c.o --
 MODULE:                 -- alphctrl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     trans_idle_prot                           72FC      14      20       1   .rodata     
-     trans_wait_dev                            7310      19      25       1   .rodata     
-     trans_wait_cmd                            7329      19      25       1   .rodata     
-     trans_wait_numdata                        7342      1E      30       1   .rodata     
-     trans_in_data                             7360      19      25       1   .rodata     
-     trans_pframe                              7379      19      25       1   .rodata     
-     trans_wait_vresp                          7392      14      20       1   .rodata     
-     idle_prot                                 73A6       4       4      15   .rodata     
-     wait_dev                                  73AA       4       4       4   .rodata     
-     wait_cmd                                  73AE       4       4       3   .rodata     
-     wait_numdata                              73B2       4       4       4   .rodata     
-     in_data                                   73B6       4       4       4   .rodata     
-     pframe                                    73BA       4       4       3   .rodata     
-     wait_vresp                                73BE       4       4       3   .rodata     
+     trans_idle_prot                           72F1      14      20       1   .rodata     
+     trans_wait_dev                            7305      19      25       1   .rodata     
+     trans_wait_cmd                            731E      19      25       1   .rodata     
+     trans_wait_numdata                        7337      1E      30       1   .rodata     
+     trans_in_data                             7355      19      25       1   .rodata     
+     trans_pframe                              736E      19      25       1   .rodata     
+     trans_wait_vresp                          7387      14      20       1   .rodata     
+     idle_prot                                 739B       4       4      15   .rodata     
+     wait_dev                                  739F       4       4       4   .rodata     
+     wait_cmd                                  73A3       4       4       3   .rodata     
+     wait_numdata                              73A7       4       4       4   .rodata     
+     in_data                                   73AB       4       4       4   .rodata     
+     pframe                                    73AF       4       4       3   .rodata     
+     wait_vresp                                73B3       4       4       3   .rodata     
 MODULE:                 -- logprot.c.o --
 - PROCEDURES:
      send_val_frame                            2D2C      18      24       1   .text       
@@ -634,9 +634,9 @@ MODULE:                 -- logprot.c.o --
      init_logprot                              3DAA       D      13       1   .text       
      exec_protocol                             3DB7      3D      61       2   .text       
 - VARIABLES:
-     pdevs                                     73C2      12      18       1   .rodata     
-     pcmds                                     73D4      4C      76       1   .rodata     
-     STRING.SW00.20.00HW03.00.1                7863      12      18       1   .rodata1    
+     pdevs                                     73B7      12      18       1   .rodata     
+     pcmds                                     73C9      4C      76       1   .rodata     
+     STRING.SW00.21.00HW03.00.1                7858      12      18       1   .rodata1    
      xframe                                     2C5       4       4      10   .bss        
      in                                         2C9       2       2       3   .bss        
      curr_val                                   2CB       1       1       2   .bss        
@@ -649,10 +649,10 @@ MODULE:                 -- logprot.c.o --
 MODULE:                 -- mtimetbl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     actions_2                                 7420       8       8       1   .rodata     
-     actions_20                                7428       6       6       1   .rodata     
-     actions_100                               742E       4       4       1   .rodata     
-     timer_chain                               7432       C      12       1   .rodata     
+     actions_2                                 7415       8       8       1   .rodata     
+     actions_20                                741D       6       6       1   .rodata     
+     actions_100                               7423       4       4       1   .rodata     
+     timer_chain                               7427       C      12       1   .rodata     
 MODULE:                 -- platform.c.o --
 - PROCEDURES:
      platform_init                             3DF4      12      18       1   .text       
@@ -661,7 +661,7 @@ MODULE:                 -- platform.c.o --
 MODULE:                 -- cop.c.o --
 - PROCEDURES:
      cop_init                                  3E14       6       6       1   .text       
-     kick_cop_wdog                             3E1A       4       4       5   .text       
+     kick_cop_wdog                             3E1A       4       4       4   .text       
 - VARIABLES:
 MODULE:                 -- icg.c.o --
 - PROCEDURES:
@@ -681,7 +681,7 @@ MODULE:                 -- rti.c.o --
      rti_handler                               3EF7      23      35       1   .text       
      init_timer_hardware                       3F1A      49      73       1   .text       
 - VARIABLES:
-     irqf                                      743E      10      16       4   .rodata     
+     irqf                                      7433      10      16       4   .rodata     
      enable_maintime                            14C       1       1       1   .data       
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      mtime                                      A3A       2       2       2   .common     
@@ -741,16 +741,16 @@ MODULE:                 -- cpdata.c.o --
      inf_close                                 4299      42      66       1   .text       
      inf_open                                  42DB      44      68       1   .text       
 - VARIABLES:
-     sens_news                                 744E      1C      28       2   .rodata     
-     sens_tout                                 746A      1C      28       2   .rodata     
-     senspar                                   7486      20      32       7   .rodata     
+     sens_news                                 7443      1C      28       2   .rodata     
+     sens_tout                                 745F      1C      28       2   .rodata     
+     senspar                                   747B      20      32       7   .rodata     
 MODULE:                 -- sensor.c.o --
 - PROCEDURES:
      get_sensor                                431F      1A      26       2   .text       
      init_sensors                              4339      1D      29       1   .text       
      proc_sensors                              4356      1D      29       1   .text       
 - VARIABLES:
-     sens_mask                                 74A6       7       7       1   .rodata     
+     sens_mask                                 749B       7       7       1   .rodata     
 MODULE:                 -- phylay.c.o --
 - PROCEDURES:
      init_phymed                               4373       4       4       1   .text       
@@ -785,20 +785,20 @@ MODULE:                 -- dwosact.c.o --
 MODULE:                 -- dwosctrl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     trans_idle_wos                            74AD      14      20       1   .rodata     
-     trans_locked_wos                          74C1      19      25       1   .rodata     
-     trans_pre_unlocking_wos                   74DA      23      35       1   .rodata     
-     trans_unlocking_wos                       74FD      1E      30       1   .rodata     
-     trans_wpunlock_wos                        751B      19      25       1   .rodata     
-     trans_unlocked_wos                        7534      1E      30       1   .rodata     
-     trans_locking_wos                         7552      14      20       1   .rodata     
-     idle_wos                                  7566       4       4       3   .rodata     
-     locked_wos                                756A       4       4      13   .rodata     
-     pre_unlocking_wos                         756E       4       4       5   .rodata     
-     unlocking_wos                             7572       4       4       5   .rodata     
-     wpunlock_wos                              7576       4       4       2   .rodata     
-     unlocked_wos                              757A       4       4       7   .rodata     
-     locking_wos                               757E       4       4       4   .rodata     
+     trans_idle_wos                            74A2      14      20       1   .rodata     
+     trans_locked_wos                          74B6      19      25       1   .rodata     
+     trans_pre_unlocking_wos                   74CF      23      35       1   .rodata     
+     trans_unlocking_wos                       74F2      1E      30       1   .rodata     
+     trans_wpunlock_wos                        7510      19      25       1   .rodata     
+     trans_unlocked_wos                        7529      1E      30       1   .rodata     
+     trans_locking_wos                         7547      14      20       1   .rodata     
+     idle_wos                                  755B       4       4       3   .rodata     
+     locked_wos                                755F       4       4      13   .rodata     
+     pre_unlocking_wos                         7563       4       4       5   .rodata     
+     unlocking_wos                             7567       4       4       5   .rodata     
+     wpunlock_wos                              756B       4       4       2   .rodata     
+     unlocked_wos                              756F       4       4       7   .rodata     
+     locking_wos                               7573       4       4       4   .rodata     
 MODULE:                 -- dwsact.c.o --
 - PROCEDURES:
      init_dwsctrl                              4540      2F      47       1   .text       
@@ -824,20 +824,20 @@ MODULE:                 -- dwsact.c.o --
 MODULE:                 -- dwsctrl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     trans_idle_ws                             7582      14      20       1   .rodata     
-     trans_locked_ws                           7596      1E      30       1   .rodata     
-     trans_pre_unlocking_ws                    75B4      28      40       1   .rodata     
-     trans_unlocking_ws                        75DC      23      35       1   .rodata     
-     trans_wpunlock_ws                         75FF      1E      30       1   .rodata     
-     trans_unlocked_ws                         761D      28      40       1   .rodata     
-     trans_locking_ws                          7645      1E      30       1   .rodata     
-     idle_ws                                   7663       4       4       3   .rodata     
-     locked_ws                                 7667       4       4      11   .rodata     
-     pre_unlocking_ws                          766B       4       4       7   .rodata     
-     unlocking_ws                              766F       4       4       7   .rodata     
-     wpunlock_ws                               7673       4       4       4   .rodata     
-     unlocked_ws                               7677       4       4       9   .rodata     
-     locking_ws                                767B       4       4       6   .rodata     
+     trans_idle_ws                             7577      14      20       1   .rodata     
+     trans_locked_ws                           758B      1E      30       1   .rodata     
+     trans_pre_unlocking_ws                    75A9      28      40       1   .rodata     
+     trans_unlocking_ws                        75D1      23      35       1   .rodata     
+     trans_wpunlock_ws                         75F4      1E      30       1   .rodata     
+     trans_unlocked_ws                         7612      28      40       1   .rodata     
+     trans_locking_ws                          763A      1E      30       1   .rodata     
+     idle_ws                                   7658       4       4       3   .rodata     
+     locked_ws                                 765C       4       4      11   .rodata     
+     pre_unlocking_ws                          7660       4       4       7   .rodata     
+     unlocking_ws                              7664       4       4       7   .rodata     
+     wpunlock_ws                               7668       4       4       4   .rodata     
+     unlocked_ws                               766C       4       4       9   .rodata     
+     locking_ws                                7670       4       4       6   .rodata     
 MODULE:                 -- lockerhdl.c.o --
 - PROCEDURES:
      lock_a_ctrl                               46F0      1F      31       6   .text       
@@ -1055,15 +1055,15 @@ MODULE:                 -- dfpwf.c.o --
 MODULE:                 -- dftypes.c.o --
 - PROCEDURES:
 - VARIABLES:
-     bsc16                                     767F      11      17       1   .rodata     
-     bsc32                                     7690      11      17       1   .rodata     
-     avail_flash                               76A1      4D      77       4   .rodata     
+     bsc16                                     7674      11      17       1   .rodata     
+     bsc32                                     7685      11      17       1   .rodata     
+     avail_flash                               7696      4D      77       4   .rodata     
      pdflash                                    A3C       4       4      13   .common     
      order_num                                  A40       1       1       4   .common     
 MODULE:                 -- dfvars.c.o --
 - PROCEDURES:
 - VARIABLES:
-     fd2bit                                    76EE      20      32       9   .rodata     
+     fd2bit                                    76E3      20      32       9   .rodata     
      page_eff_size                              A41       2       2      29   .common     
      df_num_pages                               A43       2       2       4   .common     
      fs_num_pages                               A45       2       2       7   .common     
@@ -1084,7 +1084,7 @@ MODULE:                 -- flash.c.o --
      flash_read                                5A4C      2E      46       2   .text       
      flash_write                               5A7A      2A      42       1   .text       
 - VARIABLES:
-     opc_actions                               770E      7E     126       3   .rodata     
+     opc_actions                               7703      7E     126       3   .rodata     
      cmd_buf                                    493       4       4       6   .bss        
 MODULE:                 -- spihal.c.o --
 - PROCEDURES:
@@ -1112,32 +1112,32 @@ MODULE:                 -- grqueue.c.o --
 MODULE:                 -- irq.c.o --
 - PROCEDURES:
      irq_init                                  5C4D       B      11       1   .text       
-     irq_handler                               5C58      2C      44       1   .text       
-     is_irqpin_set                             5C84      10      16       1   .text       
-     do_disable_pwf_interrupt                  5C94       3       3       3   .text       
-     do_enable_pwf_interrupt                   5C97       5       5       2   .text       
-     init_pwrfail_det                          5C9C       5       5       1   .text       
+     irq_handler                               5C58      21      33       1   .text       
+     is_irqpin_set                             5C79      10      16       1   .text       
+     do_disable_pwf_interrupt                  5C89       3       3       2   .text       
+     do_enable_pwf_interrupt                   5C8C       5       5       2   .text       
+     init_pwrfail_det                          5C91       5       5       1   .text       
 - VARIABLES:
      _Vector_2                                 FFFA       2       2       0   .abs_section_fffa
 MODULE:                 -- adc.c.o --
 - PROCEDURES:
-     adc_init                                  5CA1      11      17       1   .text       
-     read_adc                                  5CB2       B      11       1   .text       
+     adc_init                                  5C96      11      17       1   .text       
+     read_adc                                  5CA7       B      11       1   .text       
 - VARIABLES:
 MODULE:                 -- pwract.c.o --
 - PROCEDURES:
-     init_pwrctrl                              5CBD      5C      92       1   .text       
-     flash_sync                                5D19       C      12       3   .text       
-     ext2backup                                5D25      18      24       2   .text       
-     chrg2nchrg                                5D3D       C      12       1   .text       
-     checkbatt                                 5D49      1E      30       1   .text       
-     nchrg2chrg                                5D67       C      12       2   .text       
-     batt2nbatt                                5D73       9       9       2   .text       
-     ext2ext                                   5D7C      22      34       1   .text       
-     backup2ext                                5D9E      1C      28       1   .text       
-     back_bmes                                 5DBA      2F      47       1   .text       
-     shtdwn                                    5DE9       5       5       1   .text       
-     pwrctrl_ppro                              5DEE      13      19       4   .text       
+     init_pwrctrl                              5CB2      5C      92       1   .text       
+     flash_sync                                5D0E       C      12       3   .text       
+     ext2backup                                5D1A      18      24       2   .text       
+     chrg2nchrg                                5D32       C      12       1   .text       
+     checkbatt                                 5D3E      1E      30       1   .text       
+     nchrg2chrg                                5D5C       C      12       2   .text       
+     batt2nbatt                                5D68       9       9       2   .text       
+     ext2ext                                   5D71      22      34       1   .text       
+     backup2ext                                5D93      1C      28       1   .text       
+     back_bmes                                 5DAF      2F      47       1   .text       
+     shtdwn                                    5DDE       5       5       1   .text       
+     pwrctrl_ppro                              5DE3      13      19       4   .text       
 - VARIABLES:
      pwrctrl_t                                  5BA       1       1      10   .bss        
      fsync_t                                    5BB       1       1       4   .bss        
@@ -1145,61 +1145,61 @@ MODULE:                 -- pwract.c.o --
 MODULE:                 -- pwrctrl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     trans_extchrg                             778C      1E      30       1   .rodata     
-     trans_extnotchrg                          77AA      23      35       1   .rodata     
-     trans_ext                                 77CD      19      25       1   .rodata     
-     trans_backup                              77E6      19      25       1   .rodata     
-     extchrg                                   77FF       4       4       8   .rodata     
-     extnotchrg                                7803       4       4       5   .rodata     
-     ext                                       7807       4       4       6   .rodata     
-     backup                                    780B       4       4       6   .rodata     
+     trans_extchrg                             7781      1E      30       1   .rodata     
+     trans_extnotchrg                          779F      23      35       1   .rodata     
+     trans_ext                                 77C2      19      25       1   .rodata     
+     trans_backup                              77DB      19      25       1   .rodata     
+     extchrg                                   77F4       4       4       8   .rodata     
+     extnotchrg                                77F8       4       4       5   .rodata     
+     ext                                       77FC       4       4       6   .rodata     
+     backup                                    7800       4       4       6   .rodata     
 MODULE:                 -- faccess.c.o --
 - PROCEDURES:
-     read_page                                 5E01      28      40       4   .text       
-     write_page                                5E29      20      32       6   .text       
-     read_pinfo                                5E49      35      53       3   .text       
-     write_pinfo                               5E7E      35      53       4   .text       
-     adjust_out                                5EB3      5E      94       4   .text       
-     adjust_in                                 5F11      74     116       4   .text       
-     erase_page_info                           5F85      13      19       1   .text       
-     erase_dir_buffer                          5F98      1C      28       2   .text       
-     info_open                                 5FB4      39      57       1   .text       
-     convert_to_external_index                 5FED      6A     106       2   .text       
-     info_add                                  6057      5E      94       1   .text       
-     info_close                                60B5     125     293       3   .text       
-     open_sweep_dir                            61DA       3       3       1   .text       
-     close_sweep_dir                           61DD       1       1       1   .text       
-     get_info_dir                              61DE      3B      59       1   .text       
-     read_one                                  6219     17D     381       7   .text       
-     write_one                                 6396     179     377       6   .text       
-     read_one_random                           650F      46      70       1   .text       
-     read_one_queue                            6555      66     102       1   .text       
-     read_one_false_queue                      65BB      B6     182       1   .text       
-     write_one_random                          6671      46      70       1   .text       
-     write_one_false_queue                     66B7      81     129       1   .text       
-     read_random_current_file                  6738      4C      76       1   .text       
-     read_queue_current_file                   6784      4C      76       1   .text       
-     write_random_current_file                 67D0      37      55       1   .text       
-     write_queue_current_file                  6807      37      55       1   .text       
-     exists_at_beginning                       683E      40      64       1   .text       
-     get_page                                  687E      7E     126       2   .text       
-     compare_versions                          68FC      6F     111       1   .text       
-     verify_file_checksum                      696B      73     115       2   .text       
-     verify_both_memories                      69DE      E6     230       1   .text       
-     create_and_blank_firmware                 6AC4      38      56       1   .text       
-     verify_and_recover_firmware_file          6AFC      39      57       1   .text       
-     construct_dir                             6B35      C5     197       1   .text       
-     make_file_current                         6BFA      2C      44       7   .text       
-     get_existing_space                        6C26      50      80       2   .text       
-     get_current_file_status                   6C76       C      12       1   .text       
-     blank_whole_system                        6C82      49      73       1   .text       
-     blank_current_file                        6CCB      C4     196       4   .text       
-     create_file                               6D8F     132     306       1   .text       
-     read_current_file                         6EC1      24      36       1   .text       
-     write_current_file                        6EE5      24      36       1   .text       
-     seek_current                              6F09      A6     166       1   .text       
-     get_current_unit_size                     6FAF       6       6       1   .text       
-     flush_page_in_buffer                      6FB5      42      66       8   .text       
+     read_page                                 5DF6      28      40       4   .text       
+     write_page                                5E1E      20      32       6   .text       
+     read_pinfo                                5E3E      35      53       3   .text       
+     write_pinfo                               5E73      35      53       4   .text       
+     adjust_out                                5EA8      5E      94       4   .text       
+     adjust_in                                 5F06      74     116       4   .text       
+     erase_page_info                           5F7A      13      19       1   .text       
+     erase_dir_buffer                          5F8D      1C      28       2   .text       
+     info_open                                 5FA9      39      57       1   .text       
+     convert_to_external_index                 5FE2      6A     106       2   .text       
+     info_add                                  604C      5E      94       1   .text       
+     info_close                                60AA     125     293       3   .text       
+     open_sweep_dir                            61CF       3       3       1   .text       
+     close_sweep_dir                           61D2       1       1       1   .text       
+     get_info_dir                              61D3      3B      59       1   .text       
+     read_one                                  620E     17D     381       7   .text       
+     write_one                                 638B     179     377       6   .text       
+     read_one_random                           6504      46      70       1   .text       
+     read_one_queue                            654A      66     102       1   .text       
+     read_one_false_queue                      65B0      B6     182       1   .text       
+     write_one_random                          6666      46      70       1   .text       
+     write_one_false_queue                     66AC      81     129       1   .text       
+     read_random_current_file                  672D      4C      76       1   .text       
+     read_queue_current_file                   6779      4C      76       1   .text       
+     write_random_current_file                 67C5      37      55       1   .text       
+     write_queue_current_file                  67FC      37      55       1   .text       
+     exists_at_beginning                       6833      40      64       1   .text       
+     get_page                                  6873      7E     126       2   .text       
+     compare_versions                          68F1      6F     111       1   .text       
+     verify_file_checksum                      6960      73     115       2   .text       
+     verify_both_memories                      69D3      E6     230       1   .text       
+     create_and_blank_firmware                 6AB9      38      56       1   .text       
+     verify_and_recover_firmware_file          6AF1      39      57       1   .text       
+     construct_dir                             6B2A      C5     197       1   .text       
+     make_file_current                         6BEF      2C      44       7   .text       
+     get_existing_space                        6C1B      50      80       2   .text       
+     get_current_file_status                   6C6B       C      12       1   .text       
+     blank_whole_system                        6C77      49      73       1   .text       
+     blank_current_file                        6CC0      C4     196       4   .text       
+     create_file                               6D84     132     306       1   .text       
+     read_current_file                         6EB6      24      36       1   .text       
+     write_current_file                        6EDA      24      36       1   .text       
+     seek_current                              6EFE      A6     166       1   .text       
+     get_current_unit_size                     6FA4       6       6       1   .text       
+     flush_page_in_buffer                      6FAA      42      66       8   .text       
 - VARIABLES:
      page_in_buffer                             186       2       2       7   .data       
      df                                         188       D      13      98   .data       
@@ -1216,15 +1216,15 @@ MODULE:                 -- faccess.c.o --
      check_sec_fw.4                             6F0       2       2       3   .bss        
 MODULE:                 -- valconf.c.o --
 - PROCEDURES:
-     get_start_val_timeout                     6FF7       F      15       1   .text       
-     set_val_config                            7006      E4     228       4   .text       
-     set_val_hw_config                         70EA      2D      45       1   .text       
-     get_val_echo                              7117       C      12       1   .text       
+     get_start_val_timeout                     6FEC       F      15       1   .text       
+     set_val_config                            6FFB      E4     228       4   .text       
+     set_val_hw_config                         70DF      2D      45       1   .text       
+     get_val_echo                              710C       C      12       1   .text       
 - VARIABLES:
      val_configs                                195       6       6      14   .data       
 MODULE:                 -- dfrefrsh.c.o --
 - PROCEDURES:
-     must_refresh                              7123      FF     255       5   .text       
+     must_refresh                              7118      FF     255       5   .text       
 - VARIABLES:
      page_counters                              6F2      44      68       6   .bss        
 MODULE:                 -- settings.c.o --
@@ -1233,12 +1233,12 @@ MODULE:                 -- settings.c.o --
      version_number                            182C      12      18       0   BOOTROM     
 MODULE:                 -- reset.c.o --
 - PROCEDURES:
-     reset_now                                 7222       2       2       7   .text       
-     cop_reset_now                             7224       5       5       1   .text       
+     reset_now                                 7217       2       2       7   .text       
+     cop_reset_now                             7219       5       5       1   .text       
 - VARIABLES:
 MODULE:                 -- stack.c.o --
 - PROCEDURES:
-     test_sp                                   7229      19      25       1   .text       
+     test_sp                                   721E      19      25       1   .text       
 - VARIABLES:
      stack                                      736       2       2       2   .bss        
 
@@ -1316,7 +1316,7 @@ MODULE STATISTIC
   flash.c.o                                    4    415    126
   spihal.c.o                                   3    147      0
   grqueue.c.o                                296    278      0
-  irq.c.o                                      0     84      2
+  irq.c.o                                      0     73      2
   adc.c.o                                      0     28      0
   pwract.c.o                                   4    324      0
   pwrctrl.c.o                                  0      0    131
@@ -1458,7 +1458,7 @@ SECTION: ".rodata"
   locking_ws bsc16 bsc32 avail_flash fd2bit opc_actions trans_extchrg 
   trans_extnotchrg trans_ext trans_backup extchrg extnotchrg ext backup 
 SECTION: ".rodata1"
-  STRING.F..CIM...SafeBoardKi.1 STRING.SW00.20.00HW03.00.1 
+  STRING.F..CIM...SafeBoardKi.1 STRING.SW00.21.00HW03.00.1 
 SECTION: "BOOTROM"
   version_number 
 SECTION: ".common"
@@ -1988,7 +1988,7 @@ OBJECT LIST SORTED BY ADDRESS
      assign_timer                              2267      62      98      12   .text       
      kick_timer                                22C9      37      55      37   .text       
      kill_timer                                2300       4       4      16   .text       
-     kick_watchdog                             2304      17      23       7   .text       
+     kick_watchdog                             2304      17      23       6   .text       
      check_watchdog                            231B      18      24       1   .text       
      init_wouts                                2333       6       6       1   .text       
      enable_vlocks                             2339      23      35       2   .text       
@@ -2120,7 +2120,7 @@ OBJECT LIST SORTED BY ADDRESS
      platform_init                             3DF4      12      18       1   .text       
      acknowledge_irqs                          3E06       E      14       1   .text       
      cop_init                                  3E14       6       6       1   .text       
-     kick_cop_wdog                             3E1A       4       4       5   .text       
+     kick_cop_wdog                             3E1A       4       4       4   .text       
      icg_init                                  3E1E      16      22       1   .text       
      ports_init                                3E34      B1     177       1   .text       
      loging_led                                3EE5       7       7       1   .text       
@@ -2291,155 +2291,155 @@ OBJECT LIST SORTED BY ADDRESS
      remove_grqueue                            5B4A      81     129       1   .text       
      put_grqueue                               5BCB      82     130       5   .text       
      irq_init                                  5C4D       B      11       1   .text       
-     irq_handler                               5C58      2C      44       1   .text       
-     is_irqpin_set                             5C84      10      16       1   .text       
-     do_disable_pwf_interrupt                  5C94       3       3       3   .text       
-     do_enable_pwf_interrupt                   5C97       5       5       2   .text       
-     init_pwrfail_det                          5C9C       5       5       1   .text       
-     adc_init                                  5CA1      11      17       1   .text       
-     read_adc                                  5CB2       B      11       1   .text       
-     init_pwrctrl                              5CBD      5C      92       1   .text       
-     flash_sync                                5D19       C      12       3   .text       
-     ext2backup                                5D25      18      24       2   .text       
-     chrg2nchrg                                5D3D       C      12       1   .text       
-     checkbatt                                 5D49      1E      30       1   .text       
-     nchrg2chrg                                5D67       C      12       2   .text       
-     batt2nbatt                                5D73       9       9       2   .text       
-     ext2ext                                   5D7C      22      34       1   .text       
-     backup2ext                                5D9E      1C      28       1   .text       
-     back_bmes                                 5DBA      2F      47       1   .text       
-     shtdwn                                    5DE9       5       5       1   .text       
-     pwrctrl_ppro                              5DEE      13      19       4   .text       
-     read_page                                 5E01      28      40       4   .text       
-     write_page                                5E29      20      32       6   .text       
-     read_pinfo                                5E49      35      53       3   .text       
-     write_pinfo                               5E7E      35      53       4   .text       
-     adjust_out                                5EB3      5E      94       4   .text       
-     adjust_in                                 5F11      74     116       4   .text       
-     erase_page_info                           5F85      13      19       1   .text       
-     erase_dir_buffer                          5F98      1C      28       2   .text       
-     info_open                                 5FB4      39      57       1   .text       
-     convert_to_external_index                 5FED      6A     106       2   .text       
-     info_add                                  6057      5E      94       1   .text       
-     info_close                                60B5     125     293       3   .text       
-     open_sweep_dir                            61DA       3       3       1   .text       
-     close_sweep_dir                           61DD       1       1       1   .text       
-     get_info_dir                              61DE      3B      59       1   .text       
-     read_one                                  6219     17D     381       7   .text       
-     write_one                                 6396     179     377       6   .text       
-     read_one_random                           650F      46      70       1   .text       
-     read_one_queue                            6555      66     102       1   .text       
-     read_one_false_queue                      65BB      B6     182       1   .text       
-     write_one_random                          6671      46      70       1   .text       
-     write_one_false_queue                     66B7      81     129       1   .text       
-     read_random_current_file                  6738      4C      76       1   .text       
-     read_queue_current_file                   6784      4C      76       1   .text       
-     write_random_current_file                 67D0      37      55       1   .text       
-     write_queue_current_file                  6807      37      55       1   .text       
-     exists_at_beginning                       683E      40      64       1   .text       
-     get_page                                  687E      7E     126       2   .text       
-     compare_versions                          68FC      6F     111       1   .text       
-     verify_file_checksum                      696B      73     115       2   .text       
-     verify_both_memories                      69DE      E6     230       1   .text       
-     create_and_blank_firmware                 6AC4      38      56       1   .text       
-     verify_and_recover_firmware_file          6AFC      39      57       1   .text       
-     construct_dir                             6B35      C5     197       1   .text       
-     make_file_current                         6BFA      2C      44       7   .text       
-     get_existing_space                        6C26      50      80       2   .text       
-     get_current_file_status                   6C76       C      12       1   .text       
-     blank_whole_system                        6C82      49      73       1   .text       
-     blank_current_file                        6CCB      C4     196       4   .text       
-     create_file                               6D8F     132     306       1   .text       
-     read_current_file                         6EC1      24      36       1   .text       
-     write_current_file                        6EE5      24      36       1   .text       
-     seek_current                              6F09      A6     166       1   .text       
-     get_current_unit_size                     6FAF       6       6       1   .text       
-     flush_page_in_buffer                      6FB5      42      66       8   .text       
-     get_start_val_timeout                     6FF7       F      15       1   .text       
-     set_val_config                            7006      E4     228       4   .text       
-     set_val_hw_config                         70EA      2D      45       1   .text       
-     get_val_echo                              7117       C      12       1   .text       
-     must_refresh                              7123      FF     255       5   .text       
-     reset_now                                 7222       2       2       7   .text       
-     cop_reset_now                             7224       5       5       1   .text       
-     test_sp                                   7229      19      25       1   .text       
-     sci_br_tbl                                7242      12      18       4   .rodata     
-     serial_default                            7254       6       6       2   .rodata     
-     trans_vblocked                            725A       F      15       1   .rodata     
-     trans_idle_val                            7269      19      25       1   .rodata     
-     trans_in_frame                            7282      1E      30       1   .rodata     
-     vblocked                                  72A0       4       4       9   .rodata     
-     idle_val                                  72A4       4       4       3   .rodata     
-     in_frame                                  72A8       4       4       4   .rodata     
-     def_news                                  72AC      50      80      34   .rodata     
-     trans_idle_prot                           72FC      14      20       1   .rodata     
-     trans_wait_dev                            7310      19      25       1   .rodata     
-     trans_wait_cmd                            7329      19      25       1   .rodata     
-     trans_wait_numdata                        7342      1E      30       1   .rodata     
-     trans_in_data                             7360      19      25       1   .rodata     
-     trans_pframe                              7379      19      25       1   .rodata     
-     trans_wait_vresp                          7392      14      20       1   .rodata     
-     idle_prot                                 73A6       4       4      15   .rodata     
-     wait_dev                                  73AA       4       4       4   .rodata     
-     wait_cmd                                  73AE       4       4       3   .rodata     
-     wait_numdata                              73B2       4       4       4   .rodata     
-     in_data                                   73B6       4       4       4   .rodata     
-     pframe                                    73BA       4       4       3   .rodata     
-     wait_vresp                                73BE       4       4       3   .rodata     
-     pdevs                                     73C2      12      18       1   .rodata     
-     pcmds                                     73D4      4C      76       1   .rodata     
-     actions_2                                 7420       8       8       1   .rodata     
-     actions_20                                7428       6       6       1   .rodata     
-     actions_100                               742E       4       4       1   .rodata     
-     timer_chain                               7432       C      12       1   .rodata     
-     irqf                                      743E      10      16       4   .rodata     
-     sens_news                                 744E      1C      28       2   .rodata     
-     sens_tout                                 746A      1C      28       2   .rodata     
-     senspar                                   7486      20      32       7   .rodata     
-     sens_mask                                 74A6       7       7       1   .rodata     
-     trans_idle_wos                            74AD      14      20       1   .rodata     
-     trans_locked_wos                          74C1      19      25       1   .rodata     
-     trans_pre_unlocking_wos                   74DA      23      35       1   .rodata     
-     trans_unlocking_wos                       74FD      1E      30       1   .rodata     
-     trans_wpunlock_wos                        751B      19      25       1   .rodata     
-     trans_unlocked_wos                        7534      1E      30       1   .rodata     
-     trans_locking_wos                         7552      14      20       1   .rodata     
-     idle_wos                                  7566       4       4       3   .rodata     
-     locked_wos                                756A       4       4      13   .rodata     
-     pre_unlocking_wos                         756E       4       4       5   .rodata     
-     unlocking_wos                             7572       4       4       5   .rodata     
-     wpunlock_wos                              7576       4       4       2   .rodata     
-     unlocked_wos                              757A       4       4       7   .rodata     
-     locking_wos                               757E       4       4       4   .rodata     
-     trans_idle_ws                             7582      14      20       1   .rodata     
-     trans_locked_ws                           7596      1E      30       1   .rodata     
-     trans_pre_unlocking_ws                    75B4      28      40       1   .rodata     
-     trans_unlocking_ws                        75DC      23      35       1   .rodata     
-     trans_wpunlock_ws                         75FF      1E      30       1   .rodata     
-     trans_unlocked_ws                         761D      28      40       1   .rodata     
-     trans_locking_ws                          7645      1E      30       1   .rodata     
-     idle_ws                                   7663       4       4       3   .rodata     
-     locked_ws                                 7667       4       4      11   .rodata     
-     pre_unlocking_ws                          766B       4       4       7   .rodata     
-     unlocking_ws                              766F       4       4       7   .rodata     
-     wpunlock_ws                               7673       4       4       4   .rodata     
-     unlocked_ws                               7677       4       4       9   .rodata     
-     locking_ws                                767B       4       4       6   .rodata     
-     bsc16                                     767F      11      17       1   .rodata     
-     bsc32                                     7690      11      17       1   .rodata     
-     avail_flash                               76A1      4D      77       4   .rodata     
-     fd2bit                                    76EE      20      32       9   .rodata     
-     opc_actions                               770E      7E     126       3   .rodata     
-     trans_extchrg                             778C      1E      30       1   .rodata     
-     trans_extnotchrg                          77AA      23      35       1   .rodata     
-     trans_ext                                 77CD      19      25       1   .rodata     
-     trans_backup                              77E6      19      25       1   .rodata     
-     extchrg                                   77FF       4       4       8   .rodata     
-     extnotchrg                                7803       4       4       5   .rodata     
-     ext                                       7807       4       4       6   .rodata     
-     backup                                    780B       4       4       6   .rodata     
-     STRING.F..CIM...SafeBoardKi.1             780F      54      84       2   .rodata1    
-     STRING.SW00.20.00HW03.00.1                7863      12      18       1   .rodata1    
+     irq_handler                               5C58      21      33       1   .text       
+     is_irqpin_set                             5C79      10      16       1   .text       
+     do_disable_pwf_interrupt                  5C89       3       3       2   .text       
+     do_enable_pwf_interrupt                   5C8C       5       5       2   .text       
+     init_pwrfail_det                          5C91       5       5       1   .text       
+     adc_init                                  5C96      11      17       1   .text       
+     read_adc                                  5CA7       B      11       1   .text       
+     init_pwrctrl                              5CB2      5C      92       1   .text       
+     flash_sync                                5D0E       C      12       3   .text       
+     ext2backup                                5D1A      18      24       2   .text       
+     chrg2nchrg                                5D32       C      12       1   .text       
+     checkbatt                                 5D3E      1E      30       1   .text       
+     nchrg2chrg                                5D5C       C      12       2   .text       
+     batt2nbatt                                5D68       9       9       2   .text       
+     ext2ext                                   5D71      22      34       1   .text       
+     backup2ext                                5D93      1C      28       1   .text       
+     back_bmes                                 5DAF      2F      47       1   .text       
+     shtdwn                                    5DDE       5       5       1   .text       
+     pwrctrl_ppro                              5DE3      13      19       4   .text       
+     read_page                                 5DF6      28      40       4   .text       
+     write_page                                5E1E      20      32       6   .text       
+     read_pinfo                                5E3E      35      53       3   .text       
+     write_pinfo                               5E73      35      53       4   .text       
+     adjust_out                                5EA8      5E      94       4   .text       
+     adjust_in                                 5F06      74     116       4   .text       
+     erase_page_info                           5F7A      13      19       1   .text       
+     erase_dir_buffer                          5F8D      1C      28       2   .text       
+     info_open                                 5FA9      39      57       1   .text       
+     convert_to_external_index                 5FE2      6A     106       2   .text       
+     info_add                                  604C      5E      94       1   .text       
+     info_close                                60AA     125     293       3   .text       
+     open_sweep_dir                            61CF       3       3       1   .text       
+     close_sweep_dir                           61D2       1       1       1   .text       
+     get_info_dir                              61D3      3B      59       1   .text       
+     read_one                                  620E     17D     381       7   .text       
+     write_one                                 638B     179     377       6   .text       
+     read_one_random                           6504      46      70       1   .text       
+     read_one_queue                            654A      66     102       1   .text       
+     read_one_false_queue                      65B0      B6     182       1   .text       
+     write_one_random                          6666      46      70       1   .text       
+     write_one_false_queue                     66AC      81     129       1   .text       
+     read_random_current_file                  672D      4C      76       1   .text       
+     read_queue_current_file                   6779      4C      76       1   .text       
+     write_random_current_file                 67C5      37      55       1   .text       
+     write_queue_current_file                  67FC      37      55       1   .text       
+     exists_at_beginning                       6833      40      64       1   .text       
+     get_page                                  6873      7E     126       2   .text       
+     compare_versions                          68F1      6F     111       1   .text       
+     verify_file_checksum                      6960      73     115       2   .text       
+     verify_both_memories                      69D3      E6     230       1   .text       
+     create_and_blank_firmware                 6AB9      38      56       1   .text       
+     verify_and_recover_firmware_file          6AF1      39      57       1   .text       
+     construct_dir                             6B2A      C5     197       1   .text       
+     make_file_current                         6BEF      2C      44       7   .text       
+     get_existing_space                        6C1B      50      80       2   .text       
+     get_current_file_status                   6C6B       C      12       1   .text       
+     blank_whole_system                        6C77      49      73       1   .text       
+     blank_current_file                        6CC0      C4     196       4   .text       
+     create_file                               6D84     132     306       1   .text       
+     read_current_file                         6EB6      24      36       1   .text       
+     write_current_file                        6EDA      24      36       1   .text       
+     seek_current                              6EFE      A6     166       1   .text       
+     get_current_unit_size                     6FA4       6       6       1   .text       
+     flush_page_in_buffer                      6FAA      42      66       8   .text       
+     get_start_val_timeout                     6FEC       F      15       1   .text       
+     set_val_config                            6FFB      E4     228       4   .text       
+     set_val_hw_config                         70DF      2D      45       1   .text       
+     get_val_echo                              710C       C      12       1   .text       
+     must_refresh                              7118      FF     255       5   .text       
+     reset_now                                 7217       2       2       7   .text       
+     cop_reset_now                             7219       5       5       1   .text       
+     test_sp                                   721E      19      25       1   .text       
+     sci_br_tbl                                7237      12      18       4   .rodata     
+     serial_default                            7249       6       6       2   .rodata     
+     trans_vblocked                            724F       F      15       1   .rodata     
+     trans_idle_val                            725E      19      25       1   .rodata     
+     trans_in_frame                            7277      1E      30       1   .rodata     
+     vblocked                                  7295       4       4       9   .rodata     
+     idle_val                                  7299       4       4       3   .rodata     
+     in_frame                                  729D       4       4       4   .rodata     
+     def_news                                  72A1      50      80      34   .rodata     
+     trans_idle_prot                           72F1      14      20       1   .rodata     
+     trans_wait_dev                            7305      19      25       1   .rodata     
+     trans_wait_cmd                            731E      19      25       1   .rodata     
+     trans_wait_numdata                        7337      1E      30       1   .rodata     
+     trans_in_data                             7355      19      25       1   .rodata     
+     trans_pframe                              736E      19      25       1   .rodata     
+     trans_wait_vresp                          7387      14      20       1   .rodata     
+     idle_prot                                 739B       4       4      15   .rodata     
+     wait_dev                                  739F       4       4       4   .rodata     
+     wait_cmd                                  73A3       4       4       3   .rodata     
+     wait_numdata                              73A7       4       4       4   .rodata     
+     in_data                                   73AB       4       4       4   .rodata     
+     pframe                                    73AF       4       4       3   .rodata     
+     wait_vresp                                73B3       4       4       3   .rodata     
+     pdevs                                     73B7      12      18       1   .rodata     
+     pcmds                                     73C9      4C      76       1   .rodata     
+     actions_2                                 7415       8       8       1   .rodata     
+     actions_20                                741D       6       6       1   .rodata     
+     actions_100                               7423       4       4       1   .rodata     
+     timer_chain                               7427       C      12       1   .rodata     
+     irqf                                      7433      10      16       4   .rodata     
+     sens_news                                 7443      1C      28       2   .rodata     
+     sens_tout                                 745F      1C      28       2   .rodata     
+     senspar                                   747B      20      32       7   .rodata     
+     sens_mask                                 749B       7       7       1   .rodata     
+     trans_idle_wos                            74A2      14      20       1   .rodata     
+     trans_locked_wos                          74B6      19      25       1   .rodata     
+     trans_pre_unlocking_wos                   74CF      23      35       1   .rodata     
+     trans_unlocking_wos                       74F2      1E      30       1   .rodata     
+     trans_wpunlock_wos                        7510      19      25       1   .rodata     
+     trans_unlocked_wos                        7529      1E      30       1   .rodata     
+     trans_locking_wos                         7547      14      20       1   .rodata     
+     idle_wos                                  755B       4       4       3   .rodata     
+     locked_wos                                755F       4       4      13   .rodata     
+     pre_unlocking_wos                         7563       4       4       5   .rodata     
+     unlocking_wos                             7567       4       4       5   .rodata     
+     wpunlock_wos                              756B       4       4       2   .rodata     
+     unlocked_wos                              756F       4       4       7   .rodata     
+     locking_wos                               7573       4       4       4   .rodata     
+     trans_idle_ws                             7577      14      20       1   .rodata     
+     trans_locked_ws                           758B      1E      30       1   .rodata     
+     trans_pre_unlocking_ws                    75A9      28      40       1   .rodata     
+     trans_unlocking_ws                        75D1      23      35       1   .rodata     
+     trans_wpunlock_ws                         75F4      1E      30       1   .rodata     
+     trans_unlocked_ws                         7612      28      40       1   .rodata     
+     trans_locking_ws                          763A      1E      30       1   .rodata     
+     idle_ws                                   7658       4       4       3   .rodata     
+     locked_ws                                 765C       4       4      11   .rodata     
+     pre_unlocking_ws                          7660       4       4       7   .rodata     
+     unlocking_ws                              7664       4       4       7   .rodata     
+     wpunlock_ws                               7668       4       4       4   .rodata     
+     unlocked_ws                               766C       4       4       9   .rodata     
+     locking_ws                                7670       4       4       6   .rodata     
+     bsc16                                     7674      11      17       1   .rodata     
+     bsc32                                     7685      11      17       1   .rodata     
+     avail_flash                               7696      4D      77       4   .rodata     
+     fd2bit                                    76E3      20      32       9   .rodata     
+     opc_actions                               7703      7E     126       3   .rodata     
+     trans_extchrg                             7781      1E      30       1   .rodata     
+     trans_extnotchrg                          779F      23      35       1   .rodata     
+     trans_ext                                 77C2      19      25       1   .rodata     
+     trans_backup                              77DB      19      25       1   .rodata     
+     extchrg                                   77F4       4       4       8   .rodata     
+     extnotchrg                                77F8       4       4       5   .rodata     
+     ext                                       77FC       4       4       6   .rodata     
+     backup                                    7800       4       4       6   .rodata     
+     STRING.F..CIM...SafeBoardKi.1             7804      54      84       2   .rodata1    
+     STRING.SW00.21.00HW03.00.1                7858      12      18       1   .rodata1    
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      _Vector_20                                FFD6       2       2       0   .abs_section_ffd6
      _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
@@ -2512,94 +2512,94 @@ faccess.c.o:
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0x7875 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x786A ---- SIZE       4 ---
 Filling bytes inserted
  009B0100
-------- ROM-ADDRESS: 0x7879 ---- RAM-ADDRESS: 0x100 ---- SIZE      16 ---
+------- ROM-ADDRESS: 0x786E ---- RAM-ADDRESS: 0x100 ---- SIZE      16 ---
 Name of initialized Object : gsqueues
  0738073807 38009007C8 07C807C800
  40
-------- ROM-ADDRESS: 0x7889 ---- RAM-ADDRESS: 0x110 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x787E ---- RAM-ADDRESS: 0x110 ---- SIZE       2 ---
 Name of initialized Object : watchdog_tick
  03E8
-------- ROM-ADDRESS: 0x788B ---- RAM-ADDRESS: 0x112 ---- SIZE      30 ---
+------- ROM-ADDRESS: 0x7880 ---- RAM-ADDRESS: 0x112 ---- SIZE      30 ---
 Name of initialized Object : mparsers
- 73A673A62A EE72A072A0 23E6766376
- 6745407566 756A439577 FF77FF5CBD
-------- ROM-ADDRESS: 0x78A9 ---- RAM-ADDRESS: 0x130 ---- SIZE      24 ---
+ 739B739B2A EE72957295 23E6765876
+ 5C4540755B 755F439577 F477F45CB2
+------- ROM-ADDRESS: 0x789E ---- RAM-ADDRESS: 0x130 ---- SIZE      24 ---
 Name of initialized Object : nqueues
  0808080808 080002080C 080C080C00
  0408140814 08140008
-------- ROM-ADDRESS: 0x78C1 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x78B6 ---- SIZE       1 ---
 Filling bytes inserted
  00
-------- ROM-ADDRESS: 0x78C2 ---- RAM-ADDRESS: 0x149 ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x78B7 ---- RAM-ADDRESS: 0x149 ---- SIZE       3 ---
 Name of initialized Object : lock_timer:1
  960096
-------- ROM-ADDRESS: 0x78C5 ---- RAM-ADDRESS: 0x14C ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x78BA ---- RAM-ADDRESS: 0x14C ---- SIZE       1 ---
 Name of initialized Object : enable_maintime
  01
-------- ROM-ADDRESS: 0x78C6 ---- RAM-ADDRESS: 0x14D ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x78BB ---- RAM-ADDRESS: 0x14D ---- SIZE       3 ---
 Name of initialized Object : cpdata
- 748601
-------- ROM-ADDRESS: 0x78C9 ---- SIZE       4 ---
+ 747B01
+------- ROM-ADDRESS: 0x78BE ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x78CD ---- RAM-ADDRESS: 0x154 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x78C2 ---- RAM-ADDRESS: 0x154 ---- SIZE       2 ---
 Name of initialized Object : cpdata:7
- 7486
-------- ROM-ADDRESS: 0x78CF ---- SIZE       4 ---
+ 747B
+------- ROM-ADDRESS: 0x78C4 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x78D3 ---- RAM-ADDRESS: 0x15A ---- SIZE      10 ---
+------- ROM-ADDRESS: 0x78C8 ---- RAM-ADDRESS: 0x15A ---- SIZE      10 ---
 Name of initialized Object : cpdata:13
- 0174860100 0000027486
-------- ROM-ADDRESS: 0x78DD ---- SIZE       4 ---
+ 01747B0100 000002747B
+------- ROM-ADDRESS: 0x78D2 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x78E1 ---- RAM-ADDRESS: 0x168 ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x78D6 ---- RAM-ADDRESS: 0x168 ---- SIZE       3 ---
 Name of initialized Object : cpdata:27
- 037486
-------- ROM-ADDRESS: 0x78E4 ---- SIZE       4 ---
+ 03747B
+------- ROM-ADDRESS: 0x78D9 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x78E8 ---- RAM-ADDRESS: 0x16F ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x78DD ---- RAM-ADDRESS: 0x16F ---- SIZE       3 ---
 Name of initialized Object : cpdata:34
- 047486
-------- ROM-ADDRESS: 0x78EB ---- SIZE       4 ---
+ 04747B
+------- ROM-ADDRESS: 0x78E0 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x78EF ---- RAM-ADDRESS: 0x176 ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x78E4 ---- RAM-ADDRESS: 0x176 ---- SIZE       3 ---
 Name of initialized Object : cpdata:41
- 057486
-------- ROM-ADDRESS: 0x78F2 ---- SIZE       4 ---
+ 05747B
+------- ROM-ADDRESS: 0x78E7 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x78F6 ---- RAM-ADDRESS: 0x17D ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x78EB ---- RAM-ADDRESS: 0x17D ---- SIZE       1 ---
 Name of initialized Object : cpdata:48
  06
-------- ROM-ADDRESS: 0x78F7 ---- RAM-ADDRESS: 0x17E ---- SIZE       8 ---
+------- ROM-ADDRESS: 0x78EC ---- RAM-ADDRESS: 0x17E ---- SIZE       8 ---
 Name of initialized Object : grqueue
  049A049A04 9A0020
-------- ROM-ADDRESS: 0x78FF ---- RAM-ADDRESS: 0x186 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x78F4 ---- RAM-ADDRESS: 0x186 ---- SIZE       2 ---
 Name of initialized Object : page_in_buffer
  FFFF
-------- ROM-ADDRESS: 0x7901 ---- SIZE       5 ---
+------- ROM-ADDRESS: 0x78F6 ---- SIZE       5 ---
 Filling bytes inserted
  0000000000
-------- ROM-ADDRESS: 0x7906 ---- RAM-ADDRESS: 0x18D ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x78FB ---- RAM-ADDRESS: 0x18D ---- SIZE       1 ---
 Name of initialized Object : df:5
  D8
-------- ROM-ADDRESS: 0x7907 ---- SIZE       6 ---
+------- ROM-ADDRESS: 0x78FC ---- SIZE       6 ---
 Filling bytes inserted
  0000000000 00
-------- ROM-ADDRESS: 0x790D ---- RAM-ADDRESS: 0x194 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x7902 ---- RAM-ADDRESS: 0x194 ---- SIZE       1 ---
 Name of initialized Object : df:12
  14
-------- ROM-ADDRESS: 0x790E ---- RAM-ADDRESS: 0x195 ---- SIZE       6 ---
+------- ROM-ADDRESS: 0x7903 ---- RAM-ADDRESS: 0x195 ---- SIZE       6 ---
 Name of initialized Object : val_configs
  0A05050A05 05
-------- ROM-ADDRESS: 0x7914 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x7909 ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -2792,7 +2792,7 @@ proc_getusrinfo           USES verify_content_mcu verify_memory_and_mcu
 proc_usrformat            USES verify_content_mcu verify_installed_memory 
                                 get_grstat prepare_resp_sbox send_sbox_frame users_format 
                                 verify_to_respond 
-proc_version              USES verify_content_mcu STRING.SW00.20.00HW03.00.1 
+proc_version              USES verify_content_mcu STRING.SW00.21.00HW03.00.1 
                                 prepare_resp_sbox send_sbox_frame 
 proc_model                USES verify_content_mcu prepare_resp_sbox 
                                 send_sbox_frame 
@@ -3088,9 +3088,8 @@ remove_grqueue            USES grqueue is_empty_grqueue sem_disable _COPY
                                 _ICMP sem_enable 
 put_grqueue               USES grqueue sem_disable sem_enable _COPY _ICMP 
 irq_init                  USES _IRQSC 
-irq_handler               USES _IRQSC get_grstat do_disable_pwf_interrupt 
-                                proc_pwrstatus_irq def_news put_nqueue kick_cop_wdog 
-                                dfpwf_interrupt kick_watchdog 
+irq_handler               USES _IRQSC get_grstat kick_cop_wdog dfpwf_interrupt 
+                                do_disable_pwf_interrupt proc_pwrstatus_irq def_news put_nqueue 
 do_disable_pwf_interrupt  USES _IRQSC 
 do_enable_pwf_interrupt   USES _IRQSC 
 init_pwrfail_det          USES init_pwrhdl irq_init 
@@ -5742,6 +5741,12 @@ DEPENDENCY TREE
     | 
     +- get_grstat           (see above)
     |  
+    +- kick_cop_wdog        (see above)
+    |  
+    +- dfpwf_interrupt     
+    |  | 
+    |  +- dfilesys_sync        (see above)
+    |     
     +- do_disable_pwf_interrupt (see above)
     |  
     +- proc_pwrstatus_irq  
@@ -5749,14 +5754,6 @@ DEPENDENCY TREE
     |  +- kick_timer           (see above)
     |     
     +- put_nqueue           (see above)
-    |  
-    +- kick_cop_wdog        (see above)
-    |  
-    +- dfpwf_interrupt     
-    |  | 
-    |  +- dfilesys_sync        (see above)
-    |     
-    +- kick_watchdog        (see above)
        
 *********************************************************************************************
 STATISTIC SECTION
@@ -5764,6 +5761,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 11
-Total size of all blocks to be downloaded: 24808
+Number of blocks to be downloaded: 12
+Total size of all blocks to be downloaded: 24797
 
