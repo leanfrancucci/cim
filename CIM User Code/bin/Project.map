@@ -1,5 +1,5 @@
 
-PROGRAM "F:\CIM - SafeBoardKit Software V21.00\CIM User Code\bin\Project.abs"
+PROGRAM "F:\CIM - SafeBoardKit Software V23.00\CIM User Code\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -636,7 +636,7 @@ MODULE:                 -- logprot.c.o --
 - VARIABLES:
      pdevs                                     73B7      12      18       1   .rodata     
      pcmds                                     73C9      4C      76       1   .rodata     
-     STRING.SW00.21.00HW03.00.1                7858      12      18       1   .rodata1    
+     STRING.SW00.23.00HW03.00.1                7858      12      18       1   .rodata1    
      xframe                                     2C5       4       4      10   .bss        
      in                                         2C9       2       2       3   .bss        
      curr_val                                   2CB       1       1       2   .bss        
@@ -1458,7 +1458,7 @@ SECTION: ".rodata"
   locking_ws bsc16 bsc32 avail_flash fd2bit opc_actions trans_extchrg 
   trans_extnotchrg trans_ext trans_backup extchrg extnotchrg ext backup 
 SECTION: ".rodata1"
-  STRING.F..CIM...SafeBoardKi.1 STRING.SW00.21.00HW03.00.1 
+  STRING.F..CIM...SafeBoardKi.1 STRING.SW00.23.00HW03.00.1 
 SECTION: "BOOTROM"
   version_number 
 SECTION: ".common"
@@ -2439,7 +2439,7 @@ OBJECT LIST SORTED BY ADDRESS
      ext                                       77FC       4       4       6   .rodata     
      backup                                    7800       4       4       6   .rodata     
      STRING.F..CIM...SafeBoardKi.1             7804      54      84       2   .rodata1    
-     STRING.SW00.21.00HW03.00.1                7858      12      18       1   .rodata1    
+     STRING.SW00.23.00HW03.00.1                7858      12      18       1   .rodata1    
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      _Vector_20                                FFD6       2       2       0   .abs_section_ffd6
      _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
@@ -2792,7 +2792,7 @@ proc_getusrinfo           USES verify_content_mcu verify_memory_and_mcu
 proc_usrformat            USES verify_content_mcu verify_installed_memory 
                                 get_grstat prepare_resp_sbox send_sbox_frame users_format 
                                 verify_to_respond 
-proc_version              USES verify_content_mcu STRING.SW00.21.00HW03.00.1 
+proc_version              USES verify_content_mcu STRING.SW00.23.00HW03.00.1 
                                 prepare_resp_sbox send_sbox_frame 
 proc_model                USES verify_content_mcu prepare_resp_sbox 
                                 send_sbox_frame 

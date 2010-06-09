@@ -76,7 +76,11 @@ ports_init(void)
 			else
 			{
 				ports_str[pport->mcu_port].dir &= ~ppin->mask;
-				ports_str[pport->mcu_port].pup |= ppin->mask;
+//				if( (strcmp(ppin->alias,"TP1") == 0) ||
+//					(strcmp(ppin->alias,"TP2") == 0) )
+//					ports_str[pport->mcu_port].pup &= ~ppin->mask;
+//				else
+					ports_str[pport->mcu_port].pup |= ppin->mask;
 			}
 		}
 	}

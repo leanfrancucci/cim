@@ -11,7 +11,7 @@
  * Firmware and hardware version string
  */
 #define VER_STR_LEN			17+1
-#define VERSION_STRING		"SW00.21.00HW03.00"
+#define VERSION_STRING		"SW00.23.00HW03.00"
 
 /*
  * The model determine a specified hardware 
@@ -38,7 +38,7 @@
 #define TOUT_TLOCK			(3000/STIMER_BASE)
 #define TOUT_TUNLOCK		0
 #define MAX_TUNLOCK_TIME	20	/* minutes */
-#define SECMCU_BOOT_DELAY	(5000/SLEEP_BASE)
+#define SECMCU_BOOT_DELAY	(10000/SLEEP_BASE)
 #define HOST_RESET_TIME 	(3000/SLEEP_BASE)
 #define BATT_DISCONNET_TIME (2000/SLEEP_BASE)
 #define PWROFF_TIME 		(7000/SLEEP_BASE)

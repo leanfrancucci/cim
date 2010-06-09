@@ -27,6 +27,8 @@ adc_init( void )
 	ATD1PE_ATDPE0 = 1;		/* PORTB0 configured as ATD pin */
 	ATD1PE_ATDPE1 = 1;		/* PORTB1 configured as ATD pin */
 	ATD1PE_ATDPE2 = 1;		/* PORTB2 configured as ATD pin */
+	ATD1PE_ATDPE3 = 1;		/* PORTB3 configured as ATD pin */
+	ATD1PE_ATDPE4 = 1;		/* PORTB4 configured as ATD pin */
 	ATD1C_ATDPU = 1;        /* Enable ADC */
 	ATD1C_DJM = 1;          /* Right Justified */
 	ATD1C_RES8 = 0;         /* 10-bit Resolution */

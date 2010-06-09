@@ -1,5 +1,5 @@
 
-PROGRAM "c:\1\CIM ATE\bin\Project.abs"
+PROGRAM "F:\CIM - SafeBoardKit Software V23.00\CIM ATE\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -66,7 +66,7 @@ _startupData is allocated at 0x18B0 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x100     361
-  _Copy    *toCopyDownBeg 0x4BDD
+  _Copy    *toCopyDownBeg 0x4C10
 } _startupData;
 
 *********************************************************************************************
@@ -74,9 +74,9 @@ SECTION-ALLOCATION SECTION
 Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .data                             35   R/W      0x100      0x122   RAM
-.text                           8586     R     0x18BE     0x3A47   ROM
-.rodata                          932     R     0x3A48     0x3DEB   ROM
-.rodata1                        3569     R     0x3DEC     0x4BDC   ROM
+.text                           8590     R     0x18BE     0x3A4B   ROM
+.rodata                          932     R     0x3A4C     0x3DEF   ROM
+.rodata1                        3616     R     0x3DF0     0x4C0F   ROM
 .abs_section_0                     1   N/I        0x0        0x0   .absSeg0
 .abs_section_1                     1   N/I        0x1        0x1   .absSeg1
 .abs_section_2                     1   N/I        0x2        0x2   .absSeg2
@@ -193,11 +193,11 @@ Section Name                    Size  Type     From       To       Segment
 .init                            132     R     0x182C     0x18AF   ROM
 .common                          154   R/W      0x1CF      0x268   RAM
 .stack                          1280   R/W      0x269      0x768   RAM
-.copy                             41     R     0x4BDD     0x4C05   ROM
+.copy                             41     R     0x4C10     0x4C38   ROM
 .vectSeg111_vect                   2     R     0xFFFE     0xFFFF   .vectSeg111
 
 Summary of section sizes per section type:
-READ_ONLY (R):        33E2 (dec:    13282)
+READ_ONLY (R):        3415 (dec:    13333)
 READ_WRITE (R/W):      669 (dec:     1641)
 NO_INIT (N/I):          7E (dec:      126)
 
@@ -229,9 +229,9 @@ MODULE:                 -- PRINTF.C.o (ansiis.lib) --
      sprintf                                   1ECC      3B      59       1   .text       
      vsprintf                                  1F07      35      53       1   .text       
 - VARIABLES:
-     pow10                                     3A48      28      40       4   .rodata     
-     pow16                                     3A70      20      32       4   .rodata     
-     pow8                                      3A90      2C      44       4   .rodata     
+     pow10                                     3A4C      28      40       4   .rodata     
+     pow16                                     3A74      20      32       4   .rodata     
+     pow8                                      3A94      2C      44       4   .rodata     
      pbuf                                       123       6       6      20   .bss        
 MODULE:                 -- RTSHC08.C.o (ansiis.lib) --
 - PROCEDURES:
@@ -360,7 +360,7 @@ MODULE:                 -- MC9S08GB60.C.o --
      _ICGTRM                                     4E       1       1       0   .abs_section_4e
      _ATD1C                                      50       1       1       5   .abs_section_50
      _ATD1SC                                     51       1       1       9   .abs_section_51
-     _ATD1PE                                     54       1       1       3   .abs_section_54
+     _ATD1PE                                     54       1       1       5   .abs_section_54
      _IIC1A                                      58       1       1       0   .abs_section_58
      _IIC1F                                      59       1       1       0   .abs_section_59
      _IIC1C                                      5A       1       1       0   .abs_section_5a
@@ -425,7 +425,7 @@ MODULE:                 -- serlog.c.o --
 MODULE:                 -- sertable.c.o --
 - PROCEDURES:
 - VARIABLES:
-     serial_default                            3ABC       6       6       2   .rodata     
+     serial_default                            3AC0       6       6       2   .rodata     
      com1rx_queue                               1D1      40      64       3   .common     
      com2rx_queue                               211      40      64       3   .common     
 MODULE:                 -- platform.c.o --
@@ -470,10 +470,10 @@ MODULE:                 -- icg.c.o --
 MODULE:                 -- mtimetbl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     actions_2                                 3AC2       6       6       1   .rodata     
-     actions_20                                3AC8       4       4       1   .rodata     
-     actions_100                               3ACC       2       2       1   .rodata     
-     timer_chain                               3ACE       C      12       1   .rodata     
+     actions_2                                 3AC6       6       6       1   .rodata     
+     actions_20                                3ACC       4       4       1   .rodata     
+     actions_100                               3AD0       2       2       1   .rodata     
+     timer_chain                               3AD2       C      12       1   .rodata     
 MODULE:                 -- initsys.c.o --
 - PROCEDURES:
      init_system                               2AD2       6       6       1   .text       
@@ -495,7 +495,7 @@ MODULE:                 -- rti.c.o --
      rti_handler                               2B01      1A      26       1   .text       
      init_timer_hardware                       2B1B      49      73       1   .text       
 - VARIABLES:
-     irqf                                      3ADA      10      16       4   .rodata     
+     irqf                                      3ADE      10      16       4   .rodata     
      enable_maintime                            112       1       1       1   .data       
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      mtime                                      251       2       2       2   .common     
@@ -513,7 +513,7 @@ MODULE:                 -- enaint.c.o --
      sem_enable                                2BC2      24      36      11   .text       
      enable_gral_interrupt                     2BE6       3       3       1   .text       
 - VARIABLES:
-     STRING.c..1.CIM.ATE.Sources.1             3DEC      2D      45       2   .rodata1    
+     STRING.F..CIM...SafeBoardKi.1             3DF0      4E      78       2   .rodata1    
      int_stack                                  12D       8       8       3   .bss        
      pint                                       135       2       2       6   .bss        
 MODULE:                 -- lowint.c.o --
@@ -536,149 +536,149 @@ MODULE:                 -- sci.c.o --
 MODULE:                 -- scibrtbl.c.o --
 - PROCEDURES:
 - VARIABLES:
-     sci_br_tbl                                3AEA      12      18       2   .rodata     
+     sci_br_tbl                                3AEE      12      18       2   .rodata     
 MODULE:                 -- adc.c.o --
 - PROCEDURES:
-     adc_init                                  2C92      15      21       1   .text       
-     read_adc_ch                               2CA7      5D      93       1   .text       
-     adquire_adc                               2D04      51      81       1   .text       
+     adc_init                                  2C92      19      25       1   .text       
+     read_adc_ch                               2CAB      5D      93       1   .text       
+     adquire_adc                               2D08      51      81       1   .text       
 - VARIABLES:
      adclvl_buff.1                              137      14      20       5   .bss        
      adclvl.2                                   14B       2       2       6   .bss        
 MODULE:                 -- slogcom1.c.o --
 - PROCEDURES:
-     com1_init                                 2D55       A      10       1   .text       
-     com1_sendchar                             2D5F       3       3       1   .text       
+     com1_init                                 2D59       A      10       1   .text       
+     com1_sendchar                             2D63       3       3       1   .text       
 - VARIABLES:
 MODULE:                 -- slogcom2.c.o --
 - PROCEDURES:
-     com2_init                                 2D62       A      10       1   .text       
-     com2_sendchar                             2D6C       3       3       1   .text       
+     com2_init                                 2D66       A      10       1   .text       
+     com2_sendchar                             2D70       3       3       1   .text       
 - VARIABLES:
 MODULE:                 -- ioportsl.c.o --
 - PROCEDURES:
-     refresh_ports                             2D6F      72     114       2   .text       
-     ports_init                                2DE1      7C     124       1   .text       
+     refresh_ports                             2D73      72     114       2   .text       
+     ports_init                                2DE5      7C     124       1   .text       
 - VARIABLES:
      ports_str                                  253      15      21      18   .common     
 MODULE:                 -- error.c.o --
 - PROCEDURES:
-     log_error                                 2E5D      21      33      17   .text       
+     log_error                                 2E61      21      33      17   .text       
 - VARIABLES:
-     STRING.Invalid.PIN.Number.1               3E19      13      19       1   .rodata1    
-     STRING.Invalid.PORT.Number.2              3E2C      14      20       1   .rodata1    
-     STRING.PIN.must.be.output.3               3E40      13      19       1   .rodata1    
-     STRING.PIN.must.be.logic.I..4             3E53      16      22       1   .rodata1    
-     STRING.PIN.must.be.ADC.inpu.5             3E69      16      22       1   .rodata1    
-     STRING.At.Least.one.PIN.mus.6             3E7F      22      34       1   .rodata1    
-     STRING.At.Least.one.PORT.mu.7             3EA1      23      35       1   .rodata1    
-     STRING.Invalid.Command.Opti.8             3EC4      17      23       1   .rodata1    
-     STRING..Error...u....s...9                3EDB      12      18       1   .rodata1    
+     STRING.Invalid.PIN.Number.1               3E3E      13      19       1   .rodata1    
+     STRING.Invalid.PORT.Number.2              3E51      14      20       1   .rodata1    
+     STRING.PIN.must.be.output.3               3E65      13      19       1   .rodata1    
+     STRING.PIN.must.be.logic.I..4             3E78      16      22       1   .rodata1    
+     STRING.PIN.must.be.ADC.inpu.5             3E8E      16      22       1   .rodata1    
+     STRING.At.Least.one.PIN.mus.6             3EA4      22      34       1   .rodata1    
+     STRING.At.Least.one.PORT.mu.7             3EC6      23      35       1   .rodata1    
+     STRING.Invalid.Command.Opti.8             3EE9      17      23       1   .rodata1    
+     STRING..Error...u....s...9                3F00      12      18       1   .rodata1    
      error_tbl                                  113      10      16       1   .data       
 MODULE:                 -- formats.c.o --
 - PROCEDURES:
-     myprintf                                  2E7E      23      35      17   .text       
-     adc2ascci                                 2EA1      30      48       2   .text       
+     myprintf                                  2E82      23      35      17   .text       
+     adc2ascci                                 2EA5      30      48       2   .text       
 - VARIABLES:
-     STRING..d.2                               3EED       3       3       1   .rodata1    
+     STRING..d.2                               3F12       3       3       1   .rodata1    
      buff                                       14D      40      64       2   .bss        
      valbuff.1                                  18D       5       5       5   .bss        
 MODULE:                 -- cmdset.c.o --
 - PROCEDURES:
-     do_set                                    2ED1      A1     161       2   .text       
-     do_clear                                  2F72      A1     161       2   .text       
-     do_getb                                   3013      AA     170       3   .text       
-     do_outport                                30BD      73     115       1   .text       
-     do_inport                                 3130      92     146       1   .text       
-     do_geta                                   31C2      7E     126       1   .text       
-     do_status                                 3240     107     263       7   .text       
+     do_set                                    2ED5      A1     161       2   .text       
+     do_clear                                  2F76      A1     161       2   .text       
+     do_getb                                   3017      AA     170       3   .text       
+     do_outport                                30C1      73     115       1   .text       
+     do_inport                                 3134      92     146       1   .text       
+     do_geta                                   31C6      7E     126       1   .text       
+     do_status                                 3244     107     263       7   .text       
 - VARIABLES:
-     STRING...s..0x.02X...1                    3EF0       E      14       1   .rodata1    
-     STRING...s..0x.02X..2                     3EFE       D      13       1   .rodata1    
-     STRING...s.PIN.s...d..3                   3F0B       F      15       1   .rodata1    
-     STRING...s..0x.02X..4                     3F1A       D      13       1   .rodata1    
-     STRING...s..0x.02X..5                     3F27       D      13       1   .rodata1    
-     STRING...s..PIN.s..s....sV..6             3F34      15      21       1   .rodata1    
-     STRING.................7                  3F49      10      16       1   .rodata1    
-     STRING..s..0x.02X...8                     3F59       D      13       1   .rodata1    
-     STRING.PIN.s..s....sV..9                  3F66      10      16       1   .rodata1    
-     STRING.PIN.s..s....d...s...10             3F76      14      20       1   .rodata1    
+     STRING...s..0x.02X...1                    3F15       E      14       1   .rodata1    
+     STRING...s..0x.02X..2                     3F23       D      13       1   .rodata1    
+     STRING...s.PIN.s...d..3                   3F30       F      15       1   .rodata1    
+     STRING...s..0x.02X..4                     3F3F       D      13       1   .rodata1    
+     STRING...s..0x.02X..5                     3F4C       D      13       1   .rodata1    
+     STRING...s..PIN.s..s....sV..6             3F59      15      21       1   .rodata1    
+     STRING.................7                  3F6E      10      16       1   .rodata1    
+     STRING..s..0x.02X...8                     3F7E       D      13       1   .rodata1    
+     STRING.PIN.s..s....sV..9                  3F8B      10      16       1   .rodata1    
+     STRING.PIN.s..s....d...s...10             3F9B      14      20       1   .rodata1    
 MODULE:                 -- cmdshell.c.o --
 - PROCEDURES:
-     do_shell                                  3347      30      48       1   .text       
+     do_shell                                  334B      30      48       1   .text       
 - VARIABLES:
-     STRING...Command.shell.setu.1             3F8A      1A      26       1   .rodata1    
-     STRING...sdefined.longhelp..2             3FA4      15      21       1   .rodata1    
-     STRING..3                                 3FB9       1       1       1   .rodata1    
-     STRING..defined.maximum.arg.4             3FBA      24      36       1   .rodata1    
+     STRING...Command.shell.setu.1             3FAF      1A      26       1   .rodata1    
+     STRING...sdefined.longhelp..2             3FC9      15      21       1   .rodata1    
+     STRING..3                                 3FDE       1       1       1   .rodata1    
+     STRING..defined.maximum.arg.4             3FDF      24      36       1   .rodata1    
 MODULE:                 -- COMMAND.C.o --
 - PROCEDURES:
-     do_echo                                   3377      80     128       1   .text       
-     do_help                                   33F7      CB     203       4   .text       
-     find_cmd                                  34C2      4B      75       2   .text       
+     do_echo                                   337B      80     128       1   .text       
+     do_help                                   33FB      CB     203       4   .text       
+     find_cmd                                  34C6      4B      75       2   .text       
 - VARIABLES:
-     cmd_tbl                                   3AFC      78     120       2   .rodata     
-     STRING...1                                3FDE       2       2       1   .rodata1    
-     STRING.....Alias.for..help..2             3FE0      16      22       1   .rodata1    
-     STRING.echo.3                             3FF6       5       5       1   .rodata1    
-     STRING.echo...Echo.args.to..4             3FFB      1D      29       1   .rodata1    
-     STRING..args.......Echo.arg.5             4018      39      57       1   .rodata1    
-     STRING.help.6                             4051       5       5       1   .rodata1    
-     STRING.help...Print.online..7             4056      1A      26       1   .rodata1    
-     STRING..command.........Sho.8             4070     131     305       1   .rodata1    
-     STRING.shell.9                            41A1       6       6       1   .rodata1    
-     STRING.shell...show.command.10            41A7      22      34       1   .rodata1    
-     STRING.set.11                             41C9       4       4       1   .rodata1    
-     STRING.set...Sets.to.HIGH.L.12            41CD      3C      60       1   .rodata1    
-     STRING...pin.number1..pin.l.13            4209      9D     157       1   .rodata1    
-     STRING.clr.14                             42A6       4       4       1   .rodata1    
-     STRING.clr...Clears.to.LOW..15            42AA      3D      61       1   .rodata1    
-     STRING...pin.number1..pin.l.16            42E7      9F     159       1   .rodata1    
-     STRING.getb.17                            4386       5       5       1   .rodata1    
-     STRING.getb...Gets.the.spec.18            438B      29      41       1   .rodata1    
-     STRING...pin.number1..pin.l.19            43B4      6B     107       1   .rodata1    
-     STRING.geta.20                            441F       5       5       1   .rodata1    
-     STRING.geta...Gets.the.spec.21            4424      32      50       1   .rodata1    
-     STRING...pin.number..pin.la.22            4456      71     113       1   .rodata1    
-     STRING.outp.23                            44C7       5       5       1   .rodata1    
-     STRING.outp...Configures.th.24            44CC      3A      58       1   .rodata1    
-     STRING...port.number..port..25            4506      4E      78       1   .rodata1    
-     STRING.inp.26                             4554       4       4       1   .rodata1    
-     STRING.inp...Gets.the.speci.27            4558      26      38       1   .rodata1    
-     STRING...port.number..port..28            457E      7E     126       1   .rodata1    
-     STRING.stat.29                            45FC       5       5       1   .rodata1    
-     STRING.stat...Gets.all.I.O..30            4601      25      37       1   .rodata1    
-     STRING.....Gets.all.I.O..AD.31            4626      67     103       1   .rodata1    
-     STRING...No.help.available..32            468D      16      22       1   .rodata1    
-     STRING.Unknown.command...s..33            46A3      55      85       1   .rodata1    
+     cmd_tbl                                   3B00      78     120       2   .rodata     
+     STRING...1                                4003       2       2       1   .rodata1    
+     STRING.....Alias.for..help..2             4005      16      22       1   .rodata1    
+     STRING.echo.3                             401B       5       5       1   .rodata1    
+     STRING.echo...Echo.args.to..4             4020      1D      29       1   .rodata1    
+     STRING..args.......Echo.arg.5             403D      39      57       1   .rodata1    
+     STRING.help.6                             4076       5       5       1   .rodata1    
+     STRING.help...Print.online..7             407B      1A      26       1   .rodata1    
+     STRING..command.........Sho.8             4095     131     305       1   .rodata1    
+     STRING.shell.9                            41C6       6       6       1   .rodata1    
+     STRING.shell...show.command.10            41CC      22      34       1   .rodata1    
+     STRING.set.11                             41EE       4       4       1   .rodata1    
+     STRING.set...Sets.to.HIGH.L.12            41F2      3C      60       1   .rodata1    
+     STRING...pin.number1..pin.l.13            422E      9D     157       1   .rodata1    
+     STRING.clr.14                             42CB       4       4       1   .rodata1    
+     STRING.clr...Clears.to.LOW..15            42CF      3D      61       1   .rodata1    
+     STRING...pin.number1..pin.l.16            430C      9F     159       1   .rodata1    
+     STRING.getb.17                            43AB       5       5       1   .rodata1    
+     STRING.getb...Gets.the.spec.18            43B0      29      41       1   .rodata1    
+     STRING...pin.number1..pin.l.19            43D9      6B     107       1   .rodata1    
+     STRING.geta.20                            4444       5       5       1   .rodata1    
+     STRING.geta...Gets.the.spec.21            4449      32      50       1   .rodata1    
+     STRING...pin.number..pin.la.22            447B      71     113       1   .rodata1    
+     STRING.outp.23                            44EC       5       5       1   .rodata1    
+     STRING.outp...Configures.th.24            44F1      3A      58       1   .rodata1    
+     STRING...port.number..port..25            452B      4E      78       1   .rodata1    
+     STRING.inp.26                             4579       4       4       1   .rodata1    
+     STRING.inp...Gets.the.speci.27            457D      26      38       1   .rodata1    
+     STRING...port.number..port..28            45A3      7E     126       1   .rodata1    
+     STRING.stat.29                            4621       5       5       1   .rodata1    
+     STRING.stat...Gets.all.I.O..30            4626      25      37       1   .rodata1    
+     STRING.....Gets.all.I.O..AD.31            464B      67     103       1   .rodata1    
+     STRING...No.help.available..32            46B2      16      22       1   .rodata1    
+     STRING.Unknown.command...s..33            46C8      55      85       1   .rodata1    
 MODULE:                 -- CONSER.C.o --
 - PROCEDURES:
-     conser_init                               350D       1       1       1   .text       
-     conser_tstc                               350E       9       9       1   .text       
-     conser_putc                               3517       4       4       8   .text       
-     conser_puts                               351B       4       4      12   .text       
-     conser_getc                               351F      10      16       1   .text       
+     conser_init                               3511       1       1       1   .text       
+     conser_tstc                               3512       9       9       1   .text       
+     conser_putc                               351B       4       4       8   .text       
+     conser_puts                               351F       4       4      12   .text       
+     conser_getc                               3523      10      16       1   .text       
 - VARIABLES:
 MODULE:                 -- console.c.o --
 - PROCEDURES:
-     print_prompt                              352F      18      24       3   .text       
-     delete_char                               3547      94     148       1   .text       
-     process_in_char                           35DB      D2     210       1   .text       
-     parse_line                                36AD      98     152       1   .text       
-     run_command                               3745      A3     163       1   .text       
-     do_console                                37E8      26      38       1   .text       
-     command_shell                             380E      1D      29       1   .text       
-     init_command_shell                        382B      10      16       1   .text       
+     print_prompt                              3533      18      24       3   .text       
+     delete_char                               354B      94     148       1   .text       
+     process_in_char                           35DF      D2     210       1   .text       
+     parse_line                                36B1      98     152       1   .text       
+     run_command                               3749      A3     163       1   .text       
+     do_console                                37EC      26      38       1   .text       
+     command_shell                             3812      1D      29       1   .text       
+     init_command_shell                        382F      10      16       1   .text       
 - VARIABLES:
-     prompt                                    3B74       3       3       1   .rodata     
-     tab_seq                                   3B77       9       9       4   .rodata     
-     erase_seq                                 3B80       4       4       2   .rodata     
-     STRING....1                               46F8       3       3       1   .rodata1    
-     STRING....Too.many.args..ma.2             46FB      1F      31       1   .rodata1    
-     STRING....Command.too.long..3             471A      16      22       1   .rodata1    
-     STRING.Unknown.command...s..4             4730      23      35       1   .rodata1    
-     STRING.Usage...s..5                       4753       B      11       1   .rodata1    
-     STRING.Usage...s..6                       475E       B      11       1   .rodata1    
+     prompt                                    3B78       3       3       1   .rodata     
+     tab_seq                                   3B7B       9       9       4   .rodata     
+     erase_seq                                 3B84       4       4       2   .rodata     
+     STRING....1                               471D       3       3       1   .rodata1    
+     STRING....Too.many.args..ma.2             4720      1F      31       1   .rodata1    
+     STRING....Command.too.long..3             473F      16      22       1   .rodata1    
+     STRING.Unknown.command...s..4             4755      23      35       1   .rodata1    
+     STRING.Usage...s..5                       4778       B      11       1   .rodata1    
+     STRING.Usage...s..6                       4783       B      11       1   .rodata1    
      argv                                       192      18      24       4   .bss        
      console_buffer                             1AA      20      32       5   .bss        
      n                                          1CA       1       1       6   .bss        
@@ -687,249 +687,249 @@ MODULE:                 -- console.c.o --
      abort_shell                                1CE       1       1       2   .bss        
 MODULE:                 -- contick.c.o --
 - PROCEDURES:
-     set_cmd_timeout                           383B       A      10       1   .text       
+     set_cmd_timeout                           383F       A      10       1   .text       
 - VARIABLES:
      tcmd                                       268       1       1       1   .common     
 MODULE:                 -- iodefs.c.o --
 - PROCEDURES:
 - VARIABLES:
-     port0_pintbl                              3B84      5A      90       1   .rodata     
-     port1_pintbl                              3BDE      5A      90       1   .rodata     
-     port2_pintbl                              3C38      46      70       1   .rodata     
-     port3_pintbl                              3C7E      5A      90       1   .rodata     
-     port4_pintbl                              3CD8      46      70       1   .rodata     
-     port5_pintbl                              3D1E      5A      90       1   .rodata     
-     port6_pintbl                              3D78      3C      60       1   .rodata     
-     port_tbl                                  3DB4      38      56       5   .rodata     
-     STRING.VD_PLUNGER.1                       4769       B      11       1   .rodata1    
-     STRING.00.2                               4774       3       3       1   .rodata1    
-     STRING.CLOSED.3                           4777       7       7       1   .rodata1    
-     STRING.OPENED.4                           477E       7       7       1   .rodata1    
-     STRING.VD_SW.5                            4785       6       6       1   .rodata1    
-     STRING.01.6                               478B       3       3       1   .rodata1    
-     STRING.UNLOCKED.7                         478E       9       9       1   .rodata1    
-     STRING.LOCKED.8                           4797       7       7       1   .rodata1    
-     STRING.VD_LOAD.9                          479E       8       8       1   .rodata1    
-     STRING.02.10                              47A6       3       3       1   .rodata1    
-     STRING.CONNECTED.11                       47A9       A      10       1   .rodata1    
-     STRING.UNCONNECTED.12                     47B3       C      12       1   .rodata1    
-     STRING.MD_PLUNGER.13                      47BF       B      11       1   .rodata1    
-     STRING.03.14                              47CA       3       3       1   .rodata1    
-     STRING.CLOSED.15                          47CD       7       7       1   .rodata1    
-     STRING.OPENED.16                          47D4       7       7       1   .rodata1    
-     STRING.MD_SW.17                           47DB       6       6       1   .rodata1    
-     STRING.04.18                              47E1       3       3       1   .rodata1    
-     STRING.UNLOCKED.19                        47E4       9       9       1   .rodata1    
-     STRING.LOCKED.20                          47ED       7       7       1   .rodata1    
-     STRING.MD_LOAD.21                         47F4       8       8       1   .rodata1    
-     STRING.05.22                              47FC       3       3       1   .rodata1    
-     STRING.CONNECTED.23                       47FF       A      10       1   .rodata1    
-     STRING.UNCONNECTED.24                     4809       C      12       1   .rodata1    
-     STRING.STACKER1.25                        4815       9       9       1   .rodata1    
-     STRING.06.26                              481E       3       3       1   .rodata1    
-     STRING.INSTALLED.27                       4821       A      10       1   .rodata1    
-     STRING.UNINSTALLED.28                     482B       C      12       1   .rodata1    
-     STRING.STACKER2.29                        4837       9       9       1   .rodata1    
-     STRING.07.30                              4840       3       3       1   .rodata1    
-     STRING.INSTALLED.31                       4843       A      10       1   .rodata1    
-     STRING.UNINSTALLED.32                     484D       C      12       1   .rodata1    
-     STRING.PRIVDC.33                          4859       7       7       1   .rodata1    
-     STRING.10.34                              4860       3       3       1   .rodata1    
-     STRING.ANALOG.35                          4863       7       7       1   .rodata1    
-     STRING.ANALOG.36                          486A       7       7       1   .rodata1    
-     STRING.SECVDC.37                          4871       7       7       1   .rodata1    
-     STRING.11.38                              4878       3       3       1   .rodata1    
-     STRING.ANALOG.39                          487B       7       7       1   .rodata1    
-     STRING.ANALOG.40                          4882       7       7       1   .rodata1    
-     STRING.VBATT.41                           4889       6       6       1   .rodata1    
-     STRING.12.42                              488F       3       3       1   .rodata1    
-     STRING.ANALOG.43                          4892       7       7       1   .rodata1    
-     STRING.ANALOG.44                          4899       7       7       1   .rodata1    
-     STRING.TP1.45                             48A0       4       4       1   .rodata1    
-     STRING.13.46                              48A4       3       3       1   .rodata1    
-     STRING.HIGH.47                            48A7       5       5       1   .rodata1    
-     STRING.LOW.48                             48AC       4       4       1   .rodata1    
-     STRING.TP2.49                             48B0       4       4       1   .rodata1    
-     STRING.14.50                              48B4       3       3       1   .rodata1    
-     STRING.HIGH.51                            48B7       5       5       1   .rodata1    
-     STRING.LOW.52                             48BC       4       4       1   .rodata1    
-     STRING.TP3.53                             48C0       4       4       1   .rodata1    
-     STRING.15.54                              48C4       3       3       1   .rodata1    
-     STRING.HIGH.55                            48C7       5       5       1   .rodata1    
-     STRING.LOW.56                             48CC       4       4       1   .rodata1    
-     STRING.TP4.57                             48D0       4       4       1   .rodata1    
-     STRING.16.58                              48D4       3       3       1   .rodata1    
-     STRING.HIGH.59                            48D7       5       5       1   .rodata1    
-     STRING.LOW.60                             48DC       4       4       1   .rodata1    
-     STRING.TP5.61                             48E0       4       4       1   .rodata1    
-     STRING.17.62                              48E4       3       3       1   .rodata1    
-     STRING.HIGH.63                            48E7       5       5       1   .rodata1    
-     STRING.LOW.64                             48EC       4       4       1   .rodata1    
-     STRING.TP6.65                             48F0       4       4       1   .rodata1    
-     STRING.22.66                              48F4       3       3       1   .rodata1    
-     STRING.HIGH.67                            48F7       5       5       1   .rodata1    
-     STRING.LOW.68                             48FC       4       4       1   .rodata1    
-     STRING.TP7.69                             4900       4       4       1   .rodata1    
-     STRING.23.70                              4904       3       3       1   .rodata1    
-     STRING.HIGH.71                            4907       5       5       1   .rodata1    
-     STRING.LOW.72                             490C       4       4       1   .rodata1    
-     STRING.TIP_S.73                           4910       6       6       1   .rodata1    
-     STRING.24.74                              4916       3       3       1   .rodata1    
-     STRING.HIGH.75                            4919       5       5       1   .rodata1    
-     STRING.LOW.76                             491E       4       4       1   .rodata1    
-     STRING.RING_S.77                          4922       7       7       1   .rodata1    
-     STRING.25.78                              4929       3       3       1   .rodata1    
-     STRING.HIGH.79                            492C       5       5       1   .rodata1    
-     STRING.LOW.80                             4931       4       4       1   .rodata1    
-     STRING.TIP_O.81                           4935       6       6       1   .rodata1    
-     STRING.26.82                              493B       3       3       1   .rodata1    
-     STRING.HIGH.83                            493E       5       5       1   .rodata1    
-     STRING.LOW.84                             4943       4       4       1   .rodata1    
-     STRING.RING_O.85                          4947       7       7       1   .rodata1    
-     STRING.27.86                              494E       3       3       1   .rodata1    
-     STRING.HIGH.87                            4951       5       5       1   .rodata1    
-     STRING.LOW.88                             4956       4       4       1   .rodata1    
-     STRING.BATTERY.89                         495A       8       8       1   .rodata1    
-     STRING.30.90                              4962       3       3       1   .rodata1    
-     STRING.UNCONNECTED.91                     4965       C      12       1   .rodata1    
-     STRING.CONNECTED.92                       4971       A      10       1   .rodata1    
-     STRING.VALSW.93                           497B       6       6       1   .rodata1    
-     STRING.31.94                              4981       3       3       1   .rodata1    
-     STRING.VALIDATOR2.95                      4984       B      11       1   .rodata1    
-     STRING.VALIDATOR1.96                      498F       B      11       1   .rodata1    
-     STRING.RS485SW.97                         499A       8       8       1   .rodata1    
-     STRING.32.98                              49A2       3       3       1   .rodata1    
-     STRING.SECONDARY.99                       49A5       A      10       1   .rodata1    
-     STRING.PRIMARY.100                        49AF       8       8       1   .rodata1    
-     STRING.PRI_PWR.101                        49B7       8       8       1   .rodata1    
-     STRING.33.102                             49BF       3       3       1   .rodata1    
-     STRING.ON.103                             49C2       3       3       1   .rodata1    
-     STRING.OFF.104                            49C5       4       4       1   .rodata1    
-     STRING.SEC_PWR.105                        49C9       8       8       1   .rodata1    
-     STRING.34.106                             49D1       3       3       1   .rodata1    
-     STRING.ON.107                             49D4       3       3       1   .rodata1    
-     STRING.OFF.108                            49D7       4       4       1   .rodata1    
-     STRING.KEY_SW.109                         49DB       7       7       1   .rodata1    
-     STRING.35.110                             49E2       3       3       1   .rodata1    
-     STRING.CLOSE.111                          49E5       6       6       1   .rodata1    
-     STRING.OPEN.112                           49EB       5       5       1   .rodata1    
-     STRING.VD_CURR.113                        49F0       8       8       1   .rodata1    
-     STRING.36.114                             49F8       3       3       1   .rodata1    
-     STRING.NOT_DRIVED.115                     49FB       B      11       1   .rodata1    
-     STRING.DRIVED.116                         4A06       7       7       1   .rodata1    
-     STRING.MD_CURR.117                        4A0D       8       8       1   .rodata1    
-     STRING.37.118                             4A15       3       3       1   .rodata1    
-     STRING.NOT_DRIVED.119                     4A18       B      11       1   .rodata1    
-     STRING.DRIVED.120                         4A23       7       7       1   .rodata1    
-     STRING.TP8.121                            4A2A       4       4       1   .rodata1    
-     STRING.42.122                             4A2E       3       3       1   .rodata1    
-     STRING.HIGH.123                           4A31       5       5       1   .rodata1    
-     STRING.LOW.124                            4A36       4       4       1   .rodata1    
-     STRING.TP9.125                            4A3A       4       4       1   .rodata1    
-     STRING.43.126                             4A3E       3       3       1   .rodata1    
-     STRING.HIGH.127                           4A41       5       5       1   .rodata1    
-     STRING.LOW.128                            4A46       4       4       1   .rodata1    
-     STRING.TP10.129                           4A4A       5       5       1   .rodata1    
-     STRING.44.130                             4A4F       3       3       1   .rodata1    
-     STRING.HIGH.131                           4A52       5       5       1   .rodata1    
-     STRING.LOW.132                            4A57       4       4       1   .rodata1    
-     STRING.TP11.133                           4A5B       5       5       1   .rodata1    
-     STRING.45.134                             4A60       3       3       1   .rodata1    
-     STRING.HIGH.135                           4A63       5       5       1   .rodata1    
-     STRING.LOW.136                            4A68       4       4       1   .rodata1    
-     STRING.TP12.137                           4A6C       5       5       1   .rodata1    
-     STRING.46.138                             4A71       3       3       1   .rodata1    
-     STRING.HIGH.139                           4A74       5       5       1   .rodata1    
-     STRING.LOW.140                            4A79       4       4       1   .rodata1    
-     STRING.TP13.141                           4A7D       5       5       1   .rodata1    
-     STRING.47.142                             4A82       3       3       1   .rodata1    
-     STRING.HIGH.143                           4A85       5       5       1   .rodata1    
-     STRING.LOW.144                            4A8A       4       4       1   .rodata1    
-     STRING.LED0.145                           4A8E       5       5       1   .rodata1    
-     STRING.50.146                             4A93       3       3       1   .rodata1    
-     STRING.ON.147                             4A96       3       3       1   .rodata1    
-     STRING.OFF.148                            4A99       4       4       1   .rodata1    
-     STRING.LED1.149                           4A9D       5       5       1   .rodata1    
-     STRING.51.150                             4AA2       3       3       1   .rodata1    
-     STRING.ON.151                             4AA5       3       3       1   .rodata1    
-     STRING.OFF.152                            4AA8       4       4       1   .rodata1    
-     STRING.LED2.153                           4AAC       5       5       1   .rodata1    
-     STRING.52.154                             4AB1       3       3       1   .rodata1    
-     STRING.ON.155                             4AB4       3       3       1   .rodata1    
-     STRING.OFF.156                            4AB7       4       4       1   .rodata1    
-     STRING.LED3.157                           4ABB       5       5       1   .rodata1    
-     STRING.53.158                             4AC0       3       3       1   .rodata1    
-     STRING.ON.159                             4AC3       3       3       1   .rodata1    
-     STRING.OFF.160                            4AC6       4       4       1   .rodata1    
-     STRING.LED4.161                           4ACA       5       5       1   .rodata1    
-     STRING.54.162                             4ACF       3       3       1   .rodata1    
-     STRING.ON.163                             4AD2       3       3       1   .rodata1    
-     STRING.OFF.164                            4AD5       4       4       1   .rodata1    
-     STRING.LED5.165                           4AD9       5       5       1   .rodata1    
-     STRING.55.166                             4ADE       3       3       1   .rodata1    
-     STRING.ON.167                             4AE1       3       3       1   .rodata1    
-     STRING.OFF.168                            4AE4       4       4       1   .rodata1    
-     STRING.LED6.169                           4AE8       5       5       1   .rodata1    
-     STRING.56.170                             4AED       3       3       1   .rodata1    
-     STRING.ON.171                             4AF0       3       3       1   .rodata1    
-     STRING.OFF.172                            4AF3       4       4       1   .rodata1    
-     STRING.LED7.173                           4AF7       5       5       1   .rodata1    
-     STRING.57.174                             4AFC       3       3       1   .rodata1    
-     STRING.ON.175                             4AFF       3       3       1   .rodata1    
-     STRING.OFF.176                            4B02       4       4       1   .rodata1    
-     STRING.DURESS_NC.177                      4B06       A      10       1   .rodata1    
-     STRING.63.178                             4B10       3       3       1   .rodata1    
-     STRING.UNACTIVATED.179                    4B13       C      12       1   .rodata1    
-     STRING.ACTIVATED.180                      4B1F       A      10       1   .rodata1    
-     STRING.DURESS_NO.181                      4B29       A      10       1   .rodata1    
-     STRING.64.182                             4B33       3       3       1   .rodata1    
-     STRING.UNACTIVATED.183                    4B36       C      12       1   .rodata1    
-     STRING.ACTIVATED.184                      4B42       A      10       1   .rodata1    
-     STRING.BURGLAR_NC.185                     4B4C       B      11       1   .rodata1    
-     STRING.65.186                             4B57       3       3       1   .rodata1    
-     STRING.UNACTIVATED.187                    4B5A       C      12       1   .rodata1    
-     STRING.ACTIVATED.188                      4B66       A      10       1   .rodata1    
-     STRING.BURGLAR_NO.189                     4B70       B      11       1   .rodata1    
-     STRING.66.190                             4B7B       3       3       1   .rodata1    
-     STRING.UNACTIVATED.191                    4B7E       C      12       1   .rodata1    
-     STRING.ACTIVATED.192                      4B8A       A      10       1   .rodata1    
-     STRING.TP14.193                           4B94       5       5       1   .rodata1    
-     STRING.67.194                             4B99       3       3       1   .rodata1    
-     STRING.HIGH.195                           4B9C       5       5       1   .rodata1    
-     STRING.LOW.196                            4BA1       4       4       1   .rodata1    
-     STRING.PORT0.197                          4BA5       6       6       1   .rodata1    
-     STRING.0.198                              4BAB       2       2       1   .rodata1    
-     STRING.PORT1.199                          4BAD       6       6       1   .rodata1    
-     STRING.1.200                              4BB3       2       2       1   .rodata1    
-     STRING.PORT2.201                          4BB5       6       6       1   .rodata1    
-     STRING.2.202                              4BBB       2       2       1   .rodata1    
-     STRING.PORT3.203                          4BBD       6       6       1   .rodata1    
-     STRING.3.204                              4BC3       2       2       1   .rodata1    
-     STRING.PORT4.205                          4BC5       6       6       1   .rodata1    
-     STRING.4.206                              4BCB       2       2       1   .rodata1    
-     STRING.PORT5.207                          4BCD       6       6       1   .rodata1    
-     STRING.5.208                              4BD3       2       2       1   .rodata1    
-     STRING.PORT6.209                          4BD5       6       6       1   .rodata1    
-     STRING.6.210                              4BDB       2       2       1   .rodata1    
+     port0_pintbl                              3B88      5A      90       1   .rodata     
+     port1_pintbl                              3BE2      5A      90       1   .rodata     
+     port2_pintbl                              3C3C      46      70       1   .rodata     
+     port3_pintbl                              3C82      5A      90       1   .rodata     
+     port4_pintbl                              3CDC      46      70       1   .rodata     
+     port5_pintbl                              3D22      5A      90       1   .rodata     
+     port6_pintbl                              3D7C      3C      60       1   .rodata     
+     port_tbl                                  3DB8      38      56       5   .rodata     
+     STRING.VD_PLUNGER.1                       478E       B      11       1   .rodata1    
+     STRING.00.2                               4799       3       3       1   .rodata1    
+     STRING.CLOSED.3                           479C       7       7       1   .rodata1    
+     STRING.OPENED.4                           47A3       7       7       1   .rodata1    
+     STRING.VD_SW.5                            47AA       6       6       1   .rodata1    
+     STRING.01.6                               47B0       3       3       1   .rodata1    
+     STRING.UNLOCKED.7                         47B3       9       9       1   .rodata1    
+     STRING.LOCKED.8                           47BC       7       7       1   .rodata1    
+     STRING.VD_LOAD.9                          47C3       8       8       1   .rodata1    
+     STRING.02.10                              47CB       3       3       1   .rodata1    
+     STRING.CONNECTED.11                       47CE       A      10       1   .rodata1    
+     STRING.UNCONNECTED.12                     47D8       C      12       1   .rodata1    
+     STRING.MD_PLUNGER.13                      47E4       B      11       1   .rodata1    
+     STRING.03.14                              47EF       3       3       1   .rodata1    
+     STRING.CLOSED.15                          47F2       7       7       1   .rodata1    
+     STRING.OPENED.16                          47F9       7       7       1   .rodata1    
+     STRING.MD_SW.17                           4800       6       6       1   .rodata1    
+     STRING.04.18                              4806       3       3       1   .rodata1    
+     STRING.UNLOCKED.19                        4809       9       9       1   .rodata1    
+     STRING.LOCKED.20                          4812       7       7       1   .rodata1    
+     STRING.MD_LOAD.21                         4819       8       8       1   .rodata1    
+     STRING.05.22                              4821       3       3       1   .rodata1    
+     STRING.CONNECTED.23                       4824       A      10       1   .rodata1    
+     STRING.UNCONNECTED.24                     482E       C      12       1   .rodata1    
+     STRING.STACKER1.25                        483A       9       9       1   .rodata1    
+     STRING.06.26                              4843       3       3       1   .rodata1    
+     STRING.INSTALLED.27                       4846       A      10       1   .rodata1    
+     STRING.UNINSTALLED.28                     4850       C      12       1   .rodata1    
+     STRING.STACKER2.29                        485C       9       9       1   .rodata1    
+     STRING.07.30                              4865       3       3       1   .rodata1    
+     STRING.INSTALLED.31                       4868       A      10       1   .rodata1    
+     STRING.UNINSTALLED.32                     4872       C      12       1   .rodata1    
+     STRING.PRIVDC.33                          487E       7       7       1   .rodata1    
+     STRING.10.34                              4885       3       3       1   .rodata1    
+     STRING.ANALOG.35                          4888       7       7       1   .rodata1    
+     STRING.ANALOG.36                          488F       7       7       1   .rodata1    
+     STRING.SECVDC.37                          4896       7       7       1   .rodata1    
+     STRING.11.38                              489D       3       3       1   .rodata1    
+     STRING.ANALOG.39                          48A0       7       7       1   .rodata1    
+     STRING.ANALOG.40                          48A7       7       7       1   .rodata1    
+     STRING.VBATT.41                           48AE       6       6       1   .rodata1    
+     STRING.12.42                              48B4       3       3       1   .rodata1    
+     STRING.ANALOG.43                          48B7       7       7       1   .rodata1    
+     STRING.ANALOG.44                          48BE       7       7       1   .rodata1    
+     STRING.VDC_VAL1.45                        48C5       9       9       1   .rodata1    
+     STRING.13.46                              48CE       3       3       1   .rodata1    
+     STRING.ANALOG.47                          48D1       7       7       1   .rodata1    
+     STRING.LOW.48                             48D8       4       4       1   .rodata1    
+     STRING.VDC_VAL2.49                        48DC       9       9       1   .rodata1    
+     STRING.14.50                              48E5       3       3       1   .rodata1    
+     STRING.ANALOG.51                          48E8       7       7       1   .rodata1    
+     STRING.LOW.52                             48EF       4       4       1   .rodata1    
+     STRING.TP3.53                             48F3       4       4       1   .rodata1    
+     STRING.15.54                              48F7       3       3       1   .rodata1    
+     STRING.HIGH.55                            48FA       5       5       1   .rodata1    
+     STRING.LOW.56                             48FF       4       4       1   .rodata1    
+     STRING.TP4.57                             4903       4       4       1   .rodata1    
+     STRING.16.58                              4907       3       3       1   .rodata1    
+     STRING.HIGH.59                            490A       5       5       1   .rodata1    
+     STRING.LOW.60                             490F       4       4       1   .rodata1    
+     STRING.TP5.61                             4913       4       4       1   .rodata1    
+     STRING.17.62                              4917       3       3       1   .rodata1    
+     STRING.HIGH.63                            491A       5       5       1   .rodata1    
+     STRING.LOW.64                             491F       4       4       1   .rodata1    
+     STRING.TP6.65                             4923       4       4       1   .rodata1    
+     STRING.22.66                              4927       3       3       1   .rodata1    
+     STRING.HIGH.67                            492A       5       5       1   .rodata1    
+     STRING.LOW.68                             492F       4       4       1   .rodata1    
+     STRING.TP7.69                             4933       4       4       1   .rodata1    
+     STRING.23.70                              4937       3       3       1   .rodata1    
+     STRING.HIGH.71                            493A       5       5       1   .rodata1    
+     STRING.LOW.72                             493F       4       4       1   .rodata1    
+     STRING.TIP_S.73                           4943       6       6       1   .rodata1    
+     STRING.24.74                              4949       3       3       1   .rodata1    
+     STRING.HIGH.75                            494C       5       5       1   .rodata1    
+     STRING.LOW.76                             4951       4       4       1   .rodata1    
+     STRING.RING_S.77                          4955       7       7       1   .rodata1    
+     STRING.25.78                              495C       3       3       1   .rodata1    
+     STRING.HIGH.79                            495F       5       5       1   .rodata1    
+     STRING.LOW.80                             4964       4       4       1   .rodata1    
+     STRING.TIP_O.81                           4968       6       6       1   .rodata1    
+     STRING.26.82                              496E       3       3       1   .rodata1    
+     STRING.HIGH.83                            4971       5       5       1   .rodata1    
+     STRING.LOW.84                             4976       4       4       1   .rodata1    
+     STRING.RING_O.85                          497A       7       7       1   .rodata1    
+     STRING.27.86                              4981       3       3       1   .rodata1    
+     STRING.HIGH.87                            4984       5       5       1   .rodata1    
+     STRING.LOW.88                             4989       4       4       1   .rodata1    
+     STRING.BATTERY.89                         498D       8       8       1   .rodata1    
+     STRING.30.90                              4995       3       3       1   .rodata1    
+     STRING.UNCONNECTED.91                     4998       C      12       1   .rodata1    
+     STRING.CONNECTED.92                       49A4       A      10       1   .rodata1    
+     STRING.VALSW.93                           49AE       6       6       1   .rodata1    
+     STRING.31.94                              49B4       3       3       1   .rodata1    
+     STRING.VALIDATOR2.95                      49B7       B      11       1   .rodata1    
+     STRING.VALIDATOR1.96                      49C2       B      11       1   .rodata1    
+     STRING.RS485SW.97                         49CD       8       8       1   .rodata1    
+     STRING.32.98                              49D5       3       3       1   .rodata1    
+     STRING.SECONDARY.99                       49D8       A      10       1   .rodata1    
+     STRING.PRIMARY.100                        49E2       8       8       1   .rodata1    
+     STRING.PRI_PWR.101                        49EA       8       8       1   .rodata1    
+     STRING.33.102                             49F2       3       3       1   .rodata1    
+     STRING.ON.103                             49F5       3       3       1   .rodata1    
+     STRING.OFF.104                            49F8       4       4       1   .rodata1    
+     STRING.SEC_PWR.105                        49FC       8       8       1   .rodata1    
+     STRING.34.106                             4A04       3       3       1   .rodata1    
+     STRING.ON.107                             4A07       3       3       1   .rodata1    
+     STRING.OFF.108                            4A0A       4       4       1   .rodata1    
+     STRING.KEY_SW.109                         4A0E       7       7       1   .rodata1    
+     STRING.35.110                             4A15       3       3       1   .rodata1    
+     STRING.CLOSE.111                          4A18       6       6       1   .rodata1    
+     STRING.OPEN.112                           4A1E       5       5       1   .rodata1    
+     STRING.VD_CURR.113                        4A23       8       8       1   .rodata1    
+     STRING.36.114                             4A2B       3       3       1   .rodata1    
+     STRING.NOT_DRIVED.115                     4A2E       B      11       1   .rodata1    
+     STRING.DRIVED.116                         4A39       7       7       1   .rodata1    
+     STRING.MD_CURR.117                        4A40       8       8       1   .rodata1    
+     STRING.37.118                             4A48       3       3       1   .rodata1    
+     STRING.NOT_DRIVED.119                     4A4B       B      11       1   .rodata1    
+     STRING.DRIVED.120                         4A56       7       7       1   .rodata1    
+     STRING.TP8.121                            4A5D       4       4       1   .rodata1    
+     STRING.42.122                             4A61       3       3       1   .rodata1    
+     STRING.HIGH.123                           4A64       5       5       1   .rodata1    
+     STRING.LOW.124                            4A69       4       4       1   .rodata1    
+     STRING.TP9.125                            4A6D       4       4       1   .rodata1    
+     STRING.43.126                             4A71       3       3       1   .rodata1    
+     STRING.HIGH.127                           4A74       5       5       1   .rodata1    
+     STRING.LOW.128                            4A79       4       4       1   .rodata1    
+     STRING.TP10.129                           4A7D       5       5       1   .rodata1    
+     STRING.44.130                             4A82       3       3       1   .rodata1    
+     STRING.HIGH.131                           4A85       5       5       1   .rodata1    
+     STRING.LOW.132                            4A8A       4       4       1   .rodata1    
+     STRING.TP11.133                           4A8E       5       5       1   .rodata1    
+     STRING.45.134                             4A93       3       3       1   .rodata1    
+     STRING.HIGH.135                           4A96       5       5       1   .rodata1    
+     STRING.LOW.136                            4A9B       4       4       1   .rodata1    
+     STRING.TP12.137                           4A9F       5       5       1   .rodata1    
+     STRING.46.138                             4AA4       3       3       1   .rodata1    
+     STRING.HIGH.139                           4AA7       5       5       1   .rodata1    
+     STRING.LOW.140                            4AAC       4       4       1   .rodata1    
+     STRING.TP13.141                           4AB0       5       5       1   .rodata1    
+     STRING.47.142                             4AB5       3       3       1   .rodata1    
+     STRING.HIGH.143                           4AB8       5       5       1   .rodata1    
+     STRING.LOW.144                            4ABD       4       4       1   .rodata1    
+     STRING.LED0.145                           4AC1       5       5       1   .rodata1    
+     STRING.50.146                             4AC6       3       3       1   .rodata1    
+     STRING.ON.147                             4AC9       3       3       1   .rodata1    
+     STRING.OFF.148                            4ACC       4       4       1   .rodata1    
+     STRING.LED1.149                           4AD0       5       5       1   .rodata1    
+     STRING.51.150                             4AD5       3       3       1   .rodata1    
+     STRING.ON.151                             4AD8       3       3       1   .rodata1    
+     STRING.OFF.152                            4ADB       4       4       1   .rodata1    
+     STRING.LED2.153                           4ADF       5       5       1   .rodata1    
+     STRING.52.154                             4AE4       3       3       1   .rodata1    
+     STRING.ON.155                             4AE7       3       3       1   .rodata1    
+     STRING.OFF.156                            4AEA       4       4       1   .rodata1    
+     STRING.LED3.157                           4AEE       5       5       1   .rodata1    
+     STRING.53.158                             4AF3       3       3       1   .rodata1    
+     STRING.ON.159                             4AF6       3       3       1   .rodata1    
+     STRING.OFF.160                            4AF9       4       4       1   .rodata1    
+     STRING.LED4.161                           4AFD       5       5       1   .rodata1    
+     STRING.54.162                             4B02       3       3       1   .rodata1    
+     STRING.ON.163                             4B05       3       3       1   .rodata1    
+     STRING.OFF.164                            4B08       4       4       1   .rodata1    
+     STRING.LED5.165                           4B0C       5       5       1   .rodata1    
+     STRING.55.166                             4B11       3       3       1   .rodata1    
+     STRING.ON.167                             4B14       3       3       1   .rodata1    
+     STRING.OFF.168                            4B17       4       4       1   .rodata1    
+     STRING.LED6.169                           4B1B       5       5       1   .rodata1    
+     STRING.56.170                             4B20       3       3       1   .rodata1    
+     STRING.ON.171                             4B23       3       3       1   .rodata1    
+     STRING.OFF.172                            4B26       4       4       1   .rodata1    
+     STRING.LED7.173                           4B2A       5       5       1   .rodata1    
+     STRING.57.174                             4B2F       3       3       1   .rodata1    
+     STRING.ON.175                             4B32       3       3       1   .rodata1    
+     STRING.OFF.176                            4B35       4       4       1   .rodata1    
+     STRING.DURESS_NC.177                      4B39       A      10       1   .rodata1    
+     STRING.63.178                             4B43       3       3       1   .rodata1    
+     STRING.UNACTIVATED.179                    4B46       C      12       1   .rodata1    
+     STRING.ACTIVATED.180                      4B52       A      10       1   .rodata1    
+     STRING.DURESS_NO.181                      4B5C       A      10       1   .rodata1    
+     STRING.64.182                             4B66       3       3       1   .rodata1    
+     STRING.UNACTIVATED.183                    4B69       C      12       1   .rodata1    
+     STRING.ACTIVATED.184                      4B75       A      10       1   .rodata1    
+     STRING.BURGLAR_NC.185                     4B7F       B      11       1   .rodata1    
+     STRING.65.186                             4B8A       3       3       1   .rodata1    
+     STRING.UNACTIVATED.187                    4B8D       C      12       1   .rodata1    
+     STRING.ACTIVATED.188                      4B99       A      10       1   .rodata1    
+     STRING.BURGLAR_NO.189                     4BA3       B      11       1   .rodata1    
+     STRING.66.190                             4BAE       3       3       1   .rodata1    
+     STRING.UNACTIVATED.191                    4BB1       C      12       1   .rodata1    
+     STRING.ACTIVATED.192                      4BBD       A      10       1   .rodata1    
+     STRING.TP14.193                           4BC7       5       5       1   .rodata1    
+     STRING.67.194                             4BCC       3       3       1   .rodata1    
+     STRING.HIGH.195                           4BCF       5       5       1   .rodata1    
+     STRING.LOW.196                            4BD4       4       4       1   .rodata1    
+     STRING.PORT0.197                          4BD8       6       6       1   .rodata1    
+     STRING.0.198                              4BDE       2       2       1   .rodata1    
+     STRING.PORT1.199                          4BE0       6       6       1   .rodata1    
+     STRING.1.200                              4BE6       2       2       1   .rodata1    
+     STRING.PORT2.201                          4BE8       6       6       1   .rodata1    
+     STRING.2.202                              4BEE       2       2       1   .rodata1    
+     STRING.PORT3.203                          4BF0       6       6       1   .rodata1    
+     STRING.3.204                              4BF6       2       2       1   .rodata1    
+     STRING.PORT4.205                          4BF8       6       6       1   .rodata1    
+     STRING.4.206                              4BFE       2       2       1   .rodata1    
+     STRING.PORT5.207                          4C00       6       6       1   .rodata1    
+     STRING.5.208                              4C06       2       2       1   .rodata1    
+     STRING.PORT6.209                          4C08       6       6       1   .rodata1    
+     STRING.6.210                              4C0E       2       2       1   .rodata1    
 MODULE:                 -- ioports.c.o --
 - PROCEDURES:
-     set_output                                3845       C      12       1   .text       
-     clear_output                              3851       C      12       1   .text       
-     read_input                                385D       C      12       2   .text       
-     outport                                   3869       5       5       1   .text       
-     inport                                    386E      10      16       3   .text       
-     read_adc                                  387E      2B      43       2   .text       
-     find_pin                                  38A9      73     115       4   .text       
-     find_port                                 391C      55      85       2   .text       
+     set_output                                3849       C      12       1   .text       
+     clear_output                              3855       C      12       1   .text       
+     read_input                                3861       C      12       2   .text       
+     outport                                   386D       5       5       1   .text       
+     inport                                    3872      10      16       3   .text       
+     read_adc                                  3882      2B      43       2   .text       
+     find_pin                                  38AD      73     115       4   .text       
+     find_port                                 3920      55      85       2   .text       
 - VARIABLES:
 MODULE:                 -- porthdl.c.o --
 - PROCEDURES:
-     set_output_hdl                            3971      26      38       1   .text       
-     clear_output_hdl                          3997      27      39       1   .text       
-     outport_hdl                               39BE      22      34       1   .text       
-     inport_hdl                                39E0      25      37       1   .text       
-     read_input_hdl                            3A05      2E      46       1   .text       
-     read_adc_hdl                              3A33      15      21       1   .text       
+     set_output_hdl                            3975      26      38       1   .text       
+     clear_output_hdl                          399B      27      39       1   .text       
+     outport_hdl                               39C2      22      34       1   .text       
+     inport_hdl                                39E4      25      37       1   .text       
+     read_input_hdl                            3A09      2E      46       1   .text       
+     read_adc_hdl                              3A37      15      21       1   .text       
 - VARIABLES:
 
 *********************************************************************************************
@@ -962,11 +962,11 @@ MODULE STATISTIC
   lvd.c.o                                      0     11      0
   rti.c.o                                      3     99     18
   drverr.c.o                                   0      3      0
-  enaint.c.o                                  10    130     45
+  enaint.c.o                                  10    130     78
   lowint.c.o                                   0     20      0
   sci.c.o                                      0    149      4
   scibrtbl.c.o                                 0      0     18
-  adc.c.o                                     22    195      0
+  adc.c.o                                     22    199      0
   slogcom1.c.o                                 0     13      0
   slogcom2.c.o                                 0     13      0
   ioportsl.c.o                                21    238      0
@@ -978,7 +978,7 @@ MODULE STATISTIC
   CONSER.C.o                                   0     34      0
   console.c.o                                 61    780    129
   contick.c.o                                  1     10      0
-  iodefs.c.o                                   0      0   1756
+  iodefs.c.o                                   0      0   1770
   ioports.c.o                                  0    300      0
   porthdl.c.o                                  0    215      0
   other                                     1280     16     41
@@ -1025,7 +1025,7 @@ SECTION: ".rodata"
   irqf sci_br_tbl cmd_tbl prompt tab_seq erase_seq port0_pintbl port1_pintbl 
   port2_pintbl port3_pintbl port4_pintbl port5_pintbl port6_pintbl port_tbl 
 SECTION: ".rodata1"
-  STRING.c..1.CIM.ATE.Sources.1 STRING.Invalid.PIN.Number.1 
+  STRING.F..CIM...SafeBoardKi.1 STRING.Invalid.PIN.Number.1 
   STRING.Invalid.PORT.Number.2 STRING.PIN.must.be.output.3 
   STRING.PIN.must.be.logic.I..4 STRING.PIN.must.be.ADC.inpu.5 
   STRING.At.Least.one.PIN.mus.6 STRING.At.Least.one.PORT.mu.7 
@@ -1059,20 +1059,20 @@ SECTION: ".rodata1"
   STRING.UNINSTALLED.32 STRING.PRIVDC.33 STRING.10.34 STRING.ANALOG.35 
   STRING.ANALOG.36 STRING.SECVDC.37 STRING.11.38 STRING.ANALOG.39 
   STRING.ANALOG.40 STRING.VBATT.41 STRING.12.42 STRING.ANALOG.43 
-  STRING.ANALOG.44 STRING.TP1.45 STRING.13.46 STRING.HIGH.47 STRING.LOW.48 
-  STRING.TP2.49 STRING.14.50 STRING.HIGH.51 STRING.LOW.52 STRING.TP3.53 
-  STRING.15.54 STRING.HIGH.55 STRING.LOW.56 STRING.TP4.57 STRING.16.58 
-  STRING.HIGH.59 STRING.LOW.60 STRING.TP5.61 STRING.17.62 STRING.HIGH.63 
-  STRING.LOW.64 STRING.TP6.65 STRING.22.66 STRING.HIGH.67 STRING.LOW.68 
-  STRING.TP7.69 STRING.23.70 STRING.HIGH.71 STRING.LOW.72 STRING.TIP_S.73 
-  STRING.24.74 STRING.HIGH.75 STRING.LOW.76 STRING.RING_S.77 STRING.25.78 
-  STRING.HIGH.79 STRING.LOW.80 STRING.TIP_O.81 STRING.26.82 STRING.HIGH.83 
-  STRING.LOW.84 STRING.RING_O.85 STRING.27.86 STRING.HIGH.87 STRING.LOW.88 
-  STRING.BATTERY.89 STRING.30.90 STRING.UNCONNECTED.91 STRING.CONNECTED.92 
-  STRING.VALSW.93 STRING.31.94 STRING.VALIDATOR2.95 STRING.VALIDATOR1.96 
-  STRING.RS485SW.97 STRING.32.98 STRING.SECONDARY.99 STRING.PRIMARY.100 
-  STRING.PRI_PWR.101 STRING.33.102 STRING.ON.103 STRING.OFF.104 
-  STRING.SEC_PWR.105 STRING.34.106 STRING.ON.107 STRING.OFF.108 
+  STRING.ANALOG.44 STRING.VDC_VAL1.45 STRING.13.46 STRING.ANALOG.47 
+  STRING.LOW.48 STRING.VDC_VAL2.49 STRING.14.50 STRING.ANALOG.51 STRING.LOW.52 
+  STRING.TP3.53 STRING.15.54 STRING.HIGH.55 STRING.LOW.56 STRING.TP4.57 
+  STRING.16.58 STRING.HIGH.59 STRING.LOW.60 STRING.TP5.61 STRING.17.62 
+  STRING.HIGH.63 STRING.LOW.64 STRING.TP6.65 STRING.22.66 STRING.HIGH.67 
+  STRING.LOW.68 STRING.TP7.69 STRING.23.70 STRING.HIGH.71 STRING.LOW.72 
+  STRING.TIP_S.73 STRING.24.74 STRING.HIGH.75 STRING.LOW.76 STRING.RING_S.77 
+  STRING.25.78 STRING.HIGH.79 STRING.LOW.80 STRING.TIP_O.81 STRING.26.82 
+  STRING.HIGH.83 STRING.LOW.84 STRING.RING_O.85 STRING.27.86 STRING.HIGH.87 
+  STRING.LOW.88 STRING.BATTERY.89 STRING.30.90 STRING.UNCONNECTED.91 
+  STRING.CONNECTED.92 STRING.VALSW.93 STRING.31.94 STRING.VALIDATOR2.95 
+  STRING.VALIDATOR1.96 STRING.RS485SW.97 STRING.32.98 STRING.SECONDARY.99 
+  STRING.PRIMARY.100 STRING.PRI_PWR.101 STRING.33.102 STRING.ON.103 
+  STRING.OFF.104 STRING.SEC_PWR.105 STRING.34.106 STRING.ON.107 STRING.OFF.108 
   STRING.KEY_SW.109 STRING.35.110 STRING.CLOSE.111 STRING.OPEN.112 
   STRING.VD_CURR.113 STRING.36.114 STRING.NOT_DRIVED.115 STRING.DRIVED.116 
   STRING.MD_CURR.117 STRING.37.118 STRING.NOT_DRIVED.119 STRING.DRIVED.120 
@@ -1393,7 +1393,7 @@ OBJECT LIST SORTED BY ADDRESS
      _ATD1C                                      50       1       1       5   .abs_section_50
      _ATD1SC                                     51       1       1       9   .abs_section_51
      _ATD1R                                      52       2       2       1   .abs_section_52
-     _ATD1PE                                     54       1       1       3   .abs_section_54
+     _ATD1PE                                     54       1       1       5   .abs_section_54
      _IIC1A                                      58       1       1       0   .abs_section_58
      _IIC1F                                      59       1       1       0   .abs_section_59
      _IIC1C                                      5A       1       1       0   .abs_section_5a
@@ -1557,353 +1557,353 @@ OBJECT LIST SORTED BY ADDRESS
      com2_sci2_sendchar                        2C4F       D      13       1   .text       
      com1_rcv_isr                              2C5C      17      23       1   .text       
      com2_rcv_isr                              2C73      1F      31       1   .text       
-     adc_init                                  2C92      15      21       1   .text       
-     read_adc_ch                               2CA7      5D      93       1   .text       
-     adquire_adc                               2D04      51      81       1   .text       
-     com1_init                                 2D55       A      10       1   .text       
-     com1_sendchar                             2D5F       3       3       1   .text       
-     com2_init                                 2D62       A      10       1   .text       
-     com2_sendchar                             2D6C       3       3       1   .text       
-     refresh_ports                             2D6F      72     114       2   .text       
-     ports_init                                2DE1      7C     124       1   .text       
-     log_error                                 2E5D      21      33      17   .text       
-     myprintf                                  2E7E      23      35      17   .text       
-     adc2ascci                                 2EA1      30      48       2   .text       
-     do_set                                    2ED1      A1     161       2   .text       
-     do_clear                                  2F72      A1     161       2   .text       
-     do_getb                                   3013      AA     170       3   .text       
-     do_outport                                30BD      73     115       1   .text       
-     do_inport                                 3130      92     146       1   .text       
-     do_geta                                   31C2      7E     126       1   .text       
-     do_status                                 3240     107     263       7   .text       
-     do_shell                                  3347      30      48       1   .text       
-     do_echo                                   3377      80     128       1   .text       
-     do_help                                   33F7      CB     203       4   .text       
-     find_cmd                                  34C2      4B      75       2   .text       
-     conser_init                               350D       1       1       1   .text       
-     conser_tstc                               350E       9       9       1   .text       
-     conser_putc                               3517       4       4       8   .text       
-     conser_puts                               351B       4       4      12   .text       
-     conser_getc                               351F      10      16       1   .text       
-     print_prompt                              352F      18      24       3   .text       
-     delete_char                               3547      94     148       1   .text       
-     process_in_char                           35DB      D2     210       1   .text       
-     parse_line                                36AD      98     152       1   .text       
-     run_command                               3745      A3     163       1   .text       
-     do_console                                37E8      26      38       1   .text       
-     command_shell                             380E      1D      29       1   .text       
-     init_command_shell                        382B      10      16       1   .text       
-     set_cmd_timeout                           383B       A      10       1   .text       
-     set_output                                3845       C      12       1   .text       
-     clear_output                              3851       C      12       1   .text       
-     read_input                                385D       C      12       2   .text       
-     outport                                   3869       5       5       1   .text       
-     inport                                    386E      10      16       3   .text       
-     read_adc                                  387E      2B      43       2   .text       
-     find_pin                                  38A9      73     115       4   .text       
-     find_port                                 391C      55      85       2   .text       
-     set_output_hdl                            3971      26      38       1   .text       
-     clear_output_hdl                          3997      27      39       1   .text       
-     outport_hdl                               39BE      22      34       1   .text       
-     inport_hdl                                39E0      25      37       1   .text       
-     read_input_hdl                            3A05      2E      46       1   .text       
-     read_adc_hdl                              3A33      15      21       1   .text       
-     pow10                                     3A48      28      40       4   .rodata     
-     pow16                                     3A70      20      32       4   .rodata     
-     pow8                                      3A90      2C      44       4   .rodata     
-     serial_default                            3ABC       6       6       2   .rodata     
-     actions_2                                 3AC2       6       6       1   .rodata     
-     actions_20                                3AC8       4       4       1   .rodata     
-     actions_100                               3ACC       2       2       1   .rodata     
-     timer_chain                               3ACE       C      12       1   .rodata     
-     irqf                                      3ADA      10      16       4   .rodata     
-     sci_br_tbl                                3AEA      12      18       2   .rodata     
-     cmd_tbl                                   3AFC      78     120       2   .rodata     
-     prompt                                    3B74       3       3       1   .rodata     
-     tab_seq                                   3B77       9       9       4   .rodata     
-     erase_seq                                 3B80       4       4       2   .rodata     
-     port0_pintbl                              3B84      5A      90       1   .rodata     
-     port1_pintbl                              3BDE      5A      90       1   .rodata     
-     port2_pintbl                              3C38      46      70       1   .rodata     
-     port3_pintbl                              3C7E      5A      90       1   .rodata     
-     port4_pintbl                              3CD8      46      70       1   .rodata     
-     port5_pintbl                              3D1E      5A      90       1   .rodata     
-     port6_pintbl                              3D78      3C      60       1   .rodata     
-     port_tbl                                  3DB4      38      56       5   .rodata     
-     STRING.c..1.CIM.ATE.Sources.1             3DEC      2D      45       2   .rodata1    
-     STRING.Invalid.PIN.Number.1               3E19      13      19       1   .rodata1    
-     STRING.Invalid.PORT.Number.2              3E2C      14      20       1   .rodata1    
-     STRING.PIN.must.be.output.3               3E40      13      19       1   .rodata1    
-     STRING.PIN.must.be.logic.I..4             3E53      16      22       1   .rodata1    
-     STRING.PIN.must.be.ADC.inpu.5             3E69      16      22       1   .rodata1    
-     STRING.At.Least.one.PIN.mus.6             3E7F      22      34       1   .rodata1    
-     STRING.At.Least.one.PORT.mu.7             3EA1      23      35       1   .rodata1    
-     STRING.Invalid.Command.Opti.8             3EC4      17      23       1   .rodata1    
-     STRING..Error...u....s...9                3EDB      12      18       1   .rodata1    
-     STRING..d.2                               3EED       3       3       1   .rodata1    
-     STRING...s..0x.02X...1                    3EF0       E      14       1   .rodata1    
-     STRING...s..0x.02X..2                     3EFE       D      13       1   .rodata1    
-     STRING...s.PIN.s...d..3                   3F0B       F      15       1   .rodata1    
-     STRING...s..0x.02X..4                     3F1A       D      13       1   .rodata1    
-     STRING...s..0x.02X..5                     3F27       D      13       1   .rodata1    
-     STRING...s..PIN.s..s....sV..6             3F34      15      21       1   .rodata1    
-     STRING.................7                  3F49      10      16       1   .rodata1    
-     STRING..s..0x.02X...8                     3F59       D      13       1   .rodata1    
-     STRING.PIN.s..s....sV..9                  3F66      10      16       1   .rodata1    
-     STRING.PIN.s..s....d...s...10             3F76      14      20       1   .rodata1    
-     STRING...Command.shell.setu.1             3F8A      1A      26       1   .rodata1    
-     STRING...sdefined.longhelp..2             3FA4      15      21       1   .rodata1    
-     STRING..3                                 3FB9       1       1       1   .rodata1    
-     STRING..defined.maximum.arg.4             3FBA      24      36       1   .rodata1    
-     STRING...1                                3FDE       2       2       1   .rodata1    
-     STRING.....Alias.for..help..2             3FE0      16      22       1   .rodata1    
-     STRING.echo.3                             3FF6       5       5       1   .rodata1    
-     STRING.echo...Echo.args.to..4             3FFB      1D      29       1   .rodata1    
-     STRING..args.......Echo.arg.5             4018      39      57       1   .rodata1    
-     STRING.help.6                             4051       5       5       1   .rodata1    
-     STRING.help...Print.online..7             4056      1A      26       1   .rodata1    
-     STRING..command.........Sho.8             4070     131     305       1   .rodata1    
-     STRING.shell.9                            41A1       6       6       1   .rodata1    
-     STRING.shell...show.command.10            41A7      22      34       1   .rodata1    
-     STRING.set.11                             41C9       4       4       1   .rodata1    
-     STRING.set...Sets.to.HIGH.L.12            41CD      3C      60       1   .rodata1    
-     STRING...pin.number1..pin.l.13            4209      9D     157       1   .rodata1    
-     STRING.clr.14                             42A6       4       4       1   .rodata1    
-     STRING.clr...Clears.to.LOW..15            42AA      3D      61       1   .rodata1    
-     STRING...pin.number1..pin.l.16            42E7      9F     159       1   .rodata1    
-     STRING.getb.17                            4386       5       5       1   .rodata1    
-     STRING.getb...Gets.the.spec.18            438B      29      41       1   .rodata1    
-     STRING...pin.number1..pin.l.19            43B4      6B     107       1   .rodata1    
-     STRING.geta.20                            441F       5       5       1   .rodata1    
-     STRING.geta...Gets.the.spec.21            4424      32      50       1   .rodata1    
-     STRING...pin.number..pin.la.22            4456      71     113       1   .rodata1    
-     STRING.outp.23                            44C7       5       5       1   .rodata1    
-     STRING.outp...Configures.th.24            44CC      3A      58       1   .rodata1    
-     STRING...port.number..port..25            4506      4E      78       1   .rodata1    
-     STRING.inp.26                             4554       4       4       1   .rodata1    
-     STRING.inp...Gets.the.speci.27            4558      26      38       1   .rodata1    
-     STRING...port.number..port..28            457E      7E     126       1   .rodata1    
-     STRING.stat.29                            45FC       5       5       1   .rodata1    
-     STRING.stat...Gets.all.I.O..30            4601      25      37       1   .rodata1    
-     STRING.....Gets.all.I.O..AD.31            4626      67     103       1   .rodata1    
-     STRING...No.help.available..32            468D      16      22       1   .rodata1    
-     STRING.Unknown.command...s..33            46A3      55      85       1   .rodata1    
-     STRING....1                               46F8       3       3       1   .rodata1    
-     STRING....Too.many.args..ma.2             46FB      1F      31       1   .rodata1    
-     STRING....Command.too.long..3             471A      16      22       1   .rodata1    
-     STRING.Unknown.command...s..4             4730      23      35       1   .rodata1    
-     STRING.Usage...s..5                       4753       B      11       1   .rodata1    
-     STRING.Usage...s..6                       475E       B      11       1   .rodata1    
-     STRING.VD_PLUNGER.1                       4769       B      11       1   .rodata1    
-     STRING.00.2                               4774       3       3       1   .rodata1    
-     STRING.CLOSED.3                           4777       7       7       1   .rodata1    
-     STRING.OPENED.4                           477E       7       7       1   .rodata1    
-     STRING.VD_SW.5                            4785       6       6       1   .rodata1    
-     STRING.01.6                               478B       3       3       1   .rodata1    
-     STRING.UNLOCKED.7                         478E       9       9       1   .rodata1    
-     STRING.LOCKED.8                           4797       7       7       1   .rodata1    
-     STRING.VD_LOAD.9                          479E       8       8       1   .rodata1    
-     STRING.02.10                              47A6       3       3       1   .rodata1    
-     STRING.CONNECTED.11                       47A9       A      10       1   .rodata1    
-     STRING.UNCONNECTED.12                     47B3       C      12       1   .rodata1    
-     STRING.MD_PLUNGER.13                      47BF       B      11       1   .rodata1    
-     STRING.03.14                              47CA       3       3       1   .rodata1    
-     STRING.CLOSED.15                          47CD       7       7       1   .rodata1    
-     STRING.OPENED.16                          47D4       7       7       1   .rodata1    
-     STRING.MD_SW.17                           47DB       6       6       1   .rodata1    
-     STRING.04.18                              47E1       3       3       1   .rodata1    
-     STRING.UNLOCKED.19                        47E4       9       9       1   .rodata1    
-     STRING.LOCKED.20                          47ED       7       7       1   .rodata1    
-     STRING.MD_LOAD.21                         47F4       8       8       1   .rodata1    
-     STRING.05.22                              47FC       3       3       1   .rodata1    
-     STRING.CONNECTED.23                       47FF       A      10       1   .rodata1    
-     STRING.UNCONNECTED.24                     4809       C      12       1   .rodata1    
-     STRING.STACKER1.25                        4815       9       9       1   .rodata1    
-     STRING.06.26                              481E       3       3       1   .rodata1    
-     STRING.INSTALLED.27                       4821       A      10       1   .rodata1    
-     STRING.UNINSTALLED.28                     482B       C      12       1   .rodata1    
-     STRING.STACKER2.29                        4837       9       9       1   .rodata1    
-     STRING.07.30                              4840       3       3       1   .rodata1    
-     STRING.INSTALLED.31                       4843       A      10       1   .rodata1    
-     STRING.UNINSTALLED.32                     484D       C      12       1   .rodata1    
-     STRING.PRIVDC.33                          4859       7       7       1   .rodata1    
-     STRING.10.34                              4860       3       3       1   .rodata1    
-     STRING.ANALOG.35                          4863       7       7       1   .rodata1    
-     STRING.ANALOG.36                          486A       7       7       1   .rodata1    
-     STRING.SECVDC.37                          4871       7       7       1   .rodata1    
-     STRING.11.38                              4878       3       3       1   .rodata1    
-     STRING.ANALOG.39                          487B       7       7       1   .rodata1    
-     STRING.ANALOG.40                          4882       7       7       1   .rodata1    
-     STRING.VBATT.41                           4889       6       6       1   .rodata1    
-     STRING.12.42                              488F       3       3       1   .rodata1    
-     STRING.ANALOG.43                          4892       7       7       1   .rodata1    
-     STRING.ANALOG.44                          4899       7       7       1   .rodata1    
-     STRING.TP1.45                             48A0       4       4       1   .rodata1    
-     STRING.13.46                              48A4       3       3       1   .rodata1    
-     STRING.HIGH.47                            48A7       5       5       1   .rodata1    
-     STRING.LOW.48                             48AC       4       4       1   .rodata1    
-     STRING.TP2.49                             48B0       4       4       1   .rodata1    
-     STRING.14.50                              48B4       3       3       1   .rodata1    
-     STRING.HIGH.51                            48B7       5       5       1   .rodata1    
-     STRING.LOW.52                             48BC       4       4       1   .rodata1    
-     STRING.TP3.53                             48C0       4       4       1   .rodata1    
-     STRING.15.54                              48C4       3       3       1   .rodata1    
-     STRING.HIGH.55                            48C7       5       5       1   .rodata1    
-     STRING.LOW.56                             48CC       4       4       1   .rodata1    
-     STRING.TP4.57                             48D0       4       4       1   .rodata1    
-     STRING.16.58                              48D4       3       3       1   .rodata1    
-     STRING.HIGH.59                            48D7       5       5       1   .rodata1    
-     STRING.LOW.60                             48DC       4       4       1   .rodata1    
-     STRING.TP5.61                             48E0       4       4       1   .rodata1    
-     STRING.17.62                              48E4       3       3       1   .rodata1    
-     STRING.HIGH.63                            48E7       5       5       1   .rodata1    
-     STRING.LOW.64                             48EC       4       4       1   .rodata1    
-     STRING.TP6.65                             48F0       4       4       1   .rodata1    
-     STRING.22.66                              48F4       3       3       1   .rodata1    
-     STRING.HIGH.67                            48F7       5       5       1   .rodata1    
-     STRING.LOW.68                             48FC       4       4       1   .rodata1    
-     STRING.TP7.69                             4900       4       4       1   .rodata1    
-     STRING.23.70                              4904       3       3       1   .rodata1    
-     STRING.HIGH.71                            4907       5       5       1   .rodata1    
-     STRING.LOW.72                             490C       4       4       1   .rodata1    
-     STRING.TIP_S.73                           4910       6       6       1   .rodata1    
-     STRING.24.74                              4916       3       3       1   .rodata1    
-     STRING.HIGH.75                            4919       5       5       1   .rodata1    
-     STRING.LOW.76                             491E       4       4       1   .rodata1    
-     STRING.RING_S.77                          4922       7       7       1   .rodata1    
-     STRING.25.78                              4929       3       3       1   .rodata1    
-     STRING.HIGH.79                            492C       5       5       1   .rodata1    
-     STRING.LOW.80                             4931       4       4       1   .rodata1    
-     STRING.TIP_O.81                           4935       6       6       1   .rodata1    
-     STRING.26.82                              493B       3       3       1   .rodata1    
-     STRING.HIGH.83                            493E       5       5       1   .rodata1    
-     STRING.LOW.84                             4943       4       4       1   .rodata1    
-     STRING.RING_O.85                          4947       7       7       1   .rodata1    
-     STRING.27.86                              494E       3       3       1   .rodata1    
-     STRING.HIGH.87                            4951       5       5       1   .rodata1    
-     STRING.LOW.88                             4956       4       4       1   .rodata1    
-     STRING.BATTERY.89                         495A       8       8       1   .rodata1    
-     STRING.30.90                              4962       3       3       1   .rodata1    
-     STRING.UNCONNECTED.91                     4965       C      12       1   .rodata1    
-     STRING.CONNECTED.92                       4971       A      10       1   .rodata1    
-     STRING.VALSW.93                           497B       6       6       1   .rodata1    
-     STRING.31.94                              4981       3       3       1   .rodata1    
-     STRING.VALIDATOR2.95                      4984       B      11       1   .rodata1    
-     STRING.VALIDATOR1.96                      498F       B      11       1   .rodata1    
-     STRING.RS485SW.97                         499A       8       8       1   .rodata1    
-     STRING.32.98                              49A2       3       3       1   .rodata1    
-     STRING.SECONDARY.99                       49A5       A      10       1   .rodata1    
-     STRING.PRIMARY.100                        49AF       8       8       1   .rodata1    
-     STRING.PRI_PWR.101                        49B7       8       8       1   .rodata1    
-     STRING.33.102                             49BF       3       3       1   .rodata1    
-     STRING.ON.103                             49C2       3       3       1   .rodata1    
-     STRING.OFF.104                            49C5       4       4       1   .rodata1    
-     STRING.SEC_PWR.105                        49C9       8       8       1   .rodata1    
-     STRING.34.106                             49D1       3       3       1   .rodata1    
-     STRING.ON.107                             49D4       3       3       1   .rodata1    
-     STRING.OFF.108                            49D7       4       4       1   .rodata1    
-     STRING.KEY_SW.109                         49DB       7       7       1   .rodata1    
-     STRING.35.110                             49E2       3       3       1   .rodata1    
-     STRING.CLOSE.111                          49E5       6       6       1   .rodata1    
-     STRING.OPEN.112                           49EB       5       5       1   .rodata1    
-     STRING.VD_CURR.113                        49F0       8       8       1   .rodata1    
-     STRING.36.114                             49F8       3       3       1   .rodata1    
-     STRING.NOT_DRIVED.115                     49FB       B      11       1   .rodata1    
-     STRING.DRIVED.116                         4A06       7       7       1   .rodata1    
-     STRING.MD_CURR.117                        4A0D       8       8       1   .rodata1    
-     STRING.37.118                             4A15       3       3       1   .rodata1    
-     STRING.NOT_DRIVED.119                     4A18       B      11       1   .rodata1    
-     STRING.DRIVED.120                         4A23       7       7       1   .rodata1    
-     STRING.TP8.121                            4A2A       4       4       1   .rodata1    
-     STRING.42.122                             4A2E       3       3       1   .rodata1    
-     STRING.HIGH.123                           4A31       5       5       1   .rodata1    
-     STRING.LOW.124                            4A36       4       4       1   .rodata1    
-     STRING.TP9.125                            4A3A       4       4       1   .rodata1    
-     STRING.43.126                             4A3E       3       3       1   .rodata1    
-     STRING.HIGH.127                           4A41       5       5       1   .rodata1    
-     STRING.LOW.128                            4A46       4       4       1   .rodata1    
-     STRING.TP10.129                           4A4A       5       5       1   .rodata1    
-     STRING.44.130                             4A4F       3       3       1   .rodata1    
-     STRING.HIGH.131                           4A52       5       5       1   .rodata1    
-     STRING.LOW.132                            4A57       4       4       1   .rodata1    
-     STRING.TP11.133                           4A5B       5       5       1   .rodata1    
-     STRING.45.134                             4A60       3       3       1   .rodata1    
-     STRING.HIGH.135                           4A63       5       5       1   .rodata1    
-     STRING.LOW.136                            4A68       4       4       1   .rodata1    
-     STRING.TP12.137                           4A6C       5       5       1   .rodata1    
-     STRING.46.138                             4A71       3       3       1   .rodata1    
-     STRING.HIGH.139                           4A74       5       5       1   .rodata1    
-     STRING.LOW.140                            4A79       4       4       1   .rodata1    
-     STRING.TP13.141                           4A7D       5       5       1   .rodata1    
-     STRING.47.142                             4A82       3       3       1   .rodata1    
-     STRING.HIGH.143                           4A85       5       5       1   .rodata1    
-     STRING.LOW.144                            4A8A       4       4       1   .rodata1    
-     STRING.LED0.145                           4A8E       5       5       1   .rodata1    
-     STRING.50.146                             4A93       3       3       1   .rodata1    
-     STRING.ON.147                             4A96       3       3       1   .rodata1    
-     STRING.OFF.148                            4A99       4       4       1   .rodata1    
-     STRING.LED1.149                           4A9D       5       5       1   .rodata1    
-     STRING.51.150                             4AA2       3       3       1   .rodata1    
-     STRING.ON.151                             4AA5       3       3       1   .rodata1    
-     STRING.OFF.152                            4AA8       4       4       1   .rodata1    
-     STRING.LED2.153                           4AAC       5       5       1   .rodata1    
-     STRING.52.154                             4AB1       3       3       1   .rodata1    
-     STRING.ON.155                             4AB4       3       3       1   .rodata1    
-     STRING.OFF.156                            4AB7       4       4       1   .rodata1    
-     STRING.LED3.157                           4ABB       5       5       1   .rodata1    
-     STRING.53.158                             4AC0       3       3       1   .rodata1    
-     STRING.ON.159                             4AC3       3       3       1   .rodata1    
-     STRING.OFF.160                            4AC6       4       4       1   .rodata1    
-     STRING.LED4.161                           4ACA       5       5       1   .rodata1    
-     STRING.54.162                             4ACF       3       3       1   .rodata1    
-     STRING.ON.163                             4AD2       3       3       1   .rodata1    
-     STRING.OFF.164                            4AD5       4       4       1   .rodata1    
-     STRING.LED5.165                           4AD9       5       5       1   .rodata1    
-     STRING.55.166                             4ADE       3       3       1   .rodata1    
-     STRING.ON.167                             4AE1       3       3       1   .rodata1    
-     STRING.OFF.168                            4AE4       4       4       1   .rodata1    
-     STRING.LED6.169                           4AE8       5       5       1   .rodata1    
-     STRING.56.170                             4AED       3       3       1   .rodata1    
-     STRING.ON.171                             4AF0       3       3       1   .rodata1    
-     STRING.OFF.172                            4AF3       4       4       1   .rodata1    
-     STRING.LED7.173                           4AF7       5       5       1   .rodata1    
-     STRING.57.174                             4AFC       3       3       1   .rodata1    
-     STRING.ON.175                             4AFF       3       3       1   .rodata1    
-     STRING.OFF.176                            4B02       4       4       1   .rodata1    
-     STRING.DURESS_NC.177                      4B06       A      10       1   .rodata1    
-     STRING.63.178                             4B10       3       3       1   .rodata1    
-     STRING.UNACTIVATED.179                    4B13       C      12       1   .rodata1    
-     STRING.ACTIVATED.180                      4B1F       A      10       1   .rodata1    
-     STRING.DURESS_NO.181                      4B29       A      10       1   .rodata1    
-     STRING.64.182                             4B33       3       3       1   .rodata1    
-     STRING.UNACTIVATED.183                    4B36       C      12       1   .rodata1    
-     STRING.ACTIVATED.184                      4B42       A      10       1   .rodata1    
-     STRING.BURGLAR_NC.185                     4B4C       B      11       1   .rodata1    
-     STRING.65.186                             4B57       3       3       1   .rodata1    
-     STRING.UNACTIVATED.187                    4B5A       C      12       1   .rodata1    
-     STRING.ACTIVATED.188                      4B66       A      10       1   .rodata1    
-     STRING.BURGLAR_NO.189                     4B70       B      11       1   .rodata1    
-     STRING.66.190                             4B7B       3       3       1   .rodata1    
-     STRING.UNACTIVATED.191                    4B7E       C      12       1   .rodata1    
-     STRING.ACTIVATED.192                      4B8A       A      10       1   .rodata1    
-     STRING.TP14.193                           4B94       5       5       1   .rodata1    
-     STRING.67.194                             4B99       3       3       1   .rodata1    
-     STRING.HIGH.195                           4B9C       5       5       1   .rodata1    
-     STRING.LOW.196                            4BA1       4       4       1   .rodata1    
-     STRING.PORT0.197                          4BA5       6       6       1   .rodata1    
-     STRING.0.198                              4BAB       2       2       1   .rodata1    
-     STRING.PORT1.199                          4BAD       6       6       1   .rodata1    
-     STRING.1.200                              4BB3       2       2       1   .rodata1    
-     STRING.PORT2.201                          4BB5       6       6       1   .rodata1    
-     STRING.2.202                              4BBB       2       2       1   .rodata1    
-     STRING.PORT3.203                          4BBD       6       6       1   .rodata1    
-     STRING.3.204                              4BC3       2       2       1   .rodata1    
-     STRING.PORT4.205                          4BC5       6       6       1   .rodata1    
-     STRING.4.206                              4BCB       2       2       1   .rodata1    
-     STRING.PORT5.207                          4BCD       6       6       1   .rodata1    
-     STRING.5.208                              4BD3       2       2       1   .rodata1    
-     STRING.PORT6.209                          4BD5       6       6       1   .rodata1    
-     STRING.6.210                              4BDB       2       2       1   .rodata1    
+     adc_init                                  2C92      19      25       1   .text       
+     read_adc_ch                               2CAB      5D      93       1   .text       
+     adquire_adc                               2D08      51      81       1   .text       
+     com1_init                                 2D59       A      10       1   .text       
+     com1_sendchar                             2D63       3       3       1   .text       
+     com2_init                                 2D66       A      10       1   .text       
+     com2_sendchar                             2D70       3       3       1   .text       
+     refresh_ports                             2D73      72     114       2   .text       
+     ports_init                                2DE5      7C     124       1   .text       
+     log_error                                 2E61      21      33      17   .text       
+     myprintf                                  2E82      23      35      17   .text       
+     adc2ascci                                 2EA5      30      48       2   .text       
+     do_set                                    2ED5      A1     161       2   .text       
+     do_clear                                  2F76      A1     161       2   .text       
+     do_getb                                   3017      AA     170       3   .text       
+     do_outport                                30C1      73     115       1   .text       
+     do_inport                                 3134      92     146       1   .text       
+     do_geta                                   31C6      7E     126       1   .text       
+     do_status                                 3244     107     263       7   .text       
+     do_shell                                  334B      30      48       1   .text       
+     do_echo                                   337B      80     128       1   .text       
+     do_help                                   33FB      CB     203       4   .text       
+     find_cmd                                  34C6      4B      75       2   .text       
+     conser_init                               3511       1       1       1   .text       
+     conser_tstc                               3512       9       9       1   .text       
+     conser_putc                               351B       4       4       8   .text       
+     conser_puts                               351F       4       4      12   .text       
+     conser_getc                               3523      10      16       1   .text       
+     print_prompt                              3533      18      24       3   .text       
+     delete_char                               354B      94     148       1   .text       
+     process_in_char                           35DF      D2     210       1   .text       
+     parse_line                                36B1      98     152       1   .text       
+     run_command                               3749      A3     163       1   .text       
+     do_console                                37EC      26      38       1   .text       
+     command_shell                             3812      1D      29       1   .text       
+     init_command_shell                        382F      10      16       1   .text       
+     set_cmd_timeout                           383F       A      10       1   .text       
+     set_output                                3849       C      12       1   .text       
+     clear_output                              3855       C      12       1   .text       
+     read_input                                3861       C      12       2   .text       
+     outport                                   386D       5       5       1   .text       
+     inport                                    3872      10      16       3   .text       
+     read_adc                                  3882      2B      43       2   .text       
+     find_pin                                  38AD      73     115       4   .text       
+     find_port                                 3920      55      85       2   .text       
+     set_output_hdl                            3975      26      38       1   .text       
+     clear_output_hdl                          399B      27      39       1   .text       
+     outport_hdl                               39C2      22      34       1   .text       
+     inport_hdl                                39E4      25      37       1   .text       
+     read_input_hdl                            3A09      2E      46       1   .text       
+     read_adc_hdl                              3A37      15      21       1   .text       
+     pow10                                     3A4C      28      40       4   .rodata     
+     pow16                                     3A74      20      32       4   .rodata     
+     pow8                                      3A94      2C      44       4   .rodata     
+     serial_default                            3AC0       6       6       2   .rodata     
+     actions_2                                 3AC6       6       6       1   .rodata     
+     actions_20                                3ACC       4       4       1   .rodata     
+     actions_100                               3AD0       2       2       1   .rodata     
+     timer_chain                               3AD2       C      12       1   .rodata     
+     irqf                                      3ADE      10      16       4   .rodata     
+     sci_br_tbl                                3AEE      12      18       2   .rodata     
+     cmd_tbl                                   3B00      78     120       2   .rodata     
+     prompt                                    3B78       3       3       1   .rodata     
+     tab_seq                                   3B7B       9       9       4   .rodata     
+     erase_seq                                 3B84       4       4       2   .rodata     
+     port0_pintbl                              3B88      5A      90       1   .rodata     
+     port1_pintbl                              3BE2      5A      90       1   .rodata     
+     port2_pintbl                              3C3C      46      70       1   .rodata     
+     port3_pintbl                              3C82      5A      90       1   .rodata     
+     port4_pintbl                              3CDC      46      70       1   .rodata     
+     port5_pintbl                              3D22      5A      90       1   .rodata     
+     port6_pintbl                              3D7C      3C      60       1   .rodata     
+     port_tbl                                  3DB8      38      56       5   .rodata     
+     STRING.F..CIM...SafeBoardKi.1             3DF0      4E      78       2   .rodata1    
+     STRING.Invalid.PIN.Number.1               3E3E      13      19       1   .rodata1    
+     STRING.Invalid.PORT.Number.2              3E51      14      20       1   .rodata1    
+     STRING.PIN.must.be.output.3               3E65      13      19       1   .rodata1    
+     STRING.PIN.must.be.logic.I..4             3E78      16      22       1   .rodata1    
+     STRING.PIN.must.be.ADC.inpu.5             3E8E      16      22       1   .rodata1    
+     STRING.At.Least.one.PIN.mus.6             3EA4      22      34       1   .rodata1    
+     STRING.At.Least.one.PORT.mu.7             3EC6      23      35       1   .rodata1    
+     STRING.Invalid.Command.Opti.8             3EE9      17      23       1   .rodata1    
+     STRING..Error...u....s...9                3F00      12      18       1   .rodata1    
+     STRING..d.2                               3F12       3       3       1   .rodata1    
+     STRING...s..0x.02X...1                    3F15       E      14       1   .rodata1    
+     STRING...s..0x.02X..2                     3F23       D      13       1   .rodata1    
+     STRING...s.PIN.s...d..3                   3F30       F      15       1   .rodata1    
+     STRING...s..0x.02X..4                     3F3F       D      13       1   .rodata1    
+     STRING...s..0x.02X..5                     3F4C       D      13       1   .rodata1    
+     STRING...s..PIN.s..s....sV..6             3F59      15      21       1   .rodata1    
+     STRING.................7                  3F6E      10      16       1   .rodata1    
+     STRING..s..0x.02X...8                     3F7E       D      13       1   .rodata1    
+     STRING.PIN.s..s....sV..9                  3F8B      10      16       1   .rodata1    
+     STRING.PIN.s..s....d...s...10             3F9B      14      20       1   .rodata1    
+     STRING...Command.shell.setu.1             3FAF      1A      26       1   .rodata1    
+     STRING...sdefined.longhelp..2             3FC9      15      21       1   .rodata1    
+     STRING..3                                 3FDE       1       1       1   .rodata1    
+     STRING..defined.maximum.arg.4             3FDF      24      36       1   .rodata1    
+     STRING...1                                4003       2       2       1   .rodata1    
+     STRING.....Alias.for..help..2             4005      16      22       1   .rodata1    
+     STRING.echo.3                             401B       5       5       1   .rodata1    
+     STRING.echo...Echo.args.to..4             4020      1D      29       1   .rodata1    
+     STRING..args.......Echo.arg.5             403D      39      57       1   .rodata1    
+     STRING.help.6                             4076       5       5       1   .rodata1    
+     STRING.help...Print.online..7             407B      1A      26       1   .rodata1    
+     STRING..command.........Sho.8             4095     131     305       1   .rodata1    
+     STRING.shell.9                            41C6       6       6       1   .rodata1    
+     STRING.shell...show.command.10            41CC      22      34       1   .rodata1    
+     STRING.set.11                             41EE       4       4       1   .rodata1    
+     STRING.set...Sets.to.HIGH.L.12            41F2      3C      60       1   .rodata1    
+     STRING...pin.number1..pin.l.13            422E      9D     157       1   .rodata1    
+     STRING.clr.14                             42CB       4       4       1   .rodata1    
+     STRING.clr...Clears.to.LOW..15            42CF      3D      61       1   .rodata1    
+     STRING...pin.number1..pin.l.16            430C      9F     159       1   .rodata1    
+     STRING.getb.17                            43AB       5       5       1   .rodata1    
+     STRING.getb...Gets.the.spec.18            43B0      29      41       1   .rodata1    
+     STRING...pin.number1..pin.l.19            43D9      6B     107       1   .rodata1    
+     STRING.geta.20                            4444       5       5       1   .rodata1    
+     STRING.geta...Gets.the.spec.21            4449      32      50       1   .rodata1    
+     STRING...pin.number..pin.la.22            447B      71     113       1   .rodata1    
+     STRING.outp.23                            44EC       5       5       1   .rodata1    
+     STRING.outp...Configures.th.24            44F1      3A      58       1   .rodata1    
+     STRING...port.number..port..25            452B      4E      78       1   .rodata1    
+     STRING.inp.26                             4579       4       4       1   .rodata1    
+     STRING.inp...Gets.the.speci.27            457D      26      38       1   .rodata1    
+     STRING...port.number..port..28            45A3      7E     126       1   .rodata1    
+     STRING.stat.29                            4621       5       5       1   .rodata1    
+     STRING.stat...Gets.all.I.O..30            4626      25      37       1   .rodata1    
+     STRING.....Gets.all.I.O..AD.31            464B      67     103       1   .rodata1    
+     STRING...No.help.available..32            46B2      16      22       1   .rodata1    
+     STRING.Unknown.command...s..33            46C8      55      85       1   .rodata1    
+     STRING....1                               471D       3       3       1   .rodata1    
+     STRING....Too.many.args..ma.2             4720      1F      31       1   .rodata1    
+     STRING....Command.too.long..3             473F      16      22       1   .rodata1    
+     STRING.Unknown.command...s..4             4755      23      35       1   .rodata1    
+     STRING.Usage...s..5                       4778       B      11       1   .rodata1    
+     STRING.Usage...s..6                       4783       B      11       1   .rodata1    
+     STRING.VD_PLUNGER.1                       478E       B      11       1   .rodata1    
+     STRING.00.2                               4799       3       3       1   .rodata1    
+     STRING.CLOSED.3                           479C       7       7       1   .rodata1    
+     STRING.OPENED.4                           47A3       7       7       1   .rodata1    
+     STRING.VD_SW.5                            47AA       6       6       1   .rodata1    
+     STRING.01.6                               47B0       3       3       1   .rodata1    
+     STRING.UNLOCKED.7                         47B3       9       9       1   .rodata1    
+     STRING.LOCKED.8                           47BC       7       7       1   .rodata1    
+     STRING.VD_LOAD.9                          47C3       8       8       1   .rodata1    
+     STRING.02.10                              47CB       3       3       1   .rodata1    
+     STRING.CONNECTED.11                       47CE       A      10       1   .rodata1    
+     STRING.UNCONNECTED.12                     47D8       C      12       1   .rodata1    
+     STRING.MD_PLUNGER.13                      47E4       B      11       1   .rodata1    
+     STRING.03.14                              47EF       3       3       1   .rodata1    
+     STRING.CLOSED.15                          47F2       7       7       1   .rodata1    
+     STRING.OPENED.16                          47F9       7       7       1   .rodata1    
+     STRING.MD_SW.17                           4800       6       6       1   .rodata1    
+     STRING.04.18                              4806       3       3       1   .rodata1    
+     STRING.UNLOCKED.19                        4809       9       9       1   .rodata1    
+     STRING.LOCKED.20                          4812       7       7       1   .rodata1    
+     STRING.MD_LOAD.21                         4819       8       8       1   .rodata1    
+     STRING.05.22                              4821       3       3       1   .rodata1    
+     STRING.CONNECTED.23                       4824       A      10       1   .rodata1    
+     STRING.UNCONNECTED.24                     482E       C      12       1   .rodata1    
+     STRING.STACKER1.25                        483A       9       9       1   .rodata1    
+     STRING.06.26                              4843       3       3       1   .rodata1    
+     STRING.INSTALLED.27                       4846       A      10       1   .rodata1    
+     STRING.UNINSTALLED.28                     4850       C      12       1   .rodata1    
+     STRING.STACKER2.29                        485C       9       9       1   .rodata1    
+     STRING.07.30                              4865       3       3       1   .rodata1    
+     STRING.INSTALLED.31                       4868       A      10       1   .rodata1    
+     STRING.UNINSTALLED.32                     4872       C      12       1   .rodata1    
+     STRING.PRIVDC.33                          487E       7       7       1   .rodata1    
+     STRING.10.34                              4885       3       3       1   .rodata1    
+     STRING.ANALOG.35                          4888       7       7       1   .rodata1    
+     STRING.ANALOG.36                          488F       7       7       1   .rodata1    
+     STRING.SECVDC.37                          4896       7       7       1   .rodata1    
+     STRING.11.38                              489D       3       3       1   .rodata1    
+     STRING.ANALOG.39                          48A0       7       7       1   .rodata1    
+     STRING.ANALOG.40                          48A7       7       7       1   .rodata1    
+     STRING.VBATT.41                           48AE       6       6       1   .rodata1    
+     STRING.12.42                              48B4       3       3       1   .rodata1    
+     STRING.ANALOG.43                          48B7       7       7       1   .rodata1    
+     STRING.ANALOG.44                          48BE       7       7       1   .rodata1    
+     STRING.VDC_VAL1.45                        48C5       9       9       1   .rodata1    
+     STRING.13.46                              48CE       3       3       1   .rodata1    
+     STRING.ANALOG.47                          48D1       7       7       1   .rodata1    
+     STRING.LOW.48                             48D8       4       4       1   .rodata1    
+     STRING.VDC_VAL2.49                        48DC       9       9       1   .rodata1    
+     STRING.14.50                              48E5       3       3       1   .rodata1    
+     STRING.ANALOG.51                          48E8       7       7       1   .rodata1    
+     STRING.LOW.52                             48EF       4       4       1   .rodata1    
+     STRING.TP3.53                             48F3       4       4       1   .rodata1    
+     STRING.15.54                              48F7       3       3       1   .rodata1    
+     STRING.HIGH.55                            48FA       5       5       1   .rodata1    
+     STRING.LOW.56                             48FF       4       4       1   .rodata1    
+     STRING.TP4.57                             4903       4       4       1   .rodata1    
+     STRING.16.58                              4907       3       3       1   .rodata1    
+     STRING.HIGH.59                            490A       5       5       1   .rodata1    
+     STRING.LOW.60                             490F       4       4       1   .rodata1    
+     STRING.TP5.61                             4913       4       4       1   .rodata1    
+     STRING.17.62                              4917       3       3       1   .rodata1    
+     STRING.HIGH.63                            491A       5       5       1   .rodata1    
+     STRING.LOW.64                             491F       4       4       1   .rodata1    
+     STRING.TP6.65                             4923       4       4       1   .rodata1    
+     STRING.22.66                              4927       3       3       1   .rodata1    
+     STRING.HIGH.67                            492A       5       5       1   .rodata1    
+     STRING.LOW.68                             492F       4       4       1   .rodata1    
+     STRING.TP7.69                             4933       4       4       1   .rodata1    
+     STRING.23.70                              4937       3       3       1   .rodata1    
+     STRING.HIGH.71                            493A       5       5       1   .rodata1    
+     STRING.LOW.72                             493F       4       4       1   .rodata1    
+     STRING.TIP_S.73                           4943       6       6       1   .rodata1    
+     STRING.24.74                              4949       3       3       1   .rodata1    
+     STRING.HIGH.75                            494C       5       5       1   .rodata1    
+     STRING.LOW.76                             4951       4       4       1   .rodata1    
+     STRING.RING_S.77                          4955       7       7       1   .rodata1    
+     STRING.25.78                              495C       3       3       1   .rodata1    
+     STRING.HIGH.79                            495F       5       5       1   .rodata1    
+     STRING.LOW.80                             4964       4       4       1   .rodata1    
+     STRING.TIP_O.81                           4968       6       6       1   .rodata1    
+     STRING.26.82                              496E       3       3       1   .rodata1    
+     STRING.HIGH.83                            4971       5       5       1   .rodata1    
+     STRING.LOW.84                             4976       4       4       1   .rodata1    
+     STRING.RING_O.85                          497A       7       7       1   .rodata1    
+     STRING.27.86                              4981       3       3       1   .rodata1    
+     STRING.HIGH.87                            4984       5       5       1   .rodata1    
+     STRING.LOW.88                             4989       4       4       1   .rodata1    
+     STRING.BATTERY.89                         498D       8       8       1   .rodata1    
+     STRING.30.90                              4995       3       3       1   .rodata1    
+     STRING.UNCONNECTED.91                     4998       C      12       1   .rodata1    
+     STRING.CONNECTED.92                       49A4       A      10       1   .rodata1    
+     STRING.VALSW.93                           49AE       6       6       1   .rodata1    
+     STRING.31.94                              49B4       3       3       1   .rodata1    
+     STRING.VALIDATOR2.95                      49B7       B      11       1   .rodata1    
+     STRING.VALIDATOR1.96                      49C2       B      11       1   .rodata1    
+     STRING.RS485SW.97                         49CD       8       8       1   .rodata1    
+     STRING.32.98                              49D5       3       3       1   .rodata1    
+     STRING.SECONDARY.99                       49D8       A      10       1   .rodata1    
+     STRING.PRIMARY.100                        49E2       8       8       1   .rodata1    
+     STRING.PRI_PWR.101                        49EA       8       8       1   .rodata1    
+     STRING.33.102                             49F2       3       3       1   .rodata1    
+     STRING.ON.103                             49F5       3       3       1   .rodata1    
+     STRING.OFF.104                            49F8       4       4       1   .rodata1    
+     STRING.SEC_PWR.105                        49FC       8       8       1   .rodata1    
+     STRING.34.106                             4A04       3       3       1   .rodata1    
+     STRING.ON.107                             4A07       3       3       1   .rodata1    
+     STRING.OFF.108                            4A0A       4       4       1   .rodata1    
+     STRING.KEY_SW.109                         4A0E       7       7       1   .rodata1    
+     STRING.35.110                             4A15       3       3       1   .rodata1    
+     STRING.CLOSE.111                          4A18       6       6       1   .rodata1    
+     STRING.OPEN.112                           4A1E       5       5       1   .rodata1    
+     STRING.VD_CURR.113                        4A23       8       8       1   .rodata1    
+     STRING.36.114                             4A2B       3       3       1   .rodata1    
+     STRING.NOT_DRIVED.115                     4A2E       B      11       1   .rodata1    
+     STRING.DRIVED.116                         4A39       7       7       1   .rodata1    
+     STRING.MD_CURR.117                        4A40       8       8       1   .rodata1    
+     STRING.37.118                             4A48       3       3       1   .rodata1    
+     STRING.NOT_DRIVED.119                     4A4B       B      11       1   .rodata1    
+     STRING.DRIVED.120                         4A56       7       7       1   .rodata1    
+     STRING.TP8.121                            4A5D       4       4       1   .rodata1    
+     STRING.42.122                             4A61       3       3       1   .rodata1    
+     STRING.HIGH.123                           4A64       5       5       1   .rodata1    
+     STRING.LOW.124                            4A69       4       4       1   .rodata1    
+     STRING.TP9.125                            4A6D       4       4       1   .rodata1    
+     STRING.43.126                             4A71       3       3       1   .rodata1    
+     STRING.HIGH.127                           4A74       5       5       1   .rodata1    
+     STRING.LOW.128                            4A79       4       4       1   .rodata1    
+     STRING.TP10.129                           4A7D       5       5       1   .rodata1    
+     STRING.44.130                             4A82       3       3       1   .rodata1    
+     STRING.HIGH.131                           4A85       5       5       1   .rodata1    
+     STRING.LOW.132                            4A8A       4       4       1   .rodata1    
+     STRING.TP11.133                           4A8E       5       5       1   .rodata1    
+     STRING.45.134                             4A93       3       3       1   .rodata1    
+     STRING.HIGH.135                           4A96       5       5       1   .rodata1    
+     STRING.LOW.136                            4A9B       4       4       1   .rodata1    
+     STRING.TP12.137                           4A9F       5       5       1   .rodata1    
+     STRING.46.138                             4AA4       3       3       1   .rodata1    
+     STRING.HIGH.139                           4AA7       5       5       1   .rodata1    
+     STRING.LOW.140                            4AAC       4       4       1   .rodata1    
+     STRING.TP13.141                           4AB0       5       5       1   .rodata1    
+     STRING.47.142                             4AB5       3       3       1   .rodata1    
+     STRING.HIGH.143                           4AB8       5       5       1   .rodata1    
+     STRING.LOW.144                            4ABD       4       4       1   .rodata1    
+     STRING.LED0.145                           4AC1       5       5       1   .rodata1    
+     STRING.50.146                             4AC6       3       3       1   .rodata1    
+     STRING.ON.147                             4AC9       3       3       1   .rodata1    
+     STRING.OFF.148                            4ACC       4       4       1   .rodata1    
+     STRING.LED1.149                           4AD0       5       5       1   .rodata1    
+     STRING.51.150                             4AD5       3       3       1   .rodata1    
+     STRING.ON.151                             4AD8       3       3       1   .rodata1    
+     STRING.OFF.152                            4ADB       4       4       1   .rodata1    
+     STRING.LED2.153                           4ADF       5       5       1   .rodata1    
+     STRING.52.154                             4AE4       3       3       1   .rodata1    
+     STRING.ON.155                             4AE7       3       3       1   .rodata1    
+     STRING.OFF.156                            4AEA       4       4       1   .rodata1    
+     STRING.LED3.157                           4AEE       5       5       1   .rodata1    
+     STRING.53.158                             4AF3       3       3       1   .rodata1    
+     STRING.ON.159                             4AF6       3       3       1   .rodata1    
+     STRING.OFF.160                            4AF9       4       4       1   .rodata1    
+     STRING.LED4.161                           4AFD       5       5       1   .rodata1    
+     STRING.54.162                             4B02       3       3       1   .rodata1    
+     STRING.ON.163                             4B05       3       3       1   .rodata1    
+     STRING.OFF.164                            4B08       4       4       1   .rodata1    
+     STRING.LED5.165                           4B0C       5       5       1   .rodata1    
+     STRING.55.166                             4B11       3       3       1   .rodata1    
+     STRING.ON.167                             4B14       3       3       1   .rodata1    
+     STRING.OFF.168                            4B17       4       4       1   .rodata1    
+     STRING.LED6.169                           4B1B       5       5       1   .rodata1    
+     STRING.56.170                             4B20       3       3       1   .rodata1    
+     STRING.ON.171                             4B23       3       3       1   .rodata1    
+     STRING.OFF.172                            4B26       4       4       1   .rodata1    
+     STRING.LED7.173                           4B2A       5       5       1   .rodata1    
+     STRING.57.174                             4B2F       3       3       1   .rodata1    
+     STRING.ON.175                             4B32       3       3       1   .rodata1    
+     STRING.OFF.176                            4B35       4       4       1   .rodata1    
+     STRING.DURESS_NC.177                      4B39       A      10       1   .rodata1    
+     STRING.63.178                             4B43       3       3       1   .rodata1    
+     STRING.UNACTIVATED.179                    4B46       C      12       1   .rodata1    
+     STRING.ACTIVATED.180                      4B52       A      10       1   .rodata1    
+     STRING.DURESS_NO.181                      4B5C       A      10       1   .rodata1    
+     STRING.64.182                             4B66       3       3       1   .rodata1    
+     STRING.UNACTIVATED.183                    4B69       C      12       1   .rodata1    
+     STRING.ACTIVATED.184                      4B75       A      10       1   .rodata1    
+     STRING.BURGLAR_NC.185                     4B7F       B      11       1   .rodata1    
+     STRING.65.186                             4B8A       3       3       1   .rodata1    
+     STRING.UNACTIVATED.187                    4B8D       C      12       1   .rodata1    
+     STRING.ACTIVATED.188                      4B99       A      10       1   .rodata1    
+     STRING.BURGLAR_NO.189                     4BA3       B      11       1   .rodata1    
+     STRING.66.190                             4BAE       3       3       1   .rodata1    
+     STRING.UNACTIVATED.191                    4BB1       C      12       1   .rodata1    
+     STRING.ACTIVATED.192                      4BBD       A      10       1   .rodata1    
+     STRING.TP14.193                           4BC7       5       5       1   .rodata1    
+     STRING.67.194                             4BCC       3       3       1   .rodata1    
+     STRING.HIGH.195                           4BCF       5       5       1   .rodata1    
+     STRING.LOW.196                            4BD4       4       4       1   .rodata1    
+     STRING.PORT0.197                          4BD8       6       6       1   .rodata1    
+     STRING.0.198                              4BDE       2       2       1   .rodata1    
+     STRING.PORT1.199                          4BE0       6       6       1   .rodata1    
+     STRING.1.200                              4BE6       2       2       1   .rodata1    
+     STRING.PORT2.201                          4BE8       6       6       1   .rodata1    
+     STRING.2.202                              4BEE       2       2       1   .rodata1    
+     STRING.PORT3.203                          4BF0       6       6       1   .rodata1    
+     STRING.3.204                              4BF6       2       2       1   .rodata1    
+     STRING.PORT4.205                          4BF8       6       6       1   .rodata1    
+     STRING.4.206                              4BFE       2       2       1   .rodata1    
+     STRING.PORT5.207                          4C00       6       6       1   .rodata1    
+     STRING.5.208                              4C06       2       2       1   .rodata1    
+     STRING.PORT6.209                          4C08       6       6       1   .rodata1    
+     STRING.6.210                              4C0E       2       2       1   .rodata1    
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      _Vector_20                                FFD6       2       2       0   .abs_section_ffd6
      _Vector_17                                FFDC       2       2       0   .abs_section_ffdc
@@ -1975,24 +1975,24 @@ porthdl.c.o:
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0x4BDD ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x4C10 ---- SIZE       4 ---
 Filling bytes inserted
  00230100
-------- ROM-ADDRESS: 0x4BE1 ---- RAM-ADDRESS: 0x100 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x4C14 ---- RAM-ADDRESS: 0x100 ---- SIZE       2 ---
 Name of initialized Object : watchdog_tick
  03E8
-------- ROM-ADDRESS: 0x4BE3 ---- RAM-ADDRESS: 0x102 ---- SIZE      16 ---
+------- ROM-ADDRESS: 0x4C16 ---- RAM-ADDRESS: 0x102 ---- SIZE      16 ---
 Name of initialized Object : gsqueues
  01D101D101 D100400211 0211021100
  40
-------- ROM-ADDRESS: 0x4BF3 ---- RAM-ADDRESS: 0x112 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x4C26 ---- RAM-ADDRESS: 0x112 ---- SIZE       1 ---
 Name of initialized Object : enable_maintime
  01
-------- ROM-ADDRESS: 0x4BF4 ---- RAM-ADDRESS: 0x113 ---- SIZE      16 ---
+------- ROM-ADDRESS: 0x4C27 ---- RAM-ADDRESS: 0x113 ---- SIZE      16 ---
 Name of initialized Object : error_tbl
- 3E193E2C3E 403E533E69 3E7F3EA13E
- C4
-------- ROM-ADDRESS: 0x4C04 ---- SIZE       2 ---
+ 3E3E3E513E 653E783E8E 3EA43EC63E
+ E9
+------- ROM-ADDRESS: 0x4C37 ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -2075,8 +2075,8 @@ push                      USES pint int_stack
 pop                       USES pint int_stack 
 init_int_handler          USES init_stack 
 sem_disable               USES get_enable_status disable_interrupt 
-                                STRING.c..1.CIM.ATE.Sources.1 fatal push 
-sem_enable                USES pop STRING.c..1.CIM.ATE.Sources.1 fatal 
+                                STRING.F..CIM...SafeBoardKi.1 fatal push 
+sem_enable                USES pop STRING.F..CIM...SafeBoardKi.1 fatal 
                                 disable_interrupt enable_interrupt 
 enable_gral_interrupt     USES enable_interrupt 
 com1_sci1_init            USES _SCI1BD _SCI1C2 _SCI1C1 
@@ -2189,12 +2189,12 @@ port0_pintbl              USES STRING.VD_PLUNGER.1 STRING.00.2 STRING.CLOSED.3
 port1_pintbl              USES STRING.PRIVDC.33 STRING.10.34 STRING.ANALOG.35 
                                 STRING.ANALOG.36 STRING.SECVDC.37 STRING.11.38 STRING.ANALOG.39 
                                 STRING.ANALOG.40 STRING.VBATT.41 STRING.12.42 STRING.ANALOG.43 
-                                STRING.ANALOG.44 STRING.TP1.45 STRING.13.46 STRING.HIGH.47 
-                                STRING.LOW.48 STRING.TP2.49 STRING.14.50 STRING.HIGH.51 
-                                STRING.LOW.52 STRING.TP3.53 STRING.15.54 STRING.HIGH.55 
-                                STRING.LOW.56 STRING.TP4.57 STRING.16.58 STRING.HIGH.59 
-                                STRING.LOW.60 STRING.TP5.61 STRING.17.62 STRING.HIGH.63 
-                                STRING.LOW.64 
+                                STRING.ANALOG.44 STRING.VDC_VAL1.45 STRING.13.46 
+                                STRING.ANALOG.47 STRING.LOW.48 STRING.VDC_VAL2.49 STRING.14.50 
+                                STRING.ANALOG.51 STRING.LOW.52 STRING.TP3.53 STRING.15.54 
+                                STRING.HIGH.55 STRING.LOW.56 STRING.TP4.57 STRING.16.58 
+                                STRING.HIGH.59 STRING.LOW.60 STRING.TP5.61 STRING.17.62 
+                                STRING.HIGH.63 STRING.LOW.64 
 port2_pintbl              USES STRING.TP6.65 STRING.22.66 STRING.HIGH.67 
                                 STRING.LOW.68 STRING.TP7.69 STRING.23.70 STRING.HIGH.71 
                                 STRING.LOW.72 STRING.TIP_S.73 STRING.24.74 STRING.HIGH.75 
@@ -2769,6 +2769,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 8
-Total size of all blocks to be downloaded: 13282
+Number of blocks to be downloaded: 7
+Total size of all blocks to be downloaded: 13333
 
