@@ -1,0 +1,181 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+BAD_CHANNEL	.\Drivers\Enaint\drverr.h	/^	BAD_CHANNEL,$/;"	e
+BAD_CODE	.\Drivers\Enaint\drverr.h	/^	BAD_MAJOR, BAD_MINORS, BAD_CODE,$/;"	e
+BAD_MAJOR	.\Drivers\Enaint\drverr.h	/^	BAD_MAJOR, BAD_MINORS, BAD_CODE,$/;"	e
+BAD_MINORS	.\Drivers\Enaint\drverr.h	/^	BAD_MAJOR, BAD_MINORS, BAD_CODE,$/;"	e
+BKGDPE	.\Drivers\Platform\COP\cop.c	14;"	d	file:
+COPE	.\Drivers\Platform\COP\cop.c	11;"	d	file:
+COPT	.\Drivers\Platform\COP\cop.c	12;"	d	file:
+Call_Constructors	.\Start08.c	/^static void Call_Constructors(void) {$/;"	f	file:	signature:(void)
+D_TP10	.\Drivers\Platform\IO\ioports.h	45;"	d
+D_TP11	.\Drivers\Platform\IO\ioports.h	46;"	d
+D_TP6	.\Drivers\Platform\IO\ioports.h	36;"	d
+D_TP7	.\Drivers\Platform\IO\ioports.h	37;"	d
+D_TP8	.\Drivers\Platform\IO\ioports.h	47;"	d
+D_TP9	.\Drivers\Platform\IO\ioports.h	48;"	d
+D_VLOCK_IN	.\Drivers\Platform\IO\ioports.h	41;"	d
+D_VLOCK_OUT	.\Drivers\Platform\IO\ioports.h	42;"	d
+D_VRLY_IN	.\Drivers\Platform\IO\ioports.h	39;"	d
+D_VRLY_OUT	.\Drivers\Platform\IO\ioports.h	43;"	d
+D_WDOG_IN	.\Drivers\Platform\IO\ioports.h	38;"	d
+D_WDOG_OUT	.\Drivers\Platform\IO\ioports.h	44;"	d
+ENA_WOUT_DISA	.\Drivers\Enaint\drverr.h	/^	INT_STK_OFLOW, ENA_WOUT_DISA,$/;"	e
+ERR_OK	.\Drivers\Enaint\drverr.h	/^	ERR_OK,$/;"	e
+FLASH_BAD_WRITE	.\Drivers\Enaint\drverr.h	/^	FLASH_BAD_WRITE,$/;"	e
+INT_STK_OFLOW	.\Drivers\Enaint\drverr.h	/^	INT_STK_OFLOW, ENA_WOUT_DISA,$/;"	e
+Init	.\Start08.c	/^static void Init(void) {$/;"	f	file:	signature:(void)
+MAX_INT_STACK	.\Drivers\Enaint\enaint.c	21;"	d	file:
+MInt	.\mytypes.h	/^typedef int				MInt;$/;"	t
+MInt	.\mytypes.h	/^typedef schar			MInt;$/;"	t
+MUInt	.\mytypes.h	/^typedef uchar			MUInt;$/;"	t
+MUInt	.\mytypes.h	/^typedef uint			MUInt;$/;"	t
+NUM_FATAL_ERRORS	.\Drivers\Enaint\drverr.h	/^	NUM_FATAL_ERRORS$/;"	e
+NUM_WDOG_SUPS	.\Drivers\Superv\superv.h	/^	NUM_WDOG_SUPS$/;"	e
+NVFLASH_PART_OVER	.\Drivers\Enaint\drverr.h	/^	NVFLASH_PART_OVER,$/;"	e
+NVFLASH_PAR_OVFLOW	.\Drivers\Enaint\drverr.h	/^	NVFLASH_PAR_OVFLOW,$/;"	e
+ON_RESET_TIME	.\Drivers\Superv\superv.h	13;"	d
+POST_RESET_TIME	.\Drivers\Superv\superv.h	14;"	d
+P_TP10	.\Drivers\Platform\IO\ioports.h	62;"	d
+P_TP11	.\Drivers\Platform\IO\ioports.h	63;"	d
+P_TP6	.\Drivers\Platform\IO\ioports.h	53;"	d
+P_TP7	.\Drivers\Platform\IO\ioports.h	54;"	d
+P_TP8	.\Drivers\Platform\IO\ioports.h	64;"	d
+P_TP9	.\Drivers\Platform\IO\ioports.h	65;"	d
+P_VLOCK_IN	.\Drivers\Platform\IO\ioports.h	58;"	d
+P_VLOCK_OUT	.\Drivers\Platform\IO\ioports.h	59;"	d
+P_VRLY_IN	.\Drivers\Platform\IO\ioports.h	56;"	d
+P_VRLY_OUT	.\Drivers\Platform\IO\ioports.h	60;"	d
+P_WDOG_IN	.\Drivers\Platform\IO\ioports.h	55;"	d
+P_WDOG_OUT	.\Drivers\Platform\IO\ioports.h	61;"	d
+RSTPE	.\Drivers\Platform\COP\cop.c	15;"	d	file:
+SLEEP_BASE	.\Drivers\Sleep\sleep.h	12;"	d
+STOPE	.\Drivers\Platform\COP\cop.c	13;"	d	file:
+SUP_BASE	.\Drivers\Superv\superv.h	8;"	d
+TP10	.\Drivers\Platform\IO\ioports.h	28;"	d
+TP11	.\Drivers\Platform\IO\ioports.h	29;"	d
+TP6	.\Drivers\Platform\IO\ioports.h	19;"	d
+TP7	.\Drivers\Platform\IO\ioports.h	20;"	d
+TP8	.\Drivers\Platform\IO\ioports.h	30;"	d
+TP9	.\Drivers\Platform\IO\ioports.h	31;"	d
+VLOCK_IN	.\Drivers\Platform\IO\ioports.h	24;"	d
+VLOCK_OUT	.\Drivers\Platform\IO\ioports.h	25;"	d
+VLOCK_SUP	.\Drivers\Superv\superv.h	/^	WDOG_SUP, VRLY_SUP, VLOCK_SUP,$/;"	e
+VLOCK_TOUT	.\Drivers\Superv\superv.h	12;"	d
+VRLY_IN	.\Drivers\Platform\IO\ioports.h	22;"	d
+VRLY_OUT	.\Drivers\Platform\IO\ioports.h	26;"	d
+VRLY_SUP	.\Drivers\Superv\superv.h	/^	WDOG_SUP, VRLY_SUP, VLOCK_SUP,$/;"	e
+VRLY_TOUT	.\Drivers\Superv\superv.h	11;"	d
+WATCHDOG_BASE	.\Drivers\Watchdog\watchdog.h	11;"	d
+WATCHDOG_TICK	.\Drivers\Watchdog\watchdog.h	16;"	d
+WDOG_IN	.\Drivers\Platform\IO\ioports.h	21;"	d
+WDOG_OUT	.\Drivers\Platform\IO\ioports.h	27;"	d
+WDOG_SUP	.\Drivers\Superv\superv.h	/^	WDOG_SUP, VRLY_SUP, VLOCK_SUP,$/;"	e
+WDOG_SUP_ST	.\Drivers\Superv\superv.c	/^}WDOG_SUP_ST;$/;"	t	file:
+WDOG_TOUT	.\Drivers\Superv\superv.h	10;"	d
+_1SEC	.\Drivers\Sleep\sleep.h	11;"	d
+_COPY_L	.\Start08.c	/^__EXTERN_C extern void _COPY_L(void);$/;"	p	file:	signature:(void)
+_COP_H_	.\Drivers\Platform\COP\cop.h	8;"	d
+_ICG_H_	.\Drivers\Platform\ICS\ics.h	11;"	d
+_LVD_H_	.\Drivers\Platform\LVD\lvd.h	9;"	d
+_Startup	.\Start08.c	/^__EXTERN_C void _Startup(void) {$/;"	f	signature:(void)
+_Stop	.\derivative.h	9;"	d
+_Wait	.\derivative.h	12;"	d
+__DRIVERS_H__	.\Drivers\drivers.h	8;"	d
+__EXTERN_C	.\Start08.c	24;"	d	file:
+__EXTERN_C	.\Start08.c	26;"	d	file:
+__FEED_COP_IN_HLI	.\Start08.c	47;"	d	file:
+__FEED_COP_IN_HLI	.\Start08.c	49;"	d	file:
+__IOPORTS_H__	.\Drivers\Platform\IO\ioports.h	10;"	d
+__NO_FLAGS_OFFSET	.\Start08.c	18;"	d	file:
+__NO_MAIN_OFFSET	.\Start08.c	19;"	d	file:
+__PLATFORM_H__	.\Drivers\Platform\platform.h	11;"	d
+__RESET_H__	.\Drivers\Watchdog\reset.h	9;"	d
+__RTI_H__	.\Drivers\Platform\RTI\rti.h	9;"	d
+__SLEEP_H__	.\Drivers\Sleep\sleep.h	9;"	d
+__WATCHDOG_H__	.\Drivers\Watchdog\watchdog.h	9;"	d
+_reset_mcu	.\Drivers\Platform\RTI\rti.c	16;"	d	file:
+_reset_mcu	.\Drivers\Watchdog\watchdog.c	12;"	d	file:
+_startupData	.\Start08.c	/^struct _tagStartup _startupData;    \/* read-only:$/;"	v
+acknowledge_irqs	.\Drivers\Platform\platform.c	/^acknowledge_irqs( void )$/;"	f	signature:( void )
+acknowledge_irqs	.\Drivers\Platform\platform.h	/^void acknowledge_irqs( void );$/;"	p	signature:( void )
+bitf	.\mytypes.h	/^typedef uint			bitf;$/;"	t
+bitf	.\mytypes.h	/^typedef ushort			bitf;$/;"	t
+check_sleep	.\Drivers\Sleep\sleep.c	/^check_sleep( void )$/;"	f	signature:( void )
+check_sleep	.\Drivers\Sleep\sleep.h	/^void check_sleep( void );$/;"	p	signature:( void )
+check_watchdog	.\Drivers\Watchdog\watchdog.h	/^void check_watchdog( void );$/;"	p	signature:( void )
+cop_init	.\Drivers\Platform\COP\cop.c	/^cop_init( void )$/;"	f	signature:( void )
+cop_init	.\Drivers\Platform\COP\cop.h	/^void cop_init( void );$/;"	p	signature:( void )
+disable_gral_interrupt	.\Drivers\Enaint\enaint.c	/^disable_gral_interrupt( void )$/;"	f	signature:( void )
+disable_gral_interrupt	.\Drivers\Enaint\enaint.h	/^void disable_gral_interrupt( void );$/;"	p	signature:( void )
+disable_interrupt	.\Drivers\Enaint\lowint.c	/^disable_interrupt( void )$/;"	f	signature:( void )
+disable_interrupt	.\Drivers\Enaint\lowint.h	/^void disable_interrupt( void );$/;"	p	signature:( void )
+do_supervisor	.\Drivers\Superv\superv.c	/^do_supervisor( void )$/;"	f	signature:( void )
+do_supervisor	.\Drivers\Superv\superv.h	/^void do_supervisor( void );$/;"	p	signature:( void )
+drivers_init	.\Drivers\drivers.c	/^drivers_init(void)$/;"	f	signature:(void)
+drivers_init	.\Drivers\drivers.h	/^void drivers_init(void);$/;"	p	signature:(void)
+enable_gral_interrupt	.\Drivers\Enaint\enaint.c	/^enable_gral_interrupt( void )$/;"	f	signature:( void )
+enable_gral_interrupt	.\Drivers\Enaint\enaint.h	/^void enable_gral_interrupt( void );$/;"	p	signature:( void )
+enable_interrupt	.\Drivers\Enaint\lowint.c	/^enable_interrupt( void )$/;"	f	signature:( void )
+enable_interrupt	.\Drivers\Enaint\lowint.h	/^void enable_interrupt( void );$/;"	p	signature:( void )
+fatal	.\Drivers\Enaint\drverr.c	/^fatal( char *file, int line, MUInt error )$/;"	f	signature:( char *file, int line, MUInt error )
+fatal	.\Drivers\Enaint\drverr.h	/^void fatal( char *file, int line, MUInt error );$/;"	p	signature:( char *file, int line, MUInt error )
+fatal_driver	.\Drivers\Enaint\drverr.h	30;"	d
+forever	.\main.c	9;"	d	file:
+get_enable_status	.\Drivers\Enaint\lowint.c	/^get_enable_status( void )$/;"	f	signature:( void )
+get_enable_status	.\Drivers\Enaint\lowint.h	/^MUInt get_enable_status( void );$/;"	p	signature:( void )
+ics_init	.\Drivers\Platform\ICS\ics.c	/^ics_init( void )$/;"	f	signature:( void )
+ics_init	.\Drivers\Platform\ICS\ics.h	/^void ics_init( void );$/;"	p	signature:( void )
+init_int_handler	.\Drivers\Enaint\enaint.c	/^init_int_handler( void )$/;"	f	signature:( void )
+init_int_handler	.\Drivers\Enaint\enaint.h	/^void init_int_handler( void );$/;"	p	signature:( void )
+init_stack	.\Drivers\Enaint\enaint.c	/^init_stack( void )$/;"	f	file:	signature:( void )
+int_stack	.\Drivers\Enaint\enaint.c	/^static signed char int_stack[ MAX_INT_STACK ], *pint;$/;"	v	file:
+isjump	.\Drivers\Superv\superv.c	/^static MUInt isjump = 0;$/;"	v	file:
+kick_watchdog	.\Drivers\Watchdog\watchdog.c	/^kick_watchdog( void )$/;"	f	signature:( void )
+kick_watchdog	.\Drivers\Watchdog\watchdog.h	/^void kick_watchdog( void );$/;"	p	signature:( void )
+last_in	.\Drivers\Superv\superv.c	/^	uchar	last_in;$/;"	m	file:
+loadByte	.\Start08.c	/^static void near loadByte(void) {$/;"	f	file:	signature:(void)
+lvd_init	.\Drivers\Platform\LVD\lvd.c	/^lvd_init( void )$/;"	f	signature:( void )
+lvd_init	.\Drivers\Platform\LVD\lvd.h	/^void lvd_init( void );$/;"	p	signature:( void )
+main	.\Start08.c	/^__EXTERN_C extern void main(void); \/* prototype of main function *\/$/;"	p	file:	signature:(void)
+main	.\main.c	/^main(void)$/;"	f	signature:(void)
+p	.\Drivers\Superv\superv.c	/^static WDOG_SUP_ST *p;$/;"	v	file:
+pint	.\Drivers\Enaint\enaint.c	/^static signed char int_stack[ MAX_INT_STACK ], *pint;$/;"	v	file:
+platform_init	.\Drivers\Platform\platform.c	/^platform_init(void)$/;"	f	signature:(void)
+platform_init	.\Drivers\Platform\platform.h	/^void platform_init(void);$/;"	p	signature:(void)
+pop	.\Drivers\Enaint\enaint.c	/^pop( void )$/;"	f	file:	signature:( void )
+ports_init	.\Drivers\Platform\IO\ioports.c	/^ports_init(void)$/;"	f	signature:(void)
+ports_init	.\Drivers\Platform\IO\ioports.h	/^void ports_init(void);$/;"	p	signature:(void)
+push	.\Drivers\Enaint\enaint.c	/^push( MUInt enable_status )$/;"	f	file:	signature:( MUInt enable_status )
+reset_now	.\Drivers\Watchdog\reset.h	/^void reset_now( void );$/;"	p	signature:( void )
+reset_now	.\Drivers\Watchdog\watchdog.c	/^reset_now( void )$/;"	f	signature:( void )
+rti_handler	.\Drivers\Platform\RTI\rti.c	/^rti_handler( void )$/;"	f	signature:( void )
+rti_init	.\Drivers\Platform\RTI\rti.c	/^rti_init( void )$/;"	f	signature:( void )
+rti_init	.\Drivers\Platform\RTI\rti.h	/^void rti_init( void );$/;"	p	signature:( void )
+schar	.\mytypes.h	/^typedef signed char		schar;$/;"	t
+sem_disable	.\Drivers\Enaint\enaint.c	/^sem_disable( void )$/;"	f	signature:( void )
+sem_disable	.\Drivers\Enaint\enaint.h	/^void sem_disable( void );$/;"	p	signature:( void )
+sem_enable	.\Drivers\Enaint\enaint.c	/^sem_enable( void )$/;"	f	signature:( void )
+sem_enable	.\Drivers\Enaint\enaint.h	/^void sem_enable( void );$/;"	p	signature:( void )
+sleep	.\Drivers\Sleep\sleep.c	/^sleep( unsigned short msec )$/;"	f	signature:( unsigned short msec )
+sleep	.\Drivers\Sleep\sleep.h	/^void sleep( unsigned short msec );$/;"	p	signature:( unsigned short msec )
+sup_enable	.\Drivers\Superv\superv.c	/^static MUInt sup_enable;$/;"	v	file:
+supervisor_init	.\Drivers\Superv\superv.c	/^supervisor_init( void )$/;"	f	signature:( void )
+supervisor_init	.\Drivers\Superv\superv.h	/^void supervisor_init( void );$/;"	p	signature:( void )
+tick	.\Drivers\Sleep\sleep.c	/^static unsigned short tick;$/;"	v	file:
+timer	.\Drivers\Superv\superv.c	/^	short	timer;$/;"	m	file:
+toCopyDownBegOffs	.\Start08.c	126;"	d	file:
+toCopyDownBegOffs	.\Start08.c	128;"	d	file:
+tst_jump_superv	.\Drivers\Superv\superv.c	/^tst_jump_superv( void )$/;"	f	file:	signature:( void )
+uchar	.\mytypes.h	/^typedef unsigned char	uchar;$/;"	t
+uint	.\mytypes.h	/^typedef unsigned int	uint;$/;"	t
+ulong	.\mytypes.h	/^typedef unsigned long	ulong;$/;"	t
+ushort	.\mytypes.h	/^typedef unsigned short	ushort;$/;"	t
+vlock_act	.\Drivers\Superv\superv.c	/^vlock_act( void )$/;"	f	file:	signature:( void )
+vrly_act	.\Drivers\Superv\superv.c	/^vrly_act( void )$/;"	f	file:	signature:( void )
+wdog_act	.\Drivers\Superv\superv.c	/^wdog_act( void )$/;"	f	file:	signature:( void )
+wdogsup	.\Drivers\Superv\superv.c	/^static WDOG_SUP_ST wdogsup[ NUM_WDOG_SUPS ] =$/;"	v	file:

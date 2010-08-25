@@ -1,0 +1,167 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+BIN_PAGE_SIZE	.\b1.asm	/^BIN_PAGE_SIZE		equ		512$/;"	d
+BIN_PAGE_SIZE	.\newboot.asm	/^BIN_PAGE_SIZE			equ		512$/;"	d
+ChkDoneErase	.\newboot.asm	/^ChkDoneErase: $/;"	l
+ChkDoneProg	.\newboot.asm	/^ChkDoneProg: $/;"	l
+DEBOUNCE_TIME	.\newboot.asm	/^DEBOUNCE_TIME			equ		$1000	$/;"	d
+DEFAULT_RAM	.\b1.asm	/^DEFAULT_RAM:    SECTION$/;"	l
+DEFAULT_RAM	.\newboot.asm	/^DEFAULT_RAM:    SECTION$/;"	l
+DEFAULT_ROM	.\b1.asm	/^DEFAULT_ROM:	SECTION$/;"	l
+DEFAULT_ROM	.\newboot.asm	/^DEFAULT_ROM:	SECTION$/;"	l
+DENSITY_MASK	.\newboot.asm	/^DENSITY_MASK			equ		$0F$/;"	d
+DUMMY	.\newboot.asm	/^DUMMY					equ		0$/;"	d
+DoOnStack	.\newboot.asm	/^DoOnStack: $/;"	l
+END_REPRO_AREA	.\newboot.asm	/^END_REPRO_AREA			equ		END_VECT_TBL_ADDR$/;"	d
+END_USR_CODE_SECT	.\newboot.asm	/^END_USR_CODE_SECT		equ		$FBBE				; FLASH end$/;"	d
+END_VECT_TBL_ADDR	.\newboot.asm	/^END_VECT_TBL_ADDR		equ		$FFFF				; interrupt vector table end$/;"	d
+ERASE	.\newboot.asm	/^ERASE	  				equ	    'E'$/;"	d
+ERBLK_LEN	.\newboot.asm	/^ERBLK_LEN				equ		512					; erase block lenght$/;"	d
+E_MEMCTRL	.\newboot.asm	/^E_MEMCTRL				equ		7$/;"	d
+EraseSub	.\newboot.asm	/^EraseSub: 	$/;"	l
+EraseSubEnd	.\newboot.asm	/^EraseSubEnd: $/;"	l
+EraseSubSize	.\newboot.asm	/^EraseSubSize: equ (*-EraseSub)$/;"	d
+FAIL_STR	.\b1.asm	/^FAIL_STR:	dc.b	'FAIL'$/;"	d
+FAIL_STR_END	.\b1.asm	/^FAIL_STR_END:$/;"	l
+FILE_SIZE	.\b1.asm	/^FILE_SIZE			equ		$F001$/;"	d
+FILE_SIZE	.\newboot.asm	/^FILE_SIZE				equ		512	$/;"	d
+FLASH_OPTION	.\newboot.asm	/^FLASH_OPTION			equ	    %00000000			; backdoor enable, redirection enable and$/;"	d
+FLASH_PROTECTION	.\newboot.asm	/^FLASH_PROTECTION		equ	    %10000001			; FPOPEN and flash protected (from 0xFC00)$/;"	d
+MCU_ID	.\newboot.asm	/^MCU_ID					equ		6$/;"	d
+MEM0	.\newboot.asm	/^MEM0					equ		$0B$/;"	d
+MEM1	.\newboot.asm	/^MEM1					equ		$0D$/;"	d
+MM_PAGE_READ	.\newboot.asm	/^MM_PAGE_READ			equ		$52$/;"	d
+MY_ZEROPAGE	.\b1.asm	/^MY_ZEROPAGE:	SECTION		SHORT$/;"	l
+MY_ZEROPAGE	.\newboot.asm	/^MY_ZEROPAGE:	SECTION		SHORT$/;"	l
+NVOPT	.\b1.asm	/^NVOPT	  	dc.b	%00000000$/;"	d
+NVOPT	.\newboot.asm	/^NVOPT	  	dc.b	FLASH_OPTION$/;"	d
+NVOPT_ROM	.\b1.asm	/^NVOPT_ROM:		SECTION$/;"	l
+NVOPT_ROM	.\newboot.asm	/^NVOPT_ROM:		SECTION$/;"	l
+NVPROT	.\b1.asm	/^NVPROT		dc.b	%10000000$/;"	d
+NVPROT	.\newboot.asm	/^NVPROT		dc.b	FLASH_PROTECTION$/;"	d
+NVPROT_ROM	.\b1.asm	/^NVPROT_ROM:		SECTION$/;"	l
+NVPROT_ROM	.\newboot.asm	/^NVPROT_ROM:		SECTION$/;"	l
+PAGE_OFFSET	.\newboot.asm	/^PAGE_OFFSET				equ		214$/;"	d
+ProgSub	.\newboot.asm	/^ProgSub: 	$/;"	l
+ProgSubEnd	.\newboot.asm	/^ProgSubEnd: $/;"	l
+ProgSubSize	.\newboot.asm	/^ProgSubSize: equ (*-ProgSub)$/;"	d
+QUIT	.\newboot.asm	/^QUIT					equ	    'Q'$/;"	d
+RELOC_VECT_TBL_ADDR	.\newboot.asm	/^RELOC_VECT_TBL_ADDR		equ 	$FBC0				; relocated interrupt vector table$/;"	d
+RESET_VECT	.\newboot.asm	/^RESET_VECT				equ		END_VECT_TBL_ADDR-1	; reset vector address$/;"	d
+SPI_CS_M	.\newboot.asm	/^SPI_CS_M				equ		6$/;"	d
+SPI_CS_PM	.\newboot.asm	/^SPI_CS_PM				equ		2$/;"	d
+SPI_PRESCAL_X1	.\newboot.asm	/^SPI_PRESCAL_X1			equ		$00$/;"	d
+SPI_PRESCAL_X4	.\newboot.asm	/^SPI_PRESCAL_X4			equ		$30$/;"	d
+START_BOOT_CODE	.\newboot.asm	/^START_BOOT_CODE			equ		$FC00				; boot code start$/;"	d
+START_CHK_CODE	.\newboot.asm	/^START_CHK_CODE			equ		END_USR_CODE_SECT$/;"	d
+START_FILE_VERSION	.\newboot.asm	/^START_FILE_VERSION		equ		9					; $/;"	d
+START_REPRO_AREA	.\newboot.asm	/^START_REPRO_AREA		equ		START_USR_CODE_SECT$/;"	d
+START_USR_CODE_SECT	.\newboot.asm	/^START_USR_CODE_SECT		equ		$182C				; FLASH start$/;"	d
+STATUS_READ	.\newboot.asm	/^STATUS_READ				equ		$57$/;"	d
+USR_RESET_VECT	.\newboot.asm	/^USR_RESET_VECT			equ		START_BOOT_CODE-2 $/;"	d
+VECT_TBL_ADDR	.\newboot.asm	/^VECT_TBL_ADDR			equ		$FFC0				; interrupt vector table start$/;"	d
+VERSION_STRING_SIZE	.\newboot.asm	/^VERSION_STRING_SIZE		equ		10					; "SWvv.vv.bb"$/;"	d
+WRBLK_LEN	.\newboot.asm	/^WRBLK_LEN				equ		64					; write block lenght$/;"	d
+WR_DATA	.\newboot.asm	/^WR_DATA					equ	    'W'$/;"	d
+WSUPER	.\newboot.asm	/^WSUPER					equ		10$/;"	d
+calc_check	.\newboot.asm	/^calc_check:$/;"	l
+cc__1	.\newboot.asm	/^cc__1:		sta		SRS	$/;"	l
+cc__2	.\newboot.asm	/^cc__2:		aix		#1$/;"	l
+cc__3	.\newboot.asm	/^cc__3		lda		#1$/;"	l
+cc__4	.\newboot.asm	/^cc__4		clra$/;"	l
+cc__5	.\newboot.asm	/^cc__5:$/;"	l
+cf__1	.\newboot.asm	/^cf__1:									; perform 16-bit checksum of file$/;"	l
+cf__2	.\newboot.asm	/^cf__2:		aix		#-1$/;"	l
+cf__3	.\newboot.asm	/^cf__3		lda		#1$/;"	l
+cf__4	.\newboot.asm	/^cf__4		clra$/;"	l
+cf__5	.\newboot.asm	/^cf__5:$/;"	l
+check	.\newboot.asm	/^check:		ds.w	1$/;"	d
+check_file	.\newboot.asm	/^check_file:$/;"	l
+check_usr_code	.\newboot.asm	/^check_usr_code:$/;"	l
+compare_versions	.\newboot.asm	/^compare_versions:$/;"	l
+counter	.\b1.asm	/^counter:	ds.w	1$/;"	d
+cv__1	.\newboot.asm	/^cv__1:		cphx	#VERSION_STRING_SIZE			$/;"	l
+cv__2	.\newboot.asm	/^cv__2:$/;"	l
+cv__3	.\newboot.asm	/^cv__3:$/;"	l
+cv__4	.\newboot.asm	/^cv__4:$/;"	l
+d__0	.\newboot.asm	/^d__0:		nop$/;"	l
+data_count	.\newboot.asm	/^data_count:	ds.b	1$/;"	d
+delay	.\newboot.asm	/^delay:$/;"	l
+download_file	.\newboot.asm	/^download_file:$/;"	l
+dw__0	.\newboot.asm	/^dw__0:		jsr		fgetc				; parse file$/;"	l
+erase	.\newboot.asm	/^erase:$/;"	l
+f__0	.\newboot.asm	/^f__0:		jsr		trigger_wdg$/;"	l
+faddress	.\newboot.asm	/^faddress:	ds.w	1$/;"	d
+fail	.\newboot.asm	/^fail:		$/;"	l
+fg__1	.\b1.asm	/^fg__1:		ldhx	ram_ix$/;"	l
+fg__1	.\newboot.asm	/^fg__1:		ldhx	ram_ix$/;"	l
+fg__2	.\b1.asm	/^fg__2:$/;"	l
+fg__2	.\newboot.asm	/^fg__2:$/;"	l
+fgetc	.\b1.asm	/^fgetc:$/;"	l
+fgetc	.\newboot.asm	/^fgetc:$/;"	l
+file_check	.\newboot.asm	/^file_check:	ds.w	1$/;"	d
+file_ix	.\b1.asm	/^file_ix:	ds.w	1$/;"	d
+file_ix	.\newboot.asm	/^file_ix:	ds.w	1$/;"	d
+high_check	.\newboot.asm	/^high_check:	ds.b	1$/;"	d
+ilop	.\newboot.asm	/^ilop        MACRO$/;"	m
+init	.\b1.asm	/^init        MACRO$/;"	m
+init	.\newboot.asm	/^init        MACRO$/;"	m
+init_ioports	.\newboot.asm	/^init_ioports:$/;"	l
+init_page	.\b1.asm	/^init_page:$/;"	l
+init_page	.\newboot.asm	/^init_page:$/;"	l
+init_ram_buff	.\b1.asm	/^init_ram_buff:$/;"	l
+lc__0	.\b1.asm	/^lc__0		ldhx	counter$/;"	l
+len	.\newboot.asm	/^len:		ds.b	1$/;"	d
+loop	.\b1.asm	/^loop:		brclr   LOCK,ICGS1,loop		; wait until ICG stable$/;"	l
+mWDOG_CTRL	.\newboot.asm	/^mWDOG_CTRL				equ		$04$/;"	d
+main	.\b1.asm	/^main:$/;"	l
+main	.\newboot.asm	/^main:$/;"	l
+mem_status	.\newboot.asm	/^mem_status:	ds.b	1$/;"	d
+ml__0	.\b1.asm	/^ml__0:		bra		ml__0$/;"	l
+num_page	.\b1.asm	/^num_page:	ds.b	1$/;"	d
+num_page	.\newboot.asm	/^num_page:	ds.w	1$/;"	d
+page_addr	.\newboot.asm	/^page_addr:	ds.b	3$/;"	d
+qm__0	.\newboot.asm	/^qm__0:		mov		#0,mem_status$/;"	l
+qm__1	.\newboot.asm	/^qm__1:		jsr		spi_deselect$/;"	l
+query_memory	.\newboot.asm	/^query_memory:								; jft$/;"	l
+quit	.\newboot.asm	/^quit:$/;"	l
+raddress	.\newboot.asm	/^raddress:	ds.w	1$/;"	d
+ram_buff	.\b1.asm	/^ram_buff:	ds.b	BIN_PAGE_SIZE$/;"	d
+ram_buff	.\newboot.asm	/^ram_buff:	ds.b	BIN_PAGE_SIZE$/;"	d
+ram_data	.\newboot.asm	/^ram_data:	ds.b	WRBLK_LEN$/;"	d
+ram_ix	.\b1.asm	/^ram_ix:		ds.w	1$/;"	d
+ram_ix	.\newboot.asm	/^ram_ix:		ds.w	1$/;"	d
+read_page	.\newboot.asm	/^read_page:$/;"	l
+reboot	.\newboot.asm	/^reboot:$/;"	l
+reset_mem_relay	.\newboot.asm	/^reset_mem_relay:	MACRO$/;"	m
+rf__1	.\b1.asm	/^rf__1:		sta		,x$/;"	l
+rp__1	.\newboot.asm	/^rp__1:		sl		page_addr$/;"	l
+sd__0	.\newboot.asm	/^sd__0:		rts$/;"	l
+sd__1	.\newboot.asm	/^sd__1:		bset	SPI_CS_PM,PTED$/;"	l
+selfprg	.\newboot.asm	/^selfprg:$/;"	l
+send_cmd	.\newboot.asm	/^send_cmd:	MACRO$/;"	m
+set_mem_relay	.\newboot.asm	/^set_mem_relay:		MACRO$/;"	m
+sf__0	.\newboot.asm	/^sf__0:		brset	0,mem_status,reboot		; is installed memory?$/;"	l
+sl	.\newboot.asm	/^sl:		MACRO$/;"	m
+spi_deselect	.\newboot.asm	/^spi_deselect:$/;"	l
+spi_read	.\newboot.asm	/^spi_read:	MACRO$/;"	m
+spi_select	.\newboot.asm	/^spi_select:$/;"	l
+spi_write	.\newboot.asm	/^spi_write:	MACRO$/;"	m
+spi_xfer	.\newboot.asm	/^spi_xfer:$/;"	l
+ss__0	.\newboot.asm	/^ss__0:		rts$/;"	l
+ss__1	.\newboot.asm	/^ss__1:$/;"	l
+stack	.\newboot.asm	/^stack:		ds.w	1$/;"	d
+start_app	.\newboot.asm	/^start_app:									; jump to application code$/;"	l
+sx__1	.\newboot.asm	/^sx__1:		brclr 	SPTEF,SPIS,sx__1$/;"	l
+sx__2	.\newboot.asm	/^sx__2:		brclr 	SPRF,SPIS,sx__2$/;"	l
+trigger_wdg	.\newboot.asm	/^trigger_wdg:$/;"	l
+usr_code	.\newboot.asm	/^usr_code:$/;"	l
+wd__0	.\newboot.asm	/^wd__0:$/;"	l
+wr_data	.\newboot.asm	/^wr_data:$/;"	l
+xf__1	.\newboot.asm	/^xf__1:		cphx	#ram_buff + BIN_PAGE_SIZE$/;"	l
+xf__2	.\newboot.asm	/^xf__2:$/;"	l
+xfer_page_ram	.\newboot.asm	/^xfer_page_ram:$/;"	l

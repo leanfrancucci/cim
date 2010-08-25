@@ -1,0 +1,65 @@
+#
+#	optdef.txt
+#
+
+#
+#	Port data must be expressed as follows
+#		symbolic name,port name,baud,bits,parity,stop,first_timeout,byte_timeout
+#		where:
+#			parity = N O E M S
+#			stop = 1 for 1 bit, 5 for 1&half, 2 for 2 bits
+#
+
+#
+#	Safe communicaton port data
+#
+
+safe_comm,COM1,38400,8,N,1,10000,100
+
+#
+#	Test communication port data
+#
+
+test_comm,COM22,38400,8,N,1,0,0
+
+#
+#	Validator communication port data
+#
+
+val_comm,COM21,9600,8,E,1,1000,100
+
+#
+#	Printer communicaton port data
+#
+
+printer_comm,COM6,9600,8,N,1,0,0
+
+#
+#	Test Ticket Parameters expressed as follows
+#		print enable,hardware version,interface 1 type, interface 2 type.
+#		where:
+#			print enable: 1/0 enable/disable ticket printing
+#			hardware version:	HW##.##A#.#
+#						  || || | |_ Assembly Revision
+#						  || || |___ Assembly 
+#						  || ||_____ Hardware Sub Version
+#						  ||________ Hardware Version
+#			Interface X type:
+#				Upper case char, identify the interface type.
+#				C: Current Loop or JCM.
+#				R: RS232 or CashCode without 5V Power.
+
+print_ticket,1,HW04.00A0.0,C,R
+
+#
+#	Lower Upgradable Version 
+#
+
+lower_version,SW00.14.00 
+
+#
+#	File System Format Time in seconds
+#   if 0 force format.
+#
+
+fsys_format_time,210

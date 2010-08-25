@@ -1,0 +1,18 @@
+#
+#	optdef.txt
+#
+
+#
+#	Port data must be expressed as follows
+#		symbolic name,port name,baud,bits,parity,stop,first_timeout,byte_timeout
+#		where:
+#			parity = N O E M S
+#			stop = 1 for 1 bit, 5 for 1&half, 2 for 2 bits
+#
+
+#
+#	Safe communicaton port data
+#
+
+safe_comm,COM1,38400,8,N,1,2000,100
+
