@@ -1,0 +1,42 @@
+/*
+ *	Linker file for bootloader code
+ */
+
+ENTRIES
+	NVOPT NVPROT /*USRCODE*/ /* jft */
+END
+
+NAMES
+END
+
+/*
+ *	Here all RAM/ROM areas of the device are listed.
+ *	Used in PLACEMENT below.
+ */
+SECTIONS
+	Z_RAM		=	READ_WRITE	0x0080 TO 0x00FF; 
+	RAM			=	READ_WRITE	0x0100 TO 0x107F;
+	ROM			=	READ_ONLY	0xFC00 TO 0xFFAF;
+	/*USRROM		=	READ_ONLY	0x182C TO 0x1A2B;*/	/* jft */
+	NVPROTROM	=	READ_ONLY	0xFFBD TO 0xFFBD;
+	NVOPTROM	=	READ_ONLY	0xFFBF TO 0xFFBF;
+END
+
+/* 	
+ *	Here all predefined and user segments are placed
+ *	into the SECTIONS defined above. 
+ */
+PLACEMENT 
+  /*USR_ROM						INTO USRROM;*/	/* jft */
+  NVPROT_ROM					INTO NVPROTROM;
+  NVOPT_ROM						INTO NVOPTROM;
+  DEFAULT_ROM                   INTO ROM;
+  DEFAULT_RAM                   INTO RAM;
+  _DATA_ZEROPAGE, MY_ZEROPAGE   INTO Z_RAM;
+
+END
+
+STACKSIZE 	0x50
+
+VECTOR	0	main 
+INIT 		main

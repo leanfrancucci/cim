@@ -1,0 +1,30 @@
+/* This is a linker parameter file for the GB60 */
+
+NAMES END /* CodeWarrior will pass all the needed files to the linker by command line. But here you may add your own files too. */
+
+ENTRIES
+version_number
+END
+
+SEGMENTS /* Here all RAM/ROM areas of the device are listed. Used in PLACEMENT below. */
+    BOOT_ROM                 =  READ_ONLY    0x182C TO 0x184B;
+    ROM                      =  READ_ONLY    0x184C TO 0xFFAF;
+    Z_RAM                    =  READ_WRITE   0x0080 TO 0x00FF;
+    RAM                      =  READ_WRITE   0x0100 TO 0x107F;
+    ROM1                     =  READ_ONLY    0x1080 TO 0x17FF;
+    ROM2                     =  READ_ONLY    0xFFC0 TO 0xFFCB;
+END
+
+PLACEMENT /* Here all predefined and user segments are placed into the SEGMENTS defined above. */
+  //.ostext,                                             /* OSEK */
+    DEFAULT_RAM                         INTO  RAM;
+    DEFAULT_ROM, ROM_VAR, STRINGS       INTO  ROM;       /* ROM1,ROM2 In case you want to use ROM1,ROM2 as well, be sure the option -OnB=b is passed to the compiler. */
+    _DATA_ZEROPAGE, MY_ZEROPAGE         INTO  Z_RAM;
+    BOOTROM                             INTO  BOOT_ROM;
+  //VECTORS_DATA                        INTO  OSVECTORS; /* OSEK */
+END
+
+STACKSIZE 0x213
+
+VECTOR 0 _Startup /* Reset vector: this is the default entry point for an application. */
+
