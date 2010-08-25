@@ -1,5 +1,5 @@
 
-PROGRAM "D:\MinibankLocks\CIM Software\CIM User Code\bin\Project.abs"
+PROGRAM "D:\MinibankLocks\V1.0\CIM User Code\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -99,7 +99,7 @@ _startupData is allocated at 0x18D0 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x100     3511
-  _Copy    *toCopyDownBeg 0x7898
+  _Copy    *toCopyDownBeg 0x7890
 } _startupData;
 
 *********************************************************************************************
@@ -109,7 +109,7 @@ Section Name                    Size  Type     From       To       Segment
 .data                            215   R/W      0x100      0x1D6   RAM
 .text                          23303     R     0x18DE     0x73E4   ROM
 .rodata                         1109     R     0x73E5     0x7839   ROM
-.rodata1                          94     R     0x783A     0x7897   ROM
+.rodata1                          86     R     0x783A     0x788F   ROM
 BOOTROM                           18     R     0x182C     0x183D   BOOT_ROM
 .abs_section_ffdc                  2     R     0xFFDC     0xFFDD   .absSeg0
 .abs_section_ffd8                  2     R     0xFFD8     0xFFD9   .absSeg1
@@ -229,11 +229,11 @@ BOOTROM                           18     R     0x182C     0x183D   BOOT_ROM
 .init                            132     R     0x184C     0x18CF   ROM
 .common                         1845   R/W      0x782      0xEB6   RAM
 .stack                           405   R/W      0xEB7     0x104B   RAM
-.copy                            221     R     0x7898     0x7974   ROM
+.copy                            221     R     0x7890     0x796C   ROM
 .vectSeg113_vect                   2     R     0xFFFE     0xFFFF   .vectSeg113
 
 Summary of section sizes per section type:
-READ_ONLY (R):        6147 (dec:    24903)
+READ_ONLY (R):        613F (dec:    24895)
 READ_WRITE (R/W):      F4C (dec:     3916)
 NO_INIT (N/I):          7E (dec:      126)
 
@@ -485,7 +485,7 @@ MODULE:                 -- enaint.c.o --
      sem_enable                                2855      24      36      17   .text       
      enable_gral_interrupt                     2879       3       3       1   .text       
 - VARIABLES:
-     STRING.D..MinibankLocks.CIM.1             783A      4C      76       2   .rodata1    
+     STRING.D..MinibankLocks.V1..1             783A      44      68       2   .rodata1    
      int_stack                                  2F3       8       8       3   .bss        
      pint                                       2FB       2       2       6   .bss        
 MODULE:                 -- lowint.c.o --
@@ -639,7 +639,7 @@ MODULE:                 -- logprot.c.o --
      pdevs                                     7565      20      32       1   .rodata     
      pcmds                                     7585      4C      76       1   .rodata     
      dvlist                                    75D1       C      12       1   .rodata     
-     STRING.SW01.00.00HW03.00.1                7886      12      18       1   .rodata1    
+     STRING.SW01.00.00HW03.00.1                787E      12      18       1   .rodata1    
      xframe                                     333       4       4      10   .bss        
      in                                         337       2       2       3   .bss        
      curr_val                                   339       1       1       2   .bss        
@@ -1226,7 +1226,7 @@ MODULE STATISTIC
   utils.c.o                                    0     62      0
   alarm.c.o                                    0     30      0
   drverr.c.o                                   0      3      0
-  enaint.c.o                                  10    130     76
+  enaint.c.o                                  10    130     68
   lowint.c.o                                   0     20      0
   grstatus.c.o                                32    443      0
   locker.c.o                                  16    320      0
@@ -1398,7 +1398,7 @@ SECTION: ".rodata"
   trans_extnotchrg trans_ext trans_backup extchrg extnotchrg ext backup 
   trans_lockidle trans_wkeysw trans_powered lockidle wkeysw powered 
 SECTION: ".rodata1"
-  STRING.D..MinibankLocks.CIM.1 STRING.SW01.00.00HW03.00.1 
+  STRING.D..MinibankLocks.V1..1 STRING.SW01.00.00HW03.00.1 
 SECTION: "BOOTROM"
   version_number 
 SECTION: ".common"
@@ -2337,8 +2337,8 @@ OBJECT LIST SORTED BY ADDRESS
      lockidle                                  782E       4       4      14   .rodata     
      wkeysw                                    7832       4       4       3   .rodata     
      powered                                   7836       4       4       3   .rodata     
-     STRING.D..MinibankLocks.CIM.1             783A      4C      76       2   .rodata1    
-     STRING.SW01.00.00HW03.00.1                7886      12      18       1   .rodata1    
+     STRING.D..MinibankLocks.V1..1             783A      44      68       2   .rodata1    
+     STRING.SW01.00.00HW03.00.1                787E      12      18       1   .rodata1    
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
      _Vector_20                                FFD6       2       2       0   .abs_section_ffd6
      _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
@@ -2406,114 +2406,114 @@ STRING.C.o (ansiis.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0x7898 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x7890 ---- SIZE       4 ---
 Filling bytes inserted
  00D70100
-------- ROM-ADDRESS: 0x789C ---- RAM-ADDRESS: 0x100 ---- SIZE      16 ---
+------- ROM-ADDRESS: 0x7894 ---- RAM-ADDRESS: 0x100 ---- SIZE      16 ---
 Name of initialized Object : gsqueues
  0782078207 8200900812 0812081200
  40
-------- ROM-ADDRESS: 0x78AC ---- RAM-ADDRESS: 0x110 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x78A4 ---- RAM-ADDRESS: 0x110 ---- SIZE       2 ---
 Name of initialized Object : watchdog_tick
  03E8
-------- ROM-ADDRESS: 0x78AE ---- RAM-ADDRESS: 0x112 ---- SIZE      42 ---
+------- ROM-ADDRESS: 0x78A6 ---- RAM-ADDRESS: 0x112 ---- SIZE      42 ---
 Name of initialized Object : mparsers
  754975492C 3C74437443 2435782E78
  2E7236782E 782E724078 2E782E724A
  782E782E72 5577E277E2 5C85
-------- ROM-ADDRESS: 0x78D8 ---- RAM-ADDRESS: 0x13C ---- SIZE      24 ---
+------- ROM-ADDRESS: 0x78D0 ---- RAM-ADDRESS: 0x13C ---- SIZE      24 ---
 Name of initialized Object : nqueues
  0852085208 5200020856 0856085600
  04085E085E 085E0008
-------- ROM-ADDRESS: 0x78F0 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x78E8 ---- SIZE       1 ---
 Filling bytes inserted
  00
-------- ROM-ADDRESS: 0x78F1 ---- RAM-ADDRESS: 0x155 ---- SIZE       7 ---
+------- ROM-ADDRESS: 0x78E9 ---- RAM-ADDRESS: 0x155 ---- SIZE       7 ---
 Name of initialized Object : lock_timer:1
  9600960096 0096
-------- ROM-ADDRESS: 0x78F8 ---- RAM-ADDRESS: 0x15C ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x78F0 ---- RAM-ADDRESS: 0x15C ---- SIZE       1 ---
 Name of initialized Object : enable_maintime
  01
-------- ROM-ADDRESS: 0x78F9 ---- RAM-ADDRESS: 0x15D ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x78F1 ---- RAM-ADDRESS: 0x15D ---- SIZE       3 ---
 Name of initialized Object : cpdata
  763701
-------- ROM-ADDRESS: 0x78FC ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x78F4 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x7900 ---- RAM-ADDRESS: 0x164 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x78F8 ---- RAM-ADDRESS: 0x164 ---- SIZE       2 ---
 Name of initialized Object : cpdata:7
  7637
-------- ROM-ADDRESS: 0x7902 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x78FA ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x7906 ---- RAM-ADDRESS: 0x16A ---- SIZE      10 ---
+------- ROM-ADDRESS: 0x78FE ---- RAM-ADDRESS: 0x16A ---- SIZE      10 ---
 Name of initialized Object : cpdata:13
  0176370100 0000027637
-------- ROM-ADDRESS: 0x7910 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x7908 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x7914 ---- RAM-ADDRESS: 0x178 ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x790C ---- RAM-ADDRESS: 0x178 ---- SIZE       3 ---
 Name of initialized Object : cpdata:27
  037637
-------- ROM-ADDRESS: 0x7917 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x790F ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x791B ---- RAM-ADDRESS: 0x17F ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x7913 ---- RAM-ADDRESS: 0x17F ---- SIZE       3 ---
 Name of initialized Object : cpdata:34
  047637
-------- ROM-ADDRESS: 0x791E ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x7916 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x7922 ---- RAM-ADDRESS: 0x186 ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x791A ---- RAM-ADDRESS: 0x186 ---- SIZE       3 ---
 Name of initialized Object : cpdata:41
  057637
-------- ROM-ADDRESS: 0x7925 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x791D ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x7929 ---- RAM-ADDRESS: 0x18D ---- SIZE      17 ---
+------- ROM-ADDRESS: 0x7921 ---- RAM-ADDRESS: 0x18D ---- SIZE      17 ---
 Name of initialized Object : cpdata:48
  0676370100 0000077637 0100000008
  7637
-------- ROM-ADDRESS: 0x793A ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x7932 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x793E ---- RAM-ADDRESS: 0x1A2 ---- SIZE       3 ---
+------- ROM-ADDRESS: 0x7936 ---- RAM-ADDRESS: 0x1A2 ---- SIZE       3 ---
 Name of initialized Object : cpdata:69
  097637
-------- ROM-ADDRESS: 0x7941 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0x7939 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0x7945 ---- RAM-ADDRESS: 0x1A9 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x793D ---- RAM-ADDRESS: 0x1A9 ---- SIZE       1 ---
 Name of initialized Object : cpdata:76
  0A
-------- ROM-ADDRESS: 0x7946 ---- RAM-ADDRESS: 0x1AA ---- SIZE       8 ---
+------- ROM-ADDRESS: 0x793E ---- RAM-ADDRESS: 0x1AA ---- SIZE       8 ---
 Name of initialized Object : grqueue
  0504050405 040010
-------- ROM-ADDRESS: 0x794E ---- RAM-ADDRESS: 0x1B2 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x7946 ---- RAM-ADDRESS: 0x1B2 ---- SIZE       2 ---
 Name of initialized Object : page_in_buffer
  FFFF
-------- ROM-ADDRESS: 0x7950 ---- SIZE       5 ---
+------- ROM-ADDRESS: 0x7948 ---- SIZE       5 ---
 Filling bytes inserted
  0000000000
-------- ROM-ADDRESS: 0x7955 ---- RAM-ADDRESS: 0x1B9 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x794D ---- RAM-ADDRESS: 0x1B9 ---- SIZE       1 ---
 Name of initialized Object : df:5
  D8
-------- ROM-ADDRESS: 0x7956 ---- SIZE       6 ---
+------- ROM-ADDRESS: 0x794E ---- SIZE       6 ---
 Filling bytes inserted
  0000000000 00
-------- ROM-ADDRESS: 0x795C ---- RAM-ADDRESS: 0x1C0 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0x7954 ---- RAM-ADDRESS: 0x1C0 ---- SIZE       1 ---
 Name of initialized Object : df:12
  14
-------- ROM-ADDRESS: 0x795D ---- RAM-ADDRESS: 0x1C1 ---- SIZE       6 ---
+------- ROM-ADDRESS: 0x7955 ---- RAM-ADDRESS: 0x1C1 ---- SIZE       6 ---
 Name of initialized Object : val_configs
  0A05050A05 05
-------- ROM-ADDRESS: 0x7963 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x795B ---- SIZE       2 ---
 Filling bytes inserted
  0000
-------- ROM-ADDRESS: 0x7965 ---- RAM-ADDRESS: 0x1C9 ---- SIZE      14 ---
+------- ROM-ADDRESS: 0x795D ---- RAM-ADDRESS: 0x1C9 ---- SIZE      14 ---
 Name of initialized Object : lockst:2
  0D0B000013 1100001917 00001F1D
-------- ROM-ADDRESS: 0x7973 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x796B ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -2625,8 +2625,8 @@ push                      USES pint int_stack
 pop                       USES pint int_stack 
 init_int_handler          USES init_stack 
 sem_disable               USES get_enable_status disable_interrupt 
-                                STRING.D..MinibankLocks.CIM.1 fatal push 
-sem_enable                USES pop STRING.D..MinibankLocks.CIM.1 fatal 
+                                STRING.D..MinibankLocks.V1..1 fatal push 
+sem_enable                USES pop STRING.D..MinibankLocks.V1..1 fatal 
                                 disable_interrupt enable_interrupt 
 enable_gral_interrupt     USES enable_interrupt 
 init_group_status         USES init_group_status grst get_cstate 
@@ -5332,5 +5332,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 12
-Total size of all blocks to be downloaded: 24903
+Total size of all blocks to be downloaded: 24895
 
