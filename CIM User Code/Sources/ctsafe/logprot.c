@@ -287,6 +287,8 @@ typedef struct
 {
 	uchar tlock0;
 	uchar tlock1;
+	uchar tlock2;
+	uchar tlock3;
 } TLOCK_T;
 
 /*
@@ -326,6 +328,8 @@ typedef struct
 {
 	uchar tunlock_enable_lock0;
 	uchar tunlock_enable_lock1;
+	uchar tunlock_enable_lock2;
+	uchar tunlock_enable_lock3;
 } TUNLOCK_ENABLE_LOCKS_T;
 
 /*
@@ -338,6 +342,18 @@ typedef struct
 	uchar who;
 	uchar pwr;
 } VALPWR_T;
+
+
+/*
+ *		Used to check valid user device.
+ */
+
+typedef struct
+{
+	ushort mask;
+	uchar devno;
+} DVL_T;
+
 
 static XMIT_BUFF_T xframe;		/* is shared with receiving side */
 extern RFRAME_T rcv_frame;		/* is shared with receiving side */
@@ -417,7 +433,14 @@ static const PFR pdevs[] =
 	proc_dev_plunger,
 	proc_dev_alarm,
 	proc_dev_alarm,
-	proc_dev_sbox
+	proc_dev_sbox,
+	NULL,
+	NULL,
+	proc_dev_locker,
+	proc_dev_locker,
+	proc_dev_plunger,
+	proc_dev_plunger,
+	NULL
 };
 
 /*
@@ -467,6 +490,31 @@ static const PFR pcmds[] =
 	proc_tunlock_enable_locks,
 	proc_valpwr
 };
+
+
+static const DVL_T dvlist[] =
+{
+	{ LOCKER0_MASK, LOCKER0	},
+	{ LOCKER1_MASK, LOCKER1	},
+	{ LOCKER2_MASK, LOCKER2	},
+	{ LOCKER3_MASK, LOCKER3	}
+};
+
+
+static
+MUInt
+search_dev_in_list( uchar rcv_dev, ushort user_devs )
+{
+	MUInt ix;
+	DVL_T *pdv;
+
+	for( ix = 0, pdv = dvlist; ix < NUM_DEVS_LIST; ++ix, ++pdv )
+		if( pdv->devno == rcv_dev )
+			return ( pdv->mask & user_devs ) == 0;
+
+	return 1;
+}
+
 
 /*
  * get_xmit_frames:
@@ -675,8 +723,7 @@ validate_user_and_devlist( uchar dev, USER_T *user, uchar *pass_match, ushort *p
 		return 1;
 	}
 
-	if( dev != ( *pdev_list & LOCKER0_MASK ) && 
-			dev != ( *pdev_list & LOCKER1_MASK ) )
+	if( search_dev_in_list( dev, *pdev_list ) )
 	{
 		r = -ERR_USER_BAD_DEV;
 		verify_to_respond( dev, r, NULL, 0 );
@@ -1276,6 +1323,12 @@ proc_tlock( RFRAME_T *p )
 		set_tlock( LOCKER0, pload->tlock0 );
 	if( pload->tlock1 != TLOCK_NOT_ALLOWED )
 		set_tlock( LOCKER1, pload->tlock1 );
+
+	if( pload->tlock2 != TLOCK_NOT_ALLOWED )
+		set_tlock( LOCKER2, pload->tlock2 );
+	if( pload->tlock3 != TLOCK_NOT_ALLOWED )
+		set_tlock( LOCKER3, pload->tlock3 );
+
 	send_success( p->curr_dev );
 }
 
@@ -1294,6 +1347,8 @@ proc_tunlock_enable( RFRAME_T *p )
 	{
 		set_tunlock_enable( LOCKER0, pload->tunlock_enable );
 		set_tunlock_enable( LOCKER1, pload->tunlock_enable );
+		set_tunlock_enable( LOCKER2, pload->tunlock_enable );
+		set_tunlock_enable( LOCKER3, pload->tunlock_enable );
 	}
 	send_success( p->curr_dev );
 }
@@ -1399,6 +1454,11 @@ proc_tunlock_enable_locks( RFRAME_T *p )
 		set_tunlock_enable( LOCKER0, pload->tunlock_enable_lock0 );
 	if( pload->tunlock_enable_lock1 != TUNLOCK_NOT_ALLOWED )
 		set_tunlock_enable( LOCKER1, pload->tunlock_enable_lock1 );
+
+	if( pload->tunlock_enable_lock2 != TUNLOCK_NOT_ALLOWED )
+		set_tunlock_enable( LOCKER2, pload->tunlock_enable_lock2 );
+	if( pload->tunlock_enable_lock3 != TUNLOCK_NOT_ALLOWED )
+		set_tunlock_enable( LOCKER3, pload->tunlock_enable_lock3 );
 
 	send_success( p->curr_dev );
 }

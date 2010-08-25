@@ -20,7 +20,9 @@ enum
 	LOCKS_DOOR1, PLGS_DOOR1,
 	LOCKS_DOOR2, PLGS_DOOR2,
 	VAL1_STACKER, VAL2_STACKER,
-	KEY_SWITCH 
+	KEY_SWITCH, 
+	LOCKS_DOOR3, LOCKS_DOOR4,
+	PLGS_DOOR3, PLGS_DOOR4,
 };
 
 static CPDATA cpdata[] =
@@ -31,7 +33,11 @@ static CPDATA cpdata[] =
 	{ (CPARSE *)senspar, 0, CLOSE_ST, 0, PLGS_DOOR2  },
 	{ (CPARSE *)senspar, 0, CLOSE_ST, 0, VAL1_STACKER},
 	{ (CPARSE *)senspar, 0, CLOSE_ST, 0, VAL2_STACKER},
-	{ (CPARSE *)senspar, 0, CLOSE_ST, 0, KEY_SWITCH  }
+	{ (CPARSE *)senspar, 0, CLOSE_ST, 0, KEY_SWITCH  },
+	{ (CPARSE *)senspar, 1, CLOSE_ST, 0, LOCKS_DOOR3 },
+	{ (CPARSE *)senspar, 1, CLOSE_ST, 0, LOCKS_DOOR4 },
+	{ (CPARSE *)senspar, 0, CLOSE_ST, 0, PLGS_DOOR3  },
+	{ (CPARSE *)senspar, 0, CLOSE_ST, 0, PLGS_DOOR4  }
 };
 
 #define MAX_PARSER (sizeof(cpdata)/sizeof(*cpdata))

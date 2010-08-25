@@ -43,10 +43,18 @@ init_group_status( void )
 		CLOSED : OPENED;
 	grst.plunger1 = ( get_cstate(PLGS2) == CLOSE_ST ) ? 
 		CLOSED : OPENED;
+	grst.plunger2 = ( get_cstate(PLGS3) == CLOSE_ST ) ? 
+		CLOSED : OPENED;
+	grst.plunger3 = ( get_cstate(PLGS4) == CLOSE_ST ) ? 
+		CLOSED : OPENED;
 
 	grst.locker0 = ( get_cstate(LOCKS1) == CLOSE_ST ) ? 
 		LOCKED_STATUS : UNLOCKED_STATUS;
 	grst.locker1 = ( get_cstate(LOCKS2) == CLOSE_ST ) ? 
+		LOCKED_STATUS : UNLOCKED_STATUS;
+	grst.locker2 = ( get_cstate(LOCKS3) == CLOSE_ST ) ? 
+		LOCKED_STATUS : UNLOCKED_STATUS;
+	grst.locker3 = ( get_cstate(LOCKS4) == CLOSE_ST ) ? 
 		LOCKED_STATUS : UNLOCKED_STATUS;
 
 	grst.stacker0 = ( get_cstate(VAL1STCK) == CLOSE_ST ) ? 
@@ -54,15 +62,11 @@ init_group_status( void )
 	grst.stacker1 = ( get_cstate(VAL2STCK) == CLOSE_ST ) ? 
 		INSTALLED : REMOVED;
 
-	if( grst.plunger1 == OPENED )
-		grst.locker1 = UNLOCKED_STATUS;
+	grst.key_switch = ( get_cstate(KEYSWITCH) == CLOSE_ST ) ? 
+		CLOSED : OPENED;
 
 	grst.locker_error0 = grst.locker_error1 = LOCKER_OK;
-
-/*	grst.locker0 = grst.locker1 = LOCKED_STATUS;
-	grst.plunger0 = grst.plunger1 = CLOSED;
-	grst.stacker0 = grst.stacker1 = INSTALLED;
-	grst.locker_error0 = grst.locker_error1 = LOCKER_OK;*/
+	grst.locker_error2 = grst.locker_error3 = LOCKER_OK;
 }
 
 GR1ST_T *
@@ -78,7 +82,11 @@ get_grstat( void )
  *	LOCKER0_STATUS, PLUNGER0_STATUS,
  *	LOCKER1_STATUS, PLUNGER1_STATUS, SAFE_BOX,
  *	STACKER0_STATUS, STACKER1_STATUS,
- *	LOCKER0_ERROR, LOCKER1_ERROR
+ *	LOCKER0_ERROR, LOCKER1_ERROR,
+ *	LOCKER2_STATUS, LOCKER3_STATUS,
+ *	PLUNGER2_STATUS, PLUNGER3_STATUS,
+ *	KEY_SWITCH_STATUS,
+ *	LOCKER2_ERROR, LOCKER3_ERROR
  */
 unsigned char *
 get_group_status( void )
@@ -87,8 +95,13 @@ get_group_status( void )
 
 	dprintf( printf( "\nLocker0 Status : %s\n", mlst[grst.locker0] ) );
 	dprintf( printf( "Locker1 Status : %s\n", mlst[grst.locker1] ) );
+	dprintf( printf( "Locker2 Status : %s\n", mlst[grst.locker2] ) );
+	dprintf( printf( "Locker3 Status : %s\n", mlst[grst.locker3] ) );
 	dprintf( printf( "Plunger0 Status : %s\n", mpst[grst.plunger0] ) );
 	dprintf( printf( "Plunger1 Status : %s\n", mpst[grst.plunger1] ) );
+	dprintf( printf( "Plunger2 Status : %s\n", mpst[grst.plunger2] ) );
+	dprintf( printf( "Plunger3 Status : %s\n", mpst[grst.plunger3] ) );
+	dprintf( printf( "KeySwitch Status : %s\n", mpst[grst.key_switch] ) );
 	
 	if( remove_grqueue(&rem_grst) != -EMPTY_GQUEUE )
 	{
@@ -122,18 +135,30 @@ set_safebox_st( unsigned char state )
 void
 set_locker_state( MUInt who, unsigned char state )
 {
-	if( who == LOCKER0 )
+	unsigned char *p;
+
+	switch( who )
 	{
-		if( grst.locker0 == state )
+		case LOCKER0:
+			p = &grst.locker0;
+			break;
+		case LOCKER1:
+			p = &grst.locker1;
+			break;
+		case LOCKER2:
+			p = &grst.locker2;
+			break;
+		case LOCKER3:
+			p = &grst.locker3;
+			break;
+		default:
 			return;
-		grst.locker0 = state;
 	}
-	else
-	{
-		if( grst.locker1 == state )
-			return;
-		grst.locker1 = state;
-	}
+
+	if( *p == state )
+		return;
+
+	*p = state;
 	put_grqueue(&grst);
 }
 
@@ -145,18 +170,30 @@ set_locker_state( MUInt who, unsigned char state )
 void
 set_plunger_state( MUInt who, unsigned char state )
 {
-	if( who == PLUNGER0 )
+	unsigned char *p;
+
+	switch( who )
 	{
-		if( grst.plunger0 == state )
+		case PLUNGER0:
+			p = &grst.plunger0;
+			break;
+		case PLUNGER1:
+			p = &grst.plunger1;
+			break;
+		case PLUNGER2:
+			p = &grst.plunger2;
+			break;
+		case PLUNGER3:
+			p = &grst.plunger3;
+			break;
+		default:
 			return;
-		grst.plunger0 = state;
 	}
-	else
-	{
-		if( grst.plunger1 == state )
-			return;
-		grst.plunger1 = state;
-	}
+
+	if( *p == state )
+		return;
+
+	*p = state;
 	put_grqueue(&grst);
 }
 
@@ -168,20 +205,40 @@ set_plunger_state( MUInt who, unsigned char state )
 void
 set_stacker_state( MUInt who, unsigned char state )
 {
-	if( who == STACKER0 )
-	{
-		if( grst.stacker0 == state )
-			return;
-		grst.stacker0 = state;
-	}
-	else
-	{
-		if( grst.stacker1 == state )
-			return;
-		grst.stacker1 = state;
-	}
-	put_grqueue(&grst);
+	unsigned char *p;
 
+	switch( who )
+	{
+		case STACKER0:
+			p = &grst.stacker0;
+			break;
+		case STACKER1:
+			p = &grst.stacker1;
+			break;
+		default:
+			return;
+	}
+
+	if( *p == state )
+		return;
+
+	*p = state;
+	put_grqueue(&grst);
+}
+
+/*
+ * set_stacker_state
+ * state: CLOSED/OPENED
+ */
+void
+set_keyswitch_state( unsigned char state )
+{
+	if( grst.key_switch == state )
+		return;
+
+	grst.key_switch = state;
+
+	put_grqueue(&grst);
 }
 
 /*
@@ -193,17 +250,29 @@ set_stacker_state( MUInt who, unsigned char state )
 void 
 inform_locker_error( MUInt who, MUInt error )
 {
-	if( who == LOCKER0 )
+	unsigned char *p;
+
+	switch( who )
 	{
-		if( grst.locker_error0 == error )
+		case LOCKER0:
+			p = &grst.locker_error0;
+			break;
+		case LOCKER1:
+			p = &grst.locker_error1;
+			break;
+		case LOCKER2:
+			p = &grst.locker_error2;
+			break;
+		case LOCKER3:
+			p = &grst.locker_error3;
+			break;
+		default:
 			return;
-		grst.locker_error0 = error;
 	}
-	else
-	{
-		if( grst.locker_error1 == error )
-			return;
-		grst.locker_error1 = error;
-	}
+
+	if( *p == error )
+		return;
+
+	*p = error;
 	put_grqueue(&grst);
 }

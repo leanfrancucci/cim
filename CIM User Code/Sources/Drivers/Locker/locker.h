@@ -17,6 +17,14 @@ enum
 	TOLOCK, TOUNLOCK
 };
 
+enum
+{
+	LOCK0_HDLR, LOCK1_HDLR, LOCK2_HDLR, LOCK3_HDLR,
+	NUM_LOCKS
+};
+
+MUInt get_lock_ix( MUInt which );
+
 /*
  * set_locker:
  * 	Send news according to desired operations on

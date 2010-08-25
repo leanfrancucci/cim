@@ -9,7 +9,7 @@
 #include "news.h"
 #include "nqdata.h"
 
-#define MAX_TIMERS		14
+#define MAX_TIMERS		18
 
 enum
 {

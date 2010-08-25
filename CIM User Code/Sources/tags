@@ -31,7 +31,14 @@ ALL_WOUTS_OFF	.\Drivers\Wout\wouts.h	30;"	d
 APRW_B1	.\Drivers\Dflash\flash.h	/^	APRW_B1,		$/;"	e
 APRW_B2	.\Drivers\Dflash\flash.h	/^	APRW_B2,		$/;"	e
 AUTO_CS	.\Drivers\Platform\SPI\spi.h	18;"	d
-AUX2	.\Drivers\Platform\IO\ioports.h	47;"	d
+AUX2	.\Drivers\Platform\IO\ioports.h	54;"	d
+AUXILIAR_IN	.\Drivers\Sensor\sensor.h	49;"	d
+AUXIO0	.\Drivers\Platform\IO\ioports.h	31;"	d
+AUXIO1	.\Drivers\Platform\IO\ioports.h	32;"	d
+AUXIO2	.\Drivers\Platform\IO\ioports.h	33;"	d
+AUXIO3	.\Drivers\Platform\IO\ioports.h	34;"	d
+AUXIO4	.\Drivers\Platform\IO\ioports.h	35;"	d
+AUXIO5	.\Drivers\Platform\IO\ioports.h	36;"	d
 B1200	.\Drivers\Serial\serdefs.h	/^	B300, B600, B1200, B2400, B4800, B9600, B19200,$/;"	e
 B19200	.\Drivers\Serial\serdefs.h	/^	B300, B600, B1200, B2400, B4800, B9600, B19200,$/;"	e
 B1_READ	.\Drivers\Dflash\flash.h	/^	B1_READ,$/;"	e
@@ -64,7 +71,7 @@ BATTOK	.\Drivers\Pwrsys\pwrsys.h	/^	BATTLOW, BATTREM, BATTOK$/;"	e
 BATTREM	.\Drivers\Pwrsys\pwrsys.h	/^	BATTLOW, BATTREM, BATTOK$/;"	e
 BATTREM_LVL	.\Common\Automatons\pwrctrl\pwrdefs.h	18;"	d
 BATTREM_TIME	.\Common\Automatons\pwrctrl\pwrdefs.h	26;"	d
-BATT_CTRL	.\Drivers\Platform\IO\ioports.h	65;"	d
+BATT_CTRL	.\Drivers\Platform\IO\ioports.h	72;"	d
 BATT_DISCONNET_TIME	.\settings\settings.h	43;"	d
 BATT_LVL	.\Drivers\Platform\IO\ioports.h	30;"	d
 BATT_OK	.\Common\news\news.h	/^	BATT_OK,$/;"	e
@@ -86,32 +93,30 @@ BROADCAST	.\Common\news\news.h	22;"	d
 BUFFER0	.\Common\vaultdef.h	/^	BUFFER0, BUFFER1$/;"	e
 BUFFER1	.\Common\vaultdef.h	/^	BUFFER0, BUFFER1$/;"	e
 BUFF_T	.\ctsafe\logprot.h	/^} BUFF_T;$/;"	t
-BURGLAR_AL	.\Drivers\Platform\IO\ioports.h	42;"	d
-BVSEL	.\Drivers\Platform\IO\ioports.h	36;"	d
+BURGLAR_AL	.\Drivers\Platform\IO\ioports.h	49;"	d
+BVSEL	.\Drivers\Platform\IO\ioports.h	43;"	d
 BWATCHDOG_TICK	.\Drivers\Watchdog\watchdog.c	15;"	d	file:
 CH0	.\Drivers\Serial\Phylay\sersw.h	/^	CH0, CH1, NUM_CHS$/;"	e
 CH1	.\Drivers\Serial\Phylay\sersw.h	/^	CH0, CH1, NUM_CHS$/;"	e
 CHECK_MCU	.\ctsafe\logprot.c	/^	NO_CHECK_MCU, CHECK_MCU$/;"	e	file:
-CHRG_CTRL0	.\Drivers\Platform\IO\ioports.h	66;"	d
-CHRG_CTRL1	.\Drivers\Platform\IO\ioports.h	64;"	d
+CHRG_CTRL0	.\Drivers\Platform\IO\ioports.h	73;"	d
+CHRG_CTRL1	.\Drivers\Platform\IO\ioports.h	71;"	d
 CHRG_DCONN_TIME	.\Common\Automatons\pwrctrl\pwrdefs.h	27;"	d
-CIM_ID0	.\Drivers\Platform\IO\ioports.h	69;"	d
-CIM_ID1	.\Drivers\Platform\IO\ioports.h	70;"	d
-CIM_ID2	.\Drivers\Platform\IO\ioports.h	71;"	d
-CIM_ID3	.\Drivers\Platform\IO\ioports.h	72;"	d
+CIM_ID0	.\Drivers\Platform\IO\ioports.h	76;"	d
+CIM_ID1	.\Drivers\Platform\IO\ioports.h	77;"	d
+CIM_ID2	.\Drivers\Platform\IO\ioports.h	78;"	d
+CIM_ID3	.\Drivers\Platform\IO\ioports.h	79;"	d
 CLOSED	.\Drivers\GRstatus\grstatus.h	/^	OPENED, CLOSED$/;"	e
 CLOSEFILE	.\ctsafe\cscmds.h	/^	CLOSEFILE,			\/*	Not assigned						*\/$/;"	e
 CLOSEFILE_T	.\ctsafe\logprot.c	/^} CLOSEFILE_T;$/;"	t	file:
 CLOSE_DOOR	.\Common\news\news.h	/^	CLOSE_DOOR,$/;"	e
-CLOSE_DOOR1_IX	.\Common\news\news.h	/^	CLOSE_DOOR1_IX,$/;"	e
-CLOSE_DOOR2_IX	.\Common\news\news.h	/^	CLOSE_DOOR2_IX,$/;"	e
 CLOSE_KEYS	.\Common\news\news.h	/^	CLOSE_KEYS,$/;"	e
 CLOSE_KEYS_D1_IX	.\Common\news\news.h	/^	CLOSE_KEYS_D1_IX,$/;"	e
 CLOSE_KEYS_D2_IX	.\Common\news\news.h	/^	CLOSE_KEYS_D2_IX,$/;"	e
+CLOSE_KEYS_D3_IX	.\Common\news\news.h	/^	CLOSE_KEYS_D3_IX,$/;"	e
+CLOSE_KEYS_D4_IX	.\Common\news\news.h	/^	CLOSE_KEYS_D4_IX,$/;"	e
 CLOSE_NEWS	.\Drivers\Sensor\cpdata.h	/^	OPEN_NEWS, CLOSE_NEWS, NUM_NEWSTYPE$/;"	e
 CLOSE_ST	.\Drivers\Sensor\cpdata.h	/^	CLOSE_ST,$/;"	e
-CLOSE_VAL1STCK_IX	.\Drivers\Sensor\cpdata.c	/^   CLOSE_VAL1STCK_IX,$/;"	e	file:
-CLOSE_VAL2STCK_IX	.\Drivers\Sensor\cpdata.c	/^   CLOSE_VAL2STCK_IX$/;"	e	file:
 CLOSING_ST	.\Drivers\Sensor\cpdata.h	/^	CLOSING_ST,$/;"	e
 CMD_POS	.\ctsafe\csframe.h	/^	MARK_POS, DEV_POS, CMD_POS,	NDATA_POS$/;"	e
 CMD_T	.\ctsafe\cscmds.h	/^} CMD_T;$/;"	t
@@ -141,8 +146,8 @@ DATAFL_T	.\Drivers\Dflash\dftypes.h	/^} DATAFL_T;$/;"	t
 DATA_LEN	.\Common\news\news.h	/^	DATA_LEN,$/;"	e
 DATA_POS	.\ctsafe\csframe.h	86;"	d
 DATA_VALID	.\Common\news\news.h	/^	DATA_VALID, $/;"	e
-DEBUG	.\settings\settings.h	78;"	d
-DEF_TOUT_STVAL	.\settings\settings.h	59;"	d
+DEBUG	.\settings\settings.h	69;"	d
+DEF_TOUT_STVAL	.\settings\settings.h	50;"	d
 DELUSR	.\ctsafe\cscmds.h	/^	DELUSR,				\/*	Delete one user 					*\/$/;"	e
 DEL_T	.\ctsafe\logprot.c	/^} DEL_T;$/;"	t	file:
 DENSITY_MASK	.\Drivers\Dflash\dataflsh.c	33;"	d	file:
@@ -165,57 +170,73 @@ DISABLE	.\Drivers\Alarm\alarm.h	/^	ENABLE, DISABLE$/;"	e
 DISABLE_DET	.\Drivers\Platform\IRQ\irq.h	/^	DISABLE_DET, ENABLE_DET$/;"	e
 DOOR1S	.\Drivers\Platform\IO\ioports.h	21;"	d
 DOOR2S	.\Drivers\Platform\IO\ioports.h	23;"	d
-DOORWOS_CTRL	.\Common\Mparser\mpdata.h	/^	DOORWS_CTRL, DOORWOS_CTRL, PWRCTRL_CTRL,$/;"	e
-DOORWS_CTRL	.\Common\Mparser\mpdata.h	/^	DOORWS_CTRL, DOORWOS_CTRL, PWRCTRL_CTRL,$/;"	e
+DOOR3S	.\Drivers\Sensor\sensor.h	30;"	d
+DOOR3S_MASK	.\Drivers\Sensor\sensor.h	45;"	d
+DOOR4S	.\Drivers\Sensor\sensor.h	40;"	d
+DOOR4S_MASK	.\Drivers\Sensor\sensor.h	47;"	d
 DUAL	.\ctsafe\cscmds.h	/^	SINGLE, DUAL$/;"	e
 DUMMY_DATA	.\Drivers\Dflash\spihal.h	13;"	d
-DURESS_AL	.\Drivers\Platform\IO\ioports.h	41;"	d
-D_AUX2	.\Drivers\Platform\IO\ioports.h	103;"	d
-D_BATT_CTRL	.\Drivers\Platform\IO\ioports.h	121;"	d
-D_BATT_LVL	.\Drivers\Platform\IO\ioports.h	86;"	d
-D_BURGLAR_AL	.\Drivers\Platform\IO\ioports.h	98;"	d
-D_BVSEL	.\Drivers\Platform\IO\ioports.h	92;"	d
-D_CHRG_CTRL0	.\Drivers\Platform\IO\ioports.h	122;"	d
-D_CHRG_CTRL1	.\Drivers\Platform\IO\ioports.h	120;"	d
-D_CIM_ID0	.\Drivers\Platform\IO\ioports.h	125;"	d
-D_CIM_ID1	.\Drivers\Platform\IO\ioports.h	126;"	d
-D_CIM_ID2	.\Drivers\Platform\IO\ioports.h	127;"	d
-D_CIM_ID3	.\Drivers\Platform\IO\ioports.h	128;"	d
-D_DOOR1S	.\Drivers\Platform\IO\ioports.h	78;"	d
-D_DOOR2S	.\Drivers\Platform\IO\ioports.h	80;"	d
-D_DURESS_AL	.\Drivers\Platform\IO\ioports.h	97;"	d
-D_E_MEMCTRL	.\Drivers\Platform\IO\ioports.h	113;"	d
-D_HOST_PWR	.\Drivers\Platform\IO\ioports.h	119;"	d
-D_KEYS	.\Drivers\Platform\IO\ioports.h	95;"	d
-D_LED1	.\Drivers\Platform\IO\ioports.h	90;"	d
-D_LED2	.\Drivers\Platform\IO\ioports.h	91;"	d
-D_LOCK1A	.\Drivers\Platform\IO\ioports.h	115;"	d
-D_LOCK1B	.\Drivers\Platform\IO\ioports.h	116;"	d
-D_LOCK1S	.\Drivers\Platform\IO\ioports.h	77;"	d
-D_LOCK1_CURR	.\Drivers\Platform\IO\ioports.h	81;"	d
-D_LOCK2A	.\Drivers\Platform\IO\ioports.h	117;"	d
-D_LOCK2B	.\Drivers\Platform\IO\ioports.h	118;"	d
-D_LOCK2S	.\Drivers\Platform\IO\ioports.h	79;"	d
-D_LOCK2_CURR	.\Drivers\Platform\IO\ioports.h	82;"	d
-D_MCU_ID	.\Drivers\Platform\IO\ioports.h	94;"	d
-D_PRIPWRCTRL	.\Drivers\Platform\IO\ioports.h	124;"	d
-D_SPI_CLK	.\Drivers\Platform\IO\ioports.h	111;"	d
-D_SPI_CS_M	.\Drivers\Platform\IO\ioports.h	112;"	d
-D_SPI_CS_PM	.\Drivers\Platform\IO\ioports.h	108;"	d
-D_SPI_MISO	.\Drivers\Platform\IO\ioports.h	109;"	d
-D_SPI_MOSI	.\Drivers\Platform\IO\ioports.h	110;"	d
-D_UART1DIR	.\Drivers\Platform\IO\ioports.h	93;"	d
-D_UART1_RXD	.\Drivers\Platform\IO\ioports.h	107;"	d
-D_UART1_TXD	.\Drivers\Platform\IO\ioports.h	106;"	d
-D_UART2_RXD	.\Drivers\Platform\IO\ioports.h	89;"	d
-D_UART2_TXD	.\Drivers\Platform\IO\ioports.h	88;"	d
-D_VAL0PWR	.\Drivers\Platform\IO\ioports.h	102;"	d
-D_VAL1PWR	.\Drivers\Platform\IO\ioports.h	104;"	d
-D_VAL1_STACKS	.\Drivers\Platform\IO\ioports.h	83;"	d
-D_VAL2_STACKS	.\Drivers\Platform\IO\ioports.h	84;"	d
-D_VLOCKS_CTRL	.\Drivers\Platform\IO\ioports.h	100;"	d
-D_VRLY_CTRL	.\Drivers\Platform\IO\ioports.h	101;"	d
-D_WDOG_CTRL	.\Drivers\Platform\IO\ioports.h	99;"	d
+DURESS_AL	.\Drivers\Platform\IO\ioports.h	48;"	d
+DVL_T	.\ctsafe\logprot.c	/^} DVL_T;$/;"	t	file:
+D_AUX2	.\Drivers\Platform\IO\ioports.h	117;"	d
+D_AUXIO0	.\Drivers\Platform\IO\ioports.h	94;"	d
+D_AUXIO1	.\Drivers\Platform\IO\ioports.h	95;"	d
+D_AUXIO2	.\Drivers\Platform\IO\ioports.h	96;"	d
+D_AUXIO3	.\Drivers\Platform\IO\ioports.h	97;"	d
+D_AUXIO4	.\Drivers\Platform\IO\ioports.h	98;"	d
+D_AUXIO5	.\Drivers\Platform\IO\ioports.h	99;"	d
+D_BATT_CTRL	.\Drivers\Platform\IO\ioports.h	135;"	d
+D_BATT_LVL	.\Drivers\Platform\IO\ioports.h	93;"	d
+D_BURGLAR_AL	.\Drivers\Platform\IO\ioports.h	112;"	d
+D_BVSEL	.\Drivers\Platform\IO\ioports.h	106;"	d
+D_CHRG_CTRL0	.\Drivers\Platform\IO\ioports.h	136;"	d
+D_CHRG_CTRL1	.\Drivers\Platform\IO\ioports.h	134;"	d
+D_CIM_ID0	.\Drivers\Platform\IO\ioports.h	139;"	d
+D_CIM_ID1	.\Drivers\Platform\IO\ioports.h	140;"	d
+D_CIM_ID2	.\Drivers\Platform\IO\ioports.h	141;"	d
+D_CIM_ID3	.\Drivers\Platform\IO\ioports.h	142;"	d
+D_DOOR1S	.\Drivers\Platform\IO\ioports.h	85;"	d
+D_DOOR2S	.\Drivers\Platform\IO\ioports.h	87;"	d
+D_DOOR3S	.\Drivers\Sensor\sensor.h	31;"	d
+D_DOOR4S	.\Drivers\Sensor\sensor.h	41;"	d
+D_DURESS_AL	.\Drivers\Platform\IO\ioports.h	111;"	d
+D_E_MEMCTRL	.\Drivers\Platform\IO\ioports.h	127;"	d
+D_HOST_PWR	.\Drivers\Platform\IO\ioports.h	133;"	d
+D_KEYS	.\Drivers\Platform\IO\ioports.h	109;"	d
+D_LED1	.\Drivers\Platform\IO\ioports.h	104;"	d
+D_LED2	.\Drivers\Platform\IO\ioports.h	105;"	d
+D_LOCK1A	.\Drivers\Platform\IO\ioports.h	129;"	d
+D_LOCK1B	.\Drivers\Platform\IO\ioports.h	130;"	d
+D_LOCK1S	.\Drivers\Platform\IO\ioports.h	84;"	d
+D_LOCK1_CURR	.\Drivers\Platform\IO\ioports.h	88;"	d
+D_LOCK2A	.\Drivers\Platform\IO\ioports.h	131;"	d
+D_LOCK2B	.\Drivers\Platform\IO\ioports.h	132;"	d
+D_LOCK2S	.\Drivers\Platform\IO\ioports.h	86;"	d
+D_LOCK2_CURR	.\Drivers\Platform\IO\ioports.h	89;"	d
+D_LOCK3	.\Drivers\Sensor\sensor.h	25;"	d
+D_LOCK3S	.\Drivers\Sensor\sensor.h	28;"	d
+D_LOCK4	.\Drivers\Sensor\sensor.h	35;"	d
+D_LOCK4S	.\Drivers\Sensor\sensor.h	38;"	d
+D_MCU_ID	.\Drivers\Platform\IO\ioports.h	108;"	d
+D_NOT_LOCK1B_SEC	.\Drivers\Platform\IO\ioports.h	100;"	d
+D_PRIPWRCTRL	.\Drivers\Platform\IO\ioports.h	138;"	d
+D_SPI_CLK	.\Drivers\Platform\IO\ioports.h	125;"	d
+D_SPI_CS_M	.\Drivers\Platform\IO\ioports.h	126;"	d
+D_SPI_CS_PM	.\Drivers\Platform\IO\ioports.h	122;"	d
+D_SPI_MISO	.\Drivers\Platform\IO\ioports.h	123;"	d
+D_SPI_MOSI	.\Drivers\Platform\IO\ioports.h	124;"	d
+D_UART1DIR	.\Drivers\Platform\IO\ioports.h	107;"	d
+D_UART1_RXD	.\Drivers\Platform\IO\ioports.h	121;"	d
+D_UART1_TXD	.\Drivers\Platform\IO\ioports.h	120;"	d
+D_UART2_RXD	.\Drivers\Platform\IO\ioports.h	103;"	d
+D_UART2_TXD	.\Drivers\Platform\IO\ioports.h	102;"	d
+D_VAL0PWR	.\Drivers\Platform\IO\ioports.h	116;"	d
+D_VAL1PWR	.\Drivers\Platform\IO\ioports.h	118;"	d
+D_VAL1_STACKS	.\Drivers\Platform\IO\ioports.h	90;"	d
+D_VAL2_STACKS	.\Drivers\Platform\IO\ioports.h	91;"	d
+D_VLOCKS_CTRL	.\Drivers\Platform\IO\ioports.h	114;"	d
+D_VRLY_CTRL	.\Drivers\Platform\IO\ioports.h	115;"	d
+D_WDOG_CTRL	.\Drivers\Platform\IO\ioports.h	113;"	d
 EDGE_AT_START	.\Drivers\Platform\SPI\spi.h	16;"	d
 EDITUSR	.\ctsafe\cscmds.h	/^	EDITUSR,			\/*	Edit user passwords					*\/$/;"	e
 EDIT_PASS0	.\userdfs\users.h	/^	EDIT_PASS0, EDIT_PASS1, BOTH_EDIT$/;"	e
@@ -265,7 +286,7 @@ EVEN_PAR	.\Drivers\Serial\serdefs.h	/^	NO_PAR, EVEN_PAR, ODD_PAR, HIGH_PAR, LOW_
 EXT	.\Drivers\Pwrsys\pwrsys.h	/^	EXT, BACKUP$/;"	e
 EXTCHRG_BATTM_TIME	.\Common\Automatons\pwrctrl\pwrdefs.h	24;"	d
 EXT_ST	.\Drivers\Pwrsys\pwrhdl.c	/^	EXT_ST, BACKUP_ST$/;"	e	file:
-E_MEMCTRL	.\Drivers\Platform\IO\ioports.h	57;"	d
+E_MEMCTRL	.\Drivers\Platform\IO\ioports.h	64;"	d
 FD_FW	.\Drivers\Dflash\dfdata.h	82;"	d
 FD_SEEK_CUR	.\Drivers\Dflash\dfdata.h	/^	FD_SEEK_SET, FD_SEEK_CUR, FD_SEEK_END,$/;"	e
 FD_SEEK_END	.\Drivers\Dflash\dfdata.h	/^	FD_SEEK_SET, FD_SEEK_CUR, FD_SEEK_END,$/;"	e
@@ -302,7 +323,7 @@ GETUSRDEV	.\ctsafe\cscmds.h	/^	GETUSRDEV,			\/*	Get user device list				*\/$/;"	
 GETUSRINFO	.\ctsafe\cscmds.h	/^	GETUSRINFO,			\/*	Get user info						*\/$/;"	e
 GPMEM	.\ctsafe\cscmds.h	/^	GPMEM, USERSMEM$/;"	e
 GR1ST_T	.\Drivers\GRstatus\grstatus.h	/^} GR1ST_T;$/;"	t
-GR1_DEVS	.\Drivers\GRstatus\grstatus.h	27;"	d
+GR1_DEVS	.\Drivers\GRstatus\grstatus.h	34;"	d
 GR1_STATUS	.\ctsafe\cscmds.h	/^	GR1_STATUS,			\/*	Return status of several devices	*\/$/;"	e
 GRQUEUE	.\Drivers\GRstatus\grqueue.h	/^} GRQUEUE;$/;"	t
 GRQ_MAX_ELEMENTS	.\Drivers\GRstatus\grqueue.h	12;"	d
@@ -315,15 +336,11 @@ HOSTRX_MAX_CH	.\Drivers\Serial\serdefs.h	10;"	d
 HOSTRX_QUEUE	.\Drivers\Serial\gsqueue\qdata.h	/^	HOSTRX_QUEUE, VALRX_QUEUE,$/;"	e
 HOST_OFF	.\Drivers\Pwrsys\pwrsys.h	/^	HOST_ON, HOST_OFF$/;"	e
 HOST_ON	.\Drivers\Pwrsys\pwrsys.h	/^	HOST_ON, HOST_OFF$/;"	e
-HOST_PWR	.\Drivers\Platform\IO\ioports.h	63;"	d
+HOST_PWR	.\Drivers\Platform\IO\ioports.h	70;"	d
 HOST_RESET_TIME	.\settings\settings.h	42;"	d
 HTIME	.\Drivers\Sensor\cparse.h	/^	HNEW, HTIME, NUM_ENTRIES$/;"	e
 INIT_ACT	.\Common\Mparser\mparser.h	/^typedef void (*INIT_ACT)( void );$/;"	t
 INIT_OK	.\userdfs\users.h	/^	INIT_OK,				\/*	No errors in both flashes			*\/$/;"	e
-INIT_TO_LOCKED_D1_IX	.\Common\news\news.h	/^	INIT_TO_LOCKED_D1_IX,$/;"	e
-INIT_TO_LOCKED_D2_IX	.\Common\news\news.h	/^	INIT_TO_LOCKED_D2_IX,$/;"	e
-INIT_TO_UNLOCKED_D1_IX	.\Common\news\news.h	/^	INIT_TO_UNLOCKED_D1_IX,$/;"	e
-INIT_TO_UNLOCKED_D2_IX	.\Common\news\news.h	/^	INIT_TO_UNLOCKED_D2_IX,$/;"	e
 INSTALLED	.\Drivers\GRstatus\grstatus.h	/^	INSTALLED, REMOVED$/;"	e
 INT_STK_OFLOW	.\Drivers\Enaint\drverr.h	/^	INT_STK_OFLOW, ENA_WOUT_DISA,$/;"	e
 INVALID_DATA	.\Common\news\news.h	/^	INVALID_DATA,$/;"	e
@@ -332,58 +349,84 @@ IX_CLOSE_TIME	.\Drivers\Sensor\cpdata.h	/^	IX_OPEN_TIME, IX_CLOSE_TIME, NUM_TIME
 IX_OPEN_TIME	.\Drivers\Sensor\cpdata.h	/^	IX_OPEN_TIME, IX_CLOSE_TIME, NUM_TIMEVAL$/;"	e
 Init	.\Start08.c	/^static void Init(void) {$/;"	f	file:
 K	.\Drivers\Dflash\dfdata.h	20;"	d
-KEYS	.\Drivers\Platform\IO\ioports.h	39;"	d
+KEYS	.\Drivers\Platform\IO\ioports.h	46;"	d
+KEYSW	.\ctsafe\csdevs.h	/^	KEYSW,$/;"	e
 KEYSWITCH	.\Drivers\Sensor\cparse.h	/^	VAL1STCK, VAL2STCK, KEYSWITCH,$/;"	e
-KEYSWITCH_CLOSET	.\Drivers\Sensor\cpdata.h	47;"	d
-KEYSWITCH_OPENT	.\Drivers\Sensor\cpdata.h	46;"	d
-KEYS_MASK	.\Drivers\Sensor\sensor.h	16;"	d
-KEY_SWITCH	.\Drivers\Sensor\cparse.c	/^	KEY_SWITCH $/;"	e	file:
-LED1	.\Drivers\Platform\IO\ioports.h	34;"	d
-LED2	.\Drivers\Platform\IO\ioports.h	35;"	d
+KEYSWITCH_CLOSET	.\Drivers\Sensor\cpdata.h	56;"	d
+KEYSWITCH_OPENT	.\Drivers\Sensor\cpdata.h	55;"	d
+KEYS_MASK	.\Drivers\Sensor\sensor.h	19;"	d
+KEY_SWITCH	.\Drivers\Sensor\cparse.c	/^	KEY_SWITCH, $/;"	e	file:
+LED1	.\Drivers\Platform\IO\ioports.h	41;"	d
+LED2	.\Drivers\Platform\IO\ioports.h	42;"	d
 LEO_BUFFER	.\Common\vaultdef.h	149;"	d
 LITTLE_ENDIAN	.\Common\utils\utils.h	10;"	d
 LOCK	.\ctsafe\cscmds.h	/^	LOCK, 				\/* 	Lock locker devices 				*\/$/;"	e
-LOCK1A	.\Drivers\Platform\IO\ioports.h	59;"	d
-LOCK1B	.\Drivers\Platform\IO\ioports.h	60;"	d
+LOCK0_CTRL	.\Common\Mparser\mpdata.h	/^	LOCK0_CTRL, $/;"	e
+LOCK0_HDLR	.\Common\Automatons\locks\lockact.c	/^	LOCK0_HDLR, LOCK1_HDLR, LOCK2_HDLR, LOCK3_HDLR,$/;"	e	file:
+LOCK1A	.\Drivers\Platform\IO\ioports.h	66;"	d
+LOCK1B	.\Drivers\Platform\IO\ioports.h	67;"	d
 LOCK1S	.\Drivers\Platform\IO\ioports.h	20;"	d
-LOCK1S_MASK	.\Drivers\Sensor\sensor.h	8;"	d
+LOCK1S_MASK	.\Drivers\Sensor\sensor.h	11;"	d
+LOCK1_CTRL	.\Common\Mparser\mpdata.h	/^	LOCK1_CTRL, $/;"	e
 LOCK1_CURR	.\Drivers\Platform\IO\ioports.h	24;"	d
-LOCK2A	.\Drivers\Platform\IO\ioports.h	61;"	d
-LOCK2B	.\Drivers\Platform\IO\ioports.h	62;"	d
+LOCK1_HDLR	.\Common\Automatons\locks\lockact.c	/^	LOCK0_HDLR, LOCK1_HDLR, LOCK2_HDLR, LOCK3_HDLR,$/;"	e	file:
+LOCK2A	.\Drivers\Platform\IO\ioports.h	68;"	d
+LOCK2B	.\Drivers\Platform\IO\ioports.h	69;"	d
 LOCK2S	.\Drivers\Platform\IO\ioports.h	22;"	d
-LOCK2S_MASK	.\Drivers\Sensor\sensor.h	10;"	d
+LOCK2S_MASK	.\Drivers\Sensor\sensor.h	13;"	d
+LOCK2_CTRL	.\Common\Mparser\mpdata.h	/^	LOCK2_CTRL, $/;"	e
 LOCK2_CURR	.\Drivers\Platform\IO\ioports.h	25;"	d
+LOCK2_HDLR	.\Common\Automatons\locks\lockact.c	/^	LOCK0_HDLR, LOCK1_HDLR, LOCK2_HDLR, LOCK3_HDLR,$/;"	e	file:
+LOCK3	.\Drivers\Sensor\sensor.h	24;"	d
+LOCK3S	.\Drivers\Sensor\sensor.h	27;"	d
+LOCK3S_MASK	.\Drivers\Sensor\sensor.h	44;"	d
+LOCK3_CTRL	.\Common\Mparser\mpdata.h	/^	LOCK3_CTRL, $/;"	e
+LOCK3_HDLR	.\Common\Automatons\locks\lockact.c	/^	LOCK0_HDLR, LOCK1_HDLR, LOCK2_HDLR, LOCK3_HDLR,$/;"	e	file:
+LOCK4	.\Drivers\Sensor\sensor.h	34;"	d
+LOCK4S	.\Drivers\Sensor\sensor.h	37;"	d
+LOCK4S_MASK	.\Drivers\Sensor\sensor.h	46;"	d
 LOCKED	.\Common\news\news.h	/^	LOCKED,$/;"	e
-LOCKED_DOOR1_IX	.\Common\news\news.h	/^	LOCKED_DOOR1_IX,$/;"	e
-LOCKED_DOOR2_IX	.\Common\news\news.h	/^	LOCKED_DOOR2_IX,$/;"	e
 LOCKED_STATUS	.\Drivers\GRstatus\grstatus.h	/^	LOCKED_STATUS, UNLOCKED_STATUS,$/;"	e
 LOCKER	.\Common\news\news.h	/^	PROT, UART, TIM, LOCKER, PLUNGER, PWRCTRL, COMMON$/;"	e
 LOCKER0	.\ctsafe\csdevs.h	/^	LOCKER0,$/;"	e
 LOCKER0_MASK	.\ctsafe\csdevs.h	6;"	d
 LOCKER1	.\ctsafe\csdevs.h	/^	LOCKER1,$/;"	e
 LOCKER1_MASK	.\ctsafe\csdevs.h	7;"	d
+LOCKER2	.\ctsafe\csdevs.h	/^	LOCKER2,$/;"	e
+LOCKER2_MASK	.\ctsafe\csdevs.h	8;"	d
+LOCKER3	.\ctsafe\csdevs.h	/^	LOCKER3,$/;"	e
+LOCKER3_MASK	.\ctsafe\csdevs.h	9;"	d
 LOCKER_DRVA	.\Drivers\GRstatus\grstatus.h	/^	LOCKER_DRVA, LOCKER_DRVB,$/;"	e
 LOCKER_DRVB	.\Drivers\GRstatus\grstatus.h	/^	LOCKER_DRVA, LOCKER_DRVB,$/;"	e
-LOCKER_DRV_RESP_TIME	.\Drivers\Locker\lockerhdl.c	13;"	d	file:
+LOCKER_DRV_RESP_TIME	.\Drivers\Locker\lockerhdl.c	12;"	d	file:
 LOCKER_FAIL	.\Drivers\GRstatus\grstatus.h	/^	LOCKER_OPEN, LOCKER_FAIL$/;"	e
 LOCKER_OK	.\Drivers\GRstatus\grstatus.h	/^	LOCKER_OK, $/;"	e
 LOCKER_OPEN	.\Drivers\GRstatus\grstatus.h	/^	LOCKER_OPEN, LOCKER_FAIL$/;"	e
 LOCKING_STATUS	.\Drivers\GRstatus\grstatus.h	/^	LOCKING_STATUS, UNLOCKING_STATUS,$/;"	e
 LOCKS1	.\Drivers\Sensor\cparse.h	/^	LOCKS1, PLGS1, LOCKS2, PLGS2, $/;"	e
-LOCKS1_CLOSET	.\Drivers\Sensor\cpdata.h	33;"	d
-LOCKS1_OPENT	.\Drivers\Sensor\cpdata.h	32;"	d
+LOCKS1_CLOSET	.\Drivers\Sensor\cpdata.h	35;"	d
+LOCKS1_OPENT	.\Drivers\Sensor\cpdata.h	34;"	d
 LOCKS2	.\Drivers\Sensor\cparse.h	/^	LOCKS1, PLGS1, LOCKS2, PLGS2, $/;"	e
-LOCKS2_CLOSET	.\Drivers\Sensor\cpdata.h	37;"	d
-LOCKS2_OPENT	.\Drivers\Sensor\cpdata.h	36;"	d
+LOCKS2_CLOSET	.\Drivers\Sensor\cpdata.h	39;"	d
+LOCKS2_OPENT	.\Drivers\Sensor\cpdata.h	38;"	d
+LOCKS3	.\Drivers\Sensor\cparse.h	/^	LOCKS3, LOCKS4, PLGS3, PLGS4,$/;"	e
+LOCKS3_CLOSET	.\Drivers\Sensor\cpdata.h	43;"	d
+LOCKS3_OPENT	.\Drivers\Sensor\cpdata.h	42;"	d
+LOCKS4	.\Drivers\Sensor\cparse.h	/^	LOCKS3, LOCKS4, PLGS3, PLGS4,$/;"	e
+LOCKS4_CLOSET	.\Drivers\Sensor\cpdata.h	47;"	d
+LOCKS4_OPENT	.\Drivers\Sensor\cpdata.h	46;"	d
 LOCKS_DOOR1	.\Drivers\Sensor\cparse.c	/^	LOCKS_DOOR1, PLGS_DOOR1,$/;"	e	file:
 LOCKS_DOOR2	.\Drivers\Sensor\cparse.c	/^	LOCKS_DOOR2, PLGS_DOOR2,$/;"	e	file:
+LOCKS_DOOR3	.\Drivers\Sensor\cparse.c	/^	LOCKS_DOOR3, LOCKS_DOOR4,$/;"	e	file:
+LOCKS_DOOR4	.\Drivers\Sensor\cparse.c	/^	LOCKS_DOOR3, LOCKS_DOOR4,$/;"	e	file:
 LOCK_CURR_LOCKED	.\Drivers\Locker\lockerhdl.h	/^	LOCK_CURR_LOCKED$/;"	e
 LOCK_CURR_UNLOCKED	.\Drivers\Locker\lockerhdl.h	/^	LOCK_CURR_UNLOCKED,$/;"	e
 LOCK_DOOR	.\Common\news\news.h	/^	LOCK_DOOR,$/;"	e
 LOCK_DOOR1_IX	.\Common\news\news.h	/^	LOCK_DOOR1_IX,$/;"	e
 LOCK_DOOR2_IX	.\Common\news\news.h	/^	LOCK_DOOR2_IX,$/;"	e
+LOCK_DOOR3_IX	.\Common\news\news.h	/^	LOCK_DOOR3_IX,$/;"	e
+LOCK_DOOR4_IX	.\Common\news\news.h	/^	LOCK_DOOR4_IX,$/;"	e
 LOG_EDIT	.\userdfs\users.h	/^	FORCE_EDIT, LOG_EDIT $/;"	e
-LOG_SENSORS	.\Drivers\Sensor\cpdata.c	13;"	d	file:
 LOW_PAR	.\Drivers\Serial\serdefs.h	/^	NO_PAR, EVEN_PAR, ODD_PAR, HIGH_PAR, LOW_PAR,$/;"	e
 MAIN_DEVICE	.\Common\vaultdef.h	/^	MAIN_DEVICE, SECONDARY_DEVICE,$/;"	e
 MAIN_MEM_FAIL	.\Common\vaultdef.h	/^	BOTH_MEM_OK, SEC_MEM_FAIL, MAIN_MEM_FAIL, BOTH_MEM_FAIL $/;"	e
@@ -398,8 +441,8 @@ MAX_FRAME_SIZE	.\ctsafe\csframe.h	90;"	d
 MAX_INT_STACK	.\Drivers\Enaint\enaint.c	21;"	d	file:
 MAX_NDATA_LEN	.\ctsafe\csframe.h	88;"	d
 MAX_NEWS_ELEMS	.\Common\news\news.h	11;"	d
-MAX_PARSER	.\Drivers\Sensor\cparse.c	37;"	d	file:
-MAX_PARSERS	.\Drivers\Sensor\cpdata.h	10;"	d
+MAX_PARSER	.\Drivers\Sensor\cparse.c	43;"	d	file:
+MAX_PARSERS	.\Drivers\Sensor\cpdata.h	12;"	d
 MAX_READ_BYTES	.\ctsafe\logprot.c	46;"	d	file:
 MAX_REMOVINGS	.\ctsafe\logprot.c	45;"	d	file:
 MAX_STATUS_WAIT_RESP	.\Drivers\Dflash\flash.c	19;"	d	file:
@@ -407,7 +450,7 @@ MAX_TIMERS	.\Drivers\Stimers\stimers.c	12;"	d	file:
 MAX_TUNLOCK_TIME	.\settings\settings.h	40;"	d
 MAX_UNIT_SIZE	.\Drivers\Dflash\dfdata.h	89;"	d
 MAX_WRITE_BYTES	.\ctsafe\logprot.c	47;"	d	file:
-MCU_ID	.\Drivers\Platform\IO\ioports.h	38;"	d
+MCU_ID	.\Drivers\Platform\IO\ioports.h	45;"	d
 MIN_ABSOLUTE_STACK	.\Drivers\Platform\SP\stack.c	13;"	d	file:
 MInt	.\Common\mytypes.h	/^typedef int				MInt;$/;"	t
 MInt	.\Common\mytypes.h	/^typedef schar			MInt;$/;"	t
@@ -437,9 +480,10 @@ NDATA_VALID	.\Common\news\news.h	/^	NDATA_VALID,$/;"	e
 NEWS_QUEUE	.\Common\news\nqdata.h	/^	EMER_QUEUE, COND_QUEUE,	NEWS_QUEUE, $/;"	e
 NEWS_T	.\Common\news\news.h	/^} NEWS_T;$/;"	t
 NF	.\Drivers\Platform\SCI\sci.c	17;"	d	file:
-NONEWS	.\Drivers\Sensor\cpdata.h	12;"	d
-NORELOAD	.\Drivers\Sensor\cpdata.h	14;"	d
+NONEWS	.\Drivers\Sensor\cpdata.h	14;"	d
+NORELOAD	.\Drivers\Sensor\cpdata.h	16;"	d
 NORMAL_RUN	.\Drivers\Platform\IRQ\pwfhal.h	/^	NORMAL_RUN, IN_PWF$/;"	e
+NOT_LOCK1B_SEC	.\Drivers\Platform\IO\ioports.h	37;"	d
 NO_BINERASE	.\Drivers\Dflash\dataflsh.h	/^	NO_BINERASE, BINERASE$/;"	e
 NO_CHECK_MCU	.\ctsafe\logprot.c	/^	NO_CHECK_MCU, CHECK_MCU$/;"	e	file:
 NO_CMD	.\ctsafe\cscmds.h	/^	NO_CMD,				\/* 	Frame to validator devices 			*\/$/;"	e
@@ -461,6 +505,7 @@ NUM_CHS	.\Drivers\Serial\Phylay\sersw.h	/^	CH0, CH1, NUM_CHS$/;"	e
 NUM_CMDS	.\ctsafe\cscmds.h	/^	NUM_CMDS$/;"	e
 NUM_DEF_NEWS	.\Common\news\news.h	/^	NUM_DEF_NEWS$/;"	e
 NUM_DEVICES	.\ctsafe\csdevs.h	/^	NUM_DEVICES$/;"	e
+NUM_DEVS_LIST	.\ctsafe\csdevs.h	11;"	d
 NUM_ENTRIES	.\Drivers\Sensor\cparse.h	/^	HNEW, HTIME, NUM_ENTRIES$/;"	e
 NUM_FATAL_ERRORS	.\Drivers\Dflash\dffatal.h	/^	NUM_FATAL_ERRORS$/;"	e
 NUM_FATAL_ERRORS	.\Drivers\Enaint\drverr.h	/^	NUM_FATAL_ERRORS$/;"	e
@@ -469,6 +514,7 @@ NUM_FLASH_DEVICES	.\Common\vaultdef.h	/^	NUM_FLASH_DEVICES$/;"	e
 NUM_FLASH_PAGES_FOR_USERS	.\Common\vaultdef.h	35;"	d
 NUM_FW_PAGES	.\Common\vaultdef.h	153;"	d
 NUM_LOCKERS	.\settings\settings.h	28;"	d
+NUM_LOCKS	.\Common\Automatons\locks\lockact.c	/^	NUM_LOCKS$/;"	e	file:
 NUM_MPARSERS	.\Common\Mparser\mpdata.h	/^	NUM_MPARSERS$/;"	e
 NUM_NEWSTYPE	.\Drivers\Sensor\cpdata.h	/^	OPEN_NEWS, CLOSE_NEWS, NUM_NEWSTYPE$/;"	e
 NUM_NQUEUES	.\Common\news\nqdata.h	/^	NUM_NQUEUES$/;"	e
@@ -500,15 +546,13 @@ OPC_T	.\Drivers\Dflash\flash.c	/^}OPC_T;$/;"	t	file:
 OPENED	.\Drivers\GRstatus\grstatus.h	/^	OPENED, CLOSED$/;"	e
 OPENING_ST	.\Drivers\Sensor\cpdata.h	/^	OPENING_ST,$/;"	e
 OPEN_DOOR	.\Common\news\news.h	/^	OPEN_DOOR,$/;"	e
-OPEN_DOOR1_IX	.\Common\news\news.h	/^	OPEN_DOOR1_IX,$/;"	e
-OPEN_DOOR2_IX	.\Common\news\news.h	/^	OPEN_DOOR2_IX,$/;"	e
 OPEN_KEYS	.\Common\news\news.h	/^	OPEN_KEYS,$/;"	e
 OPEN_KEYS_D1_IX	.\Common\news\news.h	/^	OPEN_KEYS_D1_IX,$/;"	e
 OPEN_KEYS_D2_IX	.\Common\news\news.h	/^	OPEN_KEYS_D2_IX,$/;"	e
+OPEN_KEYS_D3_IX	.\Common\news\news.h	/^	OPEN_KEYS_D3_IX,$/;"	e
+OPEN_KEYS_D4_IX	.\Common\news\news.h	/^	OPEN_KEYS_D4_IX,$/;"	e
 OPEN_NEWS	.\Drivers\Sensor\cpdata.h	/^	OPEN_NEWS, CLOSE_NEWS, NUM_NEWSTYPE$/;"	e
 OPEN_ST	.\Drivers\Sensor\cpdata.h	/^	OPEN_ST,$/;"	e
-OPEN_VAL1STCK_IX	.\Drivers\Sensor\cpdata.c	/^   OPEN_VAL1STCK_IX,$/;"	e	file:
-OPEN_VAL2STCK_IX	.\Drivers\Sensor\cpdata.c	/^   OPEN_VAL2STCK_IX,$/;"	e	file:
 OVRN	.\Drivers\Platform\SCI\sci.c	16;"	d	file:
 PAGE_ERASE	.\Drivers\Dflash\flash.h	/^	PAGE_ERASE,	$/;"	e
 PAGE_INFO_T	.\Drivers\Dflash\faccess.c	/^} PAGE_INFO_T;$/;"	t	file:
@@ -519,77 +563,100 @@ PASS1_MATCH	.\userdfs\users.h	/^	PASS0_MATCH, PASS1_MATCH, PASS_BAD $/;"	e
 PASS_BAD	.\userdfs\users.h	/^	PASS0_MATCH, PASS1_MATCH, PASS_BAD $/;"	e
 PERR	.\Drivers\Platform\SCI\sci.c	19;"	d	file:
 PFR	.\ctsafe\logprot.c	/^typedef void (*PFR)( RFRAME_T *p );$/;"	t	file:
-PLG1S_MASK	.\Drivers\Sensor\sensor.h	9;"	d
-PLG2S_MASK	.\Drivers\Sensor\sensor.h	11;"	d
+PLG1S_MASK	.\Drivers\Sensor\sensor.h	12;"	d
+PLG2S_MASK	.\Drivers\Sensor\sensor.h	14;"	d
 PLGS1	.\Drivers\Sensor\cparse.h	/^	LOCKS1, PLGS1, LOCKS2, PLGS2, $/;"	e
-PLGS1_CLOSET	.\Drivers\Sensor\cpdata.h	35;"	d
-PLGS1_OPENT	.\Drivers\Sensor\cpdata.h	34;"	d
+PLGS1_CLOSET	.\Drivers\Sensor\cpdata.h	37;"	d
+PLGS1_OPENT	.\Drivers\Sensor\cpdata.h	36;"	d
 PLGS2	.\Drivers\Sensor\cparse.h	/^	LOCKS1, PLGS1, LOCKS2, PLGS2, $/;"	e
-PLGS2_CLOSET	.\Drivers\Sensor\cpdata.h	39;"	d
-PLGS2_OPENT	.\Drivers\Sensor\cpdata.h	38;"	d
+PLGS2_CLOSET	.\Drivers\Sensor\cpdata.h	41;"	d
+PLGS2_OPENT	.\Drivers\Sensor\cpdata.h	40;"	d
+PLGS3	.\Drivers\Sensor\cparse.h	/^	LOCKS3, LOCKS4, PLGS3, PLGS4,$/;"	e
+PLGS3_CLOSET	.\Drivers\Sensor\cpdata.h	45;"	d
+PLGS3_OPENT	.\Drivers\Sensor\cpdata.h	44;"	d
+PLGS4	.\Drivers\Sensor\cparse.h	/^	LOCKS3, LOCKS4, PLGS3, PLGS4,$/;"	e
+PLGS4_CLOSET	.\Drivers\Sensor\cpdata.h	49;"	d
+PLGS4_OPENT	.\Drivers\Sensor\cpdata.h	48;"	d
 PLGS_DOOR1	.\Drivers\Sensor\cparse.c	/^	LOCKS_DOOR1, PLGS_DOOR1,$/;"	e	file:
 PLGS_DOOR2	.\Drivers\Sensor\cparse.c	/^	LOCKS_DOOR2, PLGS_DOOR2,$/;"	e	file:
+PLGS_DOOR3	.\Drivers\Sensor\cparse.c	/^	PLGS_DOOR3, PLGS_DOOR4,$/;"	e	file:
+PLGS_DOOR4	.\Drivers\Sensor\cparse.c	/^	PLGS_DOOR3, PLGS_DOOR4,$/;"	e	file:
 PLUNGER	.\Common\news\news.h	/^	PROT, UART, TIM, LOCKER, PLUNGER, PWRCTRL, COMMON$/;"	e
 PLUNGER0	.\ctsafe\csdevs.h	/^	PLUNGER0,$/;"	e
 PLUNGER1	.\ctsafe\csdevs.h	/^	PLUNGER1,$/;"	e
+PLUNGER2	.\ctsafe\csdevs.h	/^	PLUNGER2,$/;"	e
+PLUNGER3	.\ctsafe\csdevs.h	/^	PLUNGER3,$/;"	e
 PREPRO	.\Common\Mparser\mparser.h	/^typedef NARG_T (*PREPRO)( const NEWS_T *in );$/;"	t
-PRIPWRCTRL	.\Drivers\Platform\IO\ioports.h	68;"	d
+PRIPWRCTRL	.\Drivers\Platform\IO\ioports.h	75;"	d
 PROT	.\Common\news\news.h	/^	PROT, UART, TIM, LOCKER, PLUNGER, PWRCTRL, COMMON$/;"	e
 PROT_MARK	.\ctsafe\csframe.h	24;"	d
 PWRCTRL	.\Common\news\news.h	/^	PROT, UART, TIM, LOCKER, PLUNGER, PWRCTRL, COMMON$/;"	e
-PWRCTRL_CTRL	.\Common\Mparser\mpdata.h	/^	DOORWS_CTRL, DOORWOS_CTRL, PWRCTRL_CTRL,$/;"	e
+PWRCTRL_CTRL	.\Common\Mparser\mpdata.h	/^	PWRCTRL_CTRL,$/;"	e
 PWROFF_TIME	.\settings\settings.h	44;"	d
 PWRSYS	.\Drivers\Pwrsys\pwrsys.c	/^}PWRSYS;$/;"	t	file:
 PWR_FAIL	.\Common\news\news.h	/^	PWR_FAIL,$/;"	e
 PWR_FAIL_IX	.\Common\news\news.h	/^	PWR_FAIL_IX,$/;"	e
 PWR_OK	.\Common\news\news.h	/^	PWR_OK,$/;"	e
 PWR_OK_IX	.\Common\news\news.h	/^	PWR_OK_IX,$/;"	e
-P_AUX2	.\Drivers\Platform\IO\ioports.h	159;"	d
-P_BATT_CTRL	.\Drivers\Platform\IO\ioports.h	177;"	d
-P_BATT_LVL	.\Drivers\Platform\IO\ioports.h	142;"	d
-P_BURGLAR_AL	.\Drivers\Platform\IO\ioports.h	154;"	d
-P_BVSEL	.\Drivers\Platform\IO\ioports.h	148;"	d
-P_CHRG_CTRL0	.\Drivers\Platform\IO\ioports.h	178;"	d
-P_CHRG_CTRL1	.\Drivers\Platform\IO\ioports.h	176;"	d
-P_CIM_ID0	.\Drivers\Platform\IO\ioports.h	181;"	d
-P_CIM_ID1	.\Drivers\Platform\IO\ioports.h	182;"	d
-P_CIM_ID2	.\Drivers\Platform\IO\ioports.h	183;"	d
-P_CIM_ID3	.\Drivers\Platform\IO\ioports.h	184;"	d
-P_DOOR1S	.\Drivers\Platform\IO\ioports.h	134;"	d
-P_DOOR2S	.\Drivers\Platform\IO\ioports.h	136;"	d
-P_DURESS_AL	.\Drivers\Platform\IO\ioports.h	153;"	d
-P_E_MEMCTRL	.\Drivers\Platform\IO\ioports.h	169;"	d
-P_HOST_PWR	.\Drivers\Platform\IO\ioports.h	175;"	d
-P_KEYS	.\Drivers\Platform\IO\ioports.h	151;"	d
-P_LED1	.\Drivers\Platform\IO\ioports.h	146;"	d
-P_LED2	.\Drivers\Platform\IO\ioports.h	147;"	d
-P_LOCK1A	.\Drivers\Platform\IO\ioports.h	171;"	d
-P_LOCK1B	.\Drivers\Platform\IO\ioports.h	172;"	d
-P_LOCK1S	.\Drivers\Platform\IO\ioports.h	133;"	d
-P_LOCK1_CURR	.\Drivers\Platform\IO\ioports.h	137;"	d
-P_LOCK2A	.\Drivers\Platform\IO\ioports.h	173;"	d
-P_LOCK2B	.\Drivers\Platform\IO\ioports.h	174;"	d
-P_LOCK2S	.\Drivers\Platform\IO\ioports.h	135;"	d
-P_LOCK2_CURR	.\Drivers\Platform\IO\ioports.h	138;"	d
-P_MCU_ID	.\Drivers\Platform\IO\ioports.h	150;"	d
-P_PRIPWRCTRL	.\Drivers\Platform\IO\ioports.h	180;"	d
-P_SPI_CLK	.\Drivers\Platform\IO\ioports.h	167;"	d
-P_SPI_CS_M	.\Drivers\Platform\IO\ioports.h	168;"	d
-P_SPI_CS_PM	.\Drivers\Platform\IO\ioports.h	164;"	d
-P_SPI_MISO	.\Drivers\Platform\IO\ioports.h	165;"	d
-P_SPI_MOSI	.\Drivers\Platform\IO\ioports.h	166;"	d
-P_UART1DIR	.\Drivers\Platform\IO\ioports.h	149;"	d
-P_UART1_RXD	.\Drivers\Platform\IO\ioports.h	163;"	d
-P_UART1_TXD	.\Drivers\Platform\IO\ioports.h	162;"	d
-P_UART2_RXD	.\Drivers\Platform\IO\ioports.h	145;"	d
-P_UART2_TXD	.\Drivers\Platform\IO\ioports.h	144;"	d
-P_VAL0PWR	.\Drivers\Platform\IO\ioports.h	158;"	d
-P_VAL1PWR	.\Drivers\Platform\IO\ioports.h	160;"	d
-P_VAL1_STACKS	.\Drivers\Platform\IO\ioports.h	139;"	d
-P_VAL2_STACKS	.\Drivers\Platform\IO\ioports.h	140;"	d
-P_VLOCKS_CTRL	.\Drivers\Platform\IO\ioports.h	156;"	d
-P_VRLY_CTRL	.\Drivers\Platform\IO\ioports.h	157;"	d
-P_WDOG_CTRL	.\Drivers\Platform\IO\ioports.h	155;"	d
+P_AUX2	.\Drivers\Platform\IO\ioports.h	180;"	d
+P_AUXIO0	.\Drivers\Platform\IO\ioports.h	157;"	d
+P_AUXIO1	.\Drivers\Platform\IO\ioports.h	158;"	d
+P_AUXIO2	.\Drivers\Platform\IO\ioports.h	159;"	d
+P_AUXIO3	.\Drivers\Platform\IO\ioports.h	160;"	d
+P_AUXIO4	.\Drivers\Platform\IO\ioports.h	161;"	d
+P_AUXIO5	.\Drivers\Platform\IO\ioports.h	162;"	d
+P_BATT_CTRL	.\Drivers\Platform\IO\ioports.h	198;"	d
+P_BATT_LVL	.\Drivers\Platform\IO\ioports.h	156;"	d
+P_BURGLAR_AL	.\Drivers\Platform\IO\ioports.h	175;"	d
+P_BVSEL	.\Drivers\Platform\IO\ioports.h	169;"	d
+P_CHRG_CTRL0	.\Drivers\Platform\IO\ioports.h	199;"	d
+P_CHRG_CTRL1	.\Drivers\Platform\IO\ioports.h	197;"	d
+P_CIM_ID0	.\Drivers\Platform\IO\ioports.h	202;"	d
+P_CIM_ID1	.\Drivers\Platform\IO\ioports.h	203;"	d
+P_CIM_ID2	.\Drivers\Platform\IO\ioports.h	204;"	d
+P_CIM_ID3	.\Drivers\Platform\IO\ioports.h	205;"	d
+P_DOOR1S	.\Drivers\Platform\IO\ioports.h	148;"	d
+P_DOOR2S	.\Drivers\Platform\IO\ioports.h	150;"	d
+P_DOOR3S	.\Drivers\Sensor\sensor.h	32;"	d
+P_DOOR4S	.\Drivers\Sensor\sensor.h	42;"	d
+P_DURESS_AL	.\Drivers\Platform\IO\ioports.h	174;"	d
+P_E_MEMCTRL	.\Drivers\Platform\IO\ioports.h	190;"	d
+P_HOST_PWR	.\Drivers\Platform\IO\ioports.h	196;"	d
+P_KEYS	.\Drivers\Platform\IO\ioports.h	172;"	d
+P_LED1	.\Drivers\Platform\IO\ioports.h	167;"	d
+P_LED2	.\Drivers\Platform\IO\ioports.h	168;"	d
+P_LOCK1A	.\Drivers\Platform\IO\ioports.h	192;"	d
+P_LOCK1B	.\Drivers\Platform\IO\ioports.h	193;"	d
+P_LOCK1S	.\Drivers\Platform\IO\ioports.h	147;"	d
+P_LOCK1_CURR	.\Drivers\Platform\IO\ioports.h	151;"	d
+P_LOCK2A	.\Drivers\Platform\IO\ioports.h	194;"	d
+P_LOCK2B	.\Drivers\Platform\IO\ioports.h	195;"	d
+P_LOCK2S	.\Drivers\Platform\IO\ioports.h	149;"	d
+P_LOCK2_CURR	.\Drivers\Platform\IO\ioports.h	152;"	d
+P_LOCK3	.\Drivers\Sensor\sensor.h	26;"	d
+P_LOCK3S	.\Drivers\Sensor\sensor.h	29;"	d
+P_LOCK4	.\Drivers\Sensor\sensor.h	36;"	d
+P_LOCK4S	.\Drivers\Sensor\sensor.h	39;"	d
+P_MCU_ID	.\Drivers\Platform\IO\ioports.h	171;"	d
+P_NOT_LOCK1B_SEC	.\Drivers\Platform\IO\ioports.h	163;"	d
+P_PRIPWRCTRL	.\Drivers\Platform\IO\ioports.h	201;"	d
+P_SPI_CLK	.\Drivers\Platform\IO\ioports.h	188;"	d
+P_SPI_CS_M	.\Drivers\Platform\IO\ioports.h	189;"	d
+P_SPI_CS_PM	.\Drivers\Platform\IO\ioports.h	185;"	d
+P_SPI_MISO	.\Drivers\Platform\IO\ioports.h	186;"	d
+P_SPI_MOSI	.\Drivers\Platform\IO\ioports.h	187;"	d
+P_UART1DIR	.\Drivers\Platform\IO\ioports.h	170;"	d
+P_UART1_RXD	.\Drivers\Platform\IO\ioports.h	184;"	d
+P_UART1_TXD	.\Drivers\Platform\IO\ioports.h	183;"	d
+P_UART2_RXD	.\Drivers\Platform\IO\ioports.h	166;"	d
+P_UART2_TXD	.\Drivers\Platform\IO\ioports.h	165;"	d
+P_VAL0PWR	.\Drivers\Platform\IO\ioports.h	179;"	d
+P_VAL1PWR	.\Drivers\Platform\IO\ioports.h	181;"	d
+P_VAL1_STACKS	.\Drivers\Platform\IO\ioports.h	153;"	d
+P_VAL2_STACKS	.\Drivers\Platform\IO\ioports.h	154;"	d
+P_VLOCKS_CTRL	.\Drivers\Platform\IO\ioports.h	177;"	d
+P_VRLY_CTRL	.\Drivers\Platform\IO\ioports.h	178;"	d
+P_WDOG_CTRL	.\Drivers\Platform\IO\ioports.h	176;"	d
 QCODES	.\Drivers\GRstatus\grqueue.h	/^} QCODES;$/;"	t
 QCODES	.\Drivers\Serial\gsqueue\gsqueue.h	/^} QCODES;$/;"	t
 QHDLR	.\Drivers\Serial\gsqueue\gsqueue.h	/^typedef MUInt QHDLR;$/;"	t
@@ -625,7 +692,7 @@ SEC_MEM_FAIL	.\Common\vaultdef.h	/^	BOTH_MEM_OK, SEC_MEM_FAIL, MAIN_MEM_FAIL, BO
 SEEKFILE	.\ctsafe\cscmds.h	/^	SEEKFILE,$/;"	e
 SEEKFILE_T	.\ctsafe\logprot.c	/^} SEEKFILE_T;$/;"	t	file:
 SENSORS_IN	.\Drivers\Platform\IO\ioports.h	28;"	d
-SENSOR_BASE	.\Drivers\Sensor\cpdata.h	30;"	d
+SENSOR_BASE	.\Drivers\Sensor\cpdata.h	32;"	d
 SERIAL_T	.\Drivers\Serial\serdefs.h	/^} SERIAL_T;$/;"	t
 SETDEV_T	.\ctsafe\logprot.c	/^} SETDEV_T;$/;"	t	file:
 SETUSRDEV	.\ctsafe\cscmds.h	/^	SETUSRDEV,			\/*	Set user device list				*\/$/;"	e
@@ -637,9 +704,9 @@ SHUTDOWN	.\ctsafe\cscmds.h	/^	SHUTDOWN,			\/*	Force a system shutdown				*\/$/;"
 SINGLE	.\ctsafe\cscmds.h	/^	SINGLE, DUAL$/;"	e
 SLEEP_BASE	.\Drivers\Sleep\sleep.h	12;"	d
 SNUM	.\Drivers\Sensor\cpdata.h	/^	SNUM$/;"	e
-SPI_CLK	.\Drivers\Platform\IO\ioports.h	55;"	d
-SPI_CS_M	.\Drivers\Platform\IO\ioports.h	56;"	d
-SPI_CS_PM	.\Drivers\Platform\IO\ioports.h	52;"	d
+SPI_CLK	.\Drivers\Platform\IO\ioports.h	62;"	d
+SPI_CS_M	.\Drivers\Platform\IO\ioports.h	63;"	d
+SPI_CS_PM	.\Drivers\Platform\IO\ioports.h	59;"	d
 SPI_DIVISOR_X128	.\Drivers\Platform\SPI\spi.h	35;"	d
 SPI_DIVISOR_X16	.\Drivers\Platform\SPI\spi.h	32;"	d
 SPI_DIVISOR_X2	.\Drivers\Platform\SPI\spi.h	29;"	d
@@ -648,8 +715,8 @@ SPI_DIVISOR_X32	.\Drivers\Platform\SPI\spi.h	33;"	d
 SPI_DIVISOR_X4	.\Drivers\Platform\SPI\spi.h	30;"	d
 SPI_DIVISOR_X64	.\Drivers\Platform\SPI\spi.h	34;"	d
 SPI_DIVISOR_X8	.\Drivers\Platform\SPI\spi.h	31;"	d
-SPI_MISO	.\Drivers\Platform\IO\ioports.h	53;"	d
-SPI_MOSI	.\Drivers\Platform\IO\ioports.h	54;"	d
+SPI_MISO	.\Drivers\Platform\IO\ioports.h	60;"	d
+SPI_MOSI	.\Drivers\Platform\IO\ioports.h	61;"	d
 SPI_PRESCAL_X1	.\Drivers\Platform\SPI\spi.h	20;"	d
 SPI_PRESCAL_X2	.\Drivers\Platform\SPI\spi.h	21;"	d
 SPI_PRESCAL_X3	.\Drivers\Platform\SPI\spi.h	22;"	d
@@ -690,19 +757,23 @@ TLOCK	.\ctsafe\cscmds.h	/^	TLOCK,				\/*	Set a lock time for lockers			*\/$/;"	e
 TLOCK_K	.\Drivers\Locker\locker.c	13;"	d	file:
 TLOCK_NOT_ALLOWED	.\ctsafe\cscmds.h	72;"	d
 TLOCK_T	.\ctsafe\logprot.c	/^} TLOCK_T;$/;"	t	file:
-TNOTOUT	.\Drivers\Sensor\cpdata.h	13;"	d
+TNOTOUT	.\Drivers\Sensor\cpdata.h	15;"	d
 TOLOCK	.\Drivers\Locker\locker.h	/^	TOLOCK, TOUNLOCK$/;"	e
 TORCV	.\Drivers\Serial\Phylay\phylay.h	/^	TORCV, TOXMIT$/;"	e
 TOTAL_NUM_USERS_PAGES	.\Common\vaultdef.h	137;"	d
 TOUNLOCK	.\Drivers\Locker\locker.h	/^	TOLOCK, TOUNLOCK$/;"	e
-TOUTUE_DWOS_IX	.\Common\news\news.h	/^	TOUTUE_DWOS_IX,$/;"	e
-TOUTUE_DWS_IX	.\Common\news\news.h	/^	TOUTUE_DWS_IX,$/;"	e
-TOUT_BETVAL	.\settings\settings.h	65;"	d
+TOUTUE_LOCK0_IX	.\Common\news\news.h	/^	TOUTUE_LOCK0_IX,$/;"	e
+TOUTUE_LOCK1_IX	.\Common\news\news.h	/^	TOUTUE_LOCK1_IX,$/;"	e
+TOUTUE_LOCK2_IX	.\Common\news\news.h	/^	TOUTUE_LOCK2_IX,$/;"	e
+TOUTUE_LOCK3_IX	.\Common\news\news.h	/^	TOUTUE_LOCK3_IX,$/;"	e
+TOUT_BETVAL	.\settings\settings.h	56;"	d
 TOUT_DOOR	.\Common\news\news.h	/^	TOUT_DOOR,$/;"	e
-TOUT_DWOS_IX	.\Common\news\news.h	/^	TOUT_DWOS_IX,$/;"	e
-TOUT_DWS_IX	.\Common\news\news.h	/^	TOUT_DWS_IX,$/;"	e
 TOUT_FSYNC	.\Common\news\news.h	/^	TOUT_FSYNC,$/;"	e
 TOUT_FSYNC_IX	.\Common\news\news.h	/^	TOUT_FSYNC_IX,$/;"	e
+TOUT_LOCK0_IX	.\Common\news\news.h	/^	TOUT_LOCK0_IX,$/;"	e
+TOUT_LOCK1_IX	.\Common\news\news.h	/^	TOUT_LOCK1_IX,$/;"	e
+TOUT_LOCK2_IX	.\Common\news\news.h	/^	TOUT_LOCK2_IX,$/;"	e
+TOUT_LOCK3_IX	.\Common\news\news.h	/^	TOUT_LOCK3_IX,$/;"	e
 TOUT_PWR	.\Common\news\news.h	/^	TOUT_PWR,$/;"	e
 TOUT_PWR_IX	.\Common\news\news.h	/^	TOUT_PWR_IX,$/;"	e
 TOUT_TBET_BYTE	.\settings\settings.h	34;"	d
@@ -718,7 +789,7 @@ TOXMIT	.\Drivers\Serial\Phylay\phylay.h	/^	TORCV, TOXMIT$/;"	e
 TO_LOCKED	.\Common\news\news.h	/^	TO_LOCKED,$/;"	e
 TO_UNLOCKED	.\Common\news\news.h	/^	TO_UNLOCKED,$/;"	e
 TRAN	.\Common\Mparser\mparser.h	/^} TRAN;$/;"	t
-TRUE_PWRFAIL_TIME	.\settings\settings.h	72;"	d
+TRUE_PWRFAIL_TIME	.\settings\settings.h	63;"	d
 TUNLOCKENABLE	.\ctsafe\cscmds.h	/^	TUNLOCKENABLE,		\/*	Set a unlock enable time for keyswitch *\/$/;"	e
 TUNLOCKENABLE_LOCKS	.\ctsafe\cscmds.h	/^	TUNLOCKENABLE_LOCKS,$/;"	e
 TUNLOCK_ENABLE_LOCKS_T	.\ctsafe\logprot.c	/^} TUNLOCK_ENABLE_LOCKS_T;$/;"	t	file:
@@ -731,11 +802,11 @@ TXMITCT0_IX	.\Common\news\news.h	/^	TXMITCT0_IX,$/;"	e
 TXMITCT1	.\Common\news\news.h	/^	TXMITCT1,$/;"	e
 TXMITCT1_IX	.\Common\news\news.h	/^	TXMITCT1_IX,$/;"	e
 UART	.\Common\news\news.h	/^	PROT, UART, TIM, LOCKER, PLUNGER, PWRCTRL, COMMON$/;"	e
-UART1DIR	.\Drivers\Platform\IO\ioports.h	37;"	d
-UART1_RXD	.\Drivers\Platform\IO\ioports.h	51;"	d
-UART1_TXD	.\Drivers\Platform\IO\ioports.h	50;"	d
-UART2_RXD	.\Drivers\Platform\IO\ioports.h	33;"	d
-UART2_TXD	.\Drivers\Platform\IO\ioports.h	32;"	d
+UART1DIR	.\Drivers\Platform\IO\ioports.h	44;"	d
+UART1_RXD	.\Drivers\Platform\IO\ioports.h	58;"	d
+UART1_TXD	.\Drivers\Platform\IO\ioports.h	57;"	d
+UART2_RXD	.\Drivers\Platform\IO\ioports.h	40;"	d
+UART2_TXD	.\Drivers\Platform\IO\ioports.h	39;"	d
 UAVAIL	.\userdfs\users.c	/^	UAVAIL, UUSED$/;"	e	file:
 UC_B1200	.\Drivers\Platform\SCI\sci.h	22;"	d
 UC_B1200	.\Drivers\Platform\SCI\sci.h	34;"	d
@@ -759,13 +830,13 @@ UNKNOWN	.\Common\news\news.h	/^	UNKNOWN$/;"	e
 UNKNOWN_DATA	.\Common\news\news.h	/^	UNKNOWN_DATA, $/;"	e
 UNLOCK	.\ctsafe\cscmds.h	/^	UNLOCK,				\/* 	Unlock locker devices 				*\/$/;"	e
 UNLOCKED	.\Common\news\news.h	/^	UNLOCKED,$/;"	e
-UNLOCKED_DOOR1_IX	.\Common\news\news.h	/^	UNLOCKED_DOOR1_IX,$/;"	e
-UNLOCKED_DOOR2_IX	.\Common\news\news.h	/^	UNLOCKED_DOOR2_IX,$/;"	e
 UNLOCKED_STATUS	.\Drivers\GRstatus\grstatus.h	/^	LOCKED_STATUS, UNLOCKED_STATUS,$/;"	e
 UNLOCKING_STATUS	.\Drivers\GRstatus\grstatus.h	/^	LOCKING_STATUS, UNLOCKING_STATUS,$/;"	e
 UNLOCK_DOOR	.\Common\news\news.h	/^	UNLOCK_DOOR,$/;"	e
 UNLOCK_DOOR1_IX	.\Common\news\news.h	/^	UNLOCK_DOOR1_IX,$/;"	e
 UNLOCK_DOOR2_IX	.\Common\news\news.h	/^	UNLOCK_DOOR2_IX,$/;"	e
+UNLOCK_DOOR3_IX	.\Common\news\news.h	/^	UNLOCK_DOOR3_IX,$/;"	e
+UNLOCK_DOOR4_IX	.\Common\news\news.h	/^	UNLOCK_DOOR4_IX,$/;"	e
 UNLOCK_T	.\ctsafe\logprot.c	/^} UNLOCK_T;	$/;"	t	file:
 USED	.\Drivers\Stimers\stimers.c	/^	FREE, USED$/;"	e	file:
 USERSMEM	.\ctsafe\cscmds.h	/^	GPMEM, USERSMEM$/;"	e
@@ -777,19 +848,19 @@ USER_T	.\userdfs\users.h	/^} USER_T;$/;"	t
 USRFORMAT	.\ctsafe\cscmds.h	/^	USRFORMAT,			\/*	Format user memory					*\/$/;"	e
 UUSED	.\userdfs\users.c	/^	UAVAIL, UUSED$/;"	e	file:
 VAL0	.\ctsafe\csdevs.h	/^	VAL0,$/;"	e
-VAL0PWR	.\Drivers\Platform\IO\ioports.h	46;"	d
+VAL0PWR	.\Drivers\Platform\IO\ioports.h	53;"	d
 VAL1	.\ctsafe\csdevs.h	/^	VAL1,$/;"	e
-VAL1PWR	.\Drivers\Platform\IO\ioports.h	48;"	d
+VAL1PWR	.\Drivers\Platform\IO\ioports.h	55;"	d
 VAL1STCK	.\Drivers\Sensor\cparse.h	/^	VAL1STCK, VAL2STCK, KEYSWITCH,$/;"	e
-VAL1STCK_CLOSET	.\Drivers\Sensor\cpdata.h	42;"	d
-VAL1STCK_OPENT	.\Drivers\Sensor\cpdata.h	41;"	d
-VAL1ST_MASK	.\Drivers\Sensor\sensor.h	13;"	d
+VAL1STCK_CLOSET	.\Drivers\Sensor\cpdata.h	51;"	d
+VAL1STCK_OPENT	.\Drivers\Sensor\cpdata.h	50;"	d
+VAL1ST_MASK	.\Drivers\Sensor\sensor.h	16;"	d
 VAL1_STACKER	.\Drivers\Sensor\cparse.c	/^	VAL1_STACKER, VAL2_STACKER,$/;"	e	file:
 VAL1_STACKS	.\Drivers\Platform\IO\ioports.h	26;"	d
 VAL2STCK	.\Drivers\Sensor\cparse.h	/^	VAL1STCK, VAL2STCK, KEYSWITCH,$/;"	e
-VAL2STCK_CLOSET	.\Drivers\Sensor\cpdata.h	44;"	d
-VAL2STCK_OPENT	.\Drivers\Sensor\cpdata.h	43;"	d
-VAL2ST_MASK	.\Drivers\Sensor\sensor.h	14;"	d
+VAL2STCK_CLOSET	.\Drivers\Sensor\cpdata.h	53;"	d
+VAL2STCK_OPENT	.\Drivers\Sensor\cpdata.h	52;"	d
+VAL2ST_MASK	.\Drivers\Sensor\sensor.h	17;"	d
 VAL2_STACKER	.\Drivers\Sensor\cparse.c	/^	VAL1_STACKER, VAL2_STACKER,$/;"	e	file:
 VAL2_STACKS	.\Drivers\Platform\IO\ioports.h	27;"	d
 VALBLOCK	.\Common\news\news.h	/^	VALBLOCK,$/;"	e
@@ -821,7 +892,7 @@ VERIFY_OK	.\userdfs\users.c	/^	MUST_FORMAT, VERIFY_OK$/;"	e	file:
 VERSION	.\ctsafe\cscmds.h	/^	VERSION,			\/*	Return version string				*\/$/;"	e
 VERSION_STRING	.\settings\settings.h	14;"	d
 VER_STR_LEN	.\settings\settings.h	13;"	d
-VLOCKS_CTRL	.\Drivers\Platform\IO\ioports.h	44;"	d
+VLOCKS_CTRL	.\Drivers\Platform\IO\ioports.h	51;"	d
 VLOCKS_CTRL_W	.\Drivers\Wout\wouts.h	16;"	d
 VLOCKS_CTRL_W	.\Drivers\Wout\wouts.h	23;"	d
 VLOCKS_LOCKER0	.\Drivers\Wout\wouts.h	/^	VLOCKS_LOCKER0, VLOCKS_LOCKER1,$/;"	e
@@ -829,17 +900,15 @@ VLOCKS_LOCKER1	.\Drivers\Wout\wouts.h	/^	VLOCKS_LOCKER0, VLOCKS_LOCKER1,$/;"	e
 VLOCK_ENABLE_DELAY	.\Drivers\Wout\wouts.h	32;"	d
 VRLY_ALARM	.\Drivers\Wout\wouts.h	/^	VRLY_ALARM, VRLY_HOSTPWR, $/;"	e
 VRLY_BATTERY	.\Drivers\Wout\wouts.h	/^	VRLY_BATTERY, VRLY_MEMCTRL,$/;"	e
-VRLY_CTRL	.\Drivers\Platform\IO\ioports.h	45;"	d
+VRLY_CTRL	.\Drivers\Platform\IO\ioports.h	52;"	d
 VRLY_CTRL_ENABLE	.\Drivers\Wout\wouts.h	35;"	d
 VRLY_CTRL_W	.\Drivers\Wout\wouts.h	17;"	d
 VRLY_CTRL_W	.\Drivers\Wout\wouts.h	24;"	d
 VRLY_HOSTPWR	.\Drivers\Wout\wouts.h	/^	VRLY_ALARM, VRLY_HOSTPWR, $/;"	e
 VRLY_MEMCTRL	.\Drivers\Wout\wouts.h	/^	VRLY_BATTERY, VRLY_MEMCTRL,$/;"	e
-WAIT_UNLOCK_DWOS	.\settings\settings.h	53;"	d
-WAIT_UNLOCK_DWS	.\settings\settings.h	52;"	d
 WATCHDOG_BASE	.\Drivers\Watchdog\watchdog.h	11;"	d
 WATCHDOG_TICK	.\Drivers\Watchdog\watchdog.h	16;"	d
-WDOG_CTRL	.\Drivers\Platform\IO\ioports.h	43;"	d
+WDOG_CTRL	.\Drivers\Platform\IO\ioports.h	50;"	d
 WDOG_CTRL_W	.\Drivers\Wout\wouts.h	15;"	d
 WDOG_CTRL_W	.\Drivers\Wout\wouts.h	22;"	d
 WOUT_IOPORT	.\Drivers\Wout\wouts.h	18;"	d
@@ -878,6 +947,8 @@ __GRSTATUS_H__	.\Drivers\GRstatus\grstatus.h	6;"	d
 __GSQUEUE__H__	.\Drivers\Serial\gsqueue\gsqueue.h	7;"	d
 __INITSYS_H__	.\Init\initsys.h	5;"	d
 __IOPORTS_H__	.\Drivers\Platform\IO\ioports.h	11;"	d
+__LOCKACT_H__	.\Common\Automatons\locks\lockact.h	6;"	d
+__LOCKCTRL_H__	.\Common\Automatons\locks\lockctrl.h	6;"	d
 __LOCKER_H__	.\Drivers\Locker\locker.h	6;"	d
 __LOGPROT_H__	.\ctsafe\logprot.h	6;"	d
 __MEM_RELAY__	.\Drivers\Dflash\spihal.h	15;"	d
@@ -898,6 +969,7 @@ __QDATA_H__	.\Drivers\Serial\gsqueue\qdata.h	5;"	d
 __RESET_H__	.\Drivers\Watchdog\reset.h	9;"	d
 __RTI_H__	.\Drivers\Platform\RTI\rti.h	10;"	d
 __SCI_H__	.\Drivers\Platform\SCI\sci.h	10;"	d
+__SENSOR_H__	.\Drivers\Sensor\sensor.h	6;"	d
 __SERDEFS_H__	.\Drivers\Serial\serdefs.h	6;"	d
 __SERSW_H__	.\Drivers\Serial\Phylay\sersw.h	6;"	d
 __SETTINGS_H__	.\settings\settings.h	6;"	d
@@ -980,12 +1052,10 @@ check_results	.\userdfs\users.c	/^check_results( void )$/;"	f	file:
 check_sleep	.\Drivers\Sleep\sleep.c	/^check_sleep( void )$/;"	f
 check_watchdog	.\Drivers\Watchdog\watchdog.c	/^check_watchdog( void )$/;"	f
 checkbatt	.\Common\Automatons\pwrctrl\pwract.c	/^checkbatt( NEWS_T *in )$/;"	f
+chk_keysw	.\Common\Automatons\locks\lockact.c	/^chk_keysw( NEWS_T *in )$/;"	f
 chrg2nchrg	.\Common\Automatons\pwrctrl\pwract.c	/^chrg2nchrg( NEWS_T *in )$/;"	f
-clear_lock0_a	.\Drivers\Locker\lockerhdl.h	20;"	d
-clear_lock0_b	.\Drivers\Locker\lockerhdl.h	22;"	d
-clear_lock1_a	.\Drivers\Locker\lockerhdl.h	25;"	d
-clear_lock1_b	.\Drivers\Locker\lockerhdl.h	27;"	d
 clear_memctrl	.\Drivers\Dflash\spihal.c	/^clear_memctrl( void )$/;"	f	file:
+clear_nlock0_b	.\Drivers\Locker\lockerhdl.h	20;"	d
 close_cparse	.\Drivers\Sensor\cparse.c	/^close_cparse( MUInt cphdlr )$/;"	f
 close_cparse	.\Drivers\Sensor\cparse.h	49;"	d
 close_sweep_dir	.\Drivers\Dflash\faccess.c	/^close_sweep_dir( void )$/;"	f	file:
@@ -1048,6 +1118,7 @@ dev_list	.\ctsafe\logprot.c	/^	ushort dev_list;$/;"	m	file:
 dev_list	.\userdfs\users.h	/^	ushort	dev_list;				\/*	dev_list only for high level software				*\/$/;"	m
 device	.\Common\vaultdef.h	/^	uint	device:1;		\/*	Selects MAIN or SECONDARY device		(IN)	*\/$/;"	m
 device_id	.\Drivers\Dflash\dftypes.h	/^			uchar	device_id;$/;"	m
+devno	.\ctsafe\logprot.c	/^	uchar devno;$/;"	m	file:
 df	.\Drivers\Dflash\faccess.c	/^static DFLASH_T df =$/;"	v	file:
 df	.\Drivers\Dflash\old_faccess.c	/^static DFLASH_T df =$/;"	v	file:
 df	.\userdfs\users.c	/^static DFLASH_T df;$/;"	v	file:
@@ -1095,11 +1166,12 @@ do_cparse	.\Drivers\Sensor\cparse.c	/^do_cparse( MUInt shdlr, MUInt hnews )$/;"	
 do_disable_pwf_interrupt	.\Drivers\Platform\IRQ\irq.c	/^do_disable_pwf_interrupt( void )$/;"	f
 do_enable_pwf_interrupt	.\Drivers\Platform\IRQ\irq.c	/^do_enable_pwf_interrupt( void )$/;"	f
 do_mparse	.\Common\Mparser\mparser.c	/^do_mparse( const NEWS_T *pnews )$/;"	f	file:
-dprintf	.\settings\settings.h	81;"	d
-dprintf	.\settings\settings.h	83;"	d
+dprintf	.\settings\settings.h	72;"	d
+dprintf	.\settings\settings.h	74;"	d
 drivers_init	.\Drivers\drivers.c	/^drivers_init(void)$/;"	f
 drop_frame	.\Common\Automatons\logprot\alphact.c	/^drop_frame( const NEWS_T *in )$/;"	f
 drop_vframe	.\Common\Automatons\valprot\valact.c	/^drop_vframe( const NEWS_T *in )$/;"	f
+dvlist	.\ctsafe\logprot.c	/^static const DVL_T dvlist[] =$/;"	v	file:
 dwos_ppro	.\Common\Automatons\doorwos\dwosact.c	/^dwos_ppro( const NEWS_T *in )$/;"	f
 dws_ppro	.\Common\Automatons\doorws\dwsact.c	/^dws_ppro( const NEWS_T *in )$/;"	f
 echo	.\ctsafe\valconf.h	/^	unsigned echo		:1;$/;"	m
@@ -1144,6 +1216,7 @@ fd_inerror	.\Drivers\Dflash\dfdata.h	/^	ushort fd_inerror;				\/*	bit field of f
 fd_used	.\Drivers\Dflash\dfdata.h	/^	ushort fd_used;					\/*	bit field of file descriptors used 		*\/$/;"	m
 fdesc	.\Drivers\Dflash\faccess.c	/^	bitf	fdesc:5;		\/*	file descriptor <0-31>						*\/$/;"	m	file:
 fdesc	.\Drivers\Dflash\old_faccess.c	/^	bitf	fdesc:5;		\/*	file descriptor <0-31>						*\/$/;"	m	file:
+feed_lock	.\Common\Automatons\locks\lockact.c	/^feed_lock( NEWS_T *in )$/;"	f
 file_data	.\Drivers\Dflash\faccess.c	/^	FILESYS_T	file_data;$/;"	m	file:
 file_data	.\Drivers\Dflash\old_faccess.c	/^	FILESYS_T	file_data;$/;"	m	file:
 file_type	.\Drivers\Dflash\dfdata.h	/^	uchar	file_type;		\/*	Type of file (RANDOM or QUEUE		*\/$/;"	m
@@ -1188,6 +1261,7 @@ get_grstat	.\Drivers\GRstatus\grstatus.c	/^get_grstat( void )$/;"	f
 get_gsq_qty	.\Drivers\Serial\gsqueue\gsqueue.c	/^get_gsq_qty( QHDLR qh )$/;"	f
 get_info_dir	.\Drivers\Dflash\faccess.c	/^get_info_dir( void )$/;"	f	file:
 get_info_dir	.\Drivers\Dflash\old_faccess.c	/^get_info_dir( void )$/;"	f	file:
+get_lock_ix	.\Drivers\Locker\locker.c	/^get_lock_ix( MUInt which )$/;"	f	file:
 get_mcu_id	.\Drivers\Pwrsys\pwrhdl.c	/^get_mcu_id( void )$/;"	f
 get_next_power	.\Drivers\Dflash\dfmanage.c	/^get_next_power( uint size )$/;"	f
 get_page	.\Drivers\Dflash\faccess.c	/^get_page( DFLASH_T *pf, MUInt device, ushort *pcheck, ushort *pfcheck )$/;"	f	file:
@@ -1199,7 +1273,7 @@ get_tlock_timer	.\Drivers\Locker\locker.c	/^get_tlock_timer( MUInt which )$/;"	f
 get_unlock_ena_timer	.\Drivers\Locker\locker.c	/^get_unlock_ena_timer( MUInt which )$/;"	f
 get_user_information	.\userdfs\users.c	/^get_user_information(  uint *pmax_users, uint *pfree_users )$/;"	f
 get_val_echo	.\ctsafe\valconf.c	/^get_val_echo( MUInt val )$/;"	f
-get_xmit_frames	.\ctsafe\logprot.c	477;"	d	file:
+get_xmit_frames	.\ctsafe\logprot.c	525;"	d	file:
 grq	.\Drivers\GRstatus\grqueue.c	/^static GR1ST_T grq[GRQ_MAX_ELEMENTS];$/;"	v	file:
 grqueue	.\Drivers\GRstatus\grqueue.c	/^static GRQUEUE grqueue = $/;"	v	file:
 grst	.\Drivers\GRstatus\grstatus.c	/^static GR1ST_T grst;$/;"	v	file:
@@ -1230,7 +1304,7 @@ in_frame_ppro	.\Common\Automatons\valprot\valact.c	/^in_frame_ppro( const NEWS_T
 in_index	.\Drivers\Dflash\dfdata.h	/^	ulong	in_index;		\/*	....number of elements from beginning	*\/$/;"	m
 in_numdata	.\Common\Automatons\logprot\alphact.c	/^in_numdata( const NEWS_T *in )$/;"	f
 in_pwf	.\Drivers\Pwrsys\pwrhdl.c	/^in_pwf( void )$/;"	f
-inc_xmit_frames	.\ctsafe\logprot.c	485;"	d	file:
+inc_xmit_frames	.\ctsafe\logprot.c	533;"	d	file:
 index_in	.\Drivers\Dflash\faccess.c	/^	short	index_in;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_in	.\Drivers\Dflash\old_faccess.c	/^	short	index_in;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
 index_out	.\Drivers\Dflash\faccess.c	/^	short	index_out;		\/*	Measured in bytes from beginning of page	*\/$/;"	m	file:
@@ -1248,6 +1322,7 @@ inform_locker_error	.\Drivers\GRstatus\grstatus.c	/^inform_locker_error( MUInt w
 inform_open_ws	.\Common\Automatons\doorws\dwsact.c	/^inform_open_ws( NEWS_T *in )$/;"	f
 inform_pwrfail	.\Drivers\Pwrsys\pwrhdl.c	/^inform_pwrfail( MInt thdlr )$/;"	f
 init_action	.\Common\Mparser\mparser.h	/^	INIT_ACT init_action;$/;"	m
+init_auxiliar_io	.\Drivers\Sensor\sensor.c	/^init_auxiliar_io( void )$/;"	f
 init_cparse	.\Drivers\Sensor\cparse.c	/^init_cparse( MUInt shdlr, MUInt hnews )$/;"	f
 init_dispatcher	.\Common\Dispatch\dispatch.c	/^init_dispatcher( void )$/;"	f
 init_dwosctrl	.\Common\Automatons\doorwos\dwosact.c	/^init_dwosctrl( void )$/;"	f
@@ -1255,6 +1330,11 @@ init_dwsctrl	.\Common\Automatons\doorws\dwsact.c	/^init_dwsctrl( void )$/;"	f
 init_frame	.\Common\Automatons\logprot\alphact.c	/^init_frame( const NEWS_T *in )$/;"	f
 init_group_status	.\Drivers\GRstatus\grstatus.c	/^init_group_status( void )$/;"	f
 init_int_handler	.\Drivers\Enaint\enaint.c	/^init_int_handler( void )$/;"	f
+init_lock0	.\Common\Automatons\locks\lockact.c	/^init_lock0( void )$/;"	f
+init_lock1	.\Common\Automatons\locks\lockact.c	/^init_lock1( void )$/;"	f
+init_lock2	.\Common\Automatons\locks\lockact.c	/^init_lock2( void )$/;"	f
+init_lock3	.\Common\Automatons\locks\lockact.c	/^init_lock3( void )$/;"	f
+init_lockctrl	.\Common\Automatons\locks\lockact.c	/^init_lockctrl( MUInt hdlr, MUInt tlock_ix, MUInt tulocke_ix )$/;"	f
 init_logprot	.\ctsafe\logprot.c	/^init_logprot( void )$/;"	f
 init_main_timer_interrupt	.\Drivers\Maintime\maintime.c	/^init_main_timer_interrupt( void )$/;"	f
 init_mparsers	.\Common\Mparser\mparser.c	/^init_mparsers( MUInt hp )$/;"	f
@@ -1286,10 +1366,11 @@ is_empty_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^is_empty_gsqueue( QHDLR qh
 is_empty_nqueue	.\Common\news\nqueue.c	/^is_empty_nqueue( MUInt qh )$/;"	f
 is_irqpin_set	.\Drivers\Platform\IRQ\irq.c	/^is_irqpin_set( void )$/;"	f
 is_key_switch_open	.\Drivers\Sensor\cparse.c	/^is_key_switch_open( void )$/;"	f
-is_locker_open	.\Drivers\Locker\lockerhdl.c	/^is_locker_open( MUInt who )$/;"	f
+is_notunlocked	.\Drivers\Locker\lockerhdl.c	/^is_notunlocked( MUInt who )$/;"	f
 is_unlocked	.\Drivers\Locker\lockerhdl.c	/^is_unlocked( MUInt who )$/;"	f
 is_valid	.\Common\Automatons\valprot\valact.c	21;"	d	file:
 ix_tout	.\Drivers\Sensor\cparse.h	/^	char ix_tout;$/;"	m
+key_switch	.\Drivers\GRstatus\grstatus.h	/^	unsigned char key_switch;$/;"	m
 kick_cop_wdog	.\Drivers\Platform\COP\cop.c	/^kick_cop_wdog( void )$/;"	f
 kick_dftimer	.\Drivers\Dflash\spihal.c	27;"	d	file:
 kick_timer	.\Drivers\Stimers\stimers.c	/^kick_timer( MInt thdlr, unsigned short msec )$/;"	f
@@ -1315,26 +1396,26 @@ lock_and_wait_wos	.\Common\Automatons\doorwos\dwosact.c	/^lock_and_wait_wos( NEW
 lock_b_ctrl	.\Drivers\Locker\lockerhdl.c	/^lock_b_ctrl( MUInt who, MUInt ctrl )$/;"	f
 lock_locker_wos	.\Common\Automatons\doorwos\dwosact.c	/^lock_locker_wos( void )$/;"	f	file:
 lock_locker_ws	.\Common\Automatons\doorws\dwsact.c	/^lock_locker_ws( void )$/;"	f	file:
-lock_timer	.\Drivers\Locker\locker.c	/^static unsigned short lock_timer[] = { TOUT_TLOCK, TOUT_TLOCK };$/;"	v	file:
+lock_locker_ws	.\Common\Automatons\locks\lockact.c	/^lock_locker_ws( void )$/;"	f	file:
+lock_ppro	.\Common\Automatons\locks\lockact.c	/^lock_ppro( const NEWS_T *in )$/;"	f
+lock_timer	.\Drivers\Locker\locker.c	/^static unsigned short lock_timer[] = { TOUT_TLOCK, TOUT_TLOCK, TOUT_TLOCK, TOUT_TLOCK };$/;"	v	file:
 locked_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE locked_wos =$/;"	v
 locked_ws	.\Common\Automatons\doorws\dwsctrl.c	/^const STATE locked_ws =$/;"	v
 locker0	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker0;$/;"	m
 locker1	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker1;$/;"	m
+locker2	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker2;$/;"	m
+locker3	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker3;$/;"	m
 locker_error0	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker_error0;$/;"	m
 locker_error1	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker_error1;$/;"	m
+locker_error2	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker_error2;$/;"	m
+locker_error3	.\Drivers\GRstatus\grstatus.h	/^	unsigned char locker_error3;$/;"	m
+lockidle	.\Common\Automatons\locks\lockctrl.c	/^const STATE lockidle =$/;"	v
 locking_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE locking_wos =$/;"	v
 locking_ws	.\Common\Automatons\doorws\dwsctrl.c	/^const STATE locking_ws =$/;"	v
+lockt	.\Common\Automatons\locks\lockact.c	/^static MInt lockt[ NUM_LOCKS ];$/;"	v	file:
 lockt_dwos	.\Common\Automatons\doorwos\dwosact.c	/^static MInt lockt_dwos;$/;"	v	file:
 lockt_dws	.\Common\Automatons\doorws\dwsact.c	/^static MInt lockt_dws;$/;"	v	file:
-log_keys	.\Drivers\Sensor\cpdata.c	17;"	d	file:
-log_keys	.\Drivers\Sensor\cpdata.c	22;"	d	file:
-log_sens	.\Drivers\Sensor\cpdata.c	18;"	d	file:
-log_sens	.\Drivers\Sensor\cpdata.c	23;"	d	file:
 log_user_and_password	.\ctsafe\logprot.c	/^log_user_and_password( uchar dev, uchar *user, uchar *pwd  )$/;"	f	file:
-log_val1stck	.\Drivers\Sensor\cpdata.c	15;"	d	file:
-log_val1stck	.\Drivers\Sensor\cpdata.c	20;"	d	file:
-log_val2stck	.\Drivers\Sensor\cpdata.c	16;"	d	file:
-log_val2stck	.\Drivers\Sensor\cpdata.c	21;"	d	file:
 loging_led	.\Drivers\Platform\IO\ioports.c	/^loging_led( void )$/;"	f
 lvd_init	.\Drivers\Platform\LVD\lvd.c	/^lvd_init( void )$/;"	f
 main	.\main.c	/^main( void )$/;"	f
@@ -1342,6 +1423,7 @@ main_timer_counter	.\Drivers\Maintime\maintime.c	/^static unsigned short main_ti
 main_timer_interrupt	.\Drivers\Maintime\maintime.c	/^main_timer_interrupt( void )$/;"	f
 make_file_current	.\Drivers\Dflash\faccess.c	/^make_file_current( MUInt fd )$/;"	f
 make_file_current	.\Drivers\Dflash\old_faccess.c	/^make_file_current( MUInt fd )$/;"	f
+mask	.\ctsafe\logprot.c	/^	ushort mask;$/;"	m	file:
 master_restart	.\Common\Automatons\logprot\alphact.c	/^master_restart( const NEWS_T *in )$/;"	f
 match	.\ctsafe\logprot.c	/^	uchar match;$/;"	m	file:
 max_users	.\ctsafe\logprot.c	/^	uint max_users;$/;"	m	file:
@@ -1368,6 +1450,7 @@ news_queue	.\Common\news\news.c	/^NEWS_T news_queue[ MAX_NEWS_ELEMS ];$/;"	v
 next_state	.\Common\Mparser\mparser.h	/^	const struct state_t *const next_state;$/;"	m	struct:trans_t
 next_state	.\Drivers\Sensor\cparse.h	/^	unsigned char next_state;$/;"	m
 nil	.\Drivers\Sensor\cpdata.c	/^nil( void )$/;"	f	file:
+nlock_b_ctrl	.\Drivers\Locker\lockerhdl.c	/^nlock_b_ctrl( MUInt ctrl )$/;"	f
 none	.\Drivers\Maintime\config\mtimetbl.c	/^none( void )$/;"	f
 nqueues	.\Common\news\nqdata.c	/^NQUEUE nqueues[] =$/;"	v
 num_bytes	.\Drivers\Dflash\flash.c	/^	uchar	num_bytes;$/;"	m	file:
@@ -1433,12 +1516,15 @@ pint	.\Drivers\Enaint\enaint.c	/^static signed char int_stack[ MAX_INT_STACK ], 
 platform_init	.\Drivers\Platform\platform.c	/^platform_init(void)$/;"	f
 plunger0	.\Drivers\GRstatus\grstatus.h	/^	unsigned char plunger0;$/;"	m
 plunger1	.\Drivers\GRstatus\grstatus.h	/^	unsigned char plunger1;$/;"	m
+plunger2	.\Drivers\GRstatus\grstatus.h	/^	unsigned char plunger2;$/;"	m
+plunger3	.\Drivers\GRstatus\grstatus.h	/^	unsigned char plunger3;$/;"	m
 pop	.\Drivers\Enaint\enaint.c	/^pop( void )$/;"	f	file:
 ports_init	.\Drivers\Platform\IO\ioports.c	/^ports_init(void)$/;"	f
 position	.\Drivers\Dflash\dfdata.h	/^	ulong	position;		\/*	Current position for RANDOM	*\/$/;"	m
 pout	.\Common\news\nqueue.h	/^	NEWS_T *pout;$/;"	m
 pout	.\Drivers\GRstatus\grqueue.h	/^	GR1ST_T *pout;$/;"	m
 pout	.\Drivers\Serial\gsqueue\gsqueue.h	/^	ELEM_TYPE *pout;$/;"	m
+powered	.\Common\Automatons\locks\lockctrl.c	/^const STATE powered =$/;"	v
 ppayload	.\Common\Automatons\logprot\alphact.c	/^static unsigned char *ppayload;$/;"	v	file:
 ppro	.\Common\Mparser\mparser.h	/^	PREPRO ppro;$/;"	m	struct:state_t
 pre_unlocking_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE pre_unlocking_wos =$/;"	v
@@ -1451,11 +1537,11 @@ proc_addusr	.\ctsafe\logprot.c	/^proc_addusr( RFRAME_T *p )$/;"	f	file:
 proc_blankdfs	.\ctsafe\logprot.c	/^proc_blankdfs( RFRAME_T *p )$/;"	f	file:
 proc_create_file	.\ctsafe\logprot.c	/^proc_create_file( RFRAME_T *p )$/;"	f	file:
 proc_delusr	.\ctsafe\logprot.c	/^proc_delusr( RFRAME_T *p )$/;"	f	file:
-proc_dev_alarm	.\ctsafe\logprot.c	362;"	d	file:
-proc_dev_locker	.\ctsafe\logprot.c	358;"	d	file:
-proc_dev_locker	.\ctsafe\logprot.c	360;"	d	file:
-proc_dev_plunger	.\ctsafe\logprot.c	359;"	d	file:
-proc_dev_plunger	.\ctsafe\logprot.c	361;"	d	file:
+proc_dev_alarm	.\ctsafe\logprot.c	378;"	d	file:
+proc_dev_locker	.\ctsafe\logprot.c	374;"	d	file:
+proc_dev_locker	.\ctsafe\logprot.c	376;"	d	file:
+proc_dev_plunger	.\ctsafe\logprot.c	375;"	d	file:
+proc_dev_plunger	.\ctsafe\logprot.c	377;"	d	file:
 proc_dev_sbox	.\ctsafe\logprot.c	/^proc_dev_sbox( RFRAME_T *p )$/;"	f	file:
 proc_dev_val	.\ctsafe\logprot.c	/^proc_dev_val( RFRAME_T *p )$/;"	f	file:
 proc_editusr	.\ctsafe\logprot.c	/^proc_editusr( RFRAME_T *p )$/;"	f	file:
@@ -1515,6 +1601,7 @@ pwd0	.\ctsafe\logprot.c	/^	uchar pwd0[ NUM_PASS ];$/;"	m	file:
 pwd1	.\ctsafe\logprot.c	/^	uchar pwd1[ NUM_PASS ];$/;"	m	file:
 pwd_log	.\ctsafe\logprot.c	/^	uchar pwd_log[ NUM_PASS ];$/;"	m	file:
 pwd_type	.\ctsafe\logprot.c	/^	uchar pwd_type;$/;"	m	file:
+pwr	.\ctsafe\logprot.c	/^	uchar pwr;$/;"	m	file:
 pwrctrl_ppro	.\Common\Automatons\pwrctrl\pwract.c	/^pwrctrl_ppro( const NEWS_T *in )$/;"	f
 pwrctrl_t	.\Common\Automatons\pwrctrl\pwract.c	/^static MInt pwrctrl_t, fsync_t;$/;"	v	file:
 pwrfail_t	.\Drivers\Pwrsys\pwrhdl.c	/^static MUInt pwrfail_t;$/;"	v	file:
@@ -1554,6 +1641,7 @@ rec_frame	.\Common\Automatons\logprot\alphact.c	/^rec_frame( const NEWS_T *in )$
 rec_vframe	.\Common\Automatons\valprot\valact.c	/^rec_vframe( const NEWS_T *in )$/;"	f
 recovered_count	.\userdfs\users.c	/^static uint recovered_count, ok_count, format_count;$/;"	v	file:
 relais_state	.\Drivers\Dflash\spihal.c	/^static uchar relais_state = RELAIS_OPEN;$/;"	v	file:
+release_lock	.\Common\Automatons\locks\lockact.c	/^release_lock( NEWS_T *in )$/;"	f
 reload	.\Drivers\Stimers\stimers.c	/^	unsigned short reload;$/;"	m	file:
 remove_grqueue	.\Drivers\GRstatus\grqueue.c	/^remove_grqueue( GR1ST_T *elem )$/;"	f
 remove_gsqueue	.\Drivers\Serial\gsqueue\gsqueue.c	/^remove_gsqueue( QHDLR qh, ELEM_TYPE *elem )$/;"	f
@@ -1567,6 +1655,7 @@ s	.\Drivers\Pwrsys\pwrsys.c	/^		unsigned s		:1;$/;"	m	file:
 safe_box	.\Drivers\GRstatus\grstatus.h	/^	unsigned char safe_box;$/;"	m
 schar	.\Common\mytypes.h	/^typedef signed char		schar;$/;"	t
 sci_br_tbl	.\Drivers\Platform\SCI\scibrtbl.c	/^const unsigned short sci_br_tbl[NUM_BAUD] =$/;"	v
+search_dev_in_list	.\ctsafe\logprot.c	/^search_dev_in_list( uchar rcv_dev, ushort user_devs )$/;"	f	file:
 sector_count	.\Drivers\Dflash\dftypes.h	/^			uchar	sector_count;$/;"	m
 seek_current	.\Drivers\Dflash\faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f
 seek_current	.\Drivers\Dflash\old_faccess.c	/^seek_current( long offset, MUInt whence )$/;"	f
@@ -1580,7 +1669,6 @@ send_sbox_frame	.\ctsafe\logprot.c	/^send_sbox_frame( XMIT_BUFF_T *p )$/;"	f
 send_success	.\ctsafe\logprot.c	49;"	d	file:
 send_val_frame	.\ctsafe\logprot.c	/^send_val_frame( MUInt val, XMIT_BUFF_T *p )$/;"	f	file:
 sens_mask	.\Drivers\Sensor\sensor.c	/^static const char sens_mask[ NUM_SENSORS ] =$/;"	v	file:
-sens_news	.\Drivers\Sensor\cpdata.c	/^const short sens_news[MAX_PARSERS][NUM_NEWSTYPE] = $/;"	v
 sens_tout	.\Drivers\Sensor\cpdata.c	/^const short sens_tout[MAX_PARSERS][NUM_TIMEVAL] = $/;"	v
 senspar	.\Drivers\Sensor\cpdata.c	/^const CPARSE senspar[SNUM][NUM_ENTRIES] =$/;"	v
 serial_default	.\Drivers\Serial\sertable.c	/^const SERIAL_T serial_default[] =$/;"	v
@@ -1593,14 +1681,12 @@ set_baudrate	.\Drivers\Serial\serial.c	/^set_baudrate( MUInt channel, MUInt bd )
 set_current_user_devlist	.\userdfs\users.c	/^set_current_user_devlist( uint dev_list, uint page, uint address )$/;"	f	file:
 set_dir_phymed	.\Drivers\Serial\Phylay\phylay.c	/^set_dir_phymed( MUInt dir )$/;"	f
 set_host_pwr	.\Drivers\Pwrsys\pwrhdl.c	/^set_host_pwr( MUInt ctrl )$/;"	f
-set_lock0_a	.\Drivers\Locker\lockerhdl.h	19;"	d
-set_lock0_b	.\Drivers\Locker\lockerhdl.h	21;"	d
-set_lock1_a	.\Drivers\Locker\lockerhdl.h	24;"	d
-set_lock1_b	.\Drivers\Locker\lockerhdl.h	26;"	d
+set_keyswitch_state	.\Drivers\GRstatus\grstatus.c	/^set_keyswitch_state( unsigned char state )$/;"	f
 set_locker	.\Drivers\Locker\locker.c	/^set_locker( MUInt which, MUInt ctrl )$/;"	f
 set_locker_state	.\Drivers\GRstatus\grstatus.c	/^set_locker_state( MUInt who, unsigned char state )$/;"	f
 set_memctrl	.\Drivers\Dflash\spihal.c	/^set_memctrl( void )$/;"	f	file:
 set_memstat	.\Drivers\Pwrsys\pwrsys.c	/^set_memstat( unsigned char *safe_stat )$/;"	f
+set_nlock0_b	.\Drivers\Locker\lockerhdl.h	19;"	d
 set_plunger_state	.\Drivers\GRstatus\grstatus.c	/^set_plunger_state( MUInt who, unsigned char state )$/;"	f
 set_pwr_st	.\Drivers\Pwrsys\pwrsys.c	/^set_pwr_st( MUInt state )$/;"	f
 set_results	.\userdfs\users.c	/^set_results( MUInt i )$/;"	f	file:
@@ -1613,7 +1699,7 @@ set_tunlock_enable	.\Drivers\Locker\locker.c	/^set_tunlock_enable( MUInt which, 
 set_val_config	.\ctsafe\valconf.c	/^set_val_config( MUInt val, VAL_CONFIG_T *p )$/;"	f
 set_val_hw_config	.\ctsafe\valconf.c	/^set_val_hw_config( MUInt val )$/;"	f
 set_valpwr	.\Drivers\Pwrsys\pwrhdl.c	/^set_valpwr( MUInt who, MUInt pwr )$/;"	f
-set_xmit_frames	.\ctsafe\logprot.c	493;"	d	file:
+set_xmit_frames	.\ctsafe\logprot.c	541;"	d	file:
 shtdwn	.\Common\Automatons\pwrctrl\pwract.c	/^shtdwn( NEWS_T *ix )$/;"	f
 shutdown	.\Drivers\Pwrsys\pwrsys.c	/^shutdown( void )$/;"	f
 signature	.\userdfs\users.c	/^	uchar	signature;$/;"	m	file:
@@ -1646,6 +1732,7 @@ sum	.\Common\Automatons\logprot\alphact.c	/^static MInt sum;$/;"	v	file:
 tbet_byte	.\Common\Automatons\logprot\alphact.c	/^static MInt tbet_byte, txmit1, tinactivity;$/;"	v	file:
 test_sp	.\Drivers\Platform\SP\stack.c	/^test_sp( void )$/;"	f
 test_sp	.\Drivers\Platform\SP\stack.h	12;"	d
+this_lock_hdlr	.\Common\Automatons\locks\lockact.c	32;"	d	file:
 tick	.\Drivers\Sleep\sleep.c	/^static unsigned short tick;$/;"	v	file:
 timer	.\Drivers\Maintime\mtimetyp.h	/^	unsigned short timer;$/;"	m
 timer_chain	.\Drivers\Maintime\config\mtimetbl.c	/^const TIMER_CHAIN timer_chain[] =$/;"	v
@@ -1653,6 +1740,8 @@ timers	.\Drivers\Stimers\stimers.c	/^static TIMER timers[ MAX_TIMERS ];$/;"	v	fi
 tinactivity	.\Common\Automatons\logprot\alphact.c	/^static MInt tbet_byte, txmit1, tinactivity;$/;"	v	file:
 tlock0	.\ctsafe\logprot.c	/^	uchar tlock0;$/;"	m	file:
 tlock1	.\ctsafe\logprot.c	/^	uchar tlock1;$/;"	m	file:
+tlock2	.\ctsafe\logprot.c	/^	uchar tlock2;$/;"	m	file:
+tlock3	.\ctsafe\logprot.c	/^	uchar tlock3;$/;"	m	file:
 toCopyDownBegOffs	.\Start08.c	100;"	d	file:
 toCopyDownBegOffs	.\Start08.c	98;"	d	file:
 toidle	.\Common\Automatons\logprot\alphact.c	/^toidle( const NEWS_T *in )$/;"	f
@@ -1671,9 +1760,11 @@ trans_in_data	.\Common\Automatons\logprot\alphctrl.c	/^static const TRAN trans_i
 trans_in_frame	.\Common\Automatons\valprot\valctrl.c	/^static const TRAN trans_in_frame[] =$/;"	v	file:
 trans_locked_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^static const TRAN trans_locked_wos[] =$/;"	v	file:
 trans_locked_ws	.\Common\Automatons\doorws\dwsctrl.c	/^static const TRAN trans_locked_ws[] =$/;"	v	file:
+trans_lockidle	.\Common\Automatons\locks\lockctrl.c	/^static const TRAN trans_lockidle[] =$/;"	v	file:
 trans_locking_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^static const TRAN trans_locking_wos[] =$/;"	v	file:
 trans_locking_ws	.\Common\Automatons\doorws\dwsctrl.c	/^static const TRAN trans_locking_ws[] =$/;"	v	file:
 trans_pframe	.\Common\Automatons\logprot\alphctrl.c	/^static const TRAN trans_pframe[] =$/;"	v	file:
+trans_powered	.\Common\Automatons\locks\lockctrl.c	/^static const TRAN trans_powered[] =$/;"	v	file:
 trans_pre_unlocking_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^static const TRAN trans_pre_unlocking_wos[] =$/;"	v	file:
 trans_pre_unlocking_ws	.\Common\Automatons\doorws\dwsctrl.c	/^static const TRAN trans_pre_unlocking_ws[] =$/;"	v	file:
 trans_t	.\Common\Mparser\mparser.h	/^typedef struct trans_t$/;"	s
@@ -1686,11 +1777,14 @@ trans_wait_cmd	.\Common\Automatons\logprot\alphctrl.c	/^static const TRAN trans_
 trans_wait_dev	.\Common\Automatons\logprot\alphctrl.c	/^static const TRAN trans_wait_dev[] =$/;"	v	file:
 trans_wait_numdata	.\Common\Automatons\logprot\alphctrl.c	/^static const TRAN trans_wait_numdata[] =$/;"	v	file:
 trans_wait_vresp	.\Common\Automatons\logprot\alphctrl.c	/^static const TRAN trans_wait_vresp[] =$/;"	v	file:
+trans_wkeysw	.\Common\Automatons\locks\lockctrl.c	/^static const TRAN trans_wkeysw[] =$/;"	v	file:
 trans_wpunlock_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^static const TRAN trans_wpunlock_wos[] =$/;"	v	file:
 trans_wpunlock_ws	.\Common\Automatons\doorws\dwsctrl.c	/^static const TRAN trans_wpunlock_ws[] =$/;"	v	file:
 tunlock_enable	.\ctsafe\logprot.c	/^	uchar tunlock_enable;$/;"	m	file:
 tunlock_enable_lock0	.\ctsafe\logprot.c	/^	uchar tunlock_enable_lock0;$/;"	m	file:
 tunlock_enable_lock1	.\ctsafe\logprot.c	/^	uchar tunlock_enable_lock1;$/;"	m	file:
+tunlock_enable_lock2	.\ctsafe\logprot.c	/^	uchar tunlock_enable_lock2;$/;"	m	file:
+tunlock_enable_lock3	.\ctsafe\logprot.c	/^	uchar tunlock_enable_lock3;$/;"	m	file:
 txmit0	.\ctsafe\logprot.c	/^static MInt txmit0;$/;"	v	file:
 txmit1	.\Common\Automatons\logprot\alphact.c	/^static MInt tbet_byte, txmit1, tinactivity;$/;"	v	file:
 type	.\Drivers\Stimers\stimers.c	/^	unsigned type: 1;$/;"	m	file:
@@ -1704,6 +1798,7 @@ ulking2lked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulking2lked_wos( NEWS_T 
 ulking2lked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulking2lked_ws( NEWS_T *in )$/;"	f
 ulking2ulked_wos	.\Common\Automatons\doorwos\dwosact.c	/^ulking2ulked_wos( NEWS_T *in )$/;"	f
 ulking2ulked_ws	.\Common\Automatons\doorws\dwsact.c	/^ulking2ulked_ws( NEWS_T *in )$/;"	f
+ulocke	.\Common\Automatons\locks\lockact.c	/^static MInt ulocke[ NUM_LOCKS ];$/;"	v	file:
 ulocke_dws	.\Common\Automatons\doorws\dwsact.c	/^static MInt ulocke_dws;$/;"	v	file:
 ulong	.\Common\mytypes.h	/^typedef unsigned long	ulong;$/;"	t
 unit_size	.\Drivers\Dflash\dfdata.h	/^	uchar	unit_size;		\/*	Size of file record					*\/$/;"	m
@@ -1712,7 +1807,8 @@ unit_size	.\Drivers\Dflash\old_faccess.c	/^	bitf	unit_size:8;	\/*	Size of each r
 unit_size	.\ctsafe\logprot.c	/^	uchar unit_size;$/;"	m	file:
 unlock_locker_wos	.\Common\Automatons\doorwos\dwosact.c	/^unlock_locker_wos( void )$/;"	f	file:
 unlock_locker_ws	.\Common\Automatons\doorws\dwsact.c	/^unlock_locker_ws( void )$/;"	f	file:
-unlock_timer	.\Drivers\Locker\locker.c	/^static unsigned short unlock_timer[] = { TOUT_TUNLOCK, TOUT_TUNLOCK };$/;"	v	file:
+unlock_locker_ws	.\Common\Automatons\locks\lockact.c	/^unlock_locker_ws( void )$/;"	f	file:
+unlock_timer	.\Drivers\Locker\locker.c	/^static unsigned short unlock_timer[] = { TOUT_TUNLOCK, TOUT_TUNLOCK, TOUT_TUNLOCK, TOUT_TUNLOCK };$/;"	v	file:
 unlocke_dwos	.\Common\Automatons\doorwos\dwosact.c	/^static MInt unlocke_dwos;$/;"	v	file:
 unlocked_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE unlocked_wos =$/;"	v
 unlocked_ws	.\Common\Automatons\doorws\dwsctrl.c	/^const STATE unlocked_ws =$/;"	v
@@ -1744,8 +1840,6 @@ users_init	.\userdfs\users.c	/^users_init( uint *pnum_users_avail )$/;"	f
 users_set_devlist	.\userdfs\users.c	/^users_set_devlist( uchar *puser_id, uint dev_list )$/;"	f
 users_validation	.\userdfs\users.c	/^users_validation( const USER_T *p, uchar *pass_match, ushort *pdev_list )$/;"	f
 ushort	.\Common\mytypes.h	/^typedef unsigned short	ushort;$/;"	t
-val0pwr	.\ctsafe\logprot.c	/^	uchar val0pwr;$/;"	m	file:
-val1pwr	.\ctsafe\logprot.c	/^	uchar val1pwr;$/;"	m	file:
 val_configs	.\ctsafe\valconf.c	/^static VAL_CONFIG_T val_configs[] =$/;"	v	file:
 val_err_isr	.\Drivers\Platform\SCI\sci.c	/^val_err_isr( void )$/;"	f
 val_init	.\Drivers\Serial\slogval.c	/^val_init( SERIAL_T *p )$/;"	f
@@ -1793,6 +1887,8 @@ whence	.\ctsafe\logprot.c	/^	uchar whence;$/;"	m	file:
 which	.\Drivers\Sensor\cparse.h	/^	unsigned char which;$/;"	m
 which_sensor	.\Drivers\Sensor\cparse.c	/^which_sensor( void )$/;"	f
 who	.\Common\news\news.h	/^	unsigned who:3;$/;"	m
+who	.\ctsafe\logprot.c	/^	uchar who;$/;"	m	file:
+wkeysw	.\Common\Automatons\locks\lockctrl.c	/^const STATE wkeysw =$/;"	v
 word_bits	.\ctsafe\valconf.h	/^	unsigned word_bits	:2;$/;"	m
 wout_image	.\Drivers\Wout\wouts.c	/^static MUInt wout_image,kickwouts;$/;"	v	file:
 wpunlock_wos	.\Common\Automatons\doorwos\dwosctrl.c	/^const STATE wpunlock_wos =$/;"	v

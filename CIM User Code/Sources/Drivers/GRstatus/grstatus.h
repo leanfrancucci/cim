@@ -9,15 +9,22 @@
 
 typedef struct
 {
-	unsigned char locker0;
-	unsigned char plunger0;
-	unsigned char locker1;
-	unsigned char plunger1;
-	unsigned char safe_box;
-	unsigned char stacker0;
-	unsigned char stacker1;
-	unsigned char locker_error0;
-	unsigned char locker_error1;
+	unsigned char locker0;	//2
+	unsigned char plunger0;	//1
+	unsigned char locker1;	//2
+	unsigned char plunger1;	//1
+	unsigned char safe_box;	//8
+	unsigned char stacker0;	//1
+	unsigned char stacker1;	//1
+	unsigned char locker_error0;	//2
+	unsigned char locker_error1;	//2
+	unsigned char locker2;	//2
+	unsigned char locker3;	//2
+	unsigned char plunger2;	//1
+	unsigned char plunger3;	//1
+	unsigned char key_switch;//1
+	unsigned char locker_error2;	//2
+	unsigned char locker_error3;	//2
 } GR1ST_T;
 
 /*
@@ -110,8 +117,13 @@ void set_plunger_state( MUInt who, unsigned char state );
  * who: STACKER0/STACKER1
  * state: INSTALLED/REMOVED 
  */
-void
-set_stacker_state( MUInt who, unsigned char state );
+void set_stacker_state( MUInt who, unsigned char state );
+
+/*
+ * set_stacker_state
+ * state: CLOSED/OPENED
+ */
+void set_keyswitch_state( unsigned char state );
 
 /*
  * inform_locker_error

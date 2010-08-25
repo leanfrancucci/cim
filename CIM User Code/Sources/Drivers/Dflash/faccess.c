@@ -79,7 +79,6 @@ enum
 
 static PAGE_INFO_T pinfo;
 static int current_fd;
-static ushort num_units_page;
 static ushort first_avail_page;
 static DIRINFO_T directory[ NUM_FDS ], *pcurr;
 static ushort page_in_buffer = NO_PAGE;
@@ -477,7 +476,6 @@ write_one( ulong position, uchar *p, MUInt access )
 {
 	MUInt unit_size, to_next;
 	ulong actual_position;
-	MInt status;
 
 	to_next = 0;
 	actual_position = (ulong)(position * pcurr->file_data.unit_size);
@@ -1064,7 +1062,6 @@ blank_current_file( MUInt in_init )
 {
 	uchar buffer[16];
 	MUInt first;
-	MInt status;
 
 	for( first = 1, df.page = pcurr->beg_page ; df.page <= pcurr->last_page ; ++df.page )
 	{

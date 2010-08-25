@@ -164,7 +164,6 @@ val_err_isr( void )
 	volatile MUInt datactrl;
 	volatile MUInt dataerr;
 	volatile MUInt databuff;
-	volatile MUInt aux;
 
 	dataerr  = SCI2S1 & 0x0F;
 	databuff = SCI2D;

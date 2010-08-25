@@ -28,6 +28,12 @@
 #define SENSORS_IN	PTAD
 /* PORT B Data Register */
 #define BATT_LVL	PTBD_PTBD0	/* A/D input */
+#define AUXIO0		PTBD_PTBD1
+#define AUXIO1		PTBD_PTBD2
+#define AUXIO2		PTBD_PTBD3
+#define AUXIO3		PTBD_PTBD4
+#define AUXIO4		PTBD_PTBD5
+#define AUXIO5		PTBD_PTBD6
 #define NOT_LOCK1B_SEC PTBD_PTBD7 /* output */
 /* PORT C Data Register */
 #define UART2_TXD	PTCD_PTCD0	/* SCI2 TX output */
@@ -85,6 +91,12 @@
 #define D_VAL2_STACKS	PTADD_PTADD7	/* input */
 /* PORT B Data Direction Register */
 #define D_BATT_LVL		PTBDD_PTBDD0	/* A/D input */
+#define D_AUXIO0		PTBDD_PTBDD1
+#define D_AUXIO1		PTBDD_PTBDD2
+#define D_AUXIO2		PTBDD_PTBDD3
+#define D_AUXIO3		PTBDD_PTBDD4
+#define D_AUXIO4		PTBDD_PTBDD5
+#define D_AUXIO5		PTBDD_PTBDD6
 #define D_NOT_LOCK1B_SEC PTBDD_PTBDD7 /* output */
 /* PORT C Data Direction Register */
 #define D_UART2_TXD		PTCDD_PTCDD0	/* SCI2 TX output */
@@ -142,6 +154,12 @@
 #define P_VAL2_STACKS	PTAPE_PTAPE7	/* input */
 /* PORT B PullUp Enable Register */
 #define P_BATT_LVL		PTBPE_PTBPE0	/* A/D input */
+#define P_AUXIO0		PTBPE_PTBPE1
+#define P_AUXIO1		PTBPE_PTBPE2
+#define P_AUXIO2		PTBPE_PTBPE3
+#define P_AUXIO3		PTBPE_PTBPE4
+#define P_AUXIO4		PTBPE_PTBPE5
+#define P_AUXIO5		PTBPE_PTBPE6
 #define P_NOT_LOCK1B_SEC PTBPE_PTBPE7 /* output */
 /* PORT C PullUp Enable Register */
 #define P_UART2_TXD		PTCPE_PTCPE0	/* SCI2 TX output */
