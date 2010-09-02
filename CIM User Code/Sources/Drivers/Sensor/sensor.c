@@ -82,9 +82,12 @@ init_sensors( void )
 void
 proc_sensors( void )
 {
-	MUInt hdlr;
+static	MUInt hdlr = LOCKS1;
 
-	for( hdlr=LOCKS1; hdlr < NUM_SENSORS; ++hdlr )
-		do_cparse( hdlr, get_sensor(hdlr) );
+//	for( hdlr=LOCKS1; hdlr < NUM_SENSORS; ++hdlr )
+	if( ++hdlr == NUM_SENSORS )
+		hdlr = LOCKS1;
+
+	do_cparse( hdlr, get_sensor(hdlr) );
 }
 

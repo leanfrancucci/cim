@@ -29,7 +29,7 @@ enum
  * 		States of Sensor Automata
  */
 
-#define SENSOR_BASE		2
+#define SENSOR_BASE		(2*NUM_SENSORS)
 
 #define	LOCKS1_OPENT	100/SENSOR_BASE
 #define LOCKS1_CLOSET	100/SENSOR_BASE
