@@ -24,7 +24,7 @@ PLACEMENT /* Here all predefined and user segments are placed into the SEGMENTS 
   //VECTORS_DATA                        INTO  OSVECTORS; /* OSEK */
 END
 
-STACKSIZE 0x213
+STACKSIZE 0x195
 
 VECTOR 0 _Startup /* Reset vector: this is the default entry point for an application. */
 

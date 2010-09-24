@@ -9,7 +9,7 @@
 #include "mytypes.h"
 #include "grstatus.h"
 
-#define GRQ_MAX_ELEMENTS 32
+#define GRQ_MAX_ELEMENTS 16
 /*
  * The return codes
  */

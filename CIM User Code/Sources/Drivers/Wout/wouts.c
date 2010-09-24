@@ -6,6 +6,7 @@
 #include "ioports.h"
 #include "wouts.h"
 #include "enaint.h"
+#include "mpdata.h"
 
 static MUInt wout_image,kickwouts;
 static MUInt vlocks_st[NUM_VLOCKS_MINORS];
@@ -24,7 +25,23 @@ init_wouts( void )
 void
 enable_vlocks( MUInt who )
 {
-	vlocks_st[who] = 1;
+	MUInt min;
+
+	switch( who )
+	{
+		case LOCK0_CTRL:
+			min = VLOCKS_LOCKER0;
+			break;
+		case LOCK1_CTRL:
+			min = VLOCKS_LOCKER1;
+			break;
+		case LOCK2_CTRL:
+		case LOCK3_CTRL:
+		default:
+			return;
+	}
+	
+	vlocks_st[min] = 1;
 	wout_image |= VLOCKS_CTRL_W;
 	WOUT_IOPORT	|= wout_image;
 	WOUT_IOPORT	&= ~wout_image;
@@ -36,7 +53,23 @@ void
 disable_vlocks( MUInt who )
 {
 	MUInt i;
-	vlocks_st[who] = 0;
+	MUInt min;
+
+	switch( who )
+	{
+		case LOCK0_CTRL:
+			min = VLOCKS_LOCKER0;
+			break;
+		case LOCK1_CTRL:
+			min = VLOCKS_LOCKER1;
+			break;
+		case LOCK2_CTRL:
+		case LOCK3_CTRL:
+		default:
+			return;
+	}
+
+	vlocks_st[min] = 0;
 	for( i=0; i < NUM_VLOCKS_MINORS; ++i )
 		if( vlocks_st[i] == 1 )
 			return;

@@ -11,7 +11,7 @@
  * Firmware and hardware version string
  */
 #define VER_STR_LEN			17+1
-#define VERSION_STRING		"SW00.23.00HW03.00"
+#define VERSION_STRING		"SW01.00.00HW03.00"
 
 /*
  * The model determine a specified hardware 
@@ -42,15 +42,6 @@
 #define HOST_RESET_TIME 	(3000/SLEEP_BASE)
 #define BATT_DISCONNET_TIME (2000/SLEEP_BASE)
 #define PWROFF_TIME 		(7000/SLEEP_BASE)
-
-/*
- * Used to wait a possible delayed UNLOCK in last
- * milliseconds of TOUT_TLOCK.
- * Must be higher than LOCKS1_OPENT/CLOSET
- * or PLGS2_OPENT/CLOSET
- */
-#define WAIT_UNLOCK_DWS		(500/STIMER_BASE)
-#define WAIT_UNLOCK_DWOS	(500/STIMER_BASE)
 
 /*
  * Used to wait a start of frame from validator.

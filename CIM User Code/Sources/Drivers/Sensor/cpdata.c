@@ -10,43 +10,11 @@
 #include "grstatus.h"
 #include "csdevs.h"
 
-#undef LOG_SENSORS
-#ifdef LOG_SENSORS
-#define log_val1stck(a)	(PTFD_PTFD0=a)
-#define log_val2stck(a)	(PTFD_PTFD1=a)
-#define log_keys(a)		(PTFD_PTFD2=a)
-#define log_sens(a)		(PTFD_PTFD3=a)
-#else
-#define log_val1stck(a)	
-#define log_val2stck(a)
-#define log_keys(a)	
-#define log_sens(a)
-#endif
-
 /*
  * Validators pseudo news definitions
  * 	this devices dont inform events thru the news queue,
  * 	sets status flag in GRSTATUS struct.
  */
-enum
-{
-   OPEN_VAL1STCK_IX,
-   CLOSE_VAL1STCK_IX,
-   OPEN_VAL2STCK_IX,
-   CLOSE_VAL2STCK_IX
-};
-
-const short sens_news[MAX_PARSERS][NUM_NEWSTYPE] = 
-{
-	{ UNLOCKED_DOOR1_IX,	LOCKED_DOOR1_IX },
-	{ OPEN_DOOR1_IX,  		CLOSE_DOOR1_IX  },
-	{ UNLOCKED_DOOR2_IX,	LOCKED_DOOR2_IX },
-	{ OPEN_DOOR2_IX,  		CLOSE_DOOR2_IX  },
-	{ OPEN_VAL1STCK_IX,		CLOSE_VAL1STCK_IX },
-	{ OPEN_VAL2STCK_IX,		CLOSE_VAL2STCK_IX },
-	{ OPEN_KEYS_D1_IX,		CLOSE_KEYS_D1_IX }
-};
-
 const short sens_tout[MAX_PARSERS][NUM_TIMEVAL] = 
 {
 	{ LOCKS1_OPENT, LOCKS1_CLOSET },
@@ -55,7 +23,11 @@ const short sens_tout[MAX_PARSERS][NUM_TIMEVAL] =
 	{ PLGS2_OPENT,  PLGS2_CLOSET  },
 	{ VAL1STCK_OPENT, VAL1STCK_CLOSET },
 	{ VAL2STCK_OPENT, VAL2STCK_CLOSET },
-	{ KEYSWITCH_OPENT,  KEYSWITCH_CLOSET  }
+	{ KEYSWITCH_OPENT,  KEYSWITCH_CLOSET  },
+	{ LOCKS3_OPENT, LOCKS3_CLOSET },
+	{ LOCKS4_OPENT, LOCKS4_CLOSET },
+	{ PLGS3_OPENT,  PLGS3_CLOSET  },
+	{ PLGS4_OPENT,  PLGS4_CLOSET  }
 };
 
 /*
@@ -77,21 +49,42 @@ inf_close( void )
 	{
 		case VAL1STCK:
 			set_stacker_state( STACKER0, INSTALLED );
-			log_val1stck(0);
 			break;
 		case VAL2STCK:
 			set_stacker_state( STACKER1, INSTALLED );
-			log_val2stck(0);
 			break;
 		case KEYSWITCH:
 			put_nqueue( NEWS_QUEUE, def_news[CLOSE_KEYS_D1_IX] );
 			put_nqueue( NEWS_QUEUE, def_news[CLOSE_KEYS_D2_IX] );
-			log_keys(0);
+			put_nqueue( NEWS_QUEUE, def_news[CLOSE_KEYS_D3_IX] );
+			put_nqueue( NEWS_QUEUE, def_news[CLOSE_KEYS_D4_IX] );
+			set_keyswitch_state( CLOSED );
 			break;
+		case LOCKS1:
+			set_locker_state( LOCKER0, LOCKED_STATUS );
+			break;
+		case LOCKS2:
+			set_locker_state( LOCKER1, LOCKED_STATUS );
+			break;
+		case LOCKS3:
+			set_locker_state( LOCKER2, LOCKED_STATUS );
+			break;
+		case LOCKS4:
+			set_locker_state( LOCKER3, LOCKED_STATUS );
+			break;
+		case PLGS1:
+			set_plunger_state( PLUNGER0, CLOSED );
+			break;
+		case PLGS2:
+			set_plunger_state( PLUNGER1, CLOSED );
+			break;						
+		case PLGS3:
+			set_plunger_state( PLUNGER2, CLOSED );
+			break;
+		case PLGS4:
+			set_plunger_state( PLUNGER3, CLOSED );
+			break;			
 		default:
-			put_nqueue( NEWS_QUEUE, 
-				def_news[sens_news[which_sensor()][CLOSE_NEWS]] );
-			log_sens(0);
 			break;
 	}
 }
@@ -104,21 +97,42 @@ inf_open( void )
 	{
 		case VAL1STCK:
 			set_stacker_state( STACKER0, REMOVED );
-			log_val1stck(1);
 			break;
 		case VAL2STCK:
 			set_stacker_state( STACKER1, REMOVED );
-			log_val2stck(1);
 			break;
 		case KEYSWITCH:
 			put_nqueue( NEWS_QUEUE, def_news[OPEN_KEYS_D1_IX] );
 			put_nqueue( NEWS_QUEUE, def_news[OPEN_KEYS_D2_IX] );
-			log_keys(1);
+			put_nqueue( NEWS_QUEUE, def_news[OPEN_KEYS_D3_IX] );
+			put_nqueue( NEWS_QUEUE, def_news[OPEN_KEYS_D4_IX] );
+			set_keyswitch_state( OPENED );
 			break;
+		case LOCKS1:
+			set_locker_state( LOCKER0, UNLOCKED_STATUS );
+			break;
+		case LOCKS2:
+			set_locker_state( LOCKER1, UNLOCKED_STATUS  );
+			break;
+		case LOCKS3:
+			set_locker_state( LOCKER2, UNLOCKED_STATUS );
+			break;
+		case LOCKS4:
+			set_locker_state( LOCKER3, UNLOCKED_STATUS );
+			break;
+		case PLGS1:
+			set_plunger_state( PLUNGER0, OPENED );
+			break;
+		case PLGS2:
+			set_plunger_state( PLUNGER1, OPENED );
+			break;						
+		case PLGS3:
+			set_plunger_state( PLUNGER2, OPENED );
+			break;
+		case PLGS4:
+			set_plunger_state( PLUNGER3, OPENED );
+			break;						
 		default:
-			put_nqueue( NEWS_QUEUE, 
-				def_news[sens_news[which_sensor()][OPEN_NEWS]] );
-			log_sens(1);
 			break;
 	}
 }

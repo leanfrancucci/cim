@@ -17,9 +17,10 @@ init_dispatcher( void )
 {
 	init_mparsers( CT_PROT );
 	init_mparsers( VAL_PROT );
-	init_mparsers( DOORWS_CTRL );
-	init_mparsers( DOORWOS_CTRL );	
-//	init_mparsers( PWRCTRL_CTRL );	
+	init_mparsers( LOCK0_CTRL );
+	init_mparsers( LOCK1_CTRL );
+	init_mparsers( LOCK2_CTRL );
+	init_mparsers( LOCK3_CTRL );
 }
 
 /*
