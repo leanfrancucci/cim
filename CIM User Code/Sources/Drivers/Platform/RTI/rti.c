@@ -47,7 +47,6 @@ rti_handler( void )
 
 	dflash_handler();
 	++mtime;
-
 }
 
 

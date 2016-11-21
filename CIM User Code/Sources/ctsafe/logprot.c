@@ -1527,9 +1527,8 @@ proc_dev_val( RFRAME_T *p )
 
 	put_nqueue( COND_QUEUE, def_news[ VALUNBLOCK_IX ] );
 	send_val_frame( p->curr_dev, prepare_resp_val( p ) );
-	put_nqueue( COND_QUEUE, def_news[ VALSENT_IX ] );
-
 	enable_rcv_interrupt( VALCH );
+	put_nqueue( COND_QUEUE, def_news[ VALSENT_IX ] );
 }
 
 /*

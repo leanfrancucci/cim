@@ -139,6 +139,15 @@ ports_init(void)
 	D_VAL1PWR = 1;
 	VAL0PWR = 1;
 	VAL1PWR = 1;
+
+    /* Test Points */
+#if 0
+    PTGDD_PTGDD3 = 1;
+    PTGD_PTGD3 = 1;
+
+    PTDDD_PTDDD6 = 1;
+    PTDD_PTDD6 = 1;
+#endif
 }
 
 void

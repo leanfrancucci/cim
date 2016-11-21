@@ -12,6 +12,7 @@
 #include "gsqueue.h"
 #include "serdefs.h"
 #include "scibrtbl.h"
+#include "enaint.h"
 
 #define OVRN	0x08
 #define NF		0x04
@@ -207,11 +208,16 @@ enable_rcv_interrupt( MUInt ch )
 
 	if( ch == VALCH )
 	{
-		while( !SCI2S1_TC || !SCI2S1_TDRE )
+		while( !SCI2S1_TDRE )
+            ;
+        
+        sem_disable();
+		while( !SCI2S1_TC )
 			;
 		data = SCI2D;
 		SCI2C2_RE = 1;
 		SCI2C2_RIE = 1;
+        sem_enable();
 	}
 	else
 	{
